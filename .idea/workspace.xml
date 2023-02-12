@@ -14,6 +14,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -56,6 +57,9 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\IJSE\Second Semester\AAD (Advance API Development)\Easy-Car-Rental-System\Front-End\assets" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\IJSE\Second Semester\AAD (Advance API Development)\Easy-Car-Rental-System\Back-End\src\main\java" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -68,7 +72,7 @@
       <workItem from="1676192058741" duration="448000" />
       <workItem from="1676194327772" duration="299000" />
       <workItem from="1676196329509" duration="85000" />
-      <workItem from="1676196429781" duration="306000" />
+      <workItem from="1676196429781" duration="882000" />
     </task>
     <servers />
   </component>
