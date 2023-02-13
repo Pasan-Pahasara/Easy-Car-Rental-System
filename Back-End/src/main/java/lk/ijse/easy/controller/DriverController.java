@@ -1,8 +1,13 @@
 package lk.ijse.easy.controller;
 
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import lk.ijse.easy.dto.DriverDTO;
+import lk.ijse.easy.dto.RegUserDTO;
+import lk.ijse.easy.service.DriverService;
+import lk.ijse.easy.util.ResponseUtil;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * @author : ShEnUx
@@ -14,4 +19,13 @@ import org.springframework.web.bind.annotation.RestController;
 @CrossOrigin
 @RequestMapping("/driver")
 public class DriverController {
+    @Autowired
+    private DriverService service;
+
+    @ResponseStatus(HttpStatus.CREATED)
+    @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil saveDriver(@RequestBody DriverDTO driverDTO) {
+        service.saveDriver(driverDTO);
+        return new ResponseUtil("OK", "Successfully Registered..!", null);
+    }
 }
