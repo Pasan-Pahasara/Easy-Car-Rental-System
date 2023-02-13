@@ -1,5 +1,6 @@
 package lk.ijse.easy.config;
 
+import lk.ijse.easy.controller.RegUserController;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
@@ -12,6 +13,6 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
  **/
 @Configuration
 @EnableWebMvc
-@ComponentScan()
+@ComponentScan(basePackageClasses = {RegUserController.class})
 public class WebAppConfig {
 }
