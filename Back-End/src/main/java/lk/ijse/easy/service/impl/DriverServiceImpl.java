@@ -2,7 +2,6 @@ package lk.ijse.easy.service.impl;
 
 import lk.ijse.easy.dto.DriverDTO;
 import lk.ijse.easy.entity.Driver;
-import lk.ijse.easy.entity.RegUser;
 import lk.ijse.easy.repo.DriverRepo;
 import lk.ijse.easy.service.DriverService;
 import org.modelmapper.ModelMapper;
