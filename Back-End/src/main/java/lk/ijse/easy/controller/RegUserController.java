@@ -27,4 +27,10 @@ public class RegUserController {
         service.saveRegUser(regUserDTO);
         return new ResponseUtil("OK", "Successfully Registered..!", null);
     }
+
+    @ResponseStatus(HttpStatus.ACCEPTED)
+    @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil getAllRegUser(){
+        return new ResponseUtil("OK","Successfully Loaded..!",service.getAllRegUsers());
+    }
 }
