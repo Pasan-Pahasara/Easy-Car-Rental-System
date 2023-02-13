@@ -31,7 +31,7 @@ public class DriverController {
 
     @ResponseStatus(HttpStatus.ACCEPTED)
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseUtil getAllRegUsers(){
+    public ResponseUtil getAllDrivers(){
         return new ResponseUtil("OK","Successfully Loaded..!",service.getAllDrivers());
     }
 }
