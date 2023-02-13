@@ -41,4 +41,11 @@ public class DriverController {
         service.deleteDriver(id);
         return new ResponseUtil("OK","Successfully Deleted..! : "+id,null);
     }
+
+    @ResponseStatus(HttpStatus.ACCEPTED)
+    @PutMapping(produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil updateDriver(@RequestBody DriverDTO driverDTO){
+        service.updateDriver(driverDTO);
+        return new ResponseUtil("OK","Successfully Updated..! : "+driverDTO.getDriver_Id(),null);
+    }
 }
