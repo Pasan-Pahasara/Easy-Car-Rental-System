@@ -34,4 +34,11 @@ public class DriverController {
     public ResponseUtil getAllDrivers(){
         return new ResponseUtil("OK","Successfully Loaded..!",service.getAllDrivers());
     }
+
+    @ResponseStatus(HttpStatus.ACCEPTED)
+    @DeleteMapping(params = {"driver_Id"},produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil deleteDriver(@RequestParam(name ="driver_Id") String id) {
+        service.deleteDriver(id);
+        return new ResponseUtil("OK","Successfully Deleted..! : "+id,null);
+    }
 }
