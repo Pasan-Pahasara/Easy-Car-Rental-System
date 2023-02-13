@@ -28,4 +28,10 @@ public class DriverController {
         service.saveDriver(driverDTO);
         return new ResponseUtil("OK", "Successfully Registered..!", null);
     }
+
+    @ResponseStatus(HttpStatus.ACCEPTED)
+    @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil getAllRegUsers(){
+        return new ResponseUtil("OK","Successfully Loaded..!",service.getAllDrivers());
+    }
 }
