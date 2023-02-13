@@ -1,4 +1,4 @@
-package lk.ijse.easy.dto;
+package lk.ijse.easy.entity;
 
 import lk.ijse.easy.embeded.Name;
 import lombok.AllArgsConstructor;
@@ -7,19 +7,22 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import javax.persistence.Embedded;
-
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
 /**
  * @author : ShEnUx
- * @time : 3:17 PM
+ * @time : 3:09 PM
  * @date : 2/13/2023
  * @since : 0.1.0
  **/
+@Entity
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
 @ToString
-public class CustomerDTO {
+public class RegUser {
+    @Id
     private String user_Id;
     private String role_Type;
     @Embedded
