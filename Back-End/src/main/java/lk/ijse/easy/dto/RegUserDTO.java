@@ -15,10 +15,7 @@ import javax.persistence.Embedded;
  * @date : 2/13/2023
  * @since : 0.1.0
  **/
-@NoArgsConstructor
-@AllArgsConstructor
 @Data
-@ToString
 public class RegUserDTO {
     private String user_Id;
     private String role_Type;

@@ -17,10 +17,7 @@ import javax.persistence.Id;
  * @since : 0.1.0
  **/
 @Entity
-@NoArgsConstructor
-@AllArgsConstructor
 @Data
-@ToString
 public class RegUser {
     @Id
     private String user_Id;

@@ -14,10 +14,7 @@ import javax.persistence.Embeddable;
  * @since : 0.1.0
  **/
 @Embeddable
-@NoArgsConstructor
-@AllArgsConstructor
 @Data
-@ToString
 public class Name {
     private String firstName;
     private String lastName;
