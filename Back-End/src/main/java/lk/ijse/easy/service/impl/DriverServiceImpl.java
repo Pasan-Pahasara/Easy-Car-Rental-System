@@ -6,6 +6,7 @@ import lk.ijse.easy.entity.RegUser;
 import lk.ijse.easy.repo.DriverRepo;
 import lk.ijse.easy.service.DriverService;
 import org.modelmapper.ModelMapper;
+import org.modelmapper.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -48,6 +49,6 @@ public class DriverServiceImpl implements DriverService {
     }
 
     public ArrayList<DriverDTO> getAllDrivers() {
-        return null;
+        return mapper.map(repo.findAll(),new TypeToken<ArrayList<DriverDTO>>() {}.getType());
     }
 }
