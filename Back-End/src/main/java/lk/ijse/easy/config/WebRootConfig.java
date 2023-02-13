@@ -15,7 +15,7 @@ import org.springframework.context.annotation.Import;
  **/
 @Configuration
 @Import(JPAConfig.class)
-@ComponentScan(basePackageClasses = {RegUserServiceImpl.class})
+@ComponentScan(basePackages = {"lk.ijse.easy.service.impl"})
 public class WebRootConfig {
     @Bean
     public ModelMapper modelMapper(){
