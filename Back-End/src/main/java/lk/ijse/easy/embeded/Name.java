@@ -19,6 +19,6 @@ import javax.persistence.Embeddable;
 @Data
 @ToString
 public class Name {
-    private String fistName;
+    private String firstName;
     private String lastName;
 }
