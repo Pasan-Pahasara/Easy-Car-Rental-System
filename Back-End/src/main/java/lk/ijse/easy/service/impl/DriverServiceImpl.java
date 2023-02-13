@@ -34,7 +34,10 @@ public class DriverServiceImpl implements DriverService {
     }
 
     public void deleteDriver(String id) {
-
+        if (!repo.existsById(id)) {
+            throw new RuntimeException("Wrong ID..Please enter valid id..!");
+        }
+        repo.deleteById(id);
     }
 
     public void updateDriver(DriverDTO driverDTO) {
