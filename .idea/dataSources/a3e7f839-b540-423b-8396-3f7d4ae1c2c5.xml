@@ -1076,12 +1076,16 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <DasType>varchar(255)|0s</DasType>
       <Position>12</Position>
     </column>
-    <index id="314" parent="301" name="PRIMARY">
+    <column id="314" parent="301" name="firstName">
+      <DasType>varchar(255)|0s</DasType>
+      <Position>13</Position>
+    </column>
+    <index id="315" parent="301" name="PRIMARY">
       <ColNames>user_Id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="315" parent="301" name="PRIMARY">
+    <key id="316" parent="301" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>

@@ -10,8 +10,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9d9c7e19-daae-4dea-98be-3ff2eb93366f" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/a3e7f839-b540-423b-8396-3f7d4ae1c2c5.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/a3e7f839-b540-423b-8396-3f7d4ae1c2c5.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Back-End/src/main/java/lk/ijse/easy/controller/RegUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/src/main/java/lk/ijse/easy/controller/RegUserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End/target/Back-End-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/target/Back-End-1.0-SNAPSHOT.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End/target/Back-End-1.0-SNAPSHOT/WEB-INF/classes/lk/ijse/easy/controller/RegUserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/target/Back-End-1.0-SNAPSHOT/WEB-INF/classes/lk/ijse/easy/controller/RegUserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End/target/classes/lk/ijse/easy/controller/RegUserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/target/classes/lk/ijse/easy/controller/RegUserController.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -189,7 +193,7 @@
       <workItem from="1676196329509" duration="85000" />
       <workItem from="1676196429781" duration="3579000" />
       <workItem from="1676280530313" duration="11375000" />
-      <workItem from="1676293611862" duration="4821000" />
+      <workItem from="1676293611862" duration="7007000" />
     </task>
     <servers />
   </component>

@@ -33,4 +33,11 @@ public class RegUserController {
     public ResponseUtil getAllRegUser(){
         return new ResponseUtil("OK","Successfully Loaded..!",service.getAllRegUsers());
     }
+
+    @ResponseStatus(HttpStatus.ACCEPTED)
+    @DeleteMapping(params = {"user_Id"},produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil deleteRegUser(@RequestParam(name ="user_Id") String id) {
+        service.deleteRegUser(id);
+        return new ResponseUtil("OK","Successfully Deleted..! : "+id,null);
+    }
 }
