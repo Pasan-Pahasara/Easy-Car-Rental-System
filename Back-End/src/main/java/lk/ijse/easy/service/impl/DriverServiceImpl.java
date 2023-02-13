@@ -41,7 +41,10 @@ public class DriverServiceImpl implements DriverService {
     }
 
     public void updateDriver(DriverDTO driverDTO) {
-
+        if (!repo.existsById(driverDTO.getDriver_Id())) {
+            throw new RuntimeException("Wrong ID..No Such a User to Update..!");
+        }
+        repo.save(mapper.map(driverDTO, Driver.class));
     }
 
     public ArrayList<DriverDTO> getAllDrivers() {
