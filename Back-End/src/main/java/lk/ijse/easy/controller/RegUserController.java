@@ -40,4 +40,11 @@ public class RegUserController {
         service.deleteRegUser(id);
         return new ResponseUtil("OK","Successfully Deleted..! : "+id,null);
     }
+
+    @ResponseStatus(HttpStatus.ACCEPTED)
+    @PutMapping(produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil updateRegUser(@RequestBody RegUserDTO regUserDTO){
+        service.updateRegUser(regUserDTO);
+        return new ResponseUtil("OK","Successfully Updated..! : "+regUserDTO.getUser_Id(),null);
+    }
 }
