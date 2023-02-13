@@ -1,13 +1,9 @@
 package lk.ijse.easy.dto;
 
 import lk.ijse.easy.embeded.Name;
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
 
 import javax.persistence.Embedded;
-
 
 /**
  * @author : ShEnUx
