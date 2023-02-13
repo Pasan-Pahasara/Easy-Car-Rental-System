@@ -1,5 +1,6 @@
 package lk.ijse.easy.repo;
 
+import lk.ijse.easy.entity.RegUser;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /**
@@ -8,5 +9,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
  * @date : 2/13/2023
  * @since : 0.1.0
  **/
-public interface RegUserRepo extends JpaRepository<lk.ijse.easy.entity.RegUser,String> {
+public interface RegUserRepo extends JpaRepository<RegUser,String> {
 }
