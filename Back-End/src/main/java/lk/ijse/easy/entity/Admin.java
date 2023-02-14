@@ -4,9 +4,7 @@ import lk.ijse.easy.embeded.Name;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Embedded;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 /**
  * @author : ShEnUx
@@ -20,12 +18,14 @@ import javax.persistence.Id;
 public class Admin {
     @Id
     private String admin_Id;
-    private String role_Type;
+
     @Embedded
     private Name name;
     private String contact_No;
     private String address;
     private String email;
     private String nic;
-    private String password;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    private User user;
 }

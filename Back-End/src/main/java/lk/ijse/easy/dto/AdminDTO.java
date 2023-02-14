@@ -15,11 +15,10 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class AdminDTO {
     private String admin_Id;
-    private String role_Type;
     private Name name;
     private String contact_No;
     private String address;
     private String email;
     private String nic;
-    private String password;
+    private UserDTO user;
 }
