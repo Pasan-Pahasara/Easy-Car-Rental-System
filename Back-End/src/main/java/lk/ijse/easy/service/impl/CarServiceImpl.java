@@ -1,9 +1,7 @@
 package lk.ijse.easy.service.impl;
 
 import lk.ijse.easy.dto.CarDTO;
-import lk.ijse.easy.dto.DriverDTO;
 import lk.ijse.easy.entity.Car;
-import lk.ijse.easy.entity.Driver;
 import lk.ijse.easy.repo.CarRepo;
 import lk.ijse.easy.service.CarService;
 import org.modelmapper.ModelMapper;

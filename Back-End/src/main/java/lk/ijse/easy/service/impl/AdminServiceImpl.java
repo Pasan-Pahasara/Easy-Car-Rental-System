@@ -8,9 +8,7 @@ package lk.ijse.easy.service.impl;
  **/
 
 import lk.ijse.easy.dto.AdminDTO;
-import lk.ijse.easy.dto.DriverDTO;
 import lk.ijse.easy.entity.Admin;
-import lk.ijse.easy.entity.Driver;
 import lk.ijse.easy.repo.AdminRepo;
 import lk.ijse.easy.service.AdminService;
 import org.modelmapper.ModelMapper;

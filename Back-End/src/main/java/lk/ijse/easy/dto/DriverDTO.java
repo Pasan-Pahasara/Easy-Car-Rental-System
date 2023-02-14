@@ -3,7 +3,6 @@ package lk.ijse.easy.dto;
 import lk.ijse.easy.embeded.Name;
 import lombok.Data;
 
-import javax.persistence.Embedded;
 
 /**
  * @author : ShEnUx

@@ -1,7 +1,5 @@
 package lk.ijse.easy.config;
 
-import lk.ijse.easy.repo.DriverRepo;
-import lk.ijse.easy.repo.RegUserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

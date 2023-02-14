@@ -1,7 +1,6 @@
 package lk.ijse.easy.controller;
 
 import lk.ijse.easy.dto.AdminDTO;
-import lk.ijse.easy.dto.RegUserDTO;
 import lk.ijse.easy.service.AdminService;
 import lk.ijse.easy.util.ResponseUtil;
 import org.springframework.beans.factory.annotation.Autowired;

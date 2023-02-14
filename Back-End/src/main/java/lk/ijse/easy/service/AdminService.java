@@ -1,7 +1,6 @@
 package lk.ijse.easy.service;
 
 import lk.ijse.easy.dto.AdminDTO;
-import lk.ijse.easy.dto.DriverDTO;
 
 import java.util.ArrayList;
 

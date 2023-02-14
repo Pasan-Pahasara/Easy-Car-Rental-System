@@ -5,7 +5,6 @@ import lk.ijse.easy.embeded.Rate;
 import lombok.Data;
 
 import javax.persistence.Embedded;
-import javax.persistence.Id;
 
 /**
  * @author : ShEnUx

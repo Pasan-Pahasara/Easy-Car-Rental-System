@@ -1,6 +1,5 @@
 package lk.ijse.easy.config;
 
-import lk.ijse.easy.service.impl.RegUserServiceImpl;
 import org.modelmapper.ModelMapper;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
