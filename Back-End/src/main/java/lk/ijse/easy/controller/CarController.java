@@ -1,8 +1,13 @@
 package lk.ijse.easy.controller;
 
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import lk.ijse.easy.dto.CarDTO;
+import lk.ijse.easy.dto.RegUserDTO;
+import lk.ijse.easy.service.CarService;
+import lk.ijse.easy.util.ResponseUtil;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * @author : ShEnUx
@@ -14,4 +19,14 @@ import org.springframework.web.bind.annotation.RestController;
 @CrossOrigin
 @RequestMapping("/car")
 public class CarController {
+    @Autowired
+    private CarService service;
+
+    @ResponseStatus(HttpStatus.CREATED)
+    @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil saveCar(@RequestBody CarDTO carDTO) {
+        service.saveCar(carDTO);
+        return new ResponseUtil("OK", "Successfully Registered..!", null);
+    }
+
 }
