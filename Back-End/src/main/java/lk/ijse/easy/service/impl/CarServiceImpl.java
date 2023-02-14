@@ -41,7 +41,10 @@ public class CarServiceImpl implements CarService {
     }
 
     public void updateCar(CarDTO carDTO) {
-
+        if (!repo.existsById(carDTO.getCar_Id())) {
+            throw new RuntimeException("Wrong ID..No Such a User to Update..!");
+        }
+        repo.save(mapper.map(carDTO, Car.class));
     }
 
     public ArrayList<CarDTO> getAllCars() {
