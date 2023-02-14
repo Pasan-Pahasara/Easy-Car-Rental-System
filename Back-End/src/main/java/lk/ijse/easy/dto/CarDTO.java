@@ -2,6 +2,7 @@ package lk.ijse.easy.dto;
 
 import lk.ijse.easy.embeded.Image;
 import lk.ijse.easy.embeded.Rate;
+import lk.ijse.easy.enums.Availability;
 import lk.ijse.easy.enums.CarType;
 import lk.ijse.easy.enums.FuelType;
 import lk.ijse.easy.enums.TransmissionType;
@@ -30,4 +31,6 @@ public class CarDTO {
     private String registration_Number;
     private double free_Mileage;
     private String color;
+    private Availability car_Availability;
+
 }
