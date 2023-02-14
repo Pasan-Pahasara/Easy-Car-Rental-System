@@ -35,7 +35,7 @@ public class CarController {
     }
 
     @ResponseStatus(HttpStatus.ACCEPTED)
-    @DeleteMapping(params = {"user_Id"},produces = MediaType.APPLICATION_JSON_VALUE)
+    @DeleteMapping(params = {"car_Id"},produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseUtil deleteCar(@RequestParam(name ="car_Id") String id) {
         service.deleteCar(id);
         return new ResponseUtil("OK","Successfully Deleted..! : "+id,null);
