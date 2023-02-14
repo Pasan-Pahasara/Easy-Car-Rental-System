@@ -34,7 +34,10 @@ public class CarServiceImpl implements CarService {
     }
 
     public void deleteCar(String id) {
-
+        if (!repo.existsById(id)) {
+            throw new RuntimeException("Wrong ID..Please enter valid id..!");
+        }
+        repo.deleteById(id);
     }
 
     public void updateCar(CarDTO carDTO) {
