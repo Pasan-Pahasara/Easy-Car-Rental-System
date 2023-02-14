@@ -10,8 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9d9c7e19-daae-4dea-98be-3ff2eb93366f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Back-End/src/main/java/lk/ijse/easy/entity/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Back-End/src/main/java/lk/ijse/easy/dto/UserDTO.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -193,7 +192,7 @@
       <workItem from="1676280530313" duration="11375000" />
       <workItem from="1676293611862" duration="7198000" />
       <workItem from="1676306181243" duration="5677000" />
-      <workItem from="1676345543424" duration="11948000" />
+      <workItem from="1676345543424" duration="12681000" />
     </task>
     <servers />
   </component>
