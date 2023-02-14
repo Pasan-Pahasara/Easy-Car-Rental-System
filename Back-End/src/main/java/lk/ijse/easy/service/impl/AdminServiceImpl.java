@@ -8,11 +8,13 @@ package lk.ijse.easy.service.impl;
  **/
 
 import lk.ijse.easy.dto.AdminDTO;
+import lk.ijse.easy.dto.DriverDTO;
 import lk.ijse.easy.entity.Admin;
 import lk.ijse.easy.entity.Driver;
 import lk.ijse.easy.repo.AdminRepo;
 import lk.ijse.easy.service.AdminService;
 import org.modelmapper.ModelMapper;
+import org.modelmapper.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -48,6 +50,6 @@ public class AdminServiceImpl implements AdminService {
     }
 
     public ArrayList<AdminDTO> getAdmin() {
-        return null;
+        return mapper.map(repo.findAll(),new TypeToken<ArrayList<AdminDTO>>() {}.getType());
     }
 }
