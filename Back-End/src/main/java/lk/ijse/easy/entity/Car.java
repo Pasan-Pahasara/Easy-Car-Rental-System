@@ -2,11 +2,12 @@ package lk.ijse.easy.entity;
 
 import lk.ijse.easy.embeded.Image;
 import lk.ijse.easy.embeded.Rate;
+import lk.ijse.easy.enums.CarType;
+import lk.ijse.easy.enums.FuelType;
+import lk.ijse.easy.enums.TransmissionType;
 import lombok.Data;
 
-import javax.persistence.Embedded;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 /**
  * @author : ShEnUx
@@ -21,12 +22,15 @@ public class Car {
     private String car_Id;
     private String name;
     private String brand;
-    private String type;
+    @Enumerated(EnumType.STRING)
+    private CarType type;
     @Embedded
     private Image image;
     private int number_Of_Passengers;
-    private String transmission_Type;
-    private String fuel_Type;
+    @Enumerated(EnumType.STRING)
+    private TransmissionType transmission_Type;
+    @Enumerated(EnumType.STRING)
+    private FuelType fuel_Type;
     @Embedded
     private Rate rent_Duration_Price;
     private String price_Extra_KM;

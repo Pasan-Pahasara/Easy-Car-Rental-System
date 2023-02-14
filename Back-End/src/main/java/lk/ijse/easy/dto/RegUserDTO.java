@@ -3,7 +3,6 @@ package lk.ijse.easy.dto;
 import lk.ijse.easy.embeded.Name;
 import lombok.Data;
 
-import javax.persistence.Embedded;
 
 /**
  * @author : ShEnUx
@@ -15,7 +14,6 @@ import javax.persistence.Embedded;
 public class RegUserDTO {
     private String user_Id;
     private String role_Type;
-    @Embedded
     private Name name;
     private String contact_No;
     private String address;

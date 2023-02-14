@@ -2,9 +2,10 @@ package lk.ijse.easy.dto;
 
 import lk.ijse.easy.embeded.Image;
 import lk.ijse.easy.embeded.Rate;
+import lk.ijse.easy.enums.CarType;
+import lk.ijse.easy.enums.FuelType;
+import lk.ijse.easy.enums.TransmissionType;
 import lombok.Data;
-
-import javax.persistence.Embedded;
 
 /**
  * @author : ShEnUx
@@ -17,13 +18,11 @@ public class CarDTO {
     private String car_Id;
     private String name;
     private String brand;
-    private String type;
-    @Embedded
+    private CarType type;
     private Image image;
     private int number_Of_Passengers;
-    private String transmission_Type;
-    private String fuel_Type;
-    @Embedded
+    private TransmissionType transmission_Type;
+    private FuelType fuel_Type;
     private Rate rent_Duration_Price;
     private String price_Extra_KM;
     private String registration_Number;
