@@ -34,4 +34,11 @@ public class AdminController {
     public ResponseUtil getAdmin(){
         return new ResponseUtil("OK","Successfully Loaded..!",service.getAdmin());
     }
+
+    @ResponseStatus(HttpStatus.ACCEPTED)
+    @DeleteMapping(params = {"admin_Id"},produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil deleteAdmin(@RequestParam(name ="admin_Id") String id) {
+        service.deleteAdmin(id);
+        return new ResponseUtil("OK","Successfully Deleted..! : "+id,null);
+    }
 }
