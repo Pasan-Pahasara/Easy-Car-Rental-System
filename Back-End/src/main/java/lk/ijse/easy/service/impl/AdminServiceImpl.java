@@ -41,7 +41,10 @@ public class AdminServiceImpl implements AdminService {
     }
 
     public void updateAdmin(AdminDTO adminDTO) {
-
+        if (!repo.existsById(adminDTO.getAdmin_Id())) {
+            throw new RuntimeException("Wrong ID..No Such a User to Update..!");
+        }
+        repo.save(mapper.map(adminDTO, Admin.class));
     }
 
     public ArrayList<AdminDTO> getAdmin() {
