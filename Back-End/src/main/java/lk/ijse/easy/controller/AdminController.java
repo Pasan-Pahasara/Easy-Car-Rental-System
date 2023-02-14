@@ -28,4 +28,10 @@ public class AdminController {
         service.saveAdmin(adminDTO);
         return new ResponseUtil("OK", "Successfully Registered..!", null);
     }
+
+    @ResponseStatus(HttpStatus.ACCEPTED)
+    @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil getAdmin(){
+        return new ResponseUtil("OK","Successfully Loaded..!",service.getAdmin());
+    }
 }
