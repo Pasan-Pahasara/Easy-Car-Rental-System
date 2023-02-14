@@ -1,10 +1,13 @@
 package lk.ijse.easy.controller;
 
+import lk.ijse.easy.dto.AdminDTO;
+import lk.ijse.easy.dto.RegUserDTO;
 import lk.ijse.easy.service.AdminService;
+import lk.ijse.easy.util.ResponseUtil;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * @author : ShEnUx
@@ -16,4 +19,13 @@ import org.springframework.web.bind.annotation.RestController;
 @CrossOrigin
 @RequestMapping("/admin")
 public class AdminController {
+    @Autowired
+    private AdminService service;
+
+    @ResponseStatus(HttpStatus.CREATED)
+    @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil saveAdmin(@RequestBody AdminDTO adminDTO) {
+        service.saveAdmin(adminDTO);
+        return new ResponseUtil("OK", "Successfully Registered..!", null);
+    }
 }
