@@ -1,11 +1,13 @@
 package lk.ijse.easy.service.impl;
 
 import lk.ijse.easy.dto.CarDTO;
+import lk.ijse.easy.dto.DriverDTO;
 import lk.ijse.easy.entity.Car;
 import lk.ijse.easy.entity.Driver;
 import lk.ijse.easy.repo.CarRepo;
 import lk.ijse.easy.service.CarService;
 import org.modelmapper.ModelMapper;
+import org.modelmapper.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -48,6 +50,6 @@ public class CarServiceImpl implements CarService {
     }
 
     public ArrayList<CarDTO> getAllCars() {
-        return null;
+        return mapper.map(repo.findAll(),new TypeToken<ArrayList<CarDTO>>() {}.getType());
     }
 }
