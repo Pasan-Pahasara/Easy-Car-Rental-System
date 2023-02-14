@@ -1,6 +1,7 @@
 package lk.ijse.easy.entity;
 
 import lk.ijse.easy.embeded.Name;
+import lk.ijse.easy.enums.Availability;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -26,6 +27,9 @@ public class Driver {
     private String email;
     private String nic_No;
     private String license_No;
+
+    @Enumerated(EnumType.STRING)
+    private Availability driver_Availability;
 
     @OneToOne(cascade = CascadeType.ALL)
     private User user;

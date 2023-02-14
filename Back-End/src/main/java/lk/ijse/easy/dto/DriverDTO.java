@@ -1,6 +1,7 @@
 package lk.ijse.easy.dto;
 
 import lk.ijse.easy.embeded.Name;
+import lk.ijse.easy.enums.Availability;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -21,5 +22,6 @@ public class DriverDTO {
     private String email;
     private String nic_No;
     private String license_No;
+    private Availability driver_Availability;
     private UserDTO user;
 }
