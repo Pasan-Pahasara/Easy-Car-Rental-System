@@ -34,7 +34,10 @@ public class AdminServiceImpl implements AdminService {
     }
 
     public void deleteAdmin(String id) {
-
+        if (!repo.existsById(id)) {
+            throw new RuntimeException("Wrong ID..Please enter valid id..!");
+        }
+        repo.deleteById(id);
     }
 
     public void updateAdmin(AdminDTO adminDTO) {
