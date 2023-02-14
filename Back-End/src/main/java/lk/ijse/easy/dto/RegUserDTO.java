@@ -2,6 +2,7 @@ package lk.ijse.easy.dto;
 
 import lk.ijse.easy.embeded.Name;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 
 /**
@@ -11,6 +12,7 @@ import lombok.Data;
  * @since : 0.1.0
  **/
 @Data
+@NoArgsConstructor
 public class RegUserDTO {
     private String user_Id;
     private String role_Type;

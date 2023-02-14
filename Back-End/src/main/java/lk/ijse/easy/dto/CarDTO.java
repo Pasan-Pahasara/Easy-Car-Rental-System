@@ -6,6 +6,7 @@ import lk.ijse.easy.enums.CarType;
 import lk.ijse.easy.enums.FuelType;
 import lk.ijse.easy.enums.TransmissionType;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /**
  * @author : ShEnUx
@@ -14,6 +15,7 @@ import lombok.Data;
  * @since : 0.1.0
  **/
 @Data
+@NoArgsConstructor
 public class CarDTO {
     private String car_Id;
     private String name;

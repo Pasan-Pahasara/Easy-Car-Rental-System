@@ -2,6 +2,7 @@ package lk.ijse.easy.entity;
 
 import lk.ijse.easy.embeded.Name;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
@@ -14,6 +15,7 @@ import javax.persistence.Id;
  * @since : 0.1.0
  **/
 @Entity
+@NoArgsConstructor
 @Data
 public class Admin {
     @Id

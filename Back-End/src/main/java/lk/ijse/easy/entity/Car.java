@@ -6,6 +6,7 @@ import lk.ijse.easy.enums.CarType;
 import lk.ijse.easy.enums.FuelType;
 import lk.ijse.easy.enums.TransmissionType;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
@@ -16,6 +17,7 @@ import javax.persistence.*;
  * @since : 0.1.0
  **/
 @Entity
+@NoArgsConstructor
 @Data
 public class Car {
     @Id
