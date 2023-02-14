@@ -24,15 +24,20 @@ public class Car {
     private String car_Id;
     private String name;
     private String brand;
+
     @Enumerated(EnumType.STRING)
     private CarType type;
+
     @Embedded
     private Image image;
     private int number_Of_Passengers;
+
     @Enumerated(EnumType.STRING)
     private TransmissionType transmission_Type;
+
     @Enumerated(EnumType.STRING)
     private FuelType fuel_Type;
+
     @Embedded
     private Rate rent_Duration_Price;
     private String price_Extra_KM;

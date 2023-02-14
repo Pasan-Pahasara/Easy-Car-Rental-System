@@ -21,6 +21,7 @@ public class RegUser {
     @Id
     private String user_Id;
     private String role_Type;
+
     @Embedded
     private Name name;
     private String contact_No;

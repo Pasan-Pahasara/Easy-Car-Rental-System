@@ -21,6 +21,7 @@ public class Driver {
     @Id
     private String driver_Id;
     private String role_Type;
+
     @Embedded
     private Name name;
     private String contact_No;
