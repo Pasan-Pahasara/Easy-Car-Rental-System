@@ -1,7 +1,6 @@
 package lk.ijse.easy.controller;
 
 import lk.ijse.easy.dto.CarDTO;
-import lk.ijse.easy.dto.RegUserDTO;
 import lk.ijse.easy.service.CarService;
 import lk.ijse.easy.util.ResponseUtil;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,4 +28,9 @@ public class CarController {
         return new ResponseUtil("OK", "Successfully Registered..!", null);
     }
 
+    @ResponseStatus(HttpStatus.ACCEPTED)
+    @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil getAllCars(){
+        return new ResponseUtil("OK","Successfully Loaded..!",service.getAllCars());
+    }
 }
