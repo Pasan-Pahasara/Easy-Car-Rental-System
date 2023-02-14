@@ -33,4 +33,11 @@ public class CarController {
     public ResponseUtil getAllCars(){
         return new ResponseUtil("OK","Successfully Loaded..!",service.getAllCars());
     }
+
+    @ResponseStatus(HttpStatus.ACCEPTED)
+    @DeleteMapping(params = {"user_Id"},produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil deleteCar(@RequestParam(name ="car_Id") String id) {
+        service.deleteCar(id);
+        return new ResponseUtil("OK","Successfully Deleted..! : "+id,null);
+    }
 }
