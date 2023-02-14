@@ -15,14 +15,11 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class DriverDTO {
     private String driver_Id;
-    private String role_Type;
     private Name name;
     private String contact_No;
     private String address;
     private String email;
-    private String nic;
+    private String nic_No;
     private String license_No;
-    private String password;
-    private String nic_Img;
-    private String license_Img;
+    private UserDTO user;
 }
