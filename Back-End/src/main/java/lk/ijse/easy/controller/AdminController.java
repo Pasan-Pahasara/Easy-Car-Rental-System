@@ -41,4 +41,11 @@ public class AdminController {
         service.deleteAdmin(id);
         return new ResponseUtil("OK","Successfully Deleted..! : "+id,null);
     }
+
+    @ResponseStatus(HttpStatus.ACCEPTED)
+    @PutMapping(produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil updateAdmin(@RequestBody AdminDTO adminDTO){
+        service.updateAdmin(adminDTO);
+        return new ResponseUtil("OK","Successfully Updated..! : "+adminDTO.getAdmin_Id(),null);
+    }
 }
