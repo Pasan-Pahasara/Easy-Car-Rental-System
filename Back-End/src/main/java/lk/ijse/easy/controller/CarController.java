@@ -1,6 +1,7 @@
 package lk.ijse.easy.controller;
 
 import lk.ijse.easy.dto.CarDTO;
+import lk.ijse.easy.dto.RegUserDTO;
 import lk.ijse.easy.service.CarService;
 import lk.ijse.easy.util.ResponseUtil;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,5 +40,12 @@ public class CarController {
     public ResponseUtil deleteCar(@RequestParam(name ="car_Id") String id) {
         service.deleteCar(id);
         return new ResponseUtil("OK","Successfully Deleted..! : "+id,null);
+    }
+
+    @ResponseStatus(HttpStatus.ACCEPTED)
+    @PutMapping(produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil updateCar(@RequestBody CarDTO carDTO){
+        service.updateCar(carDTO);
+        return new ResponseUtil("OK","Successfully Updated..! : "+carDTO.getCar_Id(),null);
     }
 }
