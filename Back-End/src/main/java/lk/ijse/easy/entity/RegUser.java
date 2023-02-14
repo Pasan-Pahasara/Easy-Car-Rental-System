@@ -4,9 +4,7 @@ import lk.ijse.easy.embeded.Name;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Embedded;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 /**
  * @author : ShEnUx
@@ -20,7 +18,6 @@ import javax.persistence.Id;
 public class RegUser {
     @Id
     private String user_Id;
-    private String role_Type;
 
     @Embedded
     private Name name;
@@ -29,7 +26,9 @@ public class RegUser {
     private String email;
     private String nic;
     private String license_No;
-    private String password;
     private String nic_Img;
     private String license_Img;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    private User user;
 }
