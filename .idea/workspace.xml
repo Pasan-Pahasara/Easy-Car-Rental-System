@@ -10,46 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9d9c7e19-daae-4dea-98be-3ff2eb93366f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Front-End/assets/css/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Front-End/assets/css/swiperCSS/swiper-bundle.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Front-End/assets/img/about/about.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Front-End/assets/img/hero/hero-banner.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Front-End/assets/img/hero/ios.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Front-End/assets/img/hero/play.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Front-End/assets/img/logo.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Front-End/assets/img/testimonials/profile1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Front-End/assets/img/testimonials/profile2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Front-End/assets/img/testimonials/profile3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Front-End/assets/img/testimonials/profile4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Front-End/assets/img/testimonials/profile5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Front-End/assets/img/testimonials/profile6.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Front-End/assets/img/testimonials/profile7.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Front-End/assets/img/testimonials/profile8.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Front-End/assets/img/testimonials/profile9.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Front-End/assets/js/script.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Front-End/assets/js/swiperJs/swiper-bundle.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/a3e7f839-b540-423b-8396-3f7d4ae1c2c5.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/a3e7f839-b540-423b-8396-3f7d4ae1c2c5.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End/src/main/java/lk/ijse/easy/controller/RegUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/src/main/java/lk/ijse/easy/controller/RegUserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End/src/main/java/lk/ijse/easy/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/src/main/java/lk/ijse/easy/entity/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End/src/main/java/lk/ijse/easy/service/impl/RegUserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/src/main/java/lk/ijse/easy/service/impl/RegUserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End/target/Back-End-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/target/Back-End-1.0-SNAPSHOT.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End/target/Back-End-1.0-SNAPSHOT/WEB-INF/classes/lk/ijse/easy/controller/RegUserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/target/Back-End-1.0-SNAPSHOT/WEB-INF/classes/lk/ijse/easy/controller/RegUserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End/target/Back-End-1.0-SNAPSHOT/WEB-INF/classes/lk/ijse/easy/dto/CarDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/target/Back-End-1.0-SNAPSHOT/WEB-INF/classes/lk/ijse/easy/dto/CarDTO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End/target/Back-End-1.0-SNAPSHOT/WEB-INF/classes/lk/ijse/easy/dto/DriverDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/target/Back-End-1.0-SNAPSHOT/WEB-INF/classes/lk/ijse/easy/dto/DriverDTO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End/target/Back-End-1.0-SNAPSHOT/WEB-INF/classes/lk/ijse/easy/entity/Car.class" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/target/Back-End-1.0-SNAPSHOT/WEB-INF/classes/lk/ijse/easy/entity/Car.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End/target/Back-End-1.0-SNAPSHOT/WEB-INF/classes/lk/ijse/easy/entity/Driver.class" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/target/Back-End-1.0-SNAPSHOT/WEB-INF/classes/lk/ijse/easy/entity/Driver.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End/target/Back-End-1.0-SNAPSHOT/WEB-INF/classes/lk/ijse/easy/entity/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/target/Back-End-1.0-SNAPSHOT/WEB-INF/classes/lk/ijse/easy/entity/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End/target/Back-End-1.0-SNAPSHOT/WEB-INF/classes/lk/ijse/easy/service/impl/RegUserServiceImpl$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/target/Back-End-1.0-SNAPSHOT/WEB-INF/classes/lk/ijse/easy/service/impl/RegUserServiceImpl$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End/target/Back-End-1.0-SNAPSHOT/WEB-INF/classes/lk/ijse/easy/service/impl/RegUserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/target/Back-End-1.0-SNAPSHOT/WEB-INF/classes/lk/ijse/easy/service/impl/RegUserServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End/target/classes/lk/ijse/easy/controller/RegUserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/target/classes/lk/ijse/easy/controller/RegUserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End/target/classes/lk/ijse/easy/dto/CarDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/target/classes/lk/ijse/easy/dto/CarDTO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End/target/classes/lk/ijse/easy/dto/DriverDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/target/classes/lk/ijse/easy/dto/DriverDTO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End/target/classes/lk/ijse/easy/entity/Car.class" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/target/classes/lk/ijse/easy/entity/Car.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End/target/classes/lk/ijse/easy/entity/Driver.class" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/target/classes/lk/ijse/easy/entity/Driver.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End/target/classes/lk/ijse/easy/entity/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/target/classes/lk/ijse/easy/entity/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End/target/classes/lk/ijse/easy/service/impl/RegUserServiceImpl$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/target/classes/lk/ijse/easy/service/impl/RegUserServiceImpl$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End/target/classes/lk/ijse/easy/service/impl/RegUserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/target/classes/lk/ijse/easy/service/impl/RegUserServiceImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Front-End/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Front-End/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -94,34 +55,34 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "jdk.selected.JAVA_MODULE": "1.8",
-    "last_opened_file_path": "D:/IJSE/Second Semester/AAD (Advance API Development)/Easy-Car-Rental-System/Front-End/assets/img",
-    "list.type.of.created.stylesheet": "CSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "spring.configuration.checksum": "3feb5995c06f8c6b43416f77421a92ec",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;1.8&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/IJSE/Second Semester/AAD (Advance API Development)/Easy-Car-Rental-System/Front-End/assets/img&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;3feb5995c06f8c6b43416f77421a92ec&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\IJSE\Second Semester\AAD (Advance API Development)\Easy-Car-Rental-System\Front-End\assets\img" />
@@ -251,6 +212,7 @@
       <workItem from="1676544958050" duration="715000" />
       <workItem from="1676554342753" duration="420000" />
       <workItem from="1676560584271" duration="1428000" />
+      <workItem from="1676563703994" duration="752000" />
     </task>
     <servers />
   </component>
