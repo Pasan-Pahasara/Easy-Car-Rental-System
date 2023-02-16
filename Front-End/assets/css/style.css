@@ -798,12 +798,10 @@ a {
 }
 
 .contact .row form .btn {
-    width: max-content;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     text-transform: uppercase;
-    text-align: center;
-    padding: 1px;
-    cursor: pointer;
+    padding-top: 9px;
+    width: 113px;
 }
 /*<!-- Contact Section Ends -->*/
 
