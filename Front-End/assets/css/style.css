@@ -159,7 +159,7 @@ body {
     background: hsla(219, 14%, 60%, 0.5);
 }
 
-/*---------- Reused Style ----------*/
+/*---------- Reused Styles ----------*/
 .container {
     padding-inline: 15px;
 }
@@ -241,3 +241,125 @@ a {
 .w-100 {
     width: 100%;
 }
+
+/*<!-- Header Section Start -->*/
+
+.header-contact {
+    display: none;
+}
+
+.header {
+    background: var(--alice-blue-1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    transition: var(--transition);
+    z-index: 4;
+}
+
+.header.active {
+    box-shadow: var(--shadow-1);
+}
+
+.header .container {
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.header-actions .btn span {
+    display: none;
+}
+
+.user-btn {
+    --color: var(--independence);
+    --background: var(--white);
+    --shadow-2: var(--shadow-1);
+    box-shadow: var(--shadow-1);
+}
+
+.nav-toggle-btn span {
+    background: var(--independence);
+    width: 22px;
+    height: 2px;
+    border-radius: 2px;
+    margin-block: 8px;
+    transform-origin: right;
+    transition: var(--transition);
+}
+
+.nav-toggle-btn span.two {
+    transform: scaleX(0.7);
+}
+
+.nav-toggle-btn span.three {
+    transform: scaleX(0.4);
+}
+
+.nav-toggle-btn:is(:hover, :focus) span {
+    background: var(--carolina-blue);
+}
+
+.nav-toggle-btn.active span {
+    transform: scaleX(1);
+    background: var(--carolina-blue);
+}
+
+.navbar {
+    background: var(--alice-blue-1);
+    position: fixed;
+    top: 70px;
+    bottom: 0;
+    right: -260px;
+    max-width: 260px;
+    width: 100%;
+    padding: 20px 25px;
+    border: 1px solid var(--white);
+    box-shadow: var(--shadow-1);
+    visibility: hidden;
+    transition: 0.25s cubic-bezier(0.51, 0.03, 0.64, 0.28);
+}
+
+.navbar.active {
+    visibility: visible;
+    transform: translateX(-100%);
+    transition: 0.5s cubic-bezier(0.33, 0.85, 0.56, 1.02);
+}
+
+.navbar-link {
+    color: var(--independence);
+    font-family: var(--ff-nunito);
+    font-size: var(--fs-6);
+    padding-block: 5px;
+    margin-bottom: 15px;
+}
+
+.navbar-link:is(:hover, :focus) {
+    color: var(--carolina-blue);
+}
+
+.overlay {
+    position: fixed;
+    top: 70px;
+    background: hsl(216, 38%, 95%);
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    pointer-events: none;
+    transition: var(--transition);
+}
+
+.overlay.active {
+    opacity: 0.7;
+    pointer-events: all;
+}
+/*<!-- Header Section Ends -->*/
