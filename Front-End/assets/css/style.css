@@ -976,4 +976,11 @@ a {
      */
         --fs-1: 2.625rem;
     }
+
+    /**
+   * Reused Style
+   */
+    .container {
+        max-width: 720px;
+    }
 }
