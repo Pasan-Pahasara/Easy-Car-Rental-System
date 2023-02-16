@@ -1012,4 +1012,45 @@ a {
         color: var(--independence);
         font-size: var(--fs-7);
     }
+
+    /**
+   * Hero
+   */
+    .hero {
+        position: relative;
+        min-height: 85vh;
+        display: flex;
+        align-items: center;
+        z-index: 1;
+    }
+
+    .hero-form {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 0.8fr;
+    }
+
+    .input-wrapper:not(:last-of-type) {
+        border-bottom: none;
+        border-right: 1px solid hsla(0, 0%, 0%, 0.08);
+    }
+
+    .input-label {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    /* .hero-banner {
+        display: block;
+        background: url("../images/hero-banner.jpg") no-repeat;
+        background-size: cover;
+        background-position: left;
+        position: absolute;
+        top: 100px;
+        bottom: 50px;
+        left: 65%;
+        width: 500px;
+        border-radius: 30px;
+        z-index: -1;
+    } */
 }
