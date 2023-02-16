@@ -142,9 +142,12 @@ body {
     overflow-x: hidden;
 }
 
+/**
+ * customized scrollbar.
+ */
 ::-webkit-scrollbar {
-    width: 15px;
-    height: 10px;
+    width: 6px;
+    background: #3f3838;
 }
 
 ::-webkit-scrollbar-track {
@@ -152,12 +155,42 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-    background: hsla(219, 14%, 60%, 0.3);
-    border: 2px solid var(--white);
+    background: #98D0F6;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: hsla(219, 14%, 60%, 0.5);
+    background: var(--carolina-blue);
+}
+
+/**
+ * scroll up button.
+ */
+#scroll_up_btn {
+    position: fixed;
+    opacity: 40%;
+    right: 15px;
+    bottom: 15px;
+    z-index: 996;
+    background: var(--carolina-blue);
+    width: 35px;
+    height: 35px;
+    border-radius: 4px;
+    transition: all 0.4s;
+}
+
+#scroll_up_btn > i {
+    font-size: 19px;
+    color: #fff !important;
+    line-height: 0;
+    position: absolute;
+    right: 10px;
+    top: 17px;
+}
+
+#scroll_up_btn:hover {
+    color: var(--carolina-blue) !important;
+    opacity: 100%;
+    transform: translateY(-10px);
 }
 
 /*---------- Reused Styles ----------*/
@@ -1187,3 +1220,4 @@ a {
         width: 33.33%;
     }
 }
+
