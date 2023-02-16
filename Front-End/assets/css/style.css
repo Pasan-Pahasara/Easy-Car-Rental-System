@@ -1162,4 +1162,28 @@ a {
         display: flex;
         gap: 50px;
     }
+
+    /**
+   * Hero
+   */
+    .hero {
+        min-height: 100vh;
+    }
+
+    .hero-banner {
+        left: auto;
+        right: 50px;
+        width: 630px;
+    }
+
+    .hero-form {
+        max-width: 900px;
+    }
+
+    .hero-form .btn {
+        --width: calc(100% - 40px);
+        --height: 50px;
+        margin: 20px;
+        text-transform: uppercase;
+    }
 }
