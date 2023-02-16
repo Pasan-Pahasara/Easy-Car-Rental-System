@@ -1117,3 +1117,19 @@ a {
     }
 }
 
+/**
+ * responsive for large than 1200px screen
+ */
+
+@media (min-width: 1200px) {
+    /**
+   * Custom Properties
+   */
+    :root {
+        /**
+     * typography
+     */
+        --fs-1: 2.875rem;
+        --fs-2: 2rem;
+    }
+}
