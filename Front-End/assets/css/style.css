@@ -1097,5 +1097,12 @@ a {
     .container {
         max-width: 960px;
     }
+
+    /**
+   * Hero
+   */
+    .hero .container {
+        width: 100%;
+    }
 }
 
