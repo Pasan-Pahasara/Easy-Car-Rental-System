@@ -1132,4 +1132,11 @@ a {
         --fs-1: 2.875rem;
         --fs-2: 2rem;
     }
+
+    /**
+   * Reused Styles
+   */
+    .container {
+        max-width: 1170px;
+    }
 }
