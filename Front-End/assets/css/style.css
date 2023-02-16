@@ -1104,5 +1104,16 @@ a {
     .hero .container {
         width: 100%;
     }
+
+    /**
+   * Footer
+   */
+    .footer-list:not(:last-of-type) {
+        width: 25%;
+    }
+
+    .footer-list:last-of-type {
+        width: 50%;
+    }
 }
 
