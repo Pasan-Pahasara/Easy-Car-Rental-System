@@ -1139,4 +1139,27 @@ a {
     .container {
         max-width: 1170px;
     }
+
+    /**
+   * Header
+   */
+    .overlay,
+    .nav-toggle-btn {
+        display: none;
+    }
+
+    .navbar,
+    .navbar.active {
+        all: unset;
+    }
+
+    .navbar-link {
+        margin-bottom: 0;
+        font-weight: var(--fw-600);
+    }
+
+    .navbar-list {
+        display: flex;
+        gap: 50px;
+    }
 }
