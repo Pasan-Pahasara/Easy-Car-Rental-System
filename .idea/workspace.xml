@@ -9,7 +9,49 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9d9c7e19-daae-4dea-98be-3ff2eb93366f" name="Changes" comment="" />
+    <list default="true" id="9d9c7e19-daae-4dea-98be-3ff2eb93366f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Front-End/assets/css/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Front-End/assets/css/swiperCSS/swiper-bundle.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Front-End/assets/img/about/about.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Front-End/assets/img/hero/hero-banner.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Front-End/assets/img/hero/ios.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Front-End/assets/img/hero/play.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Front-End/assets/img/logo.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Front-End/assets/img/testimonials/profile1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Front-End/assets/img/testimonials/profile2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Front-End/assets/img/testimonials/profile3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Front-End/assets/img/testimonials/profile4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Front-End/assets/img/testimonials/profile5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Front-End/assets/img/testimonials/profile6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Front-End/assets/img/testimonials/profile7.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Front-End/assets/img/testimonials/profile8.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Front-End/assets/img/testimonials/profile9.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Front-End/assets/js/script.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Front-End/assets/js/swiperJs/swiper-bundle.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/a3e7f839-b540-423b-8396-3f7d4ae1c2c5.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/a3e7f839-b540-423b-8396-3f7d4ae1c2c5.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End/src/main/java/lk/ijse/easy/controller/RegUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/src/main/java/lk/ijse/easy/controller/RegUserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End/src/main/java/lk/ijse/easy/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/src/main/java/lk/ijse/easy/entity/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End/src/main/java/lk/ijse/easy/service/impl/RegUserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/src/main/java/lk/ijse/easy/service/impl/RegUserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End/target/Back-End-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/target/Back-End-1.0-SNAPSHOT.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End/target/Back-End-1.0-SNAPSHOT/WEB-INF/classes/lk/ijse/easy/controller/RegUserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/target/Back-End-1.0-SNAPSHOT/WEB-INF/classes/lk/ijse/easy/controller/RegUserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End/target/Back-End-1.0-SNAPSHOT/WEB-INF/classes/lk/ijse/easy/dto/CarDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/target/Back-End-1.0-SNAPSHOT/WEB-INF/classes/lk/ijse/easy/dto/CarDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End/target/Back-End-1.0-SNAPSHOT/WEB-INF/classes/lk/ijse/easy/dto/DriverDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/target/Back-End-1.0-SNAPSHOT/WEB-INF/classes/lk/ijse/easy/dto/DriverDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End/target/Back-End-1.0-SNAPSHOT/WEB-INF/classes/lk/ijse/easy/entity/Car.class" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/target/Back-End-1.0-SNAPSHOT/WEB-INF/classes/lk/ijse/easy/entity/Car.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End/target/Back-End-1.0-SNAPSHOT/WEB-INF/classes/lk/ijse/easy/entity/Driver.class" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/target/Back-End-1.0-SNAPSHOT/WEB-INF/classes/lk/ijse/easy/entity/Driver.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End/target/Back-End-1.0-SNAPSHOT/WEB-INF/classes/lk/ijse/easy/entity/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/target/Back-End-1.0-SNAPSHOT/WEB-INF/classes/lk/ijse/easy/entity/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End/target/Back-End-1.0-SNAPSHOT/WEB-INF/classes/lk/ijse/easy/service/impl/RegUserServiceImpl$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/target/Back-End-1.0-SNAPSHOT/WEB-INF/classes/lk/ijse/easy/service/impl/RegUserServiceImpl$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End/target/Back-End-1.0-SNAPSHOT/WEB-INF/classes/lk/ijse/easy/service/impl/RegUserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/target/Back-End-1.0-SNAPSHOT/WEB-INF/classes/lk/ijse/easy/service/impl/RegUserServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End/target/classes/lk/ijse/easy/controller/RegUserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/target/classes/lk/ijse/easy/controller/RegUserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End/target/classes/lk/ijse/easy/dto/CarDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/target/classes/lk/ijse/easy/dto/CarDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End/target/classes/lk/ijse/easy/dto/DriverDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/target/classes/lk/ijse/easy/dto/DriverDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End/target/classes/lk/ijse/easy/entity/Car.class" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/target/classes/lk/ijse/easy/entity/Car.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End/target/classes/lk/ijse/easy/entity/Driver.class" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/target/classes/lk/ijse/easy/entity/Driver.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End/target/classes/lk/ijse/easy/entity/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/target/classes/lk/ijse/easy/entity/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End/target/classes/lk/ijse/easy/service/impl/RegUserServiceImpl$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/target/classes/lk/ijse/easy/service/impl/RegUserServiceImpl$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End/target/classes/lk/ijse/easy/service/impl/RegUserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/target/classes/lk/ijse/easy/service/impl/RegUserServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front-End/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Front-End/index.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -22,6 +64,7 @@
         <option value="Interface" />
         <option value="Class" />
         <option value="Enum" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -59,7 +102,8 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "jdk.selected.JAVA_MODULE": "1.8",
-    "last_opened_file_path": "D:/IJSE/Second Semester/AAD (Advance API Development)/Easy-Car-Rental-System/Front-End/assets",
+    "last_opened_file_path": "D:/IJSE/Second Semester/AAD (Advance API Development)/Easy-Car-Rental-System/Front-End/assets/img",
+    "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -80,6 +124,9 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\IJSE\Second Semester\AAD (Advance API Development)\Easy-Car-Rental-System\Front-End\assets\img" />
+      <recent name="D:\IJSE\Second Semester\AAD (Advance API Development)\Easy-Car-Rental-System\Front-End\assets\js" />
+      <recent name="D:\IJSE\Second Semester\AAD (Advance API Development)\Easy-Car-Rental-System\Front-End\assets\css" />
       <recent name="D:\IJSE\Second Semester\AAD (Advance API Development)\Easy-Car-Rental-System\Front-End\assets" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -190,7 +237,20 @@
       <workItem from="1676280530313" duration="11375000" />
       <workItem from="1676293611862" duration="7198000" />
       <workItem from="1676306181243" duration="5677000" />
-      <workItem from="1676345543424" duration="15302000" />
+      <workItem from="1676345543424" duration="18040000" />
+      <workItem from="1676369994010" duration="555000" />
+      <workItem from="1676376034875" duration="617000" />
+      <workItem from="1676410134515" duration="764000" />
+      <workItem from="1676431248453" duration="1358000" />
+      <workItem from="1676432762910" duration="2275000" />
+      <workItem from="1676472048691" duration="762000" />
+      <workItem from="1676510308679" duration="56000" />
+      <workItem from="1676519187037" duration="2319000" />
+      <workItem from="1676531343345" duration="39000" />
+      <workItem from="1676542344220" duration="630000" />
+      <workItem from="1676544958050" duration="715000" />
+      <workItem from="1676554342753" duration="420000" />
+      <workItem from="1676560584271" duration="1428000" />
     </task>
     <servers />
   </component>

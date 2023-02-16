@@ -27,6 +27,7 @@ public class RegUserServiceImpl implements RegUserService {
     private ModelMapper mapper;
 
     public void saveRegUser(RegUserDTO regUserDTO) {
+        System.out.println(mapper.map(regUserDTO, RegUser.class));
         if (repo.existsById(regUserDTO.getUser_Id())) {
             throw new RuntimeException("User Already Exist. Please enter another id..!");
         }
@@ -40,7 +41,7 @@ public class RegUserServiceImpl implements RegUserService {
         repo.deleteById(id);
     }
 
-    public void updateRegUser(RegUserDTO regUserDTO) {
+    public void updateRegUser(RegUserDTO regUserDTO) {;
         if (!repo.existsById(regUserDTO.getUser_Id())) {
             throw new RuntimeException("Wrong ID..No Such a User to Update..!");
         }

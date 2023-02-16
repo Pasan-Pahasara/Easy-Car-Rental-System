@@ -1,6 +1,8 @@
 package lk.ijse.easy.controller;
 
 import lk.ijse.easy.dto.RegUserDTO;
+import lk.ijse.easy.dto.UserDTO;
+import lk.ijse.easy.embeded.Name;
 import lk.ijse.easy.service.RegUserService;
 import lk.ijse.easy.util.ResponseUtil;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,8 +24,11 @@ public class RegUserController {
     private RegUserService service;
 
     @ResponseStatus(HttpStatus.CREATED)
-    @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseUtil saveRegUser(@RequestBody RegUserDTO regUserDTO) {
+    @PostMapping
+    public ResponseUtil saveRegUser(@ModelAttribute RegUserDTO regUserDTO, @ModelAttribute UserDTO userDTO, @ModelAttribute Name name) {
+        regUserDTO.setUser(userDTO);
+        regUserDTO.setName(name);
+        System.out.println(regUserDTO);
         service.saveRegUser(regUserDTO);
         return new ResponseUtil("OK", "Successfully Registered..!", null);
     }
