@@ -1193,4 +1193,23 @@ a {
     .get-start-list {
         grid-template-columns: repeat(4, 1fr);
     }
+
+    /**
+   * Footer
+   */
+    .footer-brand {
+        width: 33.33%;
+    }
+
+    .footer-text {
+        max-width: 35ch;
+    }
+
+    .footer-list:not(:last-of-type) {
+        width: 16.66%;
+    }
+
+    .footer-list:last-of-type {
+        width: 33.33%;
+    }
 }
