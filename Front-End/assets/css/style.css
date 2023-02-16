@@ -947,4 +947,17 @@ a {
         max-width: 540px;
         margin-inline: auto;
     }
+
+    /**
+   * Header
+   */
+    .header-actions .btn span {
+        display: block;
+        font-weight: var(--fw-400);
+        padding-inline: 15px;
+    }
+
+    .header-actions .btn:first-of-type ion-icon {
+        display: none;
+    }
 }
