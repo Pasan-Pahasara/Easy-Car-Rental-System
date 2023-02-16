@@ -714,22 +714,6 @@ a {
     text-align: center;
 }
 
-.button {
-    border: none;
-    font-size: 16px;
-    color: var(--white);
-    padding: 8px 16px;
-    background-color: var(--carolina-blue);
-    border-radius: var(--radius-14);
-    margin: 14px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.button:hover {
-    box-shadow: var(--shadow-2);
-}
-
 .swiper-navBtn {
     color: var(--carolina-blue);
     transition: color 0.3s ease;
