@@ -1060,6 +1060,30 @@ a {
     .get-start-list {
         grid-template-columns: 1fr 1fr;
     }
+
+    /**
+   * Footer
+   */
+    .footer-brand {
+        width: 100%;
+    }
+
+    .footer-text {
+        max-width: 400px;
+    }
+
+    .footer-bottom {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        align-items: center;
+        padding-block: 30px;
+        box-shadow: var(--shadow-1);
+    }
+
+    .social-list {
+        margin-bottom: 0;
+    }
 }
 
 
