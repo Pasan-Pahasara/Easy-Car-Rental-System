@@ -769,3 +769,64 @@ a {
     background-color: var(--carolina-blue);
 }
 /*<!-- Reviews Section Ends -->*/
+
+/*<!-- Contact Section Start -->*/
+.contact .row {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+}
+
+.contact .row .map {
+    flex: 1 1 42rem;
+    padding: 2rem;
+    box-shadow: var(--box-shadow);
+    border: var(--border);
+    border-radius: var(--radius-18);
+    background: #fff;
+}
+
+.contact .row form {
+    padding: 1rem;
+    flex: 1 1 42rem;
+    box-shadow: var(--box-shadow);
+    border: var(--border);
+    text-align: center;
+    border-radius: var(--radius-18);
+    background: #fff;
+}
+
+.contact .row form h1 {
+    font-size: 2rem;
+    color: var(--black);
+    padding-bottom: 1rem;
+}
+
+.contact .row form .box {
+    width: 100%;
+    border-radius: var(--radius-14);
+    padding: 7px;
+    padding-left: 1rem;
+    font-size: 1rem;
+    text-transform: none;
+    outline: none;
+    border: none;
+    background: #eeeff1;
+    margin: .7rem 0;
+}
+
+.contact .row form textarea {
+    /* height: 15rem; */
+    resize: none;
+}
+
+.contact .row form .btn {
+    width: max-content;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 1px;
+    cursor: pointer;
+}
+/*<!-- Contact Section Ends -->*/
