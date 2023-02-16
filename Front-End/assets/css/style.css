@@ -933,3 +933,18 @@ a {
 }
 /*<!-- Footer Section Ends -->*/
 
+/*---------- Media Queries ----------*/
+
+/**
+ * responsive for large than 580px screen
+ */
+
+@media (min-width: 580px) {
+    /**
+   * Reused Style
+   */
+    .container {
+        max-width: 540px;
+        margin-inline: auto;
+    }
+}
