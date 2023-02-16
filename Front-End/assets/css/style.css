@@ -158,3 +158,86 @@ body {
 ::-webkit-scrollbar-thumb:hover {
     background: hsla(219, 14%, 60%, 0.5);
 }
+
+/*---------- Reused Style ----------*/
+.container {
+    padding-inline: 15px;
+}
+
+button,
+a {
+    transition: var(--transition);
+}
+
+.btn {
+    position: relative;
+    background: var(--background, var(--carolina-blue));
+    color: var(--color, var(--white));
+    min-width: var(--width, 40px);
+    min-height: var(--height, 40px);
+    padding: 5px;
+    display: grid;
+    place-items: center;
+    border-radius: var(--radius-14);
+    font-family: var(--ff-nunito);
+    font-size: var(--fs-6);
+    font-weight: var(--fw-600);
+    overflow: hidden;
+}
+
+.btn ion-icon {
+    font-size: 22px;
+    --ionicon-stroke-width: 40px;
+}
+
+.btn::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, hsla(0, 0%, 100%, 0.4), transparent);
+    opacity: 0;
+    pointer-events: none;
+    transition: var(--transition);
+}
+
+.btn:is(:hover, :focus) {
+    box-shadow: var(--shadow-2);
+}
+
+.btn:is(:hover, :focus)::before {
+    opacity: 1;
+}
+
+.section {
+    padding-block: var(--section-padding);
+}
+
+.h1,
+.h2,
+.h3 {
+    color: var(--space-cadet);
+    font-family: var(--ff-nunito);
+    line-height: 1.4;
+}
+
+.h1 {
+    font-size: var(--fs-1);
+    text-transform: uppercase;
+}
+
+.h2,
+.h3 {
+    font-weight: var(--fw-400);
+}
+
+.h2 {
+    font-size: var(--fs-2);
+}
+
+.h3 {
+    font-size: var(--fs-4);
+}
+
+.w-100 {
+    width: 100%;
+}
