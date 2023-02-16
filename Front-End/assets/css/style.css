@@ -1086,5 +1086,16 @@ a {
     }
 }
 
+/**
+ * responsive for large than 992px screen
+ */
 
+@media (min-width: 992px) {
+    /**
+   * Reused Styles
+   */
+    .container {
+        max-width: 960px;
+    }
+}
 
