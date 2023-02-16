@@ -983,4 +983,33 @@ a {
     .container {
         max-width: 720px;
     }
+
+    /**
+   * Header
+   */
+    .header-actions {
+        gap: 30px;
+    }
+
+    .header-contact {
+        display: block;
+        text-align: center;
+    }
+
+    .header-contact .contact-link {
+        color: var(--space-cadet);
+        font-family: var(--ff-nunito);
+        font-size: var(--fs-5);
+        line-height: 1.3;
+    }
+
+    .header-contact .contact-link:is(:hover,
+     :focus) {
+        color: var(--carolina-blue);
+    }
+
+    .header-contact .contact-time {
+        color: var(--independence);
+        font-size: var(--fs-7);
+    }
 }
