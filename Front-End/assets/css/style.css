@@ -961,3 +961,19 @@ a {
         display: none;
     }
 }
+
+/**
+ * responsive for large than 768px screen
+ */
+
+@media (min-width: 768px) {
+    /**
+   * Custom Properties
+   */
+    :root {
+        /**
+     * typography
+     */
+        --fs-1: 2.625rem;
+    }
+}
