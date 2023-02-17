@@ -20,6 +20,14 @@
     <link href="../assets/css/vendor/app.min.css" rel="stylesheet" type="text/css" id="light-style">
 </head>
 <body>
+<!-- Start Back Button -->
+<div class="container-fluid">
+    <a href="../index.html" aria-labelledby="aria-label-txt">
+        <span id="aria-label-txt"><ion-icon name="arrow-back" style="font-size: 3rem; position: absolute; margin-top: 1rem;"></ion-icon></span>
+    </a>
+</div>
+<!-- End Back Button -->
+
 <!-- Start Customer Content-->
 <div class="container py-5 pb-2" id="manageCustomer">
 
@@ -115,7 +123,7 @@
                                     <div class="mb-3">
                                         <label class="form-label" for="role_Type">Role Type<span
                                                 class="text-danger">*</span></label>
-                                     <select class="form-control" id="role_Type"
+                                        <select class="form-control" id="role_Type"
                                                 name="role_Type">
                                             <option value="REGISTERED_USER">REGISTERED USER</option>
                                         </select>
@@ -140,7 +148,7 @@
                                             <input type="password" id="driverPassword" name="password"
                                                    class="form-control" placeholder="Password">
                                             <div class="input-group-text" data-password="false">
-                                                    <ion-icon name="eye-off"></ion-icon>
+                                                <ion-icon name="eye-off"></ion-icon>
                                             </div>
                                         </div>
                                     </div>
@@ -198,7 +206,7 @@
 <script>
     let baseUrl = "http://localhost:8080/Back_End_war/";
 
-    $("#addCustomerBtn").on('click',function () {
+    $("#addCustomerBtn").on('click', function () {
         let formData = new FormData($("#customerForm")[0]);
         console.log(formData);
         $.ajax({
