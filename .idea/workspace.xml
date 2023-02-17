@@ -9,7 +9,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9d9c7e19-daae-4dea-98be-3ff2eb93366f" name="Changes" comment="" />
+    <list default="true" id="9d9c7e19-daae-4dea-98be-3ff2eb93366f" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/Front-End/assets/img/pexels-kris-lucas-3264504.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Front-End/assets/img/signUp/signUp.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front-End/pages/regUser.html" beforeDir="false" afterPath="$PROJECT_DIR$/Front-End/pages/regUser.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -90,6 +93,7 @@
       <recent name="D:\IJSE\Second Semester\AAD (Advance API Development)\Easy-Car-Rental-System\Front-End\assets\js" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\IJSE\Second Semester\AAD (Advance API Development)\Easy-Car-Rental-System\Front-End\assets\img\signUp" />
       <recent name="D:\IJSE\Second Semester\AAD (Advance API Development)\Easy-Car-Rental-System\Front-End" />
       <recent name="D:\IJSE\Second Semester\AAD (Advance API Development)\Easy-Car-Rental-System\Front-End\assets\img" />
       <recent name="D:\IJSE\Second Semester\AAD (Advance API Development)\Easy-Car-Rental-System\Back-End\src\main\java" />
@@ -216,7 +220,7 @@
       <workItem from="1676563703994" duration="22002000" />
       <workItem from="1676587730544" duration="221000" />
       <workItem from="1676608233325" duration="8052000" />
-      <workItem from="1676616969840" duration="5234000" />
+      <workItem from="1676616969840" duration="5692000" />
     </task>
     <servers />
   </component>
