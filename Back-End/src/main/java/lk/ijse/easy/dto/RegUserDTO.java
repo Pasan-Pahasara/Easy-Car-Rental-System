@@ -3,6 +3,7 @@ package lk.ijse.easy.dto;
 import lk.ijse.easy.embeded.Name;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.web.multipart.MultipartFile;
 
 
 /**
@@ -21,7 +22,7 @@ public class RegUserDTO {
     private String email;
     private String nic;
     private String license_No;
-    private String nic_Img;
-    private String license_Img;
+    private MultipartFile nic_Img;
+    private MultipartFile license_Img;
     private UserDTO user;
 }
