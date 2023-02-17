@@ -1,6 +1,7 @@
 package lk.ijse.easy.dto;
 
 import lk.ijse.easy.embeded.Name;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -13,6 +14,7 @@ import lombok.NoArgsConstructor;
  **/
 @Data
 @NoArgsConstructor
+@AllArgsConstructor
 public class AdminDTO {
     private String admin_Id;
     private Name name;

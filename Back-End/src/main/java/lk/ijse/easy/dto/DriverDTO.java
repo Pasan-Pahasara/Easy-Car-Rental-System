@@ -2,6 +2,7 @@ package lk.ijse.easy.dto;
 
 import lk.ijse.easy.embeded.Name;
 import lk.ijse.easy.enums.Availability;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -14,6 +15,7 @@ import lombok.NoArgsConstructor;
  **/
 @Data
 @NoArgsConstructor
+@AllArgsConstructor
 public class DriverDTO {
     private String driver_Id;
     private Name name;

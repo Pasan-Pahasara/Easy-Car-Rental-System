@@ -2,6 +2,7 @@ package lk.ijse.easy.entity;
 
 import lk.ijse.easy.embeded.Name;
 import lk.ijse.easy.enums.Availability;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -15,6 +16,7 @@ import javax.persistence.*;
  **/
 @Entity
 @NoArgsConstructor
+@AllArgsConstructor
 @Data
 public class Driver {
     @Id

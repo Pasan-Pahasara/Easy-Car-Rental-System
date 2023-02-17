@@ -1,6 +1,7 @@
 package lk.ijse.easy.dto;
 
 import lk.ijse.easy.enums.RoleType;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -12,6 +13,7 @@ import lombok.NoArgsConstructor;
  **/
 @Data
 @NoArgsConstructor
+@AllArgsConstructor
 public class UserDTO {
     private String user_Id;
     private RoleType role_Type;

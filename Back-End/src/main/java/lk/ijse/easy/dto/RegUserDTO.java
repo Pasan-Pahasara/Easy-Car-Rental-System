@@ -1,6 +1,7 @@
 package lk.ijse.easy.dto;
 
 import lk.ijse.easy.embeded.Name;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.web.multipart.MultipartFile;
@@ -14,6 +15,7 @@ import org.springframework.web.multipart.MultipartFile;
  **/
 @Data
 @NoArgsConstructor
+@AllArgsConstructor
 public class RegUserDTO {
     private String user_Id;
     private Name name;
