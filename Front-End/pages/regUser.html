@@ -51,25 +51,25 @@
                                     <div class="mb-3">
                                         <label class="form-label" for="driverLicenceNo">User ID<span
                                                 class="text-danger">*</span></label>
-                                        <input class="form-control" id="driverLicenceNo" name="id"
+                                        <input class="form-control" id="driverLicenceNo" name="user_Id"
                                                placeholder="Register ID" type="text">
                                     </div>
                                     <div class="mb-3">
                                         <label class="form-label" for="driverFirstName">First Name<span
                                                 class="text-danger">*</span></label>
-                                        <input class="form-control" id="driverFirstName" name="dfname"
+                                        <input class="form-control" id="driverFirstName" name="firstName"
                                                placeholder="First Name" type="text">
                                     </div>
                                     <div class="mb-3">
                                         <label class="form-label" for="driverLastName">Last Name<span
                                                 class="text-danger">*</span></label>
-                                        <input class="form-control" id="driverLastName" name="dlname"
+                                        <input class="form-control" id="driverLastName" name="lastName"
                                                placeholder="Last Name" type="text">
                                     </div>
                                     <div class="mb-3">
                                         <label class="form-label" for="contactNo">Contact Number<span
                                                 class="text-danger">*</span></label>
-                                        <input class="form-control" id="contactNo" name="contactNo"
+                                        <input class="form-control" id="contactNo" name="contact_No"
                                                placeholder="Contact No" type="text">
                                     </div>
                                     <div class="mb-3">
@@ -80,40 +80,53 @@
                                     </div>
                                 </section>
                                 <section id="sec2Customer" class="col-xl-4">
-
+                                    <div class="mb-3">
+                                        <label class="form-label" for="cusEmail">Email<span
+                                                class="text-danger">*</span></label>
+                                        <input class="form-control" id="cusEmail" name="email"
+                                               placeholder="Email" type="text">
+                                    </div>
                                     <div class="mb-3">
                                         <label class="form-label" for="nicNo">NIC NO<span
                                                 class="text-danger">*</span></label>
-                                        <input class="form-control" id="nicNo" name="nicNo"
+                                        <input class="form-control" id="nicNo" name="nic"
                                                placeholder="NIC NO" type="text">
                                     </div>
                                     <div class="mb-3">
                                         <label class="form-label" for="imgNiC">NIC Image<span
                                                 class="text-danger">*</span></label>
-                                        <input class="form-control" id="imgNiC" name="imgView"
+                                        <input class="form-control" id="imgNiC" name="nic_Img"
                                                placeholder="NIC NO" type="file">
                                     </div>
                                     <div class="mb-3">
                                         <label class="form-label" for="cusLicence">Licence No<span
                                                 class="text-danger">*</span></label>
-                                        <input class="form-control" id="cusLicence" name="Licence"
+                                        <input class="form-control" id="cusLicence" name="license_No"
                                                placeholder="Licence No" type="text">
                                     </div>
                                     <div class="mb-3">
                                         <label class="form-label" for="imgLicence">Licence Image<span
                                                 class="text-danger">*</span></label>
-                                        <input class="form-control" id="imgLicence" name="imgLicence"
+                                        <input class="form-control" id="imgLicence" name="license_Img"
                                                placeholder="NIC NO" type="file">
                                     </div>
                                 </section>
                                 <section id="sec3Customer" class="col-xl-4">
+                                    <div class="mb-3">
+                                        <label class="form-label" for="role_Type">Role Type<span
+                                                class="text-danger">*</span></label>
+                                     <select class="form-control" id="role_Type"
+                                                name="role_Type">
+                                            <option value="REGISTERED_USER">REGISTERED USER</option>
+                                        </select>
+                                    </div>
                                     <div class="mb-3">
                                         <label for="driverUserName" class="form-label">User Name<span
                                                 class="text-danger">*</span></label>
                                         <div class="input-group has-validation">
                                             <span class="input-group-text" id="inputGroupPrepend">@</span>
                                             <input type="text" class="form-control" id="driverUserName"
-                                                   name="driverUserName" placeholder="User Name"
+                                                   name="user_Name" placeholder="User Name"
                                                    aria-describedby="inputGroupPrepend" required>
                                             <div class="invalid-feedback">
                                                 Please choose a username.
@@ -124,7 +137,7 @@
                                         <label for="driverPassword" class="form-label">Password<span
                                                 class="text-danger">*</span></label>
                                         <div class="input-group input-group-merge">
-                                            <input type="password" id="driverPassword" name="driverPassword"
+                                            <input type="password" id="driverPassword" name="password"
                                                    class="form-control" placeholder="Password">
                                             <div class="input-group-text" data-password="false">
                                                     <ion-icon name="eye-off"></ion-icon>
@@ -179,6 +192,24 @@
 <!-- End Customer Content-->
 
 <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script>
+    let baseUrl = "http://localhost:8080/Back_End_war/";
 
+    $("#addCustomerBtn").on('click',function () {
+        let formData = new FormData($("#customerForm")[0]);
+        console.log(formData);
+        $.ajax({
+            url: baseUrl + "customer",
+            method: "post",
+            data: formData,
+            contentType: false,
+            processData: false,
+            success: function (res) {
+            }, error: function (error) {
+
+            }
+        });
+    });
+</script>
 </body>
 </html>
