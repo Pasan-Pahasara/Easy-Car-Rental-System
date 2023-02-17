@@ -26,7 +26,7 @@ public class RegUserController {
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping
     public ResponseUtil saveRegUser(@ModelAttribute RegUserDTO regUserDTO, @ModelAttribute UserDTO userDTO, @ModelAttribute Name name) {
-        regUserDTO.setUser(userDTO);
+        regUserDTO.setUserDTO(userDTO);
         regUserDTO.setName(name);
         System.out.println(regUserDTO);
         service.saveRegUser(regUserDTO);

@@ -2,6 +2,7 @@ package lk.ijse.easy.service.impl;
 
 import lk.ijse.easy.dto.RegUserDTO;
 import lk.ijse.easy.entity.RegUser;
+import lk.ijse.easy.entity.User;
 import lk.ijse.easy.repo.RegUserRepo;
 import lk.ijse.easy.service.RegUserService;
 import org.modelmapper.ModelMapper;
@@ -10,6 +11,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.io.File;
+import java.io.IOException;
+import java.net.URISyntaxException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 
 /**
@@ -27,11 +34,41 @@ public class RegUserServiceImpl implements RegUserService {
     private ModelMapper mapper;
 
     public void saveRegUser(RegUserDTO regUserDTO) {
-        System.out.println(mapper.map(regUserDTO, RegUser.class));
-        if (repo.existsById(regUserDTO.getUser_Id())) {
+        RegUser regUser = new RegUser(regUserDTO.getUser_Id(), regUserDTO.getName(), regUserDTO.getContact_No(), regUserDTO.getAddress(), regUserDTO.getEmail(), regUserDTO.getNic(), regUserDTO.getLicense_No(), "", "", new User(regUserDTO.getUserDTO().getUser_Id(), regUserDTO.getUserDTO().getRole_Type(), regUserDTO.getUserDTO().getUser_Name(), regUserDTO.getUserDTO().getPassword()));
+        if (repo.existsById(regUserDTO.getUser_Id()))
             throw new RuntimeException("User Already Exist. Please enter another id..!");
+
+        try {
+            byte[] bytes1 = regUserDTO.getLicense_Img().getBytes();
+            byte[] bytes2 = regUserDTO.getNic_Img().getBytes();
+
+//            String projectPath="D:\\IJSE\\Second Semester\\AAD (Advance API Development)\\Easy-Car-Rental-System\\Front-End\\assets\\img"
+
+            String projectPath = new File(this.getClass().getProtectionDomain().getCodeSource().getLocation().toURI()).getParentFile().getParentFile().getAbsolutePath();
+            File uploadsDir = new File(projectPath + "/uploads");
+            System.out.println(projectPath);
+            uploadsDir.mkdir();
+
+            Path location2 = Paths.get(uploadsDir + "/nic" + regUser.getNic() + ".png");
+            Path location1 = Paths.get(uploadsDir + "/license" + regUser.getLicense_No() + ".png");
+
+            Files.write(location1, bytes1);
+            Files.write(location2, bytes2);
+
+            regUserDTO.getLicense_Img().transferTo(location1);
+            regUserDTO.getNic_Img().transferTo(location2);
+
+            regUser.setLicense_Img(location1.toString());
+            regUser.setNic_Img(location2.toString());
+
+            System.out.println(regUser);
+//          repo.save(regUser);
+            repo.save(mapper.map(regUser, RegUser.class));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        } catch (URISyntaxException e) {
+            throw new RuntimeException(e);
         }
-        repo.save(mapper.map(regUserDTO, RegUser.class));
     }
 
     public void deleteRegUser(String id) {
@@ -41,7 +78,7 @@ public class RegUserServiceImpl implements RegUserService {
         repo.deleteById(id);
     }
 
-    public void updateRegUser(RegUserDTO regUserDTO) {;
+    public void updateRegUser(RegUserDTO regUserDTO) {
         if (!repo.existsById(regUserDTO.getUser_Id())) {
             throw new RuntimeException("Wrong ID..No Such a User to Update..!");
         }
@@ -49,6 +86,7 @@ public class RegUserServiceImpl implements RegUserService {
     }
 
     public ArrayList<RegUserDTO> getAllRegUsers() {
-        return mapper.map(repo.findAll(), new TypeToken<ArrayList<RegUserDTO>>() {}.getType());
+        return mapper.map(repo.findAll(), new TypeToken<ArrayList<RegUserDTO>>() {
+        }.getType());
     }
 }

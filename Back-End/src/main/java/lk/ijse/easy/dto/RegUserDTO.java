@@ -24,5 +24,5 @@ public class RegUserDTO {
     private String license_No;
     private MultipartFile nic_Img;
     private MultipartFile license_Img;
-    private UserDTO user;
+    private UserDTO userDTO;
 }
