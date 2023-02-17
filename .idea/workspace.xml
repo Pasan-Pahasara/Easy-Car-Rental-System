@@ -9,16 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9d9c7e19-daae-4dea-98be-3ff2eb93366f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End/src/main/java/lk/ijse/easy/controller/RegUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/src/main/java/lk/ijse/easy/controller/RegUserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End/src/main/java/lk/ijse/easy/dto/RegUserDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/src/main/java/lk/ijse/easy/dto/RegUserDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End/src/main/java/lk/ijse/easy/entity/RegUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/src/main/java/lk/ijse/easy/entity/RegUser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End/src/main/java/lk/ijse/easy/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/src/main/java/lk/ijse/easy/entity/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End/src/main/java/lk/ijse/easy/service/impl/RegUserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/src/main/java/lk/ijse/easy/service/impl/RegUserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End/target/Back-End-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/target/Back-End-1.0-SNAPSHOT.war" afterDir="false" />
-    </list>
+    <list default="true" id="9d9c7e19-daae-4dea-98be-3ff2eb93366f" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -228,7 +219,7 @@
       <workItem from="1676608233325" duration="8052000" />
       <workItem from="1676616969840" duration="11306000" />
       <workItem from="1676635220922" duration="928000" />
-      <workItem from="1676640303199" duration="1555000" />
+      <workItem from="1676640303199" duration="2394000" />
     </task>
     <servers />
   </component>
