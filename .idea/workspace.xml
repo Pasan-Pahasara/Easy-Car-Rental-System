@@ -9,10 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9d9c7e19-daae-4dea-98be-3ff2eb93366f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Back-End/src/main/java/lk/ijse/easy/entity/Payment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="9d9c7e19-daae-4dea-98be-3ff2eb93366f" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -230,7 +227,7 @@
       <workItem from="1676688651898" duration="16917000" />
       <workItem from="1676715439153" duration="10869000" />
       <workItem from="1676727163623" duration="3607000" />
-      <workItem from="1676732053768" duration="2670000" />
+      <workItem from="1676732053768" duration="3098000" />
     </task>
     <servers />
   </component>
