@@ -35,8 +35,8 @@ public class DriverController {
     }
 
     @ResponseStatus(HttpStatus.ACCEPTED)
-    @DeleteMapping(params = {"driver_Id"},produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseUtil deleteDriver(@RequestParam(name ="driver_Id") String id) {
+    @DeleteMapping(params = {"nic_No"},produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil deleteDriver(@RequestParam(name ="nic_No") String id) {
         service.deleteDriver(id);
         return new ResponseUtil("OK","Successfully Deleted..! : "+id,null);
     }
@@ -45,6 +45,6 @@ public class DriverController {
     @PutMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseUtil updateDriver(@RequestBody DriverDTO driverDTO){
         service.updateDriver(driverDTO);
-        return new ResponseUtil("OK","Successfully Updated..! : "+driverDTO.getDriver_Id(),null);
+        return new ResponseUtil("OK","Successfully Updated..! : "+driverDTO.getNic_No(),null);
     }
 }
