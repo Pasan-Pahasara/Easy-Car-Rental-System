@@ -22,14 +22,14 @@ import java.time.LocalTime;
 public class Rent {
     @Id
     private String rent_Id;
-    private LocalDate pickUpDate;
-    private LocalTime pickUpTime;
-    private LocalDate returnDate;
+    private LocalDate pick_Up_Date;
+    private LocalTime pick_Up_Time;
+    private LocalDate return_Date;
     @Enumerated(EnumType.STRING)
-    private RequestType driverRequestType;
+    private RequestType driver_Request_Type;
     private String location;
 
     @ManyToOne(cascade = {CascadeType.REFRESH,CascadeType.DETACH})
     @JoinColumn(name = "user_RegID",referencedColumnName = "user_Id",nullable = false)
-    private RegUser regUser;
+    private RegUser reg_User;
 }
