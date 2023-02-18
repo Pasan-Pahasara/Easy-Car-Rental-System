@@ -13,7 +13,10 @@
           rel="stylesheet">
 
     <!-- Icons -->
-    <link href="../assets/css/vendor/icons.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="../assets/css/vendor/icons.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../assets/css/vendor/app.min.css" id="light-style">
 
     <style>
         * {
@@ -21,7 +24,7 @@
         }
     </style>
 </head>
-<body>
+<body class="loading" data-layout-config='{"leftSideBarTheme":"dark","layoutBoxed":false, "leftSidebarCondensed":false, "leftSidebarScrollable":false,"darkMode":false, "showRightSidebarOnStart": true}'>
 <section class="wrapper">
     <!-- Start Sidebar Content-->
     <div class="leftside-menu">
@@ -117,10 +120,15 @@
                     </a>
                 </li>
             </ul>
+            <div class="clearfix"></div>
         </div>
         <!-- slideMenu end -->
     </div>
     <!-- End Sidebar Content-->
 </section>
+
+<!-- Bundle -->
+<script src="../assets/js/vendor/vendor.min.js"></script>
+<script src="../assets/js/vendor/app.min.js"></script>
 </body>
 </html>
