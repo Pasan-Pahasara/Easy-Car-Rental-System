@@ -5,6 +5,7 @@ import lk.ijse.easy.enums.Availability;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.web.multipart.MultipartFile;
 
 
 /**
@@ -17,12 +18,11 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class DriverDTO {
-    private String driver_Id;
+    private String nic_No;
     private Name name;
     private String contact_No;
     private String address;
     private String email;
-    private String nic_No;
     private String license_No;
     private Availability driver_Availability;
     private UserDTO user;
