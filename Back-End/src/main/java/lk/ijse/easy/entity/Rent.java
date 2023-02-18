@@ -5,10 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
@@ -31,4 +28,8 @@ public class Rent {
     @Enumerated(EnumType.STRING)
     private RequestType driverRequestType;
     private String location;
+
+    @ManyToOne(cascade = {CascadeType.REFRESH,CascadeType.DETACH})
+    @JoinColumn(name = "user_RegID",referencedColumnName = "user_Id",nullable = false)
+    private RegUser regUser;
 }
