@@ -18,12 +18,11 @@ import org.springframework.web.multipart.MultipartFile;
 @NoArgsConstructor
 @AllArgsConstructor
 public class DriverDTO {
-    private String nic_No;
+    private String user_Id;
     private Name name;
     private String contact_No;
     private String address;
     private String email;
-    private String license_No;
     private Availability driver_Availability;
-    private UserDTO user;
+    private UserDTO userDTO;
 }

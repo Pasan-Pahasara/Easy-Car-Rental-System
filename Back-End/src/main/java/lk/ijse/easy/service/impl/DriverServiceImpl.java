@@ -2,6 +2,7 @@ package lk.ijse.easy.service.impl;
 
 import lk.ijse.easy.dto.DriverDTO;
 import lk.ijse.easy.entity.Driver;
+import lk.ijse.easy.entity.User;
 import lk.ijse.easy.repo.DriverRepo;
 import lk.ijse.easy.service.DriverService;
 import org.modelmapper.ModelMapper;
@@ -27,10 +28,12 @@ public class DriverServiceImpl implements DriverService {
     private ModelMapper mapper;
 
     public void saveDriver(DriverDTO driverDTO) {
-        if (repo.existsById(driverDTO.getDriver_Id())) {
+        Driver driver = new Driver(driverDTO.getUser_Id(), driverDTO.getName(), driverDTO.getContact_No(), driverDTO.getAddress(), driverDTO.getEmail(), driverDTO.getDriver_Availability(), new User(driverDTO.getUserDTO().getUser_Id(), driverDTO.getUserDTO().getRole_Type(), driverDTO.getUserDTO().getUser_Name(), driverDTO.getUserDTO().getPassword()));
+        if (repo.existsById(driverDTO.getUser_Id())) {
             throw new RuntimeException("User Already Exist. Please enter another id..!");
         }
-        repo.save(mapper.map(driverDTO, Driver.class));
+        System.out.println(driverDTO);
+        repo.save(driver);
     }
 
     public void deleteDriver(String id) {
@@ -41,7 +44,7 @@ public class DriverServiceImpl implements DriverService {
     }
 
     public void updateDriver(DriverDTO driverDTO) {
-        if (!repo.existsById(driverDTO.getDriver_Id())) {
+        if (!repo.existsById(driverDTO.getUser_Id())) {
             throw new RuntimeException("Wrong ID..No Such a User to Update..!");
         }
         repo.save(mapper.map(driverDTO, Driver.class));

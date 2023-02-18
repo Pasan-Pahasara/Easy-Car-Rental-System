@@ -1,6 +1,8 @@
 package lk.ijse.easy.controller;
 
 import lk.ijse.easy.dto.DriverDTO;
+import lk.ijse.easy.dto.UserDTO;
+import lk.ijse.easy.embeded.Name;
 import lk.ijse.easy.service.DriverService;
 import lk.ijse.easy.util.ResponseUtil;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,9 +24,12 @@ public class DriverController {
     private DriverService service;
 
     @ResponseStatus(HttpStatus.CREATED)
-    @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseUtil saveDriver(@RequestBody DriverDTO driverDTO) {
+    @PostMapping
+    public ResponseUtil saveDriver(@ModelAttribute DriverDTO driverDTO, @ModelAttribute UserDTO userDTO, @ModelAttribute Name name) {
+        driverDTO.setUserDTO(userDTO);
+        driverDTO.setName(name);
         service.saveDriver(driverDTO);
+        System.out.println(driverDTO);
         return new ResponseUtil("OK", "Successfully Registered..!", null);
     }
 
@@ -35,8 +40,8 @@ public class DriverController {
     }
 
     @ResponseStatus(HttpStatus.ACCEPTED)
-    @DeleteMapping(params = {"nic_No"},produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseUtil deleteDriver(@RequestParam(name ="nic_No") String id) {
+    @DeleteMapping(params = {"user_Id"},produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil deleteDriver(@RequestParam(name ="user_Id") String id) {
         service.deleteDriver(id);
         return new ResponseUtil("OK","Successfully Deleted..! : "+id,null);
     }
@@ -45,6 +50,6 @@ public class DriverController {
     @PutMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseUtil updateDriver(@RequestBody DriverDTO driverDTO){
         service.updateDriver(driverDTO);
-        return new ResponseUtil("OK","Successfully Updated..! : "+driverDTO.getNic_No(),null);
+        return new ResponseUtil("OK","Successfully Updated..! : "+driverDTO.getUser_Id(),null);
     }
 }

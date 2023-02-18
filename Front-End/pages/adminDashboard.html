@@ -401,7 +401,7 @@
                                                 <div class="mb-3">
                                                     <label class="form-label" for="driverNicNo">NIC No<span
                                                             class="text-danger">*</span></label>
-                                                    <input class="form-control" id="driverNicNo" name="nic_No"
+                                                    <input class="form-control" id="driverNicNo" name="user_Id"
                                                            placeholder="NIC No" type="text">
                                                 </div>
                                                 <div class="mb-3">
@@ -437,16 +437,22 @@
                                                            placeholder="Email" type="text">
                                                 </div>
                                                 <div class="mb-3">
-                                                    <label class="form-label" for="licenseNo">License No<span
+                                                    <label class="form-label" for="availability">Driver Availability<span
                                                             class="text-danger">*</span></label>
-                                                    <input class="form-control" id="licenseNo" name="license_No"
-                                                           placeholder="License No" type="text">
+                                                    <select class="form-control" id="availability"
+                                                            name="driver_Availability">
+                                                        <option>- Select Driver Availability -</option>
+                                                        <option value="AVAILABLE">AVAILABLE</option>
+                                                        <option value="UNAVAILABLE">UNAVAILABLE</option>
+                                                    </select>
                                                 </div>
                                                 <div class="mb-3">
-                                                    <label class="form-label" for="availability">Availability<span
+                                                    <label class="form-label" for="role_Type">Role Type<span
                                                             class="text-danger">*</span></label>
-                                                    <input class="form-control" id="availability" name="driver_Availability"
-                                                           placeholder="Availability" type="text">
+                                                    <select class="form-control" id="role_Type"
+                                                            name="role_Type">
+                                                        <option value="DRIVER">DRIVER</option>
+                                                    </select>
                                                 </div>
                                             </section>
                                             <section id="sec3Driver" class="col-xl-4">
@@ -456,7 +462,7 @@
                                                     <div class="input-group has-validation">
                                                         <span class="input-group-text" id="inputGroupPrepend">@</span>
                                                         <input type="text" class="form-control" id="driverUserName"
-                                                               name="driverUserName" placeholder="User Name"
+                                                               name="user_Name" placeholder="User Name"
                                                                aria-describedby="inputGroupPrepend" required>
                                                         <div class="invalid-feedback">
                                                             Please choose a username.
@@ -467,7 +473,7 @@
                                                     <label for="driverPassword" class="form-label">Password<span
                                                             class="text-danger">*</span></label>
                                                     <div class="input-group input-group-merge">
-                                                        <input type="password" id="driverPassword" name="driverPassword"
+                                                        <input type="password" id="driverPassword" name="password"
                                                                class="form-control" placeholder="Password">
                                                         <div class="input-group-text" data-password="false">
                                                             <span class="uil uil-eye-slash"></span>
@@ -672,7 +678,24 @@
 <script src="../assets/jQuery/jquery-3.6.0.min.js"></script>
 
 <script>
+    let baseUrl = "http://localhost:8080/Back_End_war/";
 
+    $("#addDriverBtn").on('click', function () {
+        // let formData = new FormData($("#driverForm")[0]);
+        let formData = $("#driverForm").serialize();
+        console.log(formData);
+        $.ajax({
+            url: baseUrl + "driver",
+            method: "post",
+            data: formData,
+            // contentType: false,
+            // processData: false,
+            success: function (res) {
+            }, error: function (error) {
+
+            }
+        });
+    });
 </script>
 </body>
 </html>

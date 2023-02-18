@@ -20,14 +20,13 @@ import javax.persistence.*;
 @Data
 public class Driver {
     @Id
-    private String nic_No;
+    private String user_Id;
 
     @Embedded
     private Name name;
     private String contact_No;
     private String address;
     private String email;
-    private String license_No;
 
     @Enumerated(EnumType.STRING)
     private Availability driver_Availability;
