@@ -207,6 +207,18 @@
                         <div class="card">
                             <!-- start card-body -->
                             <div class="card-body">
+                                <!-- start searchBar -->
+                                <div class="app-search d-lg-block mb-3">
+                                    <form class="col-xl-3">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" placeholder="Search..."
+                                                   id="carSearch">
+                                            <span class="uil uil-search search-icon"></span>
+                                            <button class="input-group-text btn-primary" type="button">Search</button>
+                                        </div>
+                                    </form>
+                                </div>
+                                <!-- end searchBar -->
                                 <!-- start row -->
                                 <div class="row">
                                     <!-- start col-->
@@ -405,6 +417,18 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-body">
+                                <!-- start searchBar -->
+                                <div class="app-search d-lg-block mb-3">
+                                    <form class="col-xl-3">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" placeholder="Search..."
+                                                   id="driverSearch">
+                                            <span class="uil uil-search search-icon"></span>
+                                            <button class="input-group-text btn-primary" type="button">Search</button>
+                                        </div>
+                                    </form>
+                                </div>
+                                <!-- end searchBar -->
                                 <div class="row">
                                     <div class="col-xl-12">
                                         <form id="driverForm" class="row">
@@ -507,6 +531,29 @@
                                                 </div>
                                             </section>
                                         </form>
+
+                                        <div class="table-responsive-xxl flex-xxl-grow-1">
+                                            <table class="table table-centered mb-0 mh-100">
+                                                <thead class="btn-primary flex-grow-0">
+                                                <tr class="table-hover">
+                                                    <th>NIC No</th>
+                                                    <th>First Name</th>
+                                                    <th>Last Name</th>
+                                                    <th>Contact Number</th>
+                                                    <th>Address</th>
+                                                    <th>Email</th>
+                                                    <th>Availability</th>
+                                                    <th>Role Type</th>
+                                                    <th>User Name</th>
+                                                    <th>Password</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody id="tblDriver">
+
+                                                </tbody>
+                                            </table>
+                                        </div>
+
                                     </div>
                                     <!-- end col-->
                                 </div>
@@ -690,7 +737,7 @@
 <script src="../assets/jQuery/jquery-3.6.0.min.js"></script>
 
 <!-- JS -->
-<script src="../assets/js/customerJS.js"></script>
+<!--<script src="../assets/js/customerJS.js"></script>-->
 <script src="../assets/js/driverJS.js"></script>
 
 </body>
