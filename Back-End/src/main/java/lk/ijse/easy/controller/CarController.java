@@ -1,12 +1,17 @@
 package lk.ijse.easy.controller;
 
 import lk.ijse.easy.dto.CarDTO;
+import lk.ijse.easy.embeded.Image;
 import lk.ijse.easy.service.CarService;
 import lk.ijse.easy.util.ResponseUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
+
+import java.io.File;
+import java.io.IOException;
 
 /**
  * @author : ShEnUx
