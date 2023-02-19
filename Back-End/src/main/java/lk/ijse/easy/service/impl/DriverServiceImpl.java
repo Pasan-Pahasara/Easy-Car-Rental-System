@@ -28,12 +28,11 @@ public class DriverServiceImpl implements DriverService {
     private ModelMapper mapper;
 
     public void saveDriver(DriverDTO driverDTO) {
-        Driver driver = new Driver(driverDTO.getUser_Id(), driverDTO.getName(), driverDTO.getContact_No(), driverDTO.getAddress(), driverDTO.getEmail(), driverDTO.getDriver_Availability(), new User(driverDTO.getUserDTO().getUser_Id(), driverDTO.getUserDTO().getRole_Type(), driverDTO.getUserDTO().getUser_Name(), driverDTO.getUserDTO().getPassword()));
         if (repo.existsById(driverDTO.getUser_Id())) {
             throw new RuntimeException("User Already Exist. Please enter another id..!");
         }
         System.out.println(driverDTO);
-        repo.save(driver);
+        repo.save(mapper.map(driverDTO, Driver.class));
     }
 
     public void deleteDriver(String id) {

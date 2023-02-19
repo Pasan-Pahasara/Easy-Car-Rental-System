@@ -24,10 +24,8 @@ public class DriverController {
     private DriverService service;
 
     @ResponseStatus(HttpStatus.CREATED)
-    @PostMapping
-    public ResponseUtil saveDriver(@ModelAttribute DriverDTO driverDTO, @ModelAttribute UserDTO userDTO, @ModelAttribute Name name) {
-        driverDTO.setUserDTO(userDTO);
-        driverDTO.setName(name);
+    @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil saveDriver(@RequestBody DriverDTO driverDTO) {
         service.saveDriver(driverDTO);
         System.out.println(driverDTO);
         return new ResponseUtil("OK", "Successfully Registered..!", null);
