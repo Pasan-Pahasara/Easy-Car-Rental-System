@@ -25,8 +25,8 @@ import javax.persistence.*;
 public class Car {
     @Id
     private String car_Id;
-    private String name;
-    private String brand;
+    private String car_name;
+    private String car_brand;
 
     @Enumerated(EnumType.STRING)
     private CarType type;

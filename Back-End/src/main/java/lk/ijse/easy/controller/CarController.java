@@ -44,7 +44,8 @@ public class CarController {
     @ResponseStatus(HttpStatus.ACCEPTED)
     @PutMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseUtil updateCar(@RequestBody CarDTO carDTO){
-        service.updateCar(carDTO);
+        System.out.println(carDTO);
+//        service.updateCar(carDTO);
         return new ResponseUtil("OK","Successfully Updated..! : "+carDTO.getCar_Id(),null);
     }
 }

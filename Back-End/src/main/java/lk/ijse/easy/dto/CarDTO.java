@@ -21,8 +21,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class CarDTO {
     private String car_Id;
-    private String name;
-    private String brand;
+    private String car_name;
+    private String car_brand;
     private CarType type;
     private Image image;
     private int number_Of_Passengers;
