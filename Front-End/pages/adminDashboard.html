@@ -246,34 +246,41 @@
                                                 <div class="mb-3">
                                                     <label class="form-label" for="frontView">Font Image<span
                                                             class="text-danger">*</span></label>
-                                                    <input class="form-control" id="frontView" name="front_View" type="file">
+                                                    <input class="form-control" id="frontView" name="front_View"
+                                                           type="file">
                                                 </div>
                                             </section>
                                             <section id="sec2Car" class="col-xl-3">
                                                 <div class="mb-3">
                                                     <label class="form-label" for="backView">Back Image<span
                                                             class="text-danger">*</span></label>
-                                                    <input class="form-control" id="backView" name="back_View" type="file">
+                                                    <input class="form-control" id="backView" name="back_View"
+                                                           type="file">
                                                 </div>
                                                 <div class="mb-3">
                                                     <label class="form-label" for="sideView">Side Image<span
                                                             class="text-danger">*</span></label>
-                                                    <input class="form-control" id="sideView" name="side_View" type="file">
+                                                    <input class="form-control" id="sideView" name="side_View"
+                                                           type="file">
                                                 </div>
                                                 <div class="mb-3">
                                                     <label class="form-label" for="interiorImage">Interior Image<span
                                                             class="text-danger">*</span></label>
-                                                    <input class="form-control" id="interiorImage" name="interior" type="file">
+                                                    <input class="form-control" id="interiorImage" name="interior"
+                                                           type="file">
                                                 </div>
                                                 <div class="mb-3">
-                                                    <label class="form-label" for="numberOfPassengers">N0 Of Passengers<span
-                                                            class="text-danger">*</span></label>
-                                                    <input class="form-control" id="numberOfPassengers" name="number_Of_Passengers"
+                                                    <label class="form-label" for="numberOfPassengers">N0 Of
+                                                        Passengers<span
+                                                                class="text-danger">*</span></label>
+                                                    <input class="form-control" id="numberOfPassengers"
+                                                           name="number_Of_Passengers"
                                                            placeholder="N0 Of Passengers" type="text">
                                                 </div>
                                                 <div class="mb-3">
-                                                    <label class="form-label" for="transmissionType">Transmission Type<span
-                                                            class="text-danger">*</span></label>
+                                                    <label class="form-label" for="transmissionType">Transmission
+                                                        Type<span
+                                                                class="text-danger">*</span></label>
                                                     <select class="form-control" id="transmissionType"
                                                             name="type">
                                                         <option>- Select Transmission Type -</option>
@@ -312,9 +319,11 @@
                                                            placeholder="Price Extra KM" type="text">
                                                 </div>
                                                 <div class="mb-3">
-                                                    <label class="form-label" for="registrationNumber">Registration Number<span
-                                                            class="text-danger">*</span></label>
-                                                    <input class="form-control" id="registrationNumber" name="registration_Number"
+                                                    <label class="form-label" for="registrationNumber">Registration
+                                                        Number<span
+                                                                class="text-danger">*</span></label>
+                                                    <input class="form-control" id="registrationNumber"
+                                                           name="registration_Number"
                                                            placeholder="Registration Number" type="text">
                                                 </div>
                                             </section>
@@ -332,8 +341,9 @@
                                                            placeholder="Color" type="text">
                                                 </div>
                                                 <div class="mb-3">
-                                                    <label class="form-label" for="carAvailability">Car Availability<span
-                                                            class="text-danger">*</span></label>
+                                                    <label class="form-label" for="carAvailability">Car
+                                                        Availability<span
+                                                                class="text-danger">*</span></label>
                                                     <select class="form-control" id="carAvailability"
                                                             name="type">
                                                         <option>- Select Car Availability -</option>
@@ -342,7 +352,8 @@
                                                     </select>
                                                 </div>
                                                 <div class="mb-3 d-grid gap-2 gap-md-0 d-md-flex justify-content-md-end">
-                                                    <button type="button" class="btn btn-success btn me-md-1" id="addCarBtn">
+                                                    <button type="button" class="btn btn-success btn me-md-1"
+                                                            id="addCarBtn">
                                                         Save
                                                     </button>
                                                     <button type="button" class="btn btn-primary btn" id="updateCar">
@@ -437,8 +448,9 @@
                                                            placeholder="Email" type="text">
                                                 </div>
                                                 <div class="mb-3">
-                                                    <label class="form-label" for="availability">Driver Availability<span
-                                                            class="text-danger">*</span></label>
+                                                    <label class="form-label" for="availability">Driver
+                                                        Availability<span
+                                                                class="text-danger">*</span></label>
                                                     <select class="form-control" id="availability"
                                                             name="driver_Availability">
                                                         <option>- Select Driver Availability -</option>
@@ -695,15 +707,15 @@
 
         if (driverNicNo) var driverOb = {
             user_Id: driverNicNo,
-            name:{
-                firstName:driverFirstName,
-                lastName:driverLastName
+            name: {
+                firstName: driverFirstName,
+                lastName: driverLastName
             },
             contact_No: contactNo,
             address: address,
             email: driverEmail,
             driver_Availability: availability,
-            userDTO:{
+            userDTO: {
                 role_Type: role_Type,
                 user_Name: driverUserName,
                 password: driverPassword
@@ -717,8 +729,8 @@
             data: JSON.stringify(driverOb),
             success: function (resp) {
                 if (resp.data === true) {
-                alert(resp.message);
-            }
+                    alert(resp.message);
+                }
             },
             error: function (error) {
                 let message = JSON.parse(error.responseText).message;
@@ -743,15 +755,15 @@
 
         var driverOb = {
             user_Id: driverNicNo,
-            name:{
-                firstName:driverFirstName,
-                lastName:driverLastName
+            name: {
+                firstName: driverFirstName,
+                lastName: driverLastName
             },
             contact_No: contactNo,
             address: address,
             email: driverEmail,
             driver_Availability: availability,
-            userDTO:{
+            userDTO: {
                 role_Type: role_Type,
                 user_Name: driverUserName,
                 password: driverPassword
@@ -774,6 +786,26 @@
         });
     });
     <!-- end driver update -->
+
+    <!-- start driver delete -->
+    $("#deleteDriver").on('click', function () {
+        let driverNicNo = $("#driverNicNo").val();
+
+        $.ajax({
+            url: baseUrl + "driver?user_Id=" + driverNicNo,
+            method: "DELETE",
+            success: function (res) {
+                if (res.code === 200) {
+                    alert(res.message);
+                }
+            },
+            error: function (error) {
+                let message = JSON.parse(error.responseText).message;
+                alert(message);
+            }
+        });
+    });
+    <!-- end driver delete -->
 </script>
 </body>
 </html>
