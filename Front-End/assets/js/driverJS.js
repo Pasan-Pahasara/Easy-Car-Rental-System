@@ -3,7 +3,7 @@
  * @since : 0.1.0
  **/
 
-let baseUrl = "http://localhost:8080/Back_End_war/";
+let driverBaseUrl = "http://localhost:8080/Back_End_war/";
 
 <!-- Start Driver Section -->
 
@@ -41,7 +41,7 @@ $("#addDriverBtn").on('click', function () {
     }
 
     $.ajax({
-        url: baseUrl + "driver",
+        url: driverBaseUrl + "driver",
         method: "post",
         contentType: "application/json",
         data: JSON.stringify(driverOb),
@@ -90,7 +90,7 @@ $("#updateDriver").on('click', function () {
     }
 
     $.ajax({
-        url: baseUrl + "driver",
+        url: driverBaseUrl + "driver",
         method: "put",
         contentType: "application/json",
         data: JSON.stringify(driverOb),
@@ -112,7 +112,7 @@ $("#deleteDriver").on('click', function () {
     let driverNicNo = $("#driverNicNo").val();
 
     $.ajax({
-        url: baseUrl + "driver?user_Id=" + driverNicNo,
+        url: driverBaseUrl + "driver?user_Id=" + driverNicNo,
         method: "DELETE",
         success: function (res) {
             if (res.code === 200) {
@@ -140,7 +140,7 @@ $("#driver-search").on("keypress", function (e) {
 function searchDriver() {
     let driverNicNo = $("#driverNicNo").val();
     $.ajax({
-        url: baseUrl + "/" + driverNicNo,
+        url: driverBaseUrl + "/" + driverNicNo,
         method: "GET",
         success: function (res) {
             if (res.code = 200) {
@@ -167,7 +167,7 @@ function searchDriver() {
 function driverLoadTable() {
     $("#tblDriver").empty();
     $.ajax({
-        url: baseUrl + "driver",
+        url: driverBaseUrl + "driver",
         method: "GET",
         contentType: "application/json",
         success: function (resp) {
