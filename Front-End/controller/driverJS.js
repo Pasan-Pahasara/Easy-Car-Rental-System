@@ -124,6 +124,7 @@ $("#deleteDriver").on('click', function () {
         success: function (res) {
             if (res.code === 200) {
                 driverLoadTable();
+                setTextFieldValuesDriver("","","","","","","","","","");
                 alert(res.message);
             }
         },
