@@ -97,6 +97,7 @@ $("#updateDriver").on('click', function () {
         dataType: "json",
         success: function (res) {
             alert(res.message);
+            driverLoadTable();
         },
         error: function (error) {
             let message = JSON.parse(error.responseText).message;
@@ -116,6 +117,7 @@ $("#deleteDriver").on('click', function () {
         success: function (res) {
             if (res.code === 200) {
                 alert(res.message);
+                driverLoadTable();
             }
         },
         error: function (error) {
@@ -161,7 +163,7 @@ function searchDriver() {
     });
 }
 
-<!-- end load driver function -->
+<!-- start load driver function -->
 function driverLoadTable() {
     $("#tblDriver").empty();
     $.ajax({
@@ -172,16 +174,45 @@ function driverLoadTable() {
             for (let driver of resp.data) {
                 let row = `<tr><td>${driver.user_Id}</td><td>${driver.name.firstName}</td><td>${driver.name.lastName}</td><td>${driver.contact_No}</td><td>${driver.address}</td><td>${driver.email}</td><td>${driver.driver_Availability}</td><td>${driver.user.role_Type}</td><td>${driver.user.user_Name}</td><td>${driver.user.password}</td></tr>`;
                 $("#tblDriver").append(row);
-                console.log(row);
             }
+            bindClickEvents();
         },
         error: function (error) {
             let message = JSON.parse(error.responseText).message;
             alert(message);
         }
     });
-
 }
 <!-- end load driver function -->
+
+<!-- start bind click events to the table rows function -->
+function bindClickEvents() {
+    $("#tblDriver>tr").on('click',function () {
+        //Get values from the selected row
+        let driverNicNo = $(this).children().eq(0).text();
+        let driverFirstName = $(this).children().eq(1).text();
+        let driverLastName = $(this).children().eq(2).text();
+        let contactNo = $(this).children().eq(3).text();
+        let address = $(this).children().eq(4).text();
+        let driverEmail= $(this).children().eq(5).text();
+        let availability = $(this).children().eq(6).text();
+        let role_Type = $(this).children().eq(7).text();
+        let driverUserName = $(this).children().eq(8).text();
+        let driverPassword = $(this).children().eq(9).text();
+
+        //Set values to the text-fields
+        $("#driverNicNo").val(driverNicNo);
+        $("#driverFirstName").val(driverFirstName);
+        $("#driverLastName").val(driverLastName);
+        $("#contactNo").val(contactNo);
+        $("#address").val(address);
+        $("#driverEmail").val(driverEmail);
+        $("#availability").val(availability);
+        $("#role_Type").val(role_Type);
+        $("#driverUserName").val(driverUserName);
+        $("#driverPassword").val(driverPassword);
+    });
+}
+<!-- end bind click events to the table rows function -->
 
 <!-- End Driver Section -->
