@@ -54,6 +54,7 @@ $("#addDriverBtn").on('click', function () {
         data: JSON.stringify(driverOb),
         success: function (resp) {
             if (resp.data === true) {
+                driverLoadTable();
                 alert(resp.message);
             }
         },
@@ -103,8 +104,8 @@ $("#updateDriver").on('click', function () {
         data: JSON.stringify(driverOb),
         dataType: "json",
         success: function (res) {
-            alert(res.message);
             driverLoadTable();
+            alert(res.message);
         },
         error: function (error) {
             let message = JSON.parse(error.responseText).message;
@@ -117,14 +118,13 @@ $("#updateDriver").on('click', function () {
 <!-- start driver delete -->
 $("#deleteDriver").on('click', function () {
     let driverNicNo = $("#driverNicNo").val();
-
     $.ajax({
         url: driverBaseUrl + "driver?user_Id=" + driverNicNo,
         method: "DELETE",
         success: function (res) {
             if (res.code === 200) {
-                alert(res.message);
                 driverLoadTable();
+                alert(res.message);
             }
         },
         error: function (error) {
@@ -140,6 +140,14 @@ $("#btnSearchDriver").on('click', function () {
     searchDriver();
 });
 <!-- end search driver using search driver button -->
+
+<!-- start search item using press ENTER -->
+$("#txtDriverSearch").on('keyup', function (event) {
+    if (event.code === "Enter") {
+        searchDriver();
+    }
+});
+<!-- end search item using press ENTER -->
 
 <!-- start search driver function -->
 function searchDriver() {
@@ -160,11 +168,13 @@ function searchDriver() {
             if (searchDriver.trim() !== driver.user_Id) {
                 driverLoadTable();
                 $("#txtDriverSearch").val("");
+                setTextFieldValues("","","","","","","","","","");
                 alert("There is no item available for that " + searchDriver);
             }
         }
     });
 }
+
 <!-- end search driver function -->
 
 <!-- start load driver function -->
@@ -180,6 +190,7 @@ function driverLoadTable() {
                 $("#tblDriver").append(row);
             }
             bindClickEvents();
+            setTextFieldValues("","","","","","","","","","");
         },
         error: function (error) {
             let message = JSON.parse(error.responseText).message;
@@ -187,18 +198,19 @@ function driverLoadTable() {
         }
     });
 }
+
 <!-- end load driver function -->
 
 <!-- start bind click events to the table rows function -->
 function bindClickEvents() {
-    $("#tblDriver>tr").on('click',function () {
+    $("#tblDriver>tr").on('click', function () {
         //Get values from the selected row
         let driverNicNo = $(this).children().eq(0).text();
         let driverFirstName = $(this).children().eq(1).text();
         let driverLastName = $(this).children().eq(2).text();
         let contactNo = $(this).children().eq(3).text();
         let address = $(this).children().eq(4).text();
-        let driverEmail= $(this).children().eq(5).text();
+        let driverEmail = $(this).children().eq(5).text();
         let availability = $(this).children().eq(6).text();
         let role_Type = $(this).children().eq(7).text();
         let driverUserName = $(this).children().eq(8).text();
@@ -217,6 +229,23 @@ function bindClickEvents() {
         $("#driverPassword").val(driverPassword);
     });
 }
+
 <!-- end bind click events to the table rows function -->
+
+<!-- start set text fields values function -->
+function setTextFieldValues(driverNicNo, driverFirstName, driverLastName, contactNo, address, driverEmail, availability, role_Type, driverUserName, driverPassword) {
+    $("#driverNicNo").val(driverNicNo);
+    $("#driverFirstName").val(driverFirstName);
+    $("#driverLastName").val(driverLastName);
+    $("#contactNo").val(contactNo);
+    $("#address").val(address);
+    $("#driverEmail").val(driverEmail);
+    $("#availability").val(availability);
+    $("#role_Type").val(role_Type);
+    $("#driverUserName").val(driverUserName);
+    $("#driverPassword").val(driverPassword);
+}
+
+<!-- end set text fields values function -->
 
 <!-- End Driver Section -->
