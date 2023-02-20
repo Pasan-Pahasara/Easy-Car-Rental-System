@@ -32,7 +32,8 @@ $("#addDriverBtn").on('click', function () {
         address: address,
         email: driverEmail,
         driver_Availability: availability,
-        userDTO: {
+        user: {
+            user_Id: driverNicNo,
             role_Type: role_Type,
             user_Name: driverUserName,
             password: driverPassword
@@ -80,7 +81,8 @@ $("#updateDriver").on('click', function () {
         address: address,
         email: driverEmail,
         driver_Availability: availability,
-        userDTO: {
+        user: {
+            user_Id: driverNicNo,
             role_Type: role_Type,
             user_Name: driverUserName,
             password: driverPassword
@@ -159,7 +161,7 @@ function searchDriver() {
     });
 }
 
-<!-- start load driver function -->
+<!-- end load driver function -->
 function driverLoadTable() {
     $("#tblDriver").empty();
     $.ajax({
