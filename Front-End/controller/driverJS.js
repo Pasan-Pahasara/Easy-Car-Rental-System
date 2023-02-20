@@ -162,6 +162,7 @@ function searchDriver() {
                 if (searchDriver.trim() === driver.user_Id) {
                     $("#tblDriver").append(`<tr><td>${driver.user_Id}</td><td>${driver.name.firstName}</td><td>${driver.name.lastName}</td><td>${driver.contact_No}</td><td>${driver.address}</td><td>${driver.email}</td><td>${driver.driver_Availability}</td><td>${driver.user.role_Type}</td><td>${driver.user.user_Name}</td><td>${driver.user.password}</td></tr>`);
                     driverBindClickEvents();
+                    setTextFieldValuesDriver("","","","","","","","","","");
                     return;
                 }
             }
