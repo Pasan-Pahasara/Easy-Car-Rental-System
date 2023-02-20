@@ -3,9 +3,18 @@
  * @since : 0.1.0
  **/
 let userBaseUrl = "http://localhost:8080/Back_End_war/";
+
+<!-- Start User Section -->
+
 manageCustomerLoadTable();
 generateCustomerId();
-<!-- Start User Section -->
+
+// default submit false
+$(function () {
+    $("#customerSearchForm").submit(function () {
+        return false;
+    });
+});
 
 <!-- start added customer -->
 $("#addCustomerBtn").on('click', function () {
