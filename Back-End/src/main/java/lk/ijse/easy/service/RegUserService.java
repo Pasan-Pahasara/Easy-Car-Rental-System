@@ -15,4 +15,5 @@ public interface RegUserService {
     void deleteRegUser(String id);
     void updateRegUser(RegUserDTO regUserDTO);
     ArrayList<RegUserDTO> getAllRegUsers();
+    String generateCustomerId();
 }

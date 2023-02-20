@@ -52,4 +52,11 @@ public class RegUserController {
         service.updateRegUser(regUserDTO);
         return new ResponseUtil("OK","Successfully Updated..! : "+regUserDTO.getUser_Id(),null);
     }
+
+    @ResponseStatus(HttpStatus.ACCEPTED)
+    @GetMapping(path = "/generateCustomerId", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil generateCustomerId() {
+        return new ResponseUtil("OK", "Successfully Generated ID..!", service.generateCustomerId());
+    }
+
 }
