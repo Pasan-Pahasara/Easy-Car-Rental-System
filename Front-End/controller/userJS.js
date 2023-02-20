@@ -78,6 +78,14 @@ $("#btnSearchCustomer").on('click', function () {
 });
 <!-- end search customer using search customer button -->
 
+<!-- start search customer using press ENTER -->
+$("#txtCustomerSearch").on('keyup', function (event) {
+    if (event.code === "Enter") {
+        searchCustomer();
+    }
+});
+<!-- end search customer using press ENTER -->
+
 <!-- start search customer function -->
 function searchCustomer() {
     $("#tblCustomerDetails").empty();
