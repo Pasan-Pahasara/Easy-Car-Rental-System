@@ -643,6 +643,97 @@
                                 <div class="row">
                                     <!-- start col-->
                                     <div class="col-xl-12">
+                                        <form id="customerDetailsForm" class="row">
+                                            <section id="sec1CustomerDetails" class="col-xl-4">
+                                                <div class="mb-3">
+                                                    <label class="form-label" for="userID">User ID<span
+                                                            class="text-danger">*</span></label>
+                                                    <input class="form-control" id="userID" name="user_Id"
+                                                           placeholder="User ID" type="text">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label class="form-label" for="userFirstName">First Name<span
+                                                            class="text-danger">*</span></label>
+                                                    <input class="form-control" id="userFirstName" name="firstName"
+                                                           placeholder="First Name" type="text">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label class="form-label" for="userLastName">Last Name<span
+                                                            class="text-danger">*</span></label>
+                                                    <input class="form-control" id="userLastName" name="lastName"
+                                                           placeholder="Last Name" type="text">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label class="form-label" for="customerContactNo">Contact Number<span
+                                                            class="text-danger">*</span></label>
+                                                    <input class="form-control" id="customerContactNo" name="contact_No"
+                                                           placeholder="Contact No" type="text">
+                                                </div>
+                                            </section>
+                                            <section id="sec2CustomerDetails" class="col-xl-4">
+                                                <div class="mb-3">
+                                                    <label class="form-label" for="customerAddress">Address<span
+                                                            class="text-danger">*</span></label>
+                                                    <input class="form-control" id="customerAddress" name="address"
+                                                           placeholder="Address" type="text">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label class="form-label" for="customerDriverEmail">Email<span
+                                                            class="text-danger">*</span></label>
+                                                    <input class="form-control" id="customerDriverEmail" name="email"
+                                                           placeholder="Email" type="text">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label class="form-label" for="customerNic">Nic No<span
+                                                            class="text-danger">*</span></label>
+                                                    <input class="form-control" id="customerNic" name="nic"
+                                                           placeholder="Nic No" type="text">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label class="form-label" for="customerLicence">Licence No<span
+                                                            class="text-danger">*</span></label>
+                                                    <input class="form-control" id="customerLicence" name="license_No"
+                                                           placeholder="Licence No" type="text">
+                                                </div>
+
+                                            </section>
+                                            <section id="sec3CustomerDetails" class="col-xl-4">
+                                                <div class="mb-3">
+                                                    <label for="driverUserName" class="form-label">User Name<span
+                                                            class="text-danger">*</span></label>
+                                                    <div class="input-group has-validation">
+                                                        <span class="input-group-text" id="customerInputGroupPrepend">@</span>
+                                                        <input type="text" class="form-control" id="customerUserName"
+                                                               name="user_Name" placeholder="User Name"
+                                                               aria-describedby="customerInputGroupPrepend" required>
+                                                        <div class="invalid-feedback">
+                                                            Please choose a username.
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="driverPassword" class="form-label">Password<span
+                                                            class="text-danger">*</span></label>
+                                                    <div class="input-group input-group-merge">
+                                                        <input type="password" id="customerPassword" name="password"
+                                                               class="form-control" placeholder="Password">
+                                                        <div class="input-group-text" data-password="false">
+                                                            <span class="uil uil-eye-slash"></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="mb-3 d-grid gap-1 d-md-flex justify-content-md-end">
+                                                    <button type="button" class="btn btn-primary btn me-md-1"
+                                                            id="updateCustomer">
+                                                        Update
+                                                    </button>
+                                                    <button type="button" class="btn btn-danger btn" id="deleteCustomer">
+                                                        Delete
+                                                    </button>
+                                                </div>
+                                            </section>
+                                        </form>
+
                                         <div class="table-responsive-xxl">
                                             <table class="table table-centered mb-0">
                                                 <thead class="btn-primary">
@@ -664,6 +755,7 @@
                                                 </tbody>
                                             </table>
                                         </div>
+
                                     </div>
                                     <!-- end col-->
                                 </div>
