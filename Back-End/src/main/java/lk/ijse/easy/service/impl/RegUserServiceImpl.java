@@ -99,16 +99,14 @@ public class RegUserServiceImpl implements RegUserService {
             int tempId = Integer.parseInt(lastId.split("-")[1]);
             tempId = tempId + 1;
             if (tempId <= 9) {
-                id = "C00-000" + tempId;
-            } else if (tempId <= 99) {
                 id = "C00-00" + tempId;
-            } else if (tempId <= 999) {
+            } else if (tempId <= 99) {
                 id = "C00-0" + tempId;
-            } else if (tempId <= 9999) {
+            } else if (tempId <= 999) {
                 id = "C00-" + tempId;
             }
         } else {
-            id = "C00-0001";
+            id = "C00-001";
         }
         return id;
     }

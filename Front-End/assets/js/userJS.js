@@ -18,9 +18,12 @@ $("#addCustomerBtn").on('click', function () {
         contentType: false,
         processData: false,
         success: function (res) {
+            alert(res.message);
             manageCustomerLoadTable();
+            generateCustomerId();
         }, error: function (error) {
-
+            let message = JSON.parse(error.responseText).message;
+            alert(message);
         }
     });
 });
@@ -46,6 +49,7 @@ function manageCustomerLoadTable() {
         }
     });
 }
+
 <!-- end load customer function -->
 
 <!-- start generate customer ID function -->
@@ -58,6 +62,7 @@ function generateCustomerId() {
         }
     })
 }
+
 <!-- end generate customer ID function -->
 
 <!-- End User Section -->
