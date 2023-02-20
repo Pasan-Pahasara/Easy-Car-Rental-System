@@ -51,7 +51,7 @@ function manageCustomerLoadTable() {
                 $("#tblCustomerDetails").append(row);
             }
             customerBindClickEvents();
-            setTextFieldValuesCustomer("","","","","","","","","","");
+            setTextFieldValuesCustomer("", "", "", "", "", "", "", "", "", "");
         },
         error: function (error) {
             let message = JSON.parse(error.responseText).message;
@@ -59,6 +59,7 @@ function manageCustomerLoadTable() {
         }
     });
 }
+
 <!-- end load customer function -->
 
 <!-- start generate customer ID function -->
@@ -71,6 +72,7 @@ function generateCustomerId() {
         }
     })
 }
+
 <!-- end generate customer ID function -->
 
 <!-- start search customer using search customer button -->
@@ -92,7 +94,7 @@ function searchCustomer() {
     $("#tblCustomerDetails").empty();
     let searchCustomer = $("#txtCustomerSearch").val();
     $.ajax({
-        url: driverBaseUrl + "customer",
+        url: userBaseUrl + "customer",
         contentType: "application/json",
         dataType: "json",
         success: function (res) {
@@ -100,14 +102,14 @@ function searchCustomer() {
                 if (searchCustomer.trim() === customerDetails.user_Id) {
                     $("#tblCustomerDetails").append(`<tr><td>${customerDetails.user_Id}</td><td>${customerDetails.name.firstName}</td><td>${customerDetails.name.lastName}</td><td>${customerDetails.contact_No}</td><td>${customerDetails.address}</td><td>${customerDetails.email}</td><td>${customerDetails.nic}</td><td>${customerDetails.license_No}</td><td>${customerDetails.user.user_Name}</td><td>${customerDetails.user.password}</td></tr>`);
                     customerBindClickEvents();
-                    setTextFieldValuesCustomer("","","","","","","","","","");
+                    setTextFieldValuesCustomer("", "", "", "", "", "", "", "", "", "");
                     return;
                 }
             }
             if (searchCustomer.trim() !== customerDetails.user_Id) {
                 manageCustomerLoadTable();
                 $("#txtCustomerSearch").val("");
-                setTextFieldValuesCustomer("","","","","","","","","","");
+                setTextFieldValuesCustomer("", "", "", "", "", "", "", "", "", "");
                 alert("There is no item available for that " + searchCustomer);
             }
         }
@@ -164,12 +166,12 @@ function setTextFieldValuesCustomer(userID, userFirstName, userLastName, custome
 $("#deleteCustomer").on('click', function () {
     let userID = $("#userID").val();
     $.ajax({
-        url: driverBaseUrl + "customer?user_Id=" + userID,
+        url: userBaseUrl + "customer?user_Id=" + userID,
         method: "DELETE",
         success: function (res) {
             if (res.code === 200) {
                 manageCustomerLoadTable();
-                setTextFieldValuesCustomer("","","","","","","","","","");
+                setTextFieldValuesCustomer("", "", "", "", "", "", "", "", "", "");
                 alert(res.message);
             }
         },
@@ -180,5 +182,54 @@ $("#deleteCustomer").on('click', function () {
     });
 });
 <!-- end customer delete -->
+
+<!-- start driver update -->
+$("#updateCustomer").on('click', function () {
+    let userID = $("#userID").val();
+    let userFirstName = $("#userFirstName").val();
+    let userLastName = $("#userLastName").val();
+    let customerContactNo = $("#customerContactNo").val();
+    let customerAddress = $("#customerAddress").val();
+    let customerDriverEmail = $("#customerDriverEmail").val();
+    let customerNic = $("#customerNic").val();
+    let customerLicence = $("#customerLicence").val();
+    let customerUserName = $("#customerUserName").val();
+    let customerPassword = $("#customerPassword").val();
+
+    var CustomerOb = {
+        user_Id: userID,
+        name: {
+            firstName: userFirstName,
+            lastName: userLastName
+        },
+        contact_No: customerContactNo,
+        address: customerAddress,
+        email: customerDriverEmail,
+        nic: customerNic,
+        license_No: customerLicence,
+        user: {
+            user_Id: userID,
+            user_Name: customerUserName,
+            password: customerPassword
+        }
+    }
+
+    $.ajax({
+        url: userBaseUrl + "customer",
+        method: "put",
+        contentType: "application/json",
+        data: JSON.stringify(CustomerOb),
+        dataType: "json",
+        success: function (res) {
+            manageCustomerLoadTable();
+            alert(res.message);
+        },
+        error: function (error) {
+            let message = JSON.parse(error.responseText).message;
+            alert(message);
+        }
+    });
+});
+<!-- end driver update -->
 
 <!-- End User Section -->
