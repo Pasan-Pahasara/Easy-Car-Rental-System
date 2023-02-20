@@ -2,6 +2,9 @@ package lk.ijse.easy.repo;
 
 import lk.ijse.easy.entity.Driver;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+
+import java.util.Optional;
 
 /**
  * @author : ShEnUx

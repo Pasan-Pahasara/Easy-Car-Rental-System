@@ -9,6 +9,13 @@ let driverBaseUrl = "http://localhost:8080/Back_End_war/";
 
 driverLoadTable();
 
+// default submit false
+$(function () {
+    $("#driverSearchForm").submit(function () {
+        return false;
+    });
+});
+
 <!-- start driver add -->
 $("#addDriverBtn").on('click', function () {
     let driverNicNo = $("#driverNicNo").val();
@@ -128,40 +135,37 @@ $("#deleteDriver").on('click', function () {
 });
 <!-- end driver delete -->
 
-
-//Search driver Event
-$("#driver-search").on("keypress", function (e) {
-    if (e.key == "Enter") {
-        searchDriver();
-    }
+<!-- start search driver using search driver button -->
+$("#btnSearchDriver").on('click', function () {
+    searchDriver();
 });
+<!-- end search driver using search driver button -->
 
-//Search Driver
+<!-- start search driver function -->
 function searchDriver() {
-    let driverNicNo = $("#driverNicNo").val();
+    $("#tblDriver").empty();
+    let searchDriver = $("#txtDriverSearch").val();
     $.ajax({
-        url: driverBaseUrl + "/" + driverNicNo,
-        method: "GET",
+        url: driverBaseUrl + "driver",
+        contentType: "application/json",
+        dataType: "json",
         success: function (res) {
-            if (res.code = 200) {
-                var driver = res.data;
-                $("#driverNicNo").val(driver.user_Id);
-                $("#driverFirstName").val(driver.firstName);
-                $("#driverLastName").val(driver.driverLastName);
-                $("#contactNo").val(driver.contactNo);
-                $("#address").val(driver.address);
-                $("#driverEmail").val(driver.driverEmail);
-                $("#availability").val(driver.availability);
-                $("#role_Type").val(driver.role_Type);
-                $("#driverUserName").val(driver.driverUserName);
-                $("#driverPassword").val(driver.driverPassword);
-            } else {
+            for (var driver of res.data) {
+                if (searchDriver.trim() === driver.user_Id) {
+                    $("#tblDriver").append(`<tr><td>${driver.user_Id}</td><td>${driver.name.firstName}</td><td>${driver.name.lastName}</td><td>${driver.contact_No}</td><td>${driver.address}</td><td>${driver.email}</td><td>${driver.driver_Availability}</td><td>${driver.user.role_Type}</td><td>${driver.user.user_Name}</td><td>${driver.user.password}</td></tr>`);
+                    bindClickEvents();
+                    return;
+                }
             }
-        },
-        error:function (ob){
+            if (searchDriver.trim() !== driver.user_Id) {
+                driverLoadTable();
+                $("#txtDriverSearch").val("");
+                alert("There is no item available for that " + searchDriver);
+            }
         }
     });
 }
+<!-- end search driver function -->
 
 <!-- start load driver function -->
 function driverLoadTable() {

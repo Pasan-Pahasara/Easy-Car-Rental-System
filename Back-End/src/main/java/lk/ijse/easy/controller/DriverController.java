@@ -1,8 +1,6 @@
 package lk.ijse.easy.controller;
 
 import lk.ijse.easy.dto.DriverDTO;
-import lk.ijse.easy.dto.UserDTO;
-import lk.ijse.easy.embeded.Name;
 import lk.ijse.easy.service.DriverService;
 import lk.ijse.easy.util.ResponseUtil;
 import org.springframework.beans.factory.annotation.Autowired;
