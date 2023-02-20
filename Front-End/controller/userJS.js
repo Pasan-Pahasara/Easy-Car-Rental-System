@@ -50,6 +50,7 @@ function manageCustomerLoadTable() {
                 let row = `<tr><td>${customerDetails.user_Id}</td><td>${customerDetails.name.firstName}</td><td>${customerDetails.name.lastName}</td><td>${customerDetails.contact_No}</td><td>${customerDetails.address}</td><td>${customerDetails.email}</td><td>${customerDetails.nic}</td><td>${customerDetails.license_No}</td><td>${customerDetails.user.user_Name}</td><td>${customerDetails.user.password}</td></tr>`;
                 $("#tblCustomerDetails").append(row);
             }
+            customerBindClickEvents();
             setTextFieldValuesCustomer("","","","","","","","","","");
         },
         error: function (error) {
@@ -98,6 +99,8 @@ function searchCustomer() {
             for (var customerDetails of res.data) {
                 if (searchCustomer.trim() === customerDetails.user_Id) {
                     $("#tblCustomerDetails").append(`<tr><td>${customerDetails.user_Id}</td><td>${customerDetails.name.firstName}</td><td>${customerDetails.name.lastName}</td><td>${customerDetails.contact_No}</td><td>${customerDetails.address}</td><td>${customerDetails.email}</td><td>${customerDetails.nic}</td><td>${customerDetails.license_No}</td><td>${customerDetails.user.user_Name}</td><td>${customerDetails.user.password}</td></tr>`);
+                    customerBindClickEvents();
+                    setTextFieldValuesCustomer("","","","","","","","","","");
                     return;
                 }
             }
@@ -111,6 +114,36 @@ function searchCustomer() {
     });
 }
 <!-- end search customer function -->
+
+<!-- start bind click events to the table rows function -->
+function customerBindClickEvents() {
+    $("#tblCustomerDetails>tr").on('click', function () {
+        //Get values from the selected row
+        let userID = $(this).children().eq(0).text();
+        let userFirstName = $(this).children().eq(1).text();
+        let userLastName = $(this).children().eq(2).text();
+        let customerContactNo = $(this).children().eq(3).text();
+        let customerAddress = $(this).children().eq(4).text();
+        let customerDriverEmail = $(this).children().eq(5).text();
+        let customerNic = $(this).children().eq(6).text();
+        let customerLicence = $(this).children().eq(7).text();
+        let customerUserName = $(this).children().eq(8).text();
+        let customerPassword = $(this).children().eq(9).text();
+
+        //Set values to the text-fields
+        $("#userID").val(userID);
+        $("#userFirstName").val(userFirstName);
+        $("#userLastName").val(userLastName);
+        $("#customerContactNo").val(customerContactNo);
+        $("#customerAddress").val(customerAddress);
+        $("#customerDriverEmail").val(customerDriverEmail);
+        $("#customerNic").val(customerNic);
+        $("#customerLicence").val(customerLicence);
+        $("#customerUserName").val(customerUserName);
+        $("#customerPassword").val(customerPassword);
+    });
+}
+<!-- end bind click events to the table rows function -->
 
 <!-- start set text fields values function -->
 function setTextFieldValuesCustomer(userID, userFirstName, userLastName, customerContactNo, customerAddress, customerDriverEmail, customerNic, customerLicence, customerUserName, customerPassword) {
