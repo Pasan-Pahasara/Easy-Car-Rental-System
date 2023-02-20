@@ -160,4 +160,25 @@ function setTextFieldValuesCustomer(userID, userFirstName, userLastName, custome
 }
 <!-- end set text fields values function -->
 
+<!-- start customer delete -->
+$("#deleteCustomer").on('click', function () {
+    let userID = $("#userID").val();
+    $.ajax({
+        url: driverBaseUrl + "customer?user_Id=" + userID,
+        method: "DELETE",
+        success: function (res) {
+            if (res.code === 200) {
+                manageCustomerLoadTable();
+                setTextFieldValuesCustomer("","","","","","","","","","");
+                alert(res.message);
+            }
+        },
+        error: function (error) {
+            let message = JSON.parse(error.responseText).message;
+            alert(message);
+        }
+    });
+});
+<!-- end customer delete -->
+
 <!-- End User Section -->
