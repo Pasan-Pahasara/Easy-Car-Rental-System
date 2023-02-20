@@ -74,8 +74,34 @@ function generateCustomerId() {
 
 <!-- start search customer using search customer button -->
 $("#btnSearchCustomer").on('click', function () {
-
+    searchCustomer();
 });
 <!-- end search customer using search customer button -->
+
+<!-- start search customer function -->
+function searchCustomer() {
+    $("#tblCustomerDetails").empty();
+    let searchCustomer = $("#txtCustomerSearch").val();
+    $.ajax({
+        url: driverBaseUrl + "customer",
+        contentType: "application/json",
+        dataType: "json",
+        success: function (res) {
+            for (var customerDetails of res.data) {
+                if (searchCustomer.trim() === customerDetails.user_Id) {
+                    $("#tblCustomerDetails").append(`<tr><td>${customerDetails.user_Id}</td><td>${customerDetails.name.firstName}</td><td>${customerDetails.name.lastName}</td><td>${customerDetails.contact_No}</td><td>${customerDetails.address}</td><td>${customerDetails.email}</td><td>${customerDetails.nic}</td><td>${customerDetails.license_No}</td><td>${customerDetails.user.user_Name}</td><td>${customerDetails.user.password}</td></tr>`);
+                    bindClickEvents();
+                    return;
+                }
+            }
+            if (searchCustomer.trim() !== customerDetails.user_Id) {
+                manageCustomerLoadTable();
+                $("#txtCustomerSearch").val("");
+                alert("There is no item available for that " + searchCustomer);
+            }
+        }
+    });
+}
+<!-- end search customer function -->
 
 <!-- End User Section -->

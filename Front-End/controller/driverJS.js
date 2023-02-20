@@ -168,7 +168,7 @@ function searchDriver() {
             if (searchDriver.trim() !== driver.user_Id) {
                 driverLoadTable();
                 $("#txtDriverSearch").val("");
-                setTextFieldValues("","","","","","","","","","");
+                setTextFieldValuesDriver("","","","","","","","","","");
                 alert("There is no item available for that " + searchDriver);
             }
         }
@@ -190,7 +190,7 @@ function driverLoadTable() {
                 $("#tblDriver").append(row);
             }
             bindClickEvents();
-            setTextFieldValues("","","","","","","","","","");
+            setTextFieldValuesDriver("","","","","","","","","","");
         },
         error: function (error) {
             let message = JSON.parse(error.responseText).message;
@@ -233,7 +233,7 @@ function bindClickEvents() {
 <!-- end bind click events to the table rows function -->
 
 <!-- start set text fields values function -->
-function setTextFieldValues(driverNicNo, driverFirstName, driverLastName, contactNo, address, driverEmail, availability, role_Type, driverUserName, driverPassword) {
+function setTextFieldValuesDriver(driverNicNo, driverFirstName, driverLastName, contactNo, address, driverEmail, availability, role_Type, driverUserName, driverPassword) {
     $("#driverNicNo").val(driverNicNo);
     $("#driverFirstName").val(driverFirstName);
     $("#driverLastName").val(driverLastName);
