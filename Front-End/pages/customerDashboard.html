@@ -21,7 +21,67 @@
     <link rel="stylesheet" href="../assets/css/vendor/app.min.css" id="light-style">
 
 </head>
-<body>
+<body class="loading"
+       data-layout-config='{"leftSideBarTheme":"dark","layoutBoxed":false, "leftSidebarCondensed":false, "leftSidebarScrollable":false,"darkMode":false, "showRightSidebarOnStart": true}'>
+<!-- Start Sidebar Wrapper-->
+<section class="wrapper">
+    <!-- Start Sidebar Content-->
+    <div class="leftside-menu">
+        <!-- light logo start -->
+        <a href="#" class="logo text-center logo-light">
+                    <span class="logo-lg">
+                        <img src="" alt="" height="16">
+                    </span>
+            <span class="logo-sm">
+                        <img src="" alt="" height="16">
+                    </span>
+        </a>
+        <!-- light logo end -->
+
+        <!-- dark logo start -->
+        <a href="#" class="logo text-center logo-dark">
+                    <span class="logo-lg">
+                        <img src="" alt="" height="16">
+                    </span>
+            <span class="logo-sm">
+                        <img src="" alt="" height="16">
+                    </span>
+        </a>
+        <!-- dark logo end -->
+
+        <!-- slideMenu start -->
+        <div class="h-100" id="leftside-menu-container" data-simplebar="">
+            <ul class="side-nav">
+
+                <li class="side-nav-title side-nav-item">Navigation</li>
+
+                <li class="side-nav-item">
+                    <a href="#" class="side-nav-link">
+                        <i class="uil uil-repeat"></i>
+                        <span>Booking Request</span>
+                    </a>
+                </li>
+                <li class="side-nav-item">
+                    <a href="#" class="side-nav-link">
+                        <i class="uil uil-receipt"></i>
+                        <span>Booking Response</span>
+                    </a>
+                </li>
+                <li class="side-nav-item">
+                    <a href="#" class="side-nav-link">
+                        <i class="uil uil-credit-card"></i>
+                        <span>Payment</span>
+                    </a>
+                </li>
+            </ul>
+            <div class="clearfix"></div>
+        </div>
+        <!-- slideMenu end -->
+    </div>
+    <!-- End Sidebar Content-->
+</section>
+<!-- End Sidebar Wrapper-->
+
 <!-- Bundle -->
 <script src="../assets/js/vendor/vendor.min.js"></script>
 <script src="../assets/js/vendor/app.min.js"></script>
