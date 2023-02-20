@@ -34,7 +34,7 @@ public class RegUserServiceImpl implements RegUserService {
     private ModelMapper mapper;
 
     public void saveRegUser(RegUserDTO regUserDTO) {
-        RegUser regUser = new RegUser(regUserDTO.getUser_Id(), regUserDTO.getName(), regUserDTO.getContact_No(), regUserDTO.getAddress(), regUserDTO.getEmail(), regUserDTO.getNic(), regUserDTO.getLicense_No(), "", "", new User(regUserDTO.getUserDTO().getUser_Id(), regUserDTO.getUserDTO().getRole_Type(), regUserDTO.getUserDTO().getUser_Name(), regUserDTO.getUserDTO().getPassword()));
+        RegUser regUser = new RegUser(regUserDTO.getUser_Id(), regUserDTO.getName(), regUserDTO.getContact_No(), regUserDTO.getAddress(), regUserDTO.getEmail(), regUserDTO.getNic(), regUserDTO.getLicense_No(), "", "", new User(regUserDTO.getUser().getUser_Id(), regUserDTO.getUser().getRole_Type(), regUserDTO.getUser().getUser_Name(), regUserDTO.getUser().getPassword()));
         if (repo.existsById(regUserDTO.getUser_Id()))
             throw new RuntimeException("User Already Exist. Please enter another id..!");
 
