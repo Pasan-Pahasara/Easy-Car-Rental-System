@@ -58,7 +58,6 @@ function manageCustomerLoadTable() {
         }
     });
 }
-
 <!-- end load customer function -->
 
 <!-- start generate customer ID function -->
@@ -71,7 +70,12 @@ function generateCustomerId() {
         }
     })
 }
-
 <!-- end generate customer ID function -->
+
+<!-- start search customer using search customer button -->
+$("#btnSearchCustomer").on('click', function () {
+
+});
+<!-- end search customer using search customer button -->
 
 <!-- End User Section -->
