@@ -50,7 +50,7 @@ function manageCustomerLoadTable() {
                 let row = `<tr><td>${customerDetails.user_Id}</td><td>${customerDetails.name.firstName}</td><td>${customerDetails.name.lastName}</td><td>${customerDetails.contact_No}</td><td>${customerDetails.address}</td><td>${customerDetails.email}</td><td>${customerDetails.nic}</td><td>${customerDetails.license_No}</td><td>${customerDetails.user.user_Name}</td><td>${customerDetails.user.password}</td></tr>`;
                 $("#tblCustomerDetails").append(row);
             }
-            carBindClickEvents();
+            setTextFieldValuesCustomer("","","","","","","","","","");
         },
         error: function (error) {
             let message = JSON.parse(error.responseText).message;
@@ -98,18 +98,33 @@ function searchCustomer() {
             for (var customerDetails of res.data) {
                 if (searchCustomer.trim() === customerDetails.user_Id) {
                     $("#tblCustomerDetails").append(`<tr><td>${customerDetails.user_Id}</td><td>${customerDetails.name.firstName}</td><td>${customerDetails.name.lastName}</td><td>${customerDetails.contact_No}</td><td>${customerDetails.address}</td><td>${customerDetails.email}</td><td>${customerDetails.nic}</td><td>${customerDetails.license_No}</td><td>${customerDetails.user.user_Name}</td><td>${customerDetails.user.password}</td></tr>`);
-                    bindClickEvents();
                     return;
                 }
             }
             if (searchCustomer.trim() !== customerDetails.user_Id) {
                 manageCustomerLoadTable();
                 $("#txtCustomerSearch").val("");
+                setTextFieldValuesCustomer("","","","","","","","","","");
                 alert("There is no item available for that " + searchCustomer);
             }
         }
     });
 }
 <!-- end search customer function -->
+
+<!-- start set text fields values function -->
+function setTextFieldValuesCustomer(userID, userFirstName, userLastName, customerContactNo, customerAddress, customerDriverEmail, customerNic, customerLicence, customerUserName, customerPassword) {
+    $("#userID").val(userID);
+    $("#userFirstName").val(userFirstName);
+    $("#userLastName").val(userLastName);
+    $("#customerContactNo").val(customerContactNo);
+    $("#customerAddress").val(customerAddress);
+    $("#customerDriverEmail").val(customerDriverEmail);
+    $("#customerNic").val(customerNic);
+    $("#customerLicence").val(customerLicence);
+    $("#customerUserName").val(customerUserName);
+    $("#customerPassword").val(customerPassword);
+}
+<!-- end set text fields values function -->
 
 <!-- End User Section -->

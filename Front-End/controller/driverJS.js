@@ -141,7 +141,7 @@ $("#btnSearchDriver").on('click', function () {
 });
 <!-- end search driver using search driver button -->
 
-<!-- start search item using press ENTER -->
+<!-- start search driver using press ENTER -->
 $("#txtDriverSearch").on('keyup', function (event) {
     if (event.code === "Enter") {
         searchDriver();
@@ -161,7 +161,7 @@ function searchDriver() {
             for (var driver of res.data) {
                 if (searchDriver.trim() === driver.user_Id) {
                     $("#tblDriver").append(`<tr><td>${driver.user_Id}</td><td>${driver.name.firstName}</td><td>${driver.name.lastName}</td><td>${driver.contact_No}</td><td>${driver.address}</td><td>${driver.email}</td><td>${driver.driver_Availability}</td><td>${driver.user.role_Type}</td><td>${driver.user.user_Name}</td><td>${driver.user.password}</td></tr>`);
-                    bindClickEvents();
+                    driverBindClickEvents();
                     return;
                 }
             }
@@ -174,7 +174,6 @@ function searchDriver() {
         }
     });
 }
-
 <!-- end search driver function -->
 
 <!-- start load driver function -->
@@ -189,7 +188,7 @@ function driverLoadTable() {
                 let row = `<tr><td>${driver.user_Id}</td><td>${driver.name.firstName}</td><td>${driver.name.lastName}</td><td>${driver.contact_No}</td><td>${driver.address}</td><td>${driver.email}</td><td>${driver.driver_Availability}</td><td>${driver.user.role_Type}</td><td>${driver.user.user_Name}</td><td>${driver.user.password}</td></tr>`;
                 $("#tblDriver").append(row);
             }
-            bindClickEvents();
+            driverBindClickEvents();
             setTextFieldValuesDriver("","","","","","","","","","");
         },
         error: function (error) {
@@ -198,11 +197,10 @@ function driverLoadTable() {
         }
     });
 }
-
 <!-- end load driver function -->
 
 <!-- start bind click events to the table rows function -->
-function bindClickEvents() {
+function driverBindClickEvents() {
     $("#tblDriver>tr").on('click', function () {
         //Get values from the selected row
         let driverNicNo = $(this).children().eq(0).text();
@@ -229,7 +227,6 @@ function bindClickEvents() {
         $("#driverPassword").val(driverPassword);
     });
 }
-
 <!-- end bind click events to the table rows function -->
 
 <!-- start set text fields values function -->
@@ -245,7 +242,6 @@ function setTextFieldValuesDriver(driverNicNo, driverFirstName, driverLastName, 
     $("#driverUserName").val(driverUserName);
     $("#driverPassword").val(driverPassword);
 }
-
 <!-- end set text fields values function -->
 
 <!-- End Driver Section -->
