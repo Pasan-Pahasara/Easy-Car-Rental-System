@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Easy Car | Log In</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Full Stack Software Developer In Sri Lanka">
+    <meta name="author" content="Pasan Pahasara">
+    <meta name="owner" content="Pasan Pahasara">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600&family=Ubuntu&display=swap"
+          rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+
+    <!-- CSS -->
+    <link href="../assets/css/vendor/icons.min.css" rel="stylesheet" type="text/css">
+    <link href="../assets/css/vendor/app.min.css" rel="stylesheet" type="text/css" id="light-style">
+
+    <style>
+        #imgCar {
+            display: block;
+            background: url("../assets/img/logIn/logIn.jpg") no-repeat;
+            background-size: cover;
+            height: 32rem;
+            border-radius: 30px;
+            z-index: -1;
+        }
+    </style>
+</head>
+<body>
+<!-- Start Back Button -->
+<div class="container-fluid">
+    <a href="../index.html" aria-labelledby="aria-label-txt">
+        <span id="aria-label-txt"><ion-icon name="arrow-back" style="font-size: 3rem; position: absolute; margin-top: 1rem;"></ion-icon></span>
+    </a>
+</div>
+<!-- End Back Button -->
+
+<!-- Start Customer Content-->
+<div class="container py-5 pb-2" id="manageCustomer">
+
+    <!-- start content-->
+    <div class="row g-0 justify-content-center align-items-center">
+
+        <!-- start image -->
+        <div id="imgCar" class="v-back col-lg-4 mb-lg-0 pt-3">
+            <p class="text-center" style="font-size: 2rem;color: #ffffff;font-weight: bold;z-index: 999"> New here?</p>
+            <p class="text-center" style="margin-top:1rem;font-size: 1rem;color: #ffffff;font-weight:lighter;z-index: 999">Sign up and discover great <br> amount of new opportunities!</p>
+            <button type="button" class="d-flex justify-content-center align-items-center btn btn-outline-light mt-3">Sign Up</button>
+        </div>
+        <!-- end image -->
+
+        <!-- start col-->
+        <div class="col-xl-4 mb-lg-0">
+            <!-- start card-->
+            <div class="card cascading-right" style="border-radius: 1rem;">
+                <!-- start card-body -->
+                <div class="card-body shadow-5 px-4">
+                    <!-- start page title -->
+                    <div class="row">
+                        <div class="col-12">
+                            <div>
+                                <div class="page-title-left">
+                                    <h2 class="fw-bold mb-4">Sign In</h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end page title -->
+
+                    <!-- start row -->
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <form id="loginForm" class="row">
+
+                                <section id="loginSec" class="col-xl-12">
+                                    <div class="mb-3">
+                                        <label class="form-label" for="loginRole_Type">Role Type<span
+                                                class="text-danger">*</span></label>
+                                        <select class="form-control" id="loginRole_Type"
+                                                name="role_Type">
+                                            <option>- Select Role Type -</option>
+                                            <option value="REGISTERED_USER">REGISTERED USER</option>
+                                            <option value="ADMIN">ADMIN</option>
+                                            <option value="DRIVER">DRIVER</option>
+                                        </select>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="loginUserName" class="form-label">User Name<span
+                                                class="text-danger">*</span></label>
+                                        <div class="input-group has-validation">
+                                            <span class="input-group-text" id="inputGroupPrepend">@</span>
+                                            <input type="text" class="form-control" id="loginUserName"
+                                                   name="user_Name" placeholder="User Name"
+                                                   aria-describedby="inputGroupPrepend" required>
+                                            <div class="invalid-feedback">
+                                                Please choose a username.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="loginPassword" class="form-label">Password<span
+                                                class="text-danger">*</span></label>
+                                        <div class="input-group input-group-merge">
+                                            <input type="password" id="loginPassword" name="password"
+                                                   class="form-control" placeholder="Password">
+                                            <div class="input-group-text" data-password="false">
+                                                <ion-icon name="eye-off"></ion-icon>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <button type="button" class="btn btn-primary btn" id="loginBtn"
+                                                style="border-radius: 1.5rem;">Sign In
+                                        </button>
+                                    </div>
+                                </section>
+
+                            </form>
+                        </div> <!-- end col-->
+                    </div>
+                    <!-- end row -->
+                </div>
+                <!-- end card-body -->
+            </div>
+            <!-- end card-->
+        </div>
+        <!-- end col-->
+    </div>
+    <!-- end content-->
+</div>
+<!-- End Customer Content-->
+
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+
+<script src="../assets/jQuery/jquery-3.6.0.min.js"></script>
+<script src="../controller/userJS.js"></script>
+</body>
+</html>
