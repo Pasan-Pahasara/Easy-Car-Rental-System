@@ -34,7 +34,8 @@
 <!-- Start Back Button -->
 <div class="container-fluid">
     <a href="../index.html" aria-labelledby="aria-label-txt">
-        <span id="aria-label-txt"><ion-icon name="arrow-back" style="font-size: 3rem; position: absolute; margin-top: 1rem;"></ion-icon></span>
+        <span id="aria-label-txt"><ion-icon name="arrow-back"
+                                            style="font-size: 3rem; position: absolute; margin-top: 1rem;"></ion-icon></span>
     </a>
 </div>
 <!-- End Back Button -->
@@ -48,8 +49,12 @@
         <!-- start image -->
         <div id="imgCar" class="v-back col-lg-4 mb-lg-0 pt-3">
             <p class="text-center" style="font-size: 2rem;color: #ffffff;font-weight: bold;z-index: 999"> New here?</p>
-            <p class="text-center" style="margin-top:1rem;font-size: 1rem;color: #ffffff;font-weight:lighter;z-index: 999">Sign up and discover great <br> amount of new opportunities!</p>
-            <button type="button" class="d-flex justify-content-center align-items-center btn btn-outline-light mt-3">Sign Up</button>
+            <p class="text-center"
+               style="margin-top:1rem;font-size: 1rem;color: #ffffff;font-weight:lighter;z-index: 999">Sign up and
+                discover great <br> amount of new opportunities!</p>
+            <button type="button" class="d-flex justify-content-center align-items-center btn btn-outline-light mt-3">
+                Sign Up
+            </button>
         </div>
         <!-- end image -->
 
@@ -138,5 +143,38 @@
 
 <script src="../assets/jQuery/jquery-3.6.0.min.js"></script>
 <script src="../controller/userJS.js"></script>
+<script>
+    let loginBaseUrl = "http://localhost:8080/Back_End_war/";
+
+    $("#loginBtn").on('click', function () {
+        login();
+    });
+
+    function login() {
+        let loginRole_Type = $("#loginRole_Type").val();
+        let loginUserName = $("#loginUserName").val();
+        let loginPassword = $("#loginPassword").val();
+
+        $.ajax({
+            url: loginBaseUrl + "user",
+            contentType: "application/json",
+            dataType: "json",
+            success: function (res) {
+                for (var login of res.data) {
+                    if (loginRole_Type === login.role_Type && loginUserName === login.user_Name && loginPassword === login.password) {
+                        if (loginRole_Type === "DRIVER" && loginUserName === login.user_Name && loginPassword === login.password) {
+                            window.location.href = 'driverDashboard.html';
+                        } else if (loginRole_Type === "REGISTERED_USER" && loginUserName === login.user_Name && loginPassword === login.password) {
+                            window.location.href = 'regUser.html';
+                        } else if (loginRole_Type === "ADMIN" && loginUserName === login.user_Name && loginPassword === login.password) {
+                            window.location.href = 'adminDashboard.html';
+                        }
+                        return;
+                    }
+                }
+            }
+        });
+    }
+</script>
 </body>
 </html>
