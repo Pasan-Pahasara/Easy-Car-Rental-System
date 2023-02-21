@@ -10,6 +10,6 @@ import java.util.ArrayList;
  * @date : 2/21/2023
  * @since : 0.1.0
  **/
-public interface userService {
+public interface UserService {
     ArrayList<UserDTO> getAllRegUsers();
 }
