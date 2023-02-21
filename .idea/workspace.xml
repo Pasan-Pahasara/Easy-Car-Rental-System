@@ -10,7 +10,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9d9c7e19-daae-4dea-98be-3ff2eb93366f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Front-End/pages/logIn.html" beforeDir="false" afterPath="$PROJECT_DIR$/Front-End/pages/logIn.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End/src/main/java/lk/ijse/easy/controller/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/src/main/java/lk/ijse/easy/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End/src/main/java/lk/ijse/easy/repo/UserRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/src/main/java/lk/ijse/easy/repo/UserRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End/target/Back-End-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/target/Back-End-1.0-SNAPSHOT.war" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,12 +23,12 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="CSS File" />
         <option value="Enum" />
-        <option value="Class" />
         <option value="JavaScript File" />
         <option value="HTML File" />
+        <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -251,7 +254,7 @@
       <workItem from="1676909075671" duration="16409000" />
       <workItem from="1676952586941" duration="995000" />
       <workItem from="1676959379253" duration="956000" />
-      <workItem from="1676995756660" duration="5834000" />
+      <workItem from="1676995756660" duration="6581000" />
     </task>
     <servers />
   </component>
