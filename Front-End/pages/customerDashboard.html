@@ -239,6 +239,113 @@
                 </div>
                 <!-- end sort out content-->
 
+                <!-- start wrapper content-->
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="row">
+
+                            <!-- start reservation details content-->
+                            <div class="col-xl-12 col-sm-6">
+                                <div class="card">
+                                    <div class="card-body">
+
+                                        <!-- start booking reservation details -->
+                                        <form id="reservationForm" class="row">
+                                            <section id="secReservationDetails" class="row mx-0">
+                                                <div class="mb-2 col-xl-3 col-lg-6">
+                                                    <label class="form-label" for="carID">Car ID<span
+                                                            class="text-danger">*</span></label>
+                                                    <select class="form-control" id="carID"
+                                                            name="car_Id">
+                                                        <option>- Select Car ID -</option>
+                                                    </select>
+                                                </div>
+                                                <div class="mb-2 col-xl-3 col-lg-6">
+                                                    <label class="form-label" for="carBrand">Car Brand<span
+                                                            class="text-danger">*</span></label>
+                                                    <input class="form-control" id="carBrand" readonly name="car_brand"
+                                                           placeholder="Car Brand" type="text">
+                                                </div>
+                                                <div class="mb-2 col-xl-3 col-lg-6">
+                                                    <label class="form-label" for="carModel">Car Model<span
+                                                            class="text-danger">*</span></label>
+                                                    <input class="form-control" id="carModel" readonly name="car_name"
+                                                           placeholder="Car Model" type="text">
+                                                </div>
+                                                <div class="mb-2 col-xl-3 col-lg-6">
+                                                    <label class="form-label" for="noOfPassengers">N0 Of Passengers<span
+                                                            class="text-danger">*</span></label>
+                                                    <input class="form-control" id="noOfPassengers" readonly
+                                                           name="number_Of_Passengers"
+                                                           placeholder="N0 Of Passengers" type="text">
+                                                </div>
+                                                <div class="mb-2 col-xl-3 col-lg-6">
+                                                    <label for="rentPickFromDate"
+                                                           class="form-label">Pick-Up Date<span
+                                                            class="text-danger">*</span></label>
+                                                    <input type="date" id="rentPickFromDate"
+                                                           class="form-control" name="pick_Up_Date"
+                                                           placeholder="Start Date">
+                                                </div>
+                                                <div class="mb-2 col-xl-3 col-lg-6">
+                                                    <label for="rentPickFromTime"
+                                                           class="form-label">PickUp Time<span
+                                                            class="text-danger">*</span></label>
+                                                    <input type="time" id="rentPickFromTime"
+                                                           class="form-control" name="pick_Up_Time"
+                                                           placeholder="Start Time">
+                                                </div>
+                                                <div class="mb-2 col-xl-3 col-lg-6">
+                                                    <label for="rentReturnFromDate"
+                                                           class="form-label">Return Date<span
+                                                            class="text-danger">*</span></label>
+                                                    <input type="date" id="rentReturnFromDate"
+                                                           class="form-control" name="return_Date"
+                                                           placeholder="End Date">
+                                                </div>
+                                                <div class="mb-2 col-xl-3 col-lg-6">
+                                                    <label for="rentReturnFromTime"
+                                                           class="form-label">Return Time<span
+                                                            class="text-danger">*</span></label>
+                                                    <input type="time" id="rentReturnFromTime"
+                                                           class="form-control" name="return_Time"
+                                                           placeholder="End Time">
+                                                </div>
+                                                <div class="mb-2 col-xl-3 col-lg-6">
+                                                    <label for="rentLocation"
+                                                           class="form-label">Location<span
+                                                            class="text-danger">*</span></label>
+                                                    <input type="text" id="rentLocation"
+                                                           class="form-control" name=""
+                                                           placeholder="Location">
+                                                </div>
+                                                <div class="mt-lg-4 col-xl-3 col-lg-6">
+                                                    <!-- Checkbox -->
+                                                    <div class="form-check">
+                                                        <input type="hidden" name="c1" value="NO"/>
+                                                        <input grouping="" class="form-check-input"
+                                                               id="driverAvailability" name="c1" type="checkbox"
+                                                               value="YES"/>
+                                                        <label class="form-check-label" for="driverAvailability">Need A
+                                                            Driver</label>
+                                                    </div>
+                                                </div>
+                                            </section>
+                                        </form>
+                                        <!-- end booking reservation details -->
+
+                                    </div>
+                                    <!-- end card-body -->
+                                </div>
+                                <!-- end card-->
+                            </div>
+                            <!-- end reservation details content-->
+
+                        </div>
+                    </div>
+                </div>
+                <!-- end wrapper content-->
+
             </div>
             <!-- End Booking Request Content-->
 
