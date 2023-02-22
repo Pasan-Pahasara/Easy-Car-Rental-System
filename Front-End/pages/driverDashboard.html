@@ -68,7 +68,7 @@
                     </a>
                 </li>
                 <li class="side-nav-item">
-                    <a href="#driverSchedule" class="side-nav-link">
+                    <a href="#" id="LinkDriverSchedule" class="side-nav-link">
                         <i class="uil-calendar-alt"></i>
                         <span>Driver Schedule</span>
                     </a>
@@ -228,6 +228,12 @@
         $("#driverSchedule").css("display", "none");
     });
     <!-- End Document Ready Navigation -->
+
+    <!-- Start Driver Schedule Navigation -->
+    $("#LinkDriverSchedule").on('click', function () {
+        $("#driverSchedule").css("display", "block");
+    });
+    <!-- End Driver Schedule Navigation -->
 </script>
 </body>
 </html>
