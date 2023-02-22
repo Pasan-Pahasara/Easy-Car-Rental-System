@@ -11,6 +11,7 @@
   <component name="ChangeListManager">
     <list default="true" id="9d9c7e19-daae-4dea-98be-3ff2eb93366f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front-End/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Front-End/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Front-End/pages/adminDashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/Front-End/pages/adminDashboard.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -64,7 +65,7 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;jdk.selected.JAVA_MODULE&quot;: &quot;1.8&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/IJSE/Second Semester/AAD (Advance API Development)/Easy-Car-Rental-System/Front-End/pages&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/ShEnUx/Documents/rasintha/ridex-master&quot;,
     &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -253,7 +254,8 @@
       <workItem from="1676952586941" duration="995000" />
       <workItem from="1676959379253" duration="956000" />
       <workItem from="1676995756660" duration="8614000" />
-      <workItem from="1677004410603" duration="1184000" />
+      <workItem from="1677004410603" duration="5041000" />
+      <workItem from="1677044587879" duration="309000" />
     </task>
     <servers />
   </component>
