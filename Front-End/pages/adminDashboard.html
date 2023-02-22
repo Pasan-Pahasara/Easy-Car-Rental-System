@@ -83,7 +83,7 @@
                 </li>
 
                 <li class="side-nav-item">
-                    <a href="#manageCustomer" class="side-nav-link">
+                    <a href="#" id="LinkManageCustomer" class="side-nav-link">
                         <i class="uil-users-alt"></i>
                         <span> Manage Customer </span>
                     </a>
@@ -908,6 +908,15 @@
         $("#managePayment").css("display", "none");
     });
     <!-- End Manage Car Navigation -->
+
+    <!-- Start Manage Customer Navigation -->
+    $("#LinkManageCustomer").on('click', function () {
+        $("#manageCar").css("display", "none");
+        $("#manageDriver").css("display", "none");
+        $("#manageCustomer").css("display", "block");
+        $("#managePayment").css("display", "none");
+    });
+    <!-- End Manage Customer Navigation -->
 </script>
 </body>
 </html>
