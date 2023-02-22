@@ -24,6 +24,10 @@
         * {
             font-family: 'Ubuntu', sans-serif;
         }
+
+        .card-radius {
+            border-radius: 1.5rem;
+        }
     </style>
 </head>
 <body class="loading"
@@ -186,6 +190,28 @@
                 <!-- end searchBar -->
             </div>
             <!-- End TopBar -->
+
+            <!-- Start Dashboard Content-->
+            <div class="container-fluid" id="adminDashboard">
+
+                <!-- start page title -->
+                <div class="row">
+                    <div class="col-12">
+                        <div class="page-title-box">
+                            <div class="page-title-right">
+                                <ol class="breadcrumb m-0">
+                                    <li><a href="javascript: void(0);">Easy Car Rental</a></li>
+                                    <li class="uil uil-angle-right active">Dashboard</li>
+                                </ol>
+                            </div>
+                            <h4 class="page-title">Dashboard</h4>
+                        </div>
+                    </div>
+                </div>
+                <!-- end page title -->
+
+            </div>
+            <!-- End Dashboard Content -->
 
             <!-- Start Car Content-->
             <div class="container-fluid" id="manageCar">
@@ -461,7 +487,9 @@
                                             <input type="text" class="form-control" placeholder="Search..."
                                                    id="txtDriverSearch">
                                             <span class="uil uil-search search-icon"></span>
-                                            <button class="input-group-text btn-primary" id="btnSearchDriver" type="button">Search</button>
+                                            <button class="input-group-text btn-primary" id="btnSearchDriver"
+                                                    type="button">Search
+                                            </button>
                                         </div>
                                     </form>
                                 </div>
@@ -641,7 +669,9 @@
                                             <input type="text" class="form-control" placeholder="Search..."
                                                    id="txtCustomerSearch">
                                             <span class="uil uil-search search-icon"></span>
-                                            <button class="input-group-text btn-primary" id="btnSearchCustomer" type="button">Search</button>
+                                            <button class="input-group-text btn-primary" id="btnSearchCustomer"
+                                                    type="button">Search
+                                            </button>
                                         </div>
                                     </form>
                                 </div>
@@ -671,8 +701,9 @@
                                                            placeholder="Last Name" type="text">
                                                 </div>
                                                 <div class="mb-3">
-                                                    <label class="form-label" for="customerContactNo">Contact Number<span
-                                                            class="text-danger">*</span></label>
+                                                    <label class="form-label" for="customerContactNo">Contact
+                                                        Number<span
+                                                                class="text-danger">*</span></label>
                                                     <input class="form-control" id="customerContactNo" name="contact_No"
                                                            placeholder="Contact No" type="text">
                                                 </div>
@@ -709,7 +740,8 @@
                                                     <label for="driverUserName" class="form-label">User Name<span
                                                             class="text-danger">*</span></label>
                                                     <div class="input-group has-validation">
-                                                        <span class="input-group-text" id="customerInputGroupPrepend">@</span>
+                                                        <span class="input-group-text"
+                                                              id="customerInputGroupPrepend">@</span>
                                                         <input type="text" class="form-control" id="customerUserName"
                                                                name="user_Name" placeholder="User Name"
                                                                aria-describedby="customerInputGroupPrepend" required>
@@ -734,7 +766,8 @@
                                                             id="updateCustomer">
                                                         Update
                                                     </button>
-                                                    <button type="button" class="btn btn-danger btn" id="deleteCustomer">
+                                                    <button type="button" class="btn btn-danger btn"
+                                                            id="deleteCustomer">
                                                         Delete
                                                     </button>
                                                 </div>
