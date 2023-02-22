@@ -348,7 +348,8 @@
 
                                         <!-- start booking car images -->
                                         <div id="imagesForm" class="row">
-                                            <section id="secCarImages" class="row mx-0 gap-3 d-flex justify-content-center align-items-center">
+                                            <section id="secCarImages"
+                                                     class="row mx-0 gap-3 d-flex justify-content-center align-items-center">
                                                 <div id="frontImage" class="col-xl-4">
                                                 </div>
                                                 <div id="backImage" class="col-xl-3">
@@ -437,47 +438,85 @@
                                     <div class="col-xl-12">
 
                                         <!-- start booking response details -->
-                                        <form id="responseForm" class="row">
+                                        <form id="responseForm" class="row mb-3">
                                             <section id="secResponseDetails" class="row mx-0">
                                                 <div class="mb-2 col-xl-4 col-sm-6">
                                                     <label class="form-label" for="responseRentId">Rent ID<span
                                                             class="text-danger">*</span></label>
-                                                    <input class="form-control" id="responseRentId" readonly name="rent_Id"
+                                                    <input class="form-control" id="responseRentId" readonly
+                                                           name="rent_Id"
                                                            placeholder="Rent ID" type="text">
                                                 </div>
                                                 <div class="mb-2 col-xl-4 col-sm-6">
                                                     <label class="form-label" for="responseUserId">User ID<span
                                                             class="text-danger">*</span></label>
-                                                    <input class="form-control" id="responseUserId" readonly name="user_Id"
+                                                    <input class="form-control" id="responseUserId" readonly
+                                                           name="user_Id"
                                                            placeholder="User ID" type="text">
                                                 </div>
                                                 <div class="mb-2 col-xl-4 col-sm-6">
                                                     <label class="form-label" for="responseCarId">Car ID<span
                                                             class="text-danger">*</span></label>
-                                                    <input class="form-control" id="responseCarId" readonly name="car_Id"
+                                                    <input class="form-control" id="responseCarId" readonly
+                                                           name="car_Id"
                                                            placeholder="Car ID" type="text">
                                                 </div>
                                                 <div class="mb-2 col-xl-4 col-sm-6">
                                                     <label class="form-label" for="responsePickUpDate">Pick-Up Date<span
                                                             class="text-danger">*</span></label>
-                                                    <input class="form-control" id="responsePickUpDate" readonly name="pick_Up_Date"
+                                                    <input class="form-control" id="responsePickUpDate" readonly
+                                                           name="pick_Up_Date"
                                                            placeholder="Pick-Up Date" type="text">
                                                 </div>
                                                 <div class="mb-2 col-xl-4 col-sm-6">
                                                     <label class="form-label" for="responseReturnDate">Return Date<span
                                                             class="text-danger">*</span></label>
-                                                    <input class="form-control" id="responseReturnDate" readonly name="return_Date"
+                                                    <input class="form-control" id="responseReturnDate" readonly
+                                                           name="return_Date"
                                                            placeholder="Return Date" type="text">
                                                 </div>
                                                 <div class="mb-2 col-xl-4 col-sm-6">
                                                     <label class="form-label" for="responseLocation">Location<span
                                                             class="text-danger">*</span></label>
-                                                    <input class="form-control" id="responseLocation" readonly name="location"
+                                                    <input class="form-control" id="responseLocation" readonly
+                                                           name="location"
                                                            placeholder="Location" type="text">
                                                 </div>
                                             </section>
                                         </form>
                                         <!-- end booking response details -->
+
+                                        <!-- start response table content-->
+                                        <div class="table-responsive-xxl table-nowrap">
+                                            <table class="table table-centered mb-0">
+                                                <thead class="btn-primary">
+                                                <tr>
+                                                    <th>Rent ID</th>
+                                                    <th>User ID</th>
+                                                    <th>Car ID</th>
+                                                    <th>Pick-Up Date</th>
+                                                    <th>Return Date</th>
+                                                    <th>Location</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody id="tblResponse">
+
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <!-- end response table content-->
+
+                                        <!-- start button content-->
+                                        <div class="mb-3 mt-3 d-grid gap-1 d-md-flex justify-content-md-center">
+                                            <button type="button" class="btn btn-danger btn" id="btnDeleteRental">
+                                                Delete Rental
+                                            </button>
+                                            <button type="button" class="btn btn-warning btn me-md-1"
+                                                    id="btnClear">
+                                                Clear
+                                            </button>
+                                        </div>
+                                        <!-- end button content-->
 
                                     </div>
                                     <!-- end col-->
