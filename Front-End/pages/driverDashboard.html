@@ -62,9 +62,15 @@
                 <li class="side-nav-title side-nav-item">Navigation</li>
 
                 <li class="side-nav-item">
-                    <a href="#driverSchedule" class="side-nav-link">
+                    <a href="#" class="side-nav-link">
                         <i class="uil uil-estate"></i>
                         <span>Dashboards</span>
+                    </a>
+                </li>
+                <li class="side-nav-item">
+                    <a href="#driverSchedule" class="side-nav-link">
+                        <i class="uil-calendar-alt"></i>
+                        <span>Driver Schedule</span>
                     </a>
                 </li>
                 <li class="side-nav-item">
@@ -216,6 +222,12 @@
 
 <!-- jQuery -->
 <script src="../assets/jQuery/jquery-3.6.0.min.js"></script>
-
+<script>
+    //<!-- Start Document Ready Navigation -->
+    $(function () {
+        $("#driverSchedule").css("display", "none");
+    });
+    <!-- End Document Ready Navigation -->
+</script>
 </body>
 </html>
