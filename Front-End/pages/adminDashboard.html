@@ -1074,7 +1074,7 @@
                                     <!-- start col-->
                                     <div class="col-xl-12">
 
-                                        <!-- start booking response details -->
+                                        <!-- start booking request details -->
                                         <form id="customerRequestForm" class="row mb-3">
                                             <section id="secResponseDetails" class="row mx-0">
                                                 <div class="mb-2 col-xl-3 col-sm-6">
@@ -1136,7 +1136,43 @@
 
                                             </section>
                                         </form>
-                                        <!-- end booking response details -->
+                                        <!-- end booking request details -->
+
+                                        <!-- start button content-->
+                                        <div class="mb-3 mt-2 d-grid gap-1 d-md-flex justify-content-md-end">
+                                            <button type="button" class="btn btn-success btn" id="btnAccept">
+                                                Accept
+                                            </button>
+                                            <button type="button" class="btn btn-danger btn" id="btnReject">
+                                                Reject
+                                            </button>
+                                            <button type="button" class="btn btn-warning btn me-md-1"
+                                                    id="btnClear">
+                                                Clear
+                                            </button>
+                                        </div>
+                                        <!-- end button content-->
+
+                                        <!-- start request table content-->
+                                        <div class="table-responsive-xxl table-nowrap">
+                                            <table class="table table-centered mb-0">
+                                                <thead class="btn-primary">
+                                                <tr>
+                                                    <th>Rent ID</th>
+                                                    <th>Customer ID</th>
+                                                    <th>Nic Or Licence</th>
+                                                    <th>Car ID</th>
+                                                    <th>Pick-Up Date</th>
+                                                    <th>Return Date</th>
+                                                    <th>Location</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody id="tblRequest">
+
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <!-- end request table content-->
 
                                     </div>
                                     <!-- end col-->
