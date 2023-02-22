@@ -108,7 +108,7 @@
                 </li>
 
                 <li class="side-nav-item">
-                    <a href="#" class="side-nav-link">
+                    <a href="#" id="LinkUserRequest" class="side-nav-link">
                         <i class="uil-check-circle"></i>
                         <span> Customer Requests </span>
                     </a>
@@ -1292,6 +1292,17 @@
         $("#userRequest").css("display", "none");
     });
     <!-- End Manage Payment Navigation -->
+
+    <!-- Start Customer Request Navigation -->
+    $("#LinkUserRequest").on('click', function () {
+        $("#adminDashboard").css("display", "none");
+        $("#manageCar").css("display", "none");
+        $("#manageDriver").css("display", "none");
+        $("#manageCustomer").css("display", "none");
+        $("#managePayment").css("display", "none");
+        $("#userRequest").css("display", "block");
+    });
+    <!-- End Customer Request Navigation -->
 
 </script>
 </body>
