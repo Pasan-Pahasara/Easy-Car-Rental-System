@@ -85,19 +85,19 @@
                 <li class="side-nav-title side-nav-item">Navigation</li>
 
                 <li class="side-nav-item">
-                    <a href="#bookingRequest" class="side-nav-link">
+                    <a href="#" id="LinkBookingRequest" class="side-nav-link">
                         <i class="uil uil-repeat"></i>
                         <span>Booking Request</span>
                     </a>
                 </li>
                 <li class="side-nav-item">
-                    <a href="#bookingResponse" class="side-nav-link">
+                    <a href="#" id="LinkBookingResponse" class="side-nav-link">
                         <i class="uil uil-receipt"></i>
                         <span>Booking Response</span>
                     </a>
                 </li>
                 <li class="side-nav-item">
-                    <a href="#customerPayment" class="side-nav-link">
+                    <a href="#" id="LinkCustomerPayment" class="side-nav-link">
                         <i class="uil uil-credit-card"></i>
                         <span>Payment</span>
                     </a>
@@ -610,6 +610,40 @@
 
 <!-- jQuery -->
 <script src="../assets/jQuery/jquery-3.6.0.min.js"></script>
+<script>
+    //<!-- Start Document Ready Navigation -->
+    $(function () {
+        $("#bookingRequest").css("display", "none");
+        $("#bookingResponse").css("display", "none");
+        $("#customerPayment").css("display", "none");
+    });
+    <!-- End Document Ready Navigation -->
 
+
+    <!-- Start Booking Request Navigation -->
+    $("#LinkBookingRequest").on('click', function () {
+        $("#bookingRequest").css("display", "block");
+        $("#bookingResponse").css("display", "none");
+        $("#customerPayment").css("display", "none");
+    });
+    <!-- End Booking Request Navigation -->
+
+    <!-- Start Booking Response Navigation -->
+    $("#LinkBookingResponse").on('click', function () {
+        $("#bookingRequest").css("display", "none");
+        $("#bookingResponse").css("display", "block");
+        $("#customerPayment").css("display", "none");
+    });
+    <!-- End Booking Response Navigation -->
+
+    <!-- Start Customer Payment Navigation -->
+    $("#LinkCustomerPayment").on('click', function () {
+        $("#bookingRequest").css("display", "none");
+        $("#bookingResponse").css("display", "none");
+        $("#customerPayment").css("display", "block");
+    });
+    <!-- End Customer Payment Navigation -->
+
+</script>
 </body>
 </html>
