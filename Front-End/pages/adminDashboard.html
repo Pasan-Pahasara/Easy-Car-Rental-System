@@ -90,7 +90,7 @@
                 </li>
 
                 <li class="side-nav-item">
-                    <a href="" class="side-nav-link">
+                    <a href="#" id="LinkManagePayment" class="side-nav-link">
                         <i class="uil uil-credit-card"></i>
                         <span> Manage Payment </span>
                     </a>
@@ -917,6 +917,16 @@
         $("#managePayment").css("display", "none");
     });
     <!-- End Manage Customer Navigation -->
+
+    <!-- Start Manage Payment Navigation -->
+    $("#LinkManagePayment").on('click', function () {
+        $("#manageCar").css("display", "none");
+        $("#manageDriver").css("display", "none");
+        $("#manageCustomer").css("display", "none");
+        $("#managePayment").css("display", "block");
+    });
+    <!-- End Manage Payment Navigation -->
+
 </script>
 </body>
 </html>
