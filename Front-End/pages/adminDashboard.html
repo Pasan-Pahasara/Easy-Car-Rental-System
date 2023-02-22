@@ -65,7 +65,7 @@
                 <li class="side-nav-title side-nav-item">Navigation</li>
 
                 <li class="side-nav-item">
-                    <a data-bs-toggle="collapse" href="#" aria-expanded="false"
+                    <a data-bs-toggle="collapse" href="#" id="LinkAdminDashboard" aria-expanded="false"
                        aria-controls="sidebarDashboards" class="side-nav-link">
                         <i class="uil uil-estate"></i>
                         <span> Dashboards </span>
@@ -1072,6 +1072,16 @@
         $("#managePayment").css("display", "none");
     });
     <!-- End Document Ready Navigation -->
+
+    <!-- Start Dashboard Navigation -->
+    $("#LinkAdminDashboard").on('click', function () {
+        $("#adminDashboard").css("display", "block");
+        $("#manageCar").css("display", "none");
+        $("#manageDriver").css("display", "none");
+        $("#manageCustomer").css("display", "none");
+        $("#managePayment").css("display", "none");
+    });
+    <!-- End Dashboard Navigation -->
 
     <!-- Start Manage Car Navigation -->
     $("#LinkManageCar").on('click', function () {
