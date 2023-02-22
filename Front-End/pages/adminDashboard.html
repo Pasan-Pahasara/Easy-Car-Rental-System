@@ -69,7 +69,7 @@
                 </li>
 
                 <li class="side-nav-item">
-                    <a href="#manageCar" class="side-nav-link">
+                    <a href="#" id="LinkManageCar" class="side-nav-link">
                         <i class="uil-car"></i>
                         <span> Manage Car </span>
                     </a>
@@ -881,6 +881,16 @@
 <script src="../controller/carJS.js"></script>
 <script src="../controller/driverJS.js"></script>
 <script src="../controller/userJS.js"></script>
+<script>
+    //<!-- Start Document Ready Navigation -->
+    $(function () {
+        $("#manageCar").css("display", "none");
+        $("#manageDriver").css("display", "none");
+        $("#manageCustomer").css("display", "none");
+        $("#managePayment").css("display", "none");
+    });
+    <!-- End Document Ready Navigation -->
 
+</script>
 </body>
 </html>
