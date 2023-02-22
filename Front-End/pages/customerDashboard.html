@@ -163,7 +163,43 @@
                                 <div class="row">
                                     <div class="col-xl-12">
 
-
+                                        <form id="rentForm" class="row">
+                                            <section id="secRent" class="row mx-0">
+                                                <div class="mb-2 col-xl-3 col-sm-6">
+                                                    <label class="form-label" for="rentId">Rent ID<span
+                                                            class="text-danger">*</span></label>
+                                                    <input class="form-control" id="rentId" readonly name="rent_Id"
+                                                           placeholder="Rent ID" type="text">
+                                                </div>
+                                                <div class="mb-2 col-xl-3 col-sm-6">
+                                                    <label class="form-label" for="userID">User ID<span
+                                                            class="text-danger">*</span></label>
+                                                    <input class="form-control" id="userID" readonly name="user_Id"
+                                                           placeholder="User ID" type="text">
+                                                </div>
+                                                <div class="mb-2 col-xl-3 col-sm-6">
+                                                    <label class="form-label" for="carType">Car Type<span
+                                                            class="text-danger">*</span></label>
+                                                    <select class="form-control" id="carType"
+                                                            name="type">
+                                                        <option>- Select Car Type -</option>
+                                                        <option value="GENERAL">GENERAL</option>
+                                                        <option value="LUXURY">LUXURY</option>
+                                                        <option value="PREMIUM">PREMIUM</option>
+                                                    </select>
+                                                </div>
+                                                <div class="mb-2 col-xl-3 col-sm-6">
+                                                    <label class="form-label" for="fuelType">Fuel Type<span
+                                                            class="text-danger">*</span></label>
+                                                    <select class="form-control" id="fuelType"
+                                                            name="type">
+                                                        <option>- Fuel Type -</option>
+                                                        <option value="DIESEL">DIESEL</option>
+                                                        <option value="PETROL">PETROL</option>
+                                                    </select>
+                                                </div>
+                                            </section>
+                                        </form>
                                     </div>
                                     <!-- end col-->
                                 </div>
