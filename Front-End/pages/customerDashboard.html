@@ -20,6 +20,35 @@
     <!-- CSS -->
     <link rel="stylesheet" href="../assets/css/vendor/app.min.css" id="light-style">
 
+    <style>
+        * {
+            font-family: 'Ubuntu', sans-serif;
+        }
+
+        #frontImage {
+            background: url("../assets/img/logIn/logIn.jpg") no-repeat;
+            background-size: cover;
+            height: 11rem;
+            padding: 1rem;
+            border-radius: 1rem;
+        }
+
+        #backImage {
+            background: url("../assets/img/logIn/logIn.jpg") no-repeat;
+            background-size: cover;
+            height: 11rem;
+            padding: 1rem;
+            border-radius: 1rem;
+        }
+
+        #sideImage {
+            background: url("../assets/img/logIn/logIn.jpg") no-repeat;
+            background-size: cover;
+            height: 11rem;
+            padding: 1rem;
+            border-radius: 1rem;
+        }
+    </style>
 </head>
 <body class="loading"
       data-layout-config='{"leftSideBarTheme":"dark","layoutBoxed":false, "leftSidebarCondensed":false, "leftSidebarScrollable":false,"darkMode":false, "showRightSidebarOnStart": true}'>
@@ -155,55 +184,52 @@
                 </div>
                 <!-- end page title -->
 
-                <!-- start content-->
+                <!-- start sort out content-->
                 <div class="row">
-                    <div class="col-12">
+                    <div class="col-xl-12">
                         <div class="card">
                             <div class="card-body">
-                                <div class="row">
-                                    <div class="col-xl-12">
 
-                                        <form id="rentForm" class="row">
-                                            <section id="secRent" class="row mx-0">
-                                                <div class="mb-2 col-xl-3 col-sm-6">
-                                                    <label class="form-label" for="rentId">Rent ID<span
-                                                            class="text-danger">*</span></label>
-                                                    <input class="form-control" id="rentId" readonly name="rent_Id"
-                                                           placeholder="Rent ID" type="text">
-                                                </div>
-                                                <div class="mb-2 col-xl-3 col-sm-6">
-                                                    <label class="form-label" for="userID">User ID<span
-                                                            class="text-danger">*</span></label>
-                                                    <input class="form-control" id="userID" readonly name="user_Id"
-                                                           placeholder="User ID" type="text">
-                                                </div>
-                                                <div class="mb-2 col-xl-3 col-sm-6">
-                                                    <label class="form-label" for="carType">Car Type<span
-                                                            class="text-danger">*</span></label>
-                                                    <select class="form-control" id="carType"
-                                                            name="type">
-                                                        <option>- Select Car Type -</option>
-                                                        <option value="GENERAL">GENERAL</option>
-                                                        <option value="LUXURY">LUXURY</option>
-                                                        <option value="PREMIUM">PREMIUM</option>
-                                                    </select>
-                                                </div>
-                                                <div class="mb-2 col-xl-3 col-sm-6">
-                                                    <label class="form-label" for="fuelType">Fuel Type<span
-                                                            class="text-danger">*</span></label>
-                                                    <select class="form-control" id="fuelType"
-                                                            name="type">
-                                                        <option>- Fuel Type -</option>
-                                                        <option value="DIESEL">DIESEL</option>
-                                                        <option value="PETROL">PETROL</option>
-                                                    </select>
-                                                </div>
-                                            </section>
-                                        </form>
-                                    </div>
-                                    <!-- end col-->
-                                </div>
-                                <!-- end row -->
+                                <!-- start booking sort out-->
+                                <form id="sortOutForm" class="row">
+                                    <section id="secRent" class="row mx-0">
+                                        <div class="mb-2 col-xl-3 col-sm-6">
+                                            <label class="form-label" for="rentId">Rent ID<span
+                                                    class="text-danger">*</span></label>
+                                            <input class="form-control" id="rentId" readonly name="rent_Id"
+                                                   placeholder="Rent ID" type="text">
+                                        </div>
+                                        <div class="mb-2 col-xl-3 col-sm-6">
+                                            <label class="form-label" for="userID">User ID<span
+                                                    class="text-danger">*</span></label>
+                                            <input class="form-control" id="userID" readonly name="user_Id"
+                                                   placeholder="User ID" type="text">
+                                        </div>
+                                        <div class="mb-2 col-xl-3 col-sm-6">
+                                            <label class="form-label" for="carType">Car Type<span
+                                                    class="text-danger">*</span></label>
+                                            <select class="form-control" id="carType"
+                                                    name="type">
+                                                <option>- Select Car Type -</option>
+                                                <option value="GENERAL">GENERAL</option>
+                                                <option value="LUXURY">LUXURY</option>
+                                                <option value="PREMIUM">PREMIUM</option>
+                                            </select>
+                                        </div>
+                                        <div class="mb-2 col-xl-3 col-sm-6">
+                                            <label class="form-label" for="fuelType">Fuel Type<span
+                                                    class="text-danger">*</span></label>
+                                            <select class="form-control" id="fuelType"
+                                                    name="type">
+                                                <option>- Fuel Type -</option>
+                                                <option value="DIESEL">DIESEL</option>
+                                                <option value="PETROL">PETROL</option>
+                                            </select>
+                                        </div>
+                                    </section>
+                                </form>
+                                <!-- end booking sort out-->
+
                             </div>
                             <!-- end card-body -->
                         </div>
@@ -211,7 +237,7 @@
                     </div>
                     <!-- end col-->
                 </div>
-                <!-- end content-->
+                <!-- end sort out content-->
 
             </div>
             <!-- End Booking Request Content-->
