@@ -35,8 +35,8 @@ $("#updateCar").on('click', function () {
     let formData = new FormData($("#carForm")[0]);
     console.log(formData);
     $.ajax({
-        url: carBaseUrl + "car",
-        method: "put",
+        url: carBaseUrl + "car/update",
+        method: "post",
         data: formData,
         contentType: false,
         processData: false,
