@@ -126,4 +126,19 @@ $("#addCartBtn").on("click", function () {
     });
 });
 
+$("#tblRentCart").empty();
+
+function loadCartTableDetail() {
+    carID = $("#carID").val();
+    rentPickFromDate = $("#rentPickFromDate").val();
+    rentPickFromTime = $("#rentPickFromTime").val();
+    rentReturnFromDate = $("#rentReturnFromDate").val();
+    rentReturnFromTime = $("#rentReturnFromTime").val();
+    driverAvailability = $("#driverAvailability").val();
+    rentLocation = $("#rentLocation").val();
+
+    let row = `<tr><td>${carID}</td><td>${rentPickFromDate}</td><td>${rentPickFromTime}</td><td>${rentReturnFromDate}</td><td>${rentReturnFromTime}</td><td>${driverAvailability}</td><td>${rentLocation}</td></tr>`;
+
+    $("#tblRentCart").append(row);
+}
 
