@@ -52,10 +52,11 @@ public class CarController {
 
     @ResponseStatus(HttpStatus.ACCEPTED)
     @PutMapping
-    public ResponseUtil updateCar(@ModelAttribute CarDTO carDTO, @ModelAttribute Rate rent_Duration_Price, @ModelAttribute ImageDTO image){
-        carDTO.setRent_Duration_Price(rent_Duration_Price);
-        carDTO.setImage(image);
-        service.updateCar(carDTO);
+    public ResponseUtil updateCar(@ModelAttribute CarDTO carDTO/*, @ModelAttribute Rate rent_Duration_Price, @ModelAttribute ImageDTO image*/){
+//        carDTO.setRent_Duration_Price(rent_Duration_Price);
+//        carDTO.setImage(image);
+//        service.updateCar(carDTO);
+        System.out.println(carDTO);
         return new ResponseUtil("OK","Successfully Updated..! : "+carDTO.getCar_Id(),null);
     }
 }

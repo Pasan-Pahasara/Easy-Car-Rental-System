@@ -5,9 +5,8 @@
 
 let driverBaseUrl = "http://localhost:8080/Back_End_war/";
 
-<!-- Start Driver Section -->
-
 driverLoadTable();
+<!-- Start Driver Section -->
 
 // default submit false
 $(function () {
