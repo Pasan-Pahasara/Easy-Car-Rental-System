@@ -27,6 +27,7 @@ $("#addCarBtn").on('click', function () {
             if (resp.data === true) {
                 alert(resp.message);
                 carLoadTable();
+                setTextFieldValuesCar("","","","","","","","","","","","","","");
             }
         },
         error: function (error) {
@@ -50,6 +51,7 @@ $("#updateCar").on('click', function () {
         success: function (res) {
             alert(res.message);
             carLoadTable();
+            setTextFieldValuesCar("","","","","","","","","","","","","","");
         },
         error: function (error) {
             let message = JSON.parse(error.responseText).message;
@@ -73,6 +75,7 @@ function carLoadTable() {
                 $("#tblCar").append(row);
             }
             carBindClickEvents();
+            setTextFieldValuesCar("","","","","","","","","","","","","","");
         },
         error: function (error) {
             let message = JSON.parse(error.responseText).message;
@@ -80,18 +83,19 @@ function carLoadTable() {
         }
     });
 }
+
 <!-- end load car function -->
 
 <!-- start bind click events to the table rows function -->
 function carBindClickEvents() {
-    $("#tblCar>tr").on('click',function () {
+    $("#tblCar>tr").on('click', function () {
         //Get values from the selected row
         let carId = $(this).children().eq(0).text();
         let carName = $(this).children().eq(1).text();
         let carBrand = $(this).children().eq(2).text();
         let carType = $(this).children().eq(3).text();
         let frontView = $(this).children().eq(4).text();
-        let backView= $(this).children().eq(5).text();
+        let backView = $(this).children().eq(5).text();
         let sideView = $(this).children().eq(6).text();
         let interiorImage = $(this).children().eq(7).text();
         let numberOfPassengers = $(this).children().eq(4).text();
@@ -126,6 +130,7 @@ function carBindClickEvents() {
         $("#carAvailability").val(carAvailability);
     });
 }
+
 <!-- end bind click events to the table rows function -->
 
 <!-- start search car using search car button -->
@@ -155,17 +160,44 @@ function searchCar() {
                 if (searchCar.trim() === car.car_Id) {
                     $("#tblCar").append(`<tr><td>${car.car_Id}</td><td>${car.car_name}</td><td>${car.car_brand}</td><td>${car.type}</td><td>${car.number_Of_Passengers}</td><td>${car.transmission_Type}</td><td>${car.fuel_Type}</td><td>${car.rent_Duration_Price.daily_Rate}</td><td>${car.rent_Duration_Price.monthly_Rate}</td><td>${car.price_Extra_KM}</td><td>${car.registration_Number}</td><td>${car.free_Mileage}</td><td>${car.color}</td><td>${car.car_Availability}</td></tr>`);
                     carBindClickEvents();
+                    setTextFieldValuesCar("","","","","","","","","","","","","","");
                     return;
                 }
             }
             if (searchCar.trim() !== car.car_Id) {
                 carLoadTable();
                 $("#txtCarSearch").val("");
+                setTextFieldValuesCar("","","","","","","","","","","","","","");
                 alert("There is no item available for that " + searchCar);
             }
         }
     });
 }
+
 <!-- end search car function -->
+
+<!-- start set text fields values function -->
+function setTextFieldValuesCar(carId, carName, carBrand, carType, numberOfPassengers, transmissionType, fuelType, dailyRate, monthlyRate, priceExtraKM, registrationNumber, freeMileage, color, carAvailability) {
+    $("#carId").val(carId);
+    $("#carName").val(carName);
+    $("#carBrand").val(carBrand);
+    $("#carType").val(carType);
+    // $("#frontView").val(frontView);
+    // $("#backView").val(backView);
+    // $("#sideView").val(sideView);
+    // $("#interiorImage").val(interiorImage);
+    $("#numberOfPassengers").val(numberOfPassengers);
+    $("#transmissionType").val(transmissionType);
+    $("#fuelType").val(fuelType);
+    $("#dailyRate").val(dailyRate);
+    $("#monthlyRate").val(monthlyRate);
+    $("#priceExtraKM").val(priceExtraKM);
+    $("#registrationNumber").val(registrationNumber);
+    $("#freeMileage").val(freeMileage);
+    $("#color").val(color);
+    $("#carAvailability").val(carAvailability);
+}
+
+<!-- end set text fields values function -->
 
 <!-- End Car Section -->
