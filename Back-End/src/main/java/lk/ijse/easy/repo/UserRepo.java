@@ -1,6 +1,5 @@
 package lk.ijse.easy.repo;
 
-import lk.ijse.easy.dto.UserDTO;
 import lk.ijse.easy.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -12,7 +11,7 @@ import org.springframework.data.jpa.repository.Query;
  * @since : 0.1.0
  **/
 
-public interface UserRepo extends JpaRepository<User,String> {
-    @Query(value = "select * from User where user_Name=? AND password=? limit 1",nativeQuery = true)
+public interface UserRepo extends JpaRepository<User, String> {
+    @Query(value = "select * from User where user_Name=? AND password=? limit 1", nativeQuery = true)
     User findUserByUser_NameAndPassword(String username, String password) throws RuntimeException;
 }
