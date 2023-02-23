@@ -27,15 +27,4 @@ public class UserController {
         System.out.println(service.getAllRegUsers());
         return new ResponseUtil("OK","Successfully Loaded..!",service.getAllRegUsers());
     }
-
-    @GetMapping(params = {"username"})
-    public ResponseUtil setUser(String username){
-        Current.currentUser=service.getRegUsers(username);
-        return new ResponseUtil("OK","Successfully Loaded..!","");
-    }
-
-    @GetMapping(path = "current")
-    public ResponseUtil getCurrentUser(){
-        return new ResponseUtil("OK","Successfully Loaded..!",Current.currentUser);
-    }
 }

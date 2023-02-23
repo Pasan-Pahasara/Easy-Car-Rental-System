@@ -30,9 +30,4 @@ public class UserImpl implements UserService {
         return mapper.map(repo.findAll(), new TypeToken<ArrayList<UserDTO>>() {
         }.getType());
     }
-
-    @Override
-    public UserDTO getRegUsers(String username) {
-       return mapper.map(repo.findUserByUser_Name(username),UserDTO.class);
-    }
 }

@@ -13,6 +13,5 @@ import org.springframework.data.jpa.repository.Query;
  **/
 
 public interface UserRepo extends JpaRepository<User,String> {
-    @Query(value = "select * from User where user_Name=? limit 1",nativeQuery = true)
-    User findUserByUser_Name(String username) throws RuntimeException;
+
 }

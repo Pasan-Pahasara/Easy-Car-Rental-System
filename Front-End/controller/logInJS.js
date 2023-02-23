@@ -28,13 +28,6 @@ function login() {
                     if (loginRole_Type === "DRIVER" && loginUserName === login.user_Name && loginPassword === login.password) {
                         window.location.href = 'driverDashboard.html';
                     } else if (loginRole_Type === "REGISTERED_USER" && loginUserName === login.user_Name && loginPassword === login.password) {
-                        $.ajax({
-                            url: loginBaseUrl+ "user?username="+loginUserName,
-                            data:res.data,
-                            method:"get",
-                            success:function (res1) {
-                            }
-                        })
                         window.location.href = 'customerDashboard.html';
                     } else if (loginRole_Type === "ADMIN" && loginUserName === login.user_Name && loginPassword === login.password) {
                         window.location.href = 'adminDashboard.html';

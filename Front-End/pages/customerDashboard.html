@@ -611,7 +611,6 @@
 <!-- jQuery -->
 <script src="../assets/jQuery/jquery-3.6.0.min.js"></script>
 <script>
-    let currentBaseUrl = "http://localhost:8080/Back_End_war/";
 
     //<!-- Start Document Ready Navigation -->
     $(function () {
@@ -644,17 +643,6 @@
         $("#customerPayment").css("display", "block");
     });
     <!-- End Customer Payment Navigation -->
-
-    let user;
-
-    $.ajax({
-        url: currentBaseUrl+ "user/current",
-        method:"get",
-        success:function (res) {
-            user=res.data;
-            $("#userID").val(res.data.user_Id);
-        }
-    })
 
 </script>
 </body>
