@@ -55,6 +55,7 @@ $("#addDriverBtn").on('click', function () {
             if (resp.data === true) {
                 driverLoadTable();
                 alert(resp.message);
+                setTextFieldValuesDriver("","","","","","","","","","");
             }
         },
         error: function (error) {
@@ -105,6 +106,7 @@ $("#updateDriver").on('click', function () {
         success: function (res) {
             driverLoadTable();
             alert(res.message);
+            setTextFieldValuesDriver("","","","","","","","","","");
         },
         error: function (error) {
             let message = JSON.parse(error.responseText).message;
