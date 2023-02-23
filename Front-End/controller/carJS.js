@@ -83,7 +83,6 @@ function carLoadTable() {
         }
     });
 }
-
 <!-- end load car function -->
 
 <!-- start bind click events to the table rows function -->
@@ -130,7 +129,6 @@ function carBindClickEvents() {
         $("#carAvailability").val(carAvailability);
     });
 }
-
 <!-- end bind click events to the table rows function -->
 
 <!-- start search car using search car button -->
@@ -173,7 +171,6 @@ function searchCar() {
         }
     });
 }
-
 <!-- end search car function -->
 
 <!-- start set text fields values function -->
@@ -197,7 +194,6 @@ function setTextFieldValuesCar(carId, carName, carBrand, carType, numberOfPassen
     $("#color").val(color);
     $("#carAvailability").val(carAvailability);
 }
-
 <!-- end set text fields values function -->
 
 <!-- End Car Section -->
