@@ -15,4 +15,5 @@ public interface CarService {
     void deleteCar(String id);
     void updateCar(CarDTO carDTO);
     ArrayList<CarDTO> getAllCars();
+    ArrayList<CarDTO> getFilerData(String type,String fuelType);
 }
