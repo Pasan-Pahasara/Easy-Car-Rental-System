@@ -30,4 +30,9 @@ public class UserImpl implements UserService {
         return mapper.map(repo.findAll(), new TypeToken<ArrayList<UserDTO>>() {
         }.getType());
     }
+
+    @Override
+    public UserDTO getRegUsers(String username, String password) {
+       return null;
+    }
 }
