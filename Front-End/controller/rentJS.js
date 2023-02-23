@@ -4,7 +4,7 @@
  **/
 let rentBaseUrl = "http://localhost:8080/Back_End_war/";
 
-$("#fuelType").on('click',function () {
+$("#fuelType").on('click', function () {
     let carType = $("#carType").val();
     let fuel_Type = $("#fuelType").val();
     console.log(carType);
@@ -31,7 +31,7 @@ $("#fuelType").on('click',function () {
     })
 });
 
-$("#carID").on('click',function () {
+$("#carID").on('click', function () {
     var search = $("#carID").val();
     $.ajax({
         url: rentBaseUrl + "car/searchCar/?car_Id=" + search,
@@ -143,3 +143,55 @@ function loadCartTableDetail() {
     $("#tblRentCart").append(row);
 }
 
+$("#reservationBtn").on(function () {
+    let rentDetails = [];
+    for (let i = 0; i < $("#tblRentCart tr").length; i++) {
+        var rentDetail = {
+            carID: $("#tblRentCart").children(`:eq(${i})`).children(":eq(0)").text(),
+            rentID: $("#rent_Id").val()
+        }
+        rentDetails.push(rentDetail);
+    }
+
+    for (let i = 0; i < $("#tblRentCart tr").length; i++) {
+        let rentID = $("#rent_Id").val();
+        let pickUpDate = $("#tblRentCart").children(`:eq(${i})`).children(":eq(1)").text();
+        let pickUpTime = $("#tblRentCart").children(`:eq(${i})`).children(":eq(2)").text();
+        let returnDate = $("#tblRentCart").children(`:eq(${i})`).children(":eq(3)").text();
+        let returnTime = $("#tblRentCart").children(`:eq(${i})`).children(":eq(4)").text();
+        let requestType = $("#tblRentCart").children(`:eq(${i})`).children(":eq(5)").text();
+        let rentType = "PENDING";
+        let location = $("#tblRentCart").children(`:eq(${i})`).children(":eq(6)").text();
+        let userID = $("#userID").val();
+
+        let rentOB = {
+            rentID: rentID,
+            pickUpDate: pickUpDate,
+            pickUpTime: pickUpTime,
+            returnDate: returnDate,
+            returnTime: returnTime,
+            requestType: requestType,
+            rentType: rentType,
+            location: location,
+            regUser: {user_Id: userID},
+            rentDetails: rentDetails
+        }
+        console.log(rentDetails)
+        console.log(rentOB)
+
+        $.ajax({
+            url: rentBaseUrl + "rent",
+            method: "POST",
+            contentType: "application/json",
+            dataType: "json",
+            data: JSON.stringify(rentOB),
+            success: function (res) {
+                alert(res.message);
+            },
+            error: function (error) {
+                let message = JSON.parse(error.responseText).message;
+                alert(message);
+            }
+        });
+    }
+});
