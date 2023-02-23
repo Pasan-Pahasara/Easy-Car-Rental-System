@@ -128,6 +128,12 @@ function carBindClickEvents() {
 }
 <!-- end bind click events to the table rows function -->
 
+<!-- start search car using search car button -->
+$("#btnSearchCar").on('click', function () {
+    searchCar();
+});
+<!-- end search car using search car button -->
+
 <!-- start search car function -->
 function searchCar() {
     $("#tblCar").empty();
