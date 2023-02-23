@@ -43,6 +43,19 @@ public class RentServiceImpl implements RentService {
         if (repo.existsById(dto.getRentID())) {
             throw new RuntimeException("Booking" + dto.getRentID() + " Already added.!");
         }
+
+        if(dto.getRequestType().equals("YES")){
+            List<Driver> drivers = driverRepo.availableDrivers();
+            int x;
+
+            for (RentDetails rentDetails : rent.getRentDetails()){
+                x=new Random().nextInt(drivers.size());
+                rentDetails.setRentID(drivers.get(x).getUser_Id());
+                Car car = carRepo.findById(rentDetails.getRentID()).get();
+                car.setCar_Availability(UNAVAILABLE);
+                driverRepo.save(drivers.get(x));
+            }
+        }
         repo.save(rent);
     }
 }
