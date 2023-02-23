@@ -4,6 +4,7 @@ import lk.ijse.easy.dto.CarDTO;
 import lk.ijse.easy.embeded.Image;
 import lk.ijse.easy.embeded.ImageDTO;
 import lk.ijse.easy.embeded.Rate;
+import lk.ijse.easy.entity.Car;
 import lk.ijse.easy.service.CarService;
 import lk.ijse.easy.util.ResponseUtil;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -66,5 +67,11 @@ public class CarController {
         System.out.println(type);
         System.out.println(fuel_Type);
         return service.getFilerData(type,fuel_Type);
+    }
+
+    @ResponseStatus(HttpStatus.CREATED)
+    @GetMapping(path = "/searchCar", params = {"car_Id"})
+    public Car searchCusId(String car_Id) {
+        return service.searchCarId(car_Id);
     }
 }
