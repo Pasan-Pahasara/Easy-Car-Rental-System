@@ -2,6 +2,8 @@ package lk.ijse.easy.controller;
 
 import lk.ijse.easy.dto.CarDTO;
 import lk.ijse.easy.embeded.Image;
+import lk.ijse.easy.embeded.ImageDTO;
+import lk.ijse.easy.embeded.Rate;
 import lk.ijse.easy.service.CarService;
 import lk.ijse.easy.util.ResponseUtil;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,8 +29,10 @@ public class CarController {
     private CarService service;
 
     @ResponseStatus(HttpStatus.CREATED)
-    @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseUtil saveCar(@RequestBody CarDTO carDTO) {
+    @PostMapping
+    public ResponseUtil saveCar(@ModelAttribute CarDTO carDTO, @ModelAttribute Rate rent_Duration_Price, @ModelAttribute ImageDTO image) {
+        carDTO.setRent_Duration_Price(rent_Duration_Price);
+        carDTO.setImage(image);
         service.saveCar(carDTO);
         return new ResponseUtil("OK", "Successfully Registered..!", null);
     }

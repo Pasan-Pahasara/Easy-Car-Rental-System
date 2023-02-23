@@ -1,6 +1,7 @@
 package lk.ijse.easy.dto;
 
 import lk.ijse.easy.embeded.Image;
+import lk.ijse.easy.embeded.ImageDTO;
 import lk.ijse.easy.embeded.Rate;
 import lk.ijse.easy.enums.Availability;
 import lk.ijse.easy.enums.CarType;
@@ -24,7 +25,7 @@ public class CarDTO {
     private String car_name;
     private String car_brand;
     private CarType type;
-    private Image image;
+    private ImageDTO image;
     private int number_Of_Passengers;
     private TransmissionType transmission_Type;
     private FuelType fuel_Type;

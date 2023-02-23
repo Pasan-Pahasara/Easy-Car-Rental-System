@@ -8,58 +8,18 @@ carLoadTable();
 
 <!-- start car add -->
 $("#addCarBtn").on('click', function () {
-    let carId = $("#carId").val();
-    let carName = $("#carName").val();
-    let carBrand = $("#carBrand").val();
-    let carType = $("#carType").val();
-    let frontView = $("#frontView").val();
-    let backView = $("#backView").val();
-    let sideView = $("#sideView").val();
-    let interiorImage = $("#interiorImage").val();
-    let numberOfPassengers = $("#numberOfPassengers").val();
-    let transmissionType = $("#transmissionType").val();
-    let fuelType = $("#fuelType").val();
-    let dailyRate = $("#dailyRate").val();
-    let monthlyRate = $("#monthlyRate").val();
-    let priceExtraKM = $("#priceExtraKM").val();
-    let registrationNumber = $("#registrationNumber").val();
-    let freeMileage = $("#freeMileage").val();
-    let color = $("#color").val();
-    let carAvailability = $("#carAvailability").val();
-
-    if (carId) var carOb = {
-        car_Id: carId,
-        car_name: carName,
-        car_brand: carBrand,
-        type: carType,
-        image: {
-            front_View: frontView,
-            back_View: backView,
-            side_View: sideView,
-            interior: interiorImage
-        },
-        number_Of_Passengers: numberOfPassengers,
-        transmission_Type: transmissionType,
-        fuel_Type: fuelType,
-        rent_Duration_Price: {
-            daily_Rate: dailyRate,
-            monthly_Rate: monthlyRate
-        },
-        price_Extra_KM: priceExtraKM,
-        registration_Number: registrationNumber,
-        free_Mileage: freeMileage,
-        color: color,
-        car_Availability: carAvailability
-    }
-
+    let formData = new FormData($("#carForm")[0]);
+    console.log(formData);
     $.ajax({
         url: carBaseUrl + "car",
         method: "post",
-        contentType: "application/json",
-        data: JSON.stringify(carOb),
+        data: formData,
+        contentType: false,
+        processData: false,
         success: function (resp) {
             if (resp.data === true) {
                 alert(resp.message);
+                carLoadTable();
             }
         },
         error: function (error) {
