@@ -42,6 +42,7 @@ $("#updateCar").on('click', function () {
         processData: false,
         success: function (res) {
             alert(res.message);
+            carLoadTable();
         },
         error: function (error) {
             let message = JSON.parse(error.responseText).message;
