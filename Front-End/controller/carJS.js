@@ -6,6 +6,13 @@ let carBaseUrl = "http://localhost:8080/Back_End_war/";
 <!-- Start Car Section -->
 carLoadTable();
 
+// default submit false
+$(function () {
+    $("#carSearchForm").submit(function () {
+        return false;
+    });
+});
+
 <!-- start car add -->
 $("#addCarBtn").on('click', function () {
     let formData = new FormData($("#carForm")[0]);
