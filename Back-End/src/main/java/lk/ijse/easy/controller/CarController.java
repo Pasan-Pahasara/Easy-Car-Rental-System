@@ -14,6 +14,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 
 /**
  * @author : ShEnUx
@@ -57,5 +58,13 @@ public class CarController {
         carDTO.setImage(image);
         service.updateCar(carDTO);
         return new ResponseUtil("OK","Successfully Updated..! : "+carDTO.getCar_Id(),null);
+    }
+
+    @ResponseStatus(HttpStatus.CREATED)
+    @GetMapping(path = "/filterCarDetails",params = {"type","fuel_Type"})
+    public ArrayList<CarDTO> searchDriverId(@RequestParam String type, @RequestParam String fuel_Type) {
+        System.out.println(type);
+        System.out.println(fuel_Type);
+        return service.getFilerData(type,fuel_Type);
     }
 }
