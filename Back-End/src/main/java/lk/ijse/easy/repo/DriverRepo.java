@@ -4,7 +4,7 @@ import lk.ijse.easy.entity.Driver;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
-import java.util.Optional;
+import java.util.List;
 
 /**
  * @author : ShEnUx
@@ -13,4 +13,6 @@ import java.util.Optional;
  * @since : 0.1.0
  **/
 public interface DriverRepo extends JpaRepository<Driver,String> {
+    @Query(value = "SELECT * FROM Driver WHERE driver_Availability='AVAILABLE'", nativeQuery = true)
+    List<Driver> availableDrivers();
 }
