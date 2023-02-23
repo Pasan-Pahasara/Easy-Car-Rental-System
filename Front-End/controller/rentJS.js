@@ -77,6 +77,13 @@ $("#carID").on('click',function () {
 });
 
 let tableRow = [];
+let carID;
+let rentPickFromDate;
+let rentPickFromTime;
+let rentReturnFromDate;
+let rentReturnFromTime;
+let driverAvailability;
+let rentLocation;
 
 $("#addCartBtn").on("click", function () {
     let duplicate = false;
@@ -98,6 +105,25 @@ $("#addCartBtn").on("click", function () {
         $(tableRow).children(':nth-child(7)').text($("#rentLocation").val());
 
     }
+
+    $("#tblRentCart>tr").on('click', function () {
+        tableRow = $(this);
+        carID = $(this).children(":eq(0)").text();
+        rentPickFromDate = $(this).children(":eq(1)").text();
+        rentPickFromTime = $(this).children(":eq(2)").text();
+        rentReturnFromDate = $(this).children(":eq(3)").text();
+        rentReturnFromTime = $(this).children(":eq(4)").text();
+        driverAvailability = $(this).children(":eq(5)").text();
+        rentLocation = $(this).children(":eq(6)").text();
+
+        $("#carID").val(carID);
+        $("#rentPickFromDate").val(rentPickFromDate);
+        $("#rentPickFromTime").val(rentPickFromTime);
+        $("#rentReturnFromDate").val(rentReturnFromDate);
+        $("#rentReturnFromTime").val(rentReturnFromTime);
+        $("#driverAvailability").val(driverAvailability);
+        $("#rentLocation").val(rentLocation);
+    });
 });
 
 
