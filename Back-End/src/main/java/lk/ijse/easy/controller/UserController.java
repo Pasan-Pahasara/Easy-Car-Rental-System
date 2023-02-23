@@ -27,4 +27,10 @@ public class UserController {
         System.out.println(service.getAllRegUsers());
         return new ResponseUtil("OK","Successfully Loaded..!",service.getAllRegUsers());
     }
+
+    @GetMapping(params = {"username"})
+    public ResponseUtil setUser(String username,String password){
+        Current.currentUser=service.getRegUsers(username,password);
+        return new ResponseUtil("OK","Successfully Loaded..!","");
+    }
 }
