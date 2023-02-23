@@ -76,4 +76,28 @@ $("#carID").on('click',function () {
     })
 });
 
+let tableRow = [];
+
+$("#addCartBtn").on("click", function () {
+    let duplicate = false;
+    for (let i = 0; i < $("#tblRentCart tr").length; i++) {
+        if ($("#carID option:selected").text() === $("#tblRentCart tr").children(':nth-child(1)')[i].innerText) {
+            duplicate = true;
+        }
+    }
+    if (duplicate !== true) {
+        $('#carID,#rentPickFromDate,#carModel,#carBrand,#noOfPassengers,#rentPickFromTime,#rentReturnFromDate,#rentReturnFromTime,#driverAvailability,#rentLocation').val("");
+        $("#tblRentCart").attr('disabled', true);
+
+    } else if (duplicate === true) {
+        $(tableRow).children(':nth-child(2)').text($("#rentPickFromDate").val());
+        $(tableRow).children(':nth-child(3)').text($("#rentPickFromTime").val())
+        $(tableRow).children(':nth-child(4)').text($("#rentReturnFromDate").val());
+        $(tableRow).children(':nth-child(5)').text($("#rentReturnFromTime").val());
+        $(tableRow).children(':nth-child(6)').text($("#driverAvailability").val());
+        $(tableRow).children(':nth-child(7)').text($("#rentLocation").val());
+
+    }
+});
+
 
