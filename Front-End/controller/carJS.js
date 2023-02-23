@@ -134,6 +134,14 @@ $("#btnSearchCar").on('click', function () {
 });
 <!-- end search car using search car button -->
 
+<!-- start search car using press ENTER -->
+$("#txtCarSearch").on('keyup', function (event) {
+    if (event.code === "Enter") {
+        searchCar();
+    }
+});
+<!-- end search car using press ENTER -->
+
 <!-- start search car function -->
 function searchCar() {
     $("#tblCar").empty();
