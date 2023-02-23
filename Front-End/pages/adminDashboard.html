@@ -94,9 +94,16 @@
                 </li>
 
                 <li class="side-nav-item">
-                    <a href="#" id="LinkManagePayment" class="side-nav-link">
-                        <i class="uil uil-credit-card"></i>
-                        <span> Manage Payment </span>
+                    <a href="#" id="LinkUserRequest" class="side-nav-link">
+                        <i class="uil-check-circle"></i>
+                        <span> Customer Requests </span>
+                    </a>
+                </li>
+
+                <li class="side-nav-item">
+                    <a href="#" class="side-nav-link">
+                        <i class="uil-repeat"></i>
+                        <span> Rental Returns </span>
                     </a>
                 </li>
 
@@ -108,16 +115,9 @@
                 </li>
 
                 <li class="side-nav-item">
-                    <a href="#" id="LinkUserRequest" class="side-nav-link">
-                        <i class="uil-check-circle"></i>
-                        <span> Customer Requests </span>
-                    </a>
-                </li>
-
-                <li class="side-nav-item">
-                    <a href="#" class="side-nav-link">
-                        <i class="uil-repeat"></i>
-                        <span> Rental Returns </span>
+                    <a href="#" id="LinkPaymentDetails" class="side-nav-link">
+                        <i class="uil uil-credit-card"></i>
+                        <span> Payment Details </span>
                     </a>
                 </li>
 
@@ -960,88 +960,6 @@
             </div>
             <!-- End Customer Content-->
 
-            <!-- Start Payment Details Content-->
-            <div class="container-fluid" id="managePayment">
-
-                <!-- start page title -->
-                <div class="row">
-                    <div class="col-12">
-                        <div class="page-title-box">
-                            <div class="page-title-right">
-                                <ol class="breadcrumb m-0">
-                                    <li><a href="javascript: void(0);">Easy Car Rental</a></li>
-                                    <li class="uil uil-angle-right active">Manage Payment</li>
-                                </ol>
-                            </div>
-                            <h4 class="page-title">Manage Payment</h4>
-                        </div>
-                    </div>
-                </div>
-                <!-- end page title -->
-
-                <!-- start content-->
-                <div class="row">
-                    <!-- start col-->
-                    <div class="col-12">
-                        <!-- start card-->
-                        <div class="card">
-                            <!-- start card-body -->
-                            <div class="card-body">
-                                <!-- start row -->
-                                <div class="row">
-                                    <!-- start col -->
-                                    <div class="col-xl-12">
-                                        <div class="row m-3">
-                                            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                                                <div>
-                                                    <label for="paymentDetailsPickFromDate"
-                                                           class="form-label">From</label>
-                                                    <input type="date" id="paymentDetailsPickFromDate"
-                                                           class="form-control" name="fromDate"
-                                                           placeholder="Start Date">
-                                                </div>
-                                                <div>
-                                                    <label for="paymentDetailsPickFromDate"
-                                                           class="form-label">To</label>
-                                                    <input type="date" id="paymentDetailsPickToDate"
-                                                           class="form-control" name="toDate"
-                                                           placeholder="End Date">
-                                                </div>
-                                                <button type="button" class="btn btn-danger mt-3" id="btnSearchPayment">
-                                                    Search
-                                                </button>
-                                            </div>
-                                        </div>
-                                        <table class="table table-centered mb-0">
-                                            <thead class="btn-primary">
-                                            <tr>
-                                                <th>Payment ID</th>
-                                                <th>Date</th>
-                                                <th>Amount (Rs.)</th>
-                                                <th>Rent ID</th>
-                                                <th>Customer ID</th>
-                                            </tr>
-                                            </thead>
-                                            <tbody id="tblPayments">
-
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                    <!-- end col-->
-                                </div>
-                                <!-- end row -->
-                            </div>
-                            <!-- end card-body -->
-                        </div>
-                        <!-- end card-->
-                    </div>
-                    <!-- end col-->
-                </div>
-                <!-- end content-->
-
-            </div>
-            <!-- End Payment Details Content-->
-
             <!-- Start User Request Content-->
             <div class="container-fluid" id="userRequest">
 
@@ -1120,8 +1038,9 @@
                                                            placeholder="Customer ID" type="text">
                                                 </div>
                                                 <div class="mb-2 col-xl-3 col-sm-6">
-                                                    <label class="form-label" for="requestNicOrLicenceNo">Nic or Licence No<span
-                                                            class="text-danger">*</span></label>
+                                                    <label class="form-label" for="requestNicOrLicenceNo">Nic or Licence
+                                                        No<span
+                                                                class="text-danger">*</span></label>
                                                     <input class="form-control" id="requestNicOrLicenceNo" readonly
                                                            name="nic"
                                                            placeholder="Nic or Licence No" type="text">
@@ -1160,7 +1079,8 @@
                                                     <input type="text" class="form-control" placeholder="Search..."
                                                            id="txtCustomerRequestSearch">
                                                     <span class="uil uil-search search-icon"></span>
-                                                    <button class="input-group-text btn-danger" id="CustomerRequestSearch"
+                                                    <button class="input-group-text btn-danger"
+                                                            id="CustomerRequestSearch"
                                                             type="button">Search
                                                     </button>
                                                 </div>
@@ -1205,6 +1125,88 @@
             </div>
             <!-- End User Request Content-->
 
+            <!-- Start Payment Details Content-->
+            <div class="container-fluid" id="paymentDetails">
+
+                <!-- start page title -->
+                <div class="row">
+                    <div class="col-12">
+                        <div class="page-title-box">
+                            <div class="page-title-right">
+                                <ol class="breadcrumb m-0">
+                                    <li><a href="javascript: void(0);">Easy Car Rental</a></li>
+                                    <li class="uil uil-angle-right active">Payment Details</li>
+                                </ol>
+                            </div>
+                            <h4 class="page-title">Payment Details</h4>
+                        </div>
+                    </div>
+                </div>
+                <!-- end page title -->
+
+                <!-- start content-->
+                <div class="row">
+                    <!-- start col-->
+                    <div class="col-12">
+                        <!-- start card-->
+                        <div class="card">
+                            <!-- start card-body -->
+                            <div class="card-body">
+                                <!-- start row -->
+                                <div class="row">
+                                    <!-- start col -->
+                                    <div class="col-xl-12">
+                                        <div class="row m-3">
+                                            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                                                <div>
+                                                    <label for="paymentDetailsPickFromDate"
+                                                           class="form-label">From</label>
+                                                    <input type="date" id="paymentDetailsPickFromDate"
+                                                           class="form-control" name="fromDate"
+                                                           placeholder="Start Date">
+                                                </div>
+                                                <div>
+                                                    <label for="paymentDetailsPickFromDate"
+                                                           class="form-label">To</label>
+                                                    <input type="date" id="paymentDetailsPickToDate"
+                                                           class="form-control" name="toDate"
+                                                           placeholder="End Date">
+                                                </div>
+                                                <button type="button" class="btn btn-danger mt-3" id="btnSearchPayment">
+                                                    Search
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <table class="table table-centered mb-0">
+                                            <thead class="btn-primary">
+                                            <tr>
+                                                <th>Payment ID</th>
+                                                <th>Date</th>
+                                                <th>Amount (Rs.)</th>
+                                                <th>Rent ID</th>
+                                                <th>Customer ID</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody id="tblPayments">
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <!-- end col-->
+                                </div>
+                                <!-- end row -->
+                            </div>
+                            <!-- end card-body -->
+                        </div>
+                        <!-- end card-->
+                    </div>
+                    <!-- end col-->
+                </div>
+                <!-- end content-->
+
+            </div>
+            <!-- End Payment Details Content-->
+
         </div>
         <!-- end content-->
     </div>
@@ -1233,7 +1235,7 @@
         $("#manageCar").css("display", "none");
         $("#manageDriver").css("display", "none");
         $("#manageCustomer").css("display", "none");
-        $("#managePayment").css("display", "none");
+        $("#paymentDetails").css("display", "none");
         $("#userRequest").css("display", "none");
     });
     <!-- End Document Ready Navigation -->
@@ -1244,7 +1246,7 @@
         $("#manageCar").css("display", "none");
         $("#manageDriver").css("display", "none");
         $("#manageCustomer").css("display", "none");
-        $("#managePayment").css("display", "none");
+        $("#paymentDetails").css("display", "none");
         $("#userRequest").css("display", "none");
     });
     <!-- End Dashboard Navigation -->
@@ -1255,7 +1257,7 @@
         $("#manageCar").css("display", "block");
         $("#manageDriver").css("display", "none");
         $("#manageCustomer").css("display", "none");
-        $("#managePayment").css("display", "none");
+        $("#paymentDetails").css("display", "none");
         $("#userRequest").css("display", "none");
     });
     <!-- End Manage Car Navigation -->
@@ -1266,7 +1268,7 @@
         $("#manageCar").css("display", "none");
         $("#manageDriver").css("display", "block");
         $("#manageCustomer").css("display", "none");
-        $("#managePayment").css("display", "none");
+        $("#paymentDetails").css("display", "none");
         $("#userRequest").css("display", "none");
     });
     <!-- End Manage Car Navigation -->
@@ -1277,18 +1279,18 @@
         $("#manageCar").css("display", "none");
         $("#manageDriver").css("display", "none");
         $("#manageCustomer").css("display", "block");
-        $("#managePayment").css("display", "none");
+        $("#paymentDetails").css("display", "none");
         $("#userRequest").css("display", "none");
     });
     <!-- End Manage Customer Navigation -->
 
     <!-- Start Manage Payment Navigation -->
-    $("#LinkManagePayment").on('click', function () {
+    $("#LinkPaymentDetails").on('click', function () {
         $("#adminDashboard").css("display", "none");
         $("#manageCar").css("display", "none");
         $("#manageDriver").css("display", "none");
         $("#manageCustomer").css("display", "none");
-        $("#managePayment").css("display", "block");
+        $("#paymentDetails").css("display", "block");
         $("#userRequest").css("display", "none");
     });
     <!-- End Manage Payment Navigation -->
@@ -1299,7 +1301,7 @@
         $("#manageCar").css("display", "none");
         $("#manageDriver").css("display", "none");
         $("#manageCustomer").css("display", "none");
-        $("#managePayment").css("display", "none");
+        $("#paymentDetails").css("display", "none");
         $("#userRequest").css("display", "block");
     });
     <!-- End Customer Request Navigation -->
