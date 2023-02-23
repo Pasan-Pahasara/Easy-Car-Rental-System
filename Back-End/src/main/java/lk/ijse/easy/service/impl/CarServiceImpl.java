@@ -112,4 +112,13 @@ public class CarServiceImpl implements CarService {
         return mapper.map(repo.filterCar(type, fuelType), new TypeToken<ArrayList<Car>>() {
         }.getType());
     }
+
+    @Override
+    public Car searchCarId(String id) {
+        if (!repo.existsById(id)) {
+            throw new RuntimeException("Wrong ID. Please enter Valid id..!");
+        }
+        System.out.println(id);
+        return mapper.map(repo.findById(id).get(), Car.class);
+    }
 }
