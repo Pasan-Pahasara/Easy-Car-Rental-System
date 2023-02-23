@@ -93,6 +93,7 @@ $("#addCartBtn").on("click", function () {
         }
     }
     if (duplicate !== true) {
+        loadCartTableDetail();
         $('#carID,#rentPickFromDate,#carModel,#carBrand,#noOfPassengers,#rentPickFromTime,#rentReturnFromDate,#rentReturnFromTime,#driverAvailability,#rentLocation').val("");
         $("#tblRentCart").attr('disabled', true);
 
