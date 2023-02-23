@@ -12,6 +12,4 @@ import lk.ijse.easy.entity.Rent;
 public class RentDetailsDTO {
     private String carID;
     private String rentID;
-    private Rent rent;
-    private Car car;
 }
