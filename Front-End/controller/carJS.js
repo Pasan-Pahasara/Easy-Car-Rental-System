@@ -196,4 +196,25 @@ function setTextFieldValuesCar(carId, carName, carBrand, carType, numberOfPassen
 }
 <!-- end set text fields values function -->
 
+<!-- start car delete -->
+$("#deleteCar").on('click', function () {
+    let carID = $("#carId").val();
+    $.ajax({
+        url: driverBaseUrl + "car?car_Id=" + carID,
+        method: "DELETE",
+        success: function (res) {
+            if (res.code === 200) {
+                carLoadTable();
+                setTextFieldValuesCar("","","","","","","","","","","","","","");
+                alert(res.message);
+            }
+        },
+        error: function (error) {
+            let message = JSON.parse(error.responseText).message;
+            alert(message);
+        }
+    });
+});
+<!-- end car delete -->
+
 <!-- End Car Section -->
