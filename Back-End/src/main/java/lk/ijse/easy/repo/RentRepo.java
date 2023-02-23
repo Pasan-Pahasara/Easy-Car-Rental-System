@@ -9,5 +9,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
  * @date : 2/23/2023
  * @since : 0.1.0
  **/
-public interface rentRepo extends JpaRepository<Rent, String> {
+public interface RentRepo extends JpaRepository<Rent, String> {
 }
