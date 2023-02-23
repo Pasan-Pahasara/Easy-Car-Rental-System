@@ -79,7 +79,6 @@ public class CarServiceImpl implements CarService {
         }
 
         try {
-
             String projectPath = new File(this.getClass().getProtectionDomain().getCodeSource().getLocation().toURI()).getParentFile().getParentFile().getAbsolutePath();
             File uploadsDir = new File(projectPath + "/uploads");
             System.out.println(projectPath);
