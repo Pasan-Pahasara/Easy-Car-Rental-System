@@ -33,4 +33,9 @@ public class UserController {
         Current.currentUser=service.getRegUsers(username,password);
         return new ResponseUtil("OK","Successfully Loaded..!","");
     }
+
+    @GetMapping(path = "current")
+    public ResponseUtil getCurrentUser(){
+        return new ResponseUtil("OK","Successfully Loaded..!",Current.currentUser);
+    }
 }
