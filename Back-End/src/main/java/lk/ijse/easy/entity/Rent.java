@@ -1,5 +1,6 @@
 package lk.ijse.easy.entity;
 
+import lk.ijse.easy.enums.RentRequestType;
 import lk.ijse.easy.enums.RequestType;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -8,6 +9,7 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.List;
 
 /**
  * @author : ShEnUx
@@ -21,15 +23,25 @@ import java.time.LocalTime;
 @Data
 public class Rent {
     @Id
-    private String rent_Id;
-    private LocalDate pick_Up_Date;
-    private LocalTime pick_Up_Time;
-    private LocalDate return_Date;
+    private String rentID;
+    private LocalDate pickUpDate;
+    private LocalTime pickUpTime;
+    private LocalDate returnDate;
+    private LocalTime returnTime;
     @Enumerated(EnumType.STRING)
-    private RequestType driver_Request_Type;
+    private RequestType requestType;
+    @Enumerated(EnumType.STRING)
+    private RentRequestType rentType;
     private String location;
 
     @ManyToOne(cascade = {CascadeType.REFRESH,CascadeType.DETACH})
-    @JoinColumn(name = "user_RegID",referencedColumnName = "user_Id",nullable = false)
-    private RegUser reg_User;
+    @JoinColumn(name = "userID",referencedColumnName = "user_Id",nullable = false)
+    private RegUser regUser;
+
+//    @OneToMany(mappedBy = "rent",cascade = CascadeType.ALL)
+//    private List<DriverSchedule> driverSchedules;
+
+    @OneToMany(mappedBy = "rent",cascade = CascadeType.ALL)
+    private List<RentDetails> rentDetails;
+
 }
