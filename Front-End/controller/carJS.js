@@ -5,6 +5,7 @@
 let carBaseUrl = "http://localhost:8080/Back_End_war/";
 <!-- Start Car Section -->
 carLoadTable();
+generateCarId();
 
 // default submit false
 $(function () {
@@ -25,9 +26,10 @@ $("#addCarBtn").on('click', function () {
         processData: false,
         dataType: "json",
         success: function (resp) {
-                carLoadTable();
-                alert(resp.message);
-                setTextFieldValuesCar("","","","","","","","","","","","","","");
+            carLoadTable();
+            generateCarId();
+            alert(resp.message);
+            setTextFieldValuesCar("", "", "", "", "", "", "", "", "", "", "", "", "", "");
         },
         error: function (error) {
             let message = JSON.parse(error.responseText).message;
@@ -51,7 +53,7 @@ $("#updateCar").on('click', function () {
         success: function (res) {
             carLoadTable();
             alert(res.message);
-            setTextFieldValuesCar("","","","","","","","","","","","","","");
+            setTextFieldValuesCar("", "", "", "", "", "", "", "", "", "", "", "", "", "");
         },
         error: function (error) {
             let message = JSON.parse(error.responseText).message;
@@ -76,7 +78,7 @@ function carLoadTable() {
                 $("#tblCar").append(row);
             }
             carBindClickEvents();
-            setTextFieldValuesCar("","","","","","","","","","","","","","");
+            setTextFieldValuesCar("", "", "", "", "", "", "", "", "", "", "", "", "", "");
         },
         error: function (error) {
             let message = JSON.parse(error.responseText).message;
@@ -84,6 +86,7 @@ function carLoadTable() {
         }
     });
 }
+
 <!-- end load car function -->
 
 <!-- start bind click events to the table rows function -->
@@ -130,6 +133,7 @@ function carBindClickEvents() {
         $("#carAvailability").val(carAvailability);
     });
 }
+
 <!-- end bind click events to the table rows function -->
 
 <!-- start search car using search car button -->
@@ -159,19 +163,20 @@ function searchCar() {
                 if (searchCar.trim() === car.car_Id) {
                     $("#tblCar").append(`<tr><td>${car.car_Id}</td><td>${car.car_name}</td><td>${car.car_brand}</td><td>${car.type}</td><td>${car.number_Of_Passengers}</td><td>${car.transmission_Type}</td><td>${car.fuel_Type}</td><td>${car.rent_Duration_Price.daily_Rate}</td><td>${car.rent_Duration_Price.monthly_Rate}</td><td>${car.price_Extra_KM}</td><td>${car.registration_Number}</td><td>${car.free_Mileage}</td><td>${car.color}</td><td>${car.car_Availability}</td></tr>`);
                     carBindClickEvents();
-                    setTextFieldValuesCar("","","","","","","","","","","","","","");
+                    setTextFieldValuesCar("", "", "", "", "", "", "", "", "", "", "", "", "", "");
                     return;
                 }
             }
             if (searchCar.trim() !== car.car_Id) {
                 carLoadTable();
                 $("#txtCarSearch").val("");
-                setTextFieldValuesCar("","","","","","","","","","","","","","");
+                setTextFieldValuesCar("", "", "", "", "", "", "", "", "", "", "", "", "", "");
                 alert("There is no item available for that " + searchCar);
             }
         }
     });
 }
+
 <!-- end search car function -->
 
 <!-- start set text fields values function -->
@@ -195,6 +200,7 @@ function setTextFieldValuesCar(carId, carName, carBrand, carType, numberOfPassen
     $("#color").val(color);
     $("#carAvailability").val(carAvailability);
 }
+
 <!-- end set text fields values function -->
 
 <!-- start car delete -->
@@ -205,9 +211,9 @@ $("#deleteCar").on('click', function () {
         method: "DELETE",
         dataType: "json",
         success: function (res) {
-                carLoadTable();
-                alert(res.message);
-                setTextFieldValuesCar("","","","","","","","","","","","","","");
+            carLoadTable();
+            alert(res.message);
+            setTextFieldValuesCar("", "", "", "", "", "", "", "", "", "", "", "", "", "");
         },
         error: function (error) {
             let message = JSON.parse(error.responseText).message;
@@ -216,5 +222,19 @@ $("#deleteCar").on('click', function () {
     });
 });
 <!-- end car delete -->
+
+<!-- start generate car ID function -->
+function generateCarId() {
+    $.ajax({
+        url: carBaseUrl + "car/generateCarId",
+        method: "get",
+        dataType: "json",
+        success: function (res) {
+            $('#carId').val(res.data);
+        }
+    })
+}
+
+<!-- end generate car ID function -->
 
 <!-- End Car Section -->
