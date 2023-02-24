@@ -189,9 +189,9 @@ $("#deleteCustomer").on('click', function () {
 });
 <!-- end customer delete -->
 
-<!-- start driver update -->
+<!-- start customer update -->
 $("#updateCustomer").on('click', function () {
-    let formData = new FormData($("#customerForm")[0]);
+    let formData = new FormData($("#customerDetailsForm")[0]);
     console.log(formData);
     $.ajax({
         url: userBaseUrl + "customer/update",
@@ -209,6 +209,6 @@ $("#updateCustomer").on('click', function () {
         }
     });
 });
-<!-- end driver update -->
+<!-- end customer update -->
 
 <!-- End User Section -->

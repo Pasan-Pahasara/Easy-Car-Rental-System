@@ -74,7 +74,7 @@
                 </li>
                 <li class="side-nav-item">
                     <a href="#" id="LinkManageProfile" class="side-nav-link">
-                        <i class="uil uil-receipt"></i>
+                        <i class="uil uil-user"></i>
                         <span>Manage Profile</span>
                     </a>
                 </li>
@@ -605,14 +605,25 @@
                                                            placeholder="Nic No" type="text">
                                                 </div>
                                                 <div class="mb-3">
+                                                    <label class="form-label" for="imgNiC">NIC Image<span
+                                                            class="text-danger">*</span></label>
+                                                    <input class="form-control" id="imgNiC" name="nic_Img"
+                                                           placeholder="NIC NO" type="file">
+                                                </div>
+                                            </section>
+                                            <section id="sec3CustomerDetails" class="col-xl-4">
+                                                <div class="mb-3">
                                                     <label class="form-label" for="customerLicence">Licence No<span
                                                             class="text-danger">*</span></label>
                                                     <input class="form-control" id="customerLicence" name="license_No"
                                                            placeholder="Licence No" type="text">
                                                 </div>
-
-                                            </section>
-                                            <section id="sec3CustomerDetails" class="col-xl-4">
+                                                <div class="mb-3">
+                                                    <label class="form-label" for="imgLicence">Licence Image<span
+                                                            class="text-danger">*</span></label>
+                                                    <input class="form-control" id="imgLicence" name="license_Img"
+                                                           placeholder="NIC NO" type="file">
+                                                </div>
                                                 <div class="mb-3">
                                                     <label for="customerUserName" class="form-label">User Name<span
                                                             class="text-danger">*</span></label>
@@ -814,13 +825,37 @@
                     $("#customerAddress").val(cus.address);
                     $("#customerDriverEmail").val(cus.email);
                     $("#customerNic").val(cus.nic);
+                    $("#imgNiC").val(cus.nic_Img);
                     $("#customerLicence").val(cus.license_No);
+                    $("#imgLicence").val(cus.license_Img);
                     $("#customerUserName").val(cus.user.user_Name);
                     $("#customerPassword").val(cus.user.password);
                 }
             }
         }
     })
+
+    <!-- start customer update -->
+    $("#updateCustomer").on('click', function () {
+        let formData = new FormData($("#customerDetailsForm")[0]);
+        console.log(formData);
+        $.ajax({
+            url: currentBaseUrl + "customer/update",
+            method: "post",
+            data: formData,
+            contentType: false,
+            processData: false,
+            dataType: "json",
+            success: function (res) {
+                alert(res.message);
+                // manageCustomerLoadTable();
+            }, error: function (error) {
+                let message = JSON.parse(error.responseText).message;
+                alert(message);
+            }
+        });
+    });
+    <!-- end customer update -->
 
 </script>
 </body>
