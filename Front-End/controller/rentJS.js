@@ -9,7 +9,7 @@ generateRentId();
 <!-- start generate rent ID function -->
 function generateRentId() {
     $.ajax({
-        url: userBaseUrl + "rent/generateRentId",
+        url: rentBaseUrl + "rent/generateRentId",
         method: "get",
         dataType: "json",
         success: function (res) {
