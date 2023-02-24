@@ -11,4 +11,5 @@ import org.springframework.web.bind.annotation.RequestBody;
  **/
 public interface RentService {
     void bookingCars(@RequestBody RentDTO dto);
+    String generateRentId();
 }

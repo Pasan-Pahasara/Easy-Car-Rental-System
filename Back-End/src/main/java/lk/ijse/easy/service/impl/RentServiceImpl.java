@@ -60,7 +60,27 @@ public class RentServiceImpl implements RentService {
                 driverRepo.save(drivers.get(x));
             }
         }
-
         repo.save(rent);
+    }
+
+    @Override
+    public String generateRentId() {
+        String lastId = repo.generateRentId();
+        String id = "";
+
+        if (lastId != null) {
+            int tempId = Integer.parseInt(lastId.split("-")[1]);
+            tempId = tempId + 1;
+            if (tempId <= 9) {
+                id = "R00-00" + tempId;
+            } else if (tempId <= 99) {
+                id = "R00-0" + tempId;
+            } else if (tempId <= 999) {
+                id = "R00-" + tempId;
+            }
+        } else {
+            id = "R00-001";
+        }
+        return id;
     }
 }
