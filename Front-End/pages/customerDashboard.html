@@ -73,6 +73,12 @@
                     </a>
                 </li>
                 <li class="side-nav-item">
+                    <a href="#" id="LinkManageProfile" class="side-nav-link">
+                        <i class="uil uil-receipt"></i>
+                        <span>Manage Profile</span>
+                    </a>
+                </li>
+                <li class="side-nav-item">
                     <a href="#" id="LinkCustomerPayment" class="side-nav-link">
                         <i class="uil uil-credit-card"></i>
                         <span>Payment</span>
@@ -518,6 +524,142 @@
             </div>
             <!-- End Booking Response Content-->
 
+            <!-- Start Manage Profile Content-->
+            <div class="container-fluid" id="manageProfile">
+
+                <!-- start page title -->
+                <div class="row">
+                    <div class="col-12">
+                        <div class="page-title-box">
+                            <div class="page-title-right">
+                                <ol class="breadcrumb m-0">
+                                    <li><a href="javascript: void(0);">Easy Car Rental</a></li>
+                                    <li class="uil uil-angle-right active">Manage Profile</li>
+                                </ol>
+                            </div>
+                            <h4 class="page-title">Manage Profile</h4>
+                        </div>
+                    </div>
+                </div>
+                <!-- end page title -->
+
+                <!-- start content-->
+                <div class="row">
+                    <!-- start col-->
+                    <div class="col-12">
+                        <!-- start card-->
+                        <div class="card">
+                            <!-- start card-body -->
+                            <div class="card-body">
+                                <!-- start row -->
+                                <div class="row">
+                                    <!-- start col-->
+                                    <div class="col-xl-12">
+                                        <form id="customerDetailsForm" class="row">
+                                            <section id="sec1CustomerDetails" class="col-xl-4">
+                                                <div class="mb-3">
+                                                    <label class="form-label" for="cusUserID">User ID<span
+                                                            class="text-danger">*</span></label>
+                                                    <input class="form-control" readonly id="cusUserID" name="user_Id"
+                                                           placeholder="User ID" type="text">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label class="form-label" for="userFirstName">First Name<span
+                                                            class="text-danger">*</span></label>
+                                                    <input class="form-control" id="userFirstName" name="firstName"
+                                                           placeholder="First Name" type="text">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label class="form-label" for="userLastName">Last Name<span
+                                                            class="text-danger">*</span></label>
+                                                    <input class="form-control" id="userLastName" name="lastName"
+                                                           placeholder="Last Name" type="text">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label class="form-label" for="customerContactNo">Contact
+                                                        Number<span
+                                                                class="text-danger">*</span></label>
+                                                    <input class="form-control" id="customerContactNo" name="contact_No"
+                                                           placeholder="Contact No" type="text">
+                                                </div>
+                                            </section>
+                                            <section id="sec2CustomerDetails" class="col-xl-4">
+                                                <div class="mb-3">
+                                                    <label class="form-label" for="customerAddress">Address<span
+                                                            class="text-danger">*</span></label>
+                                                    <input class="form-control" id="customerAddress" name="address"
+                                                           placeholder="Address" type="text">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label class="form-label" for="customerDriverEmail">Email<span
+                                                            class="text-danger">*</span></label>
+                                                    <input class="form-control" id="customerDriverEmail" name="email"
+                                                           placeholder="Email" type="text">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label class="form-label" for="customerNic">Nic No<span
+                                                            class="text-danger">*</span></label>
+                                                    <input class="form-control" id="customerNic" name="nic"
+                                                           placeholder="Nic No" type="text">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label class="form-label" for="customerLicence">Licence No<span
+                                                            class="text-danger">*</span></label>
+                                                    <input class="form-control" id="customerLicence" name="license_No"
+                                                           placeholder="Licence No" type="text">
+                                                </div>
+
+                                            </section>
+                                            <section id="sec3CustomerDetails" class="col-xl-4">
+                                                <div class="mb-3">
+                                                    <label for="customerUserName" class="form-label">User Name<span
+                                                            class="text-danger">*</span></label>
+                                                    <div class="input-group has-validation">
+                                                        <span class="input-group-text"
+                                                              id="customerInputGroupPrepend">@</span>
+                                                        <input type="text" class="form-control" id="customerUserName"
+                                                               name="user_Name" placeholder="User Name"
+                                                               aria-describedby="customerInputGroupPrepend" required>
+                                                        <div class="invalid-feedback">
+                                                            Please choose a username.
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="customerPassword" class="form-label">Password<span
+                                                            class="text-danger">*</span></label>
+                                                    <div class="input-group input-group-merge">
+                                                        <input type="password" id="customerPassword" name="password"
+                                                               class="form-control" placeholder="Password">
+                                                        <div class="input-group-text" data-password="false">
+                                                            <span class="uil uil-eye-slash"></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="mb-3 d-grid gap-1 d-md-flex justify-content-md-end">
+                                                    <button type="button" class="btn btn-primary btn me-md-1"
+                                                            id="updateCustomer">
+                                                        Update
+                                                    </button>
+                                                </div>
+                                            </section>
+                                        </form>
+                                    </div>
+                                    <!-- end col-->
+                                </div>
+                                <!-- end row -->
+                            </div>
+                            <!-- end card-body -->
+                        </div>
+                        <!-- end card-->
+                    </div>
+                    <!-- end col-->
+                </div>
+                <!-- end content-->
+
+            </div>
+            <!-- End Manage Profile Content-->
+
             <!-- Start Payment Content-->
             <div class="container-fluid" id="customerPayment">
 
@@ -602,6 +744,7 @@
     $(function () {
         $("#bookingRequest").css("display", "block");
         $("#bookingResponse").css("display", "none");
+        $("#manageProfile").css("display", "none");
         $("#customerPayment").css("display", "none");
     });
     <!-- End Document Ready Navigation -->
@@ -610,6 +753,7 @@
     $("#LinkBookingRequest").on('click', function () {
         $("#bookingRequest").css("display", "block");
         $("#bookingResponse").css("display", "none");
+        $("#manageProfile").css("display", "none");
         $("#customerPayment").css("display", "none");
     });
     <!-- End Booking Request Navigation -->
@@ -618,14 +762,25 @@
     $("#LinkBookingResponse").on('click', function () {
         $("#bookingRequest").css("display", "none");
         $("#bookingResponse").css("display", "block");
+        $("#manageProfile").css("display", "none");
         $("#customerPayment").css("display", "none");
     });
     <!-- End Booking Response Navigation -->
+
+    <!-- Start Manage Profile Navigation -->
+    $("#LinkManageProfile").on('click', function () {
+        $("#bookingRequest").css("display", "none");
+        $("#bookingResponse").css("display", "none");
+        $("#manageProfile").css("display", "block");
+        $("#customerPayment").css("display", "none");
+    });
+    <!-- End Manage Profile Navigation -->
 
     <!-- Start Customer Payment Navigation -->
     $("#LinkCustomerPayment").on('click', function () {
         $("#bookingRequest").css("display", "none");
         $("#bookingResponse").css("display", "none");
+        $("#manageProfile").css("display", "none");
         $("#customerPayment").css("display", "block");
     });
     <!-- End Customer Payment Navigation -->
