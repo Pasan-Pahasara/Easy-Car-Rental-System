@@ -5,6 +5,7 @@ import lk.ijse.easy.entity.Car;
 import lk.ijse.easy.entity.Driver;
 import lk.ijse.easy.entity.Rent;
 import lk.ijse.easy.entity.RentDetails;
+import lk.ijse.easy.enums.RequestType;
 import lk.ijse.easy.repo.CarRepo;
 import lk.ijse.easy.repo.DriverRepo;
 import lk.ijse.easy.repo.RentRepo;
@@ -44,18 +45,21 @@ public class RentServiceImpl implements RentService {
             throw new RuntimeException("Booking" + dto.getRentID() + " Already added.!");
         }
 
-        if(dto.getRequestType().equals("YES")){
+        if(dto.getRequestType().equals(RequestType.YES)){
             List<Driver> drivers = driverRepo.availableDrivers();
             int x;
 
             for (RentDetails rentDetails : rent.getRentDetails()){
                 x=new Random().nextInt(drivers.size());
-                rentDetails.setRentID(drivers.get(x).getUser_Id());
-                Car car = carRepo.findById(rentDetails.getRentID()).get();
+                rentDetails.setDriverID(drivers.get(x).getUser_Id());
+                Car car = carRepo.findById(rentDetails.getCarID()).get();
                 car.setCar_Availability(UNAVAILABLE);
+                carRepo.save(car);
+                drivers.get(x).setDriver_Availability(UNAVAILABLE);
                 driverRepo.save(drivers.get(x));
             }
         }
+
         repo.save(rent);
     }
 }
