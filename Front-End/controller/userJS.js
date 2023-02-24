@@ -26,6 +26,7 @@ $("#addCustomerBtn").on('click', function () {
         data: formData,
         contentType: false,
         processData: false,
+        dataType: "json",
         success: function (res) {
             alert(res.message);
             manageCustomerLoadTable();
@@ -45,6 +46,7 @@ function manageCustomerLoadTable() {
         url: userBaseUrl + "customer",
         method: "get",
         contentType: "application/json",
+        dataType: "json",
         success: function (resp) {
             for (let customerDetails of resp.data) {
                 let row = `<tr><td>${customerDetails.user_Id}</td><td>${customerDetails.name.firstName}</td><td>${customerDetails.name.lastName}</td><td>${customerDetails.contact_No}</td><td>${customerDetails.address}</td><td>${customerDetails.email}</td><td>${customerDetails.nic}</td><td>${customerDetails.license_No}</td><td>${customerDetails.user.user_Name}</td><td>${customerDetails.user.password}</td></tr>`;
@@ -67,6 +69,7 @@ function generateCustomerId() {
     $.ajax({
         url: userBaseUrl + "customer/generateCustomerId",
         method: "get",
+        dataType: "json",
         success: function (res) {
             $('#cusRegID').val(res.data);
         }
@@ -115,6 +118,7 @@ function searchCustomer() {
         }
     });
 }
+
 <!-- end search customer function -->
 
 <!-- start bind click events to the table rows function -->
@@ -145,6 +149,7 @@ function customerBindClickEvents() {
         $("#customerPassword").val(customerPassword);
     });
 }
+
 <!-- end bind click events to the table rows function -->
 
 <!-- start set text fields values function -->
@@ -160,6 +165,7 @@ function setTextFieldValuesCustomer(userID, userFirstName, userLastName, custome
     $("#customerUserName").val(customerUserName);
     $("#customerPassword").val(customerPassword);
 }
+
 <!-- end set text fields values function -->
 
 <!-- start customer delete -->
@@ -168,12 +174,11 @@ $("#deleteCustomer").on('click', function () {
     $.ajax({
         url: userBaseUrl + "customer?user_Id=" + userID,
         method: "DELETE",
+        dataType: "json",
         success: function (res) {
-            if (res.code === 200) {
-                manageCustomerLoadTable();
-                setTextFieldValuesCustomer("", "", "", "", "", "", "", "", "", "");
-                alert(res.message);
-            }
+            manageCustomerLoadTable();
+            alert(res.message);
+            setTextFieldValuesCustomer("", "", "", "", "", "", "", "", "", "");
         },
         error: function (error) {
             let message = JSON.parse(error.responseText).message;
