@@ -15,4 +15,6 @@ import java.util.ArrayList;
 public interface CarRepo extends JpaRepository<Car,String> {
     @Query(value = "SELECT * FROM Car WHERE type =?1 and fuel_Type=?2 and car_Availability='AVAILABLE' ", nativeQuery = true)
     ArrayList<Car> filterCar(String type, String fuel_Type);
+    @Query(value = "SELECT car_Id FROM car ORDER BY car_Id DESC LIMIT 1", nativeQuery = true)
+    String generateCarId();
 }
