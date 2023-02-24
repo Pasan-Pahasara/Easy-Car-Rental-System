@@ -18,4 +18,5 @@ public interface CarService {
     ArrayList<CarDTO> getAllCars();
     ArrayList<CarDTO> getFilerData(String type,String fuelType);
     Car searchCarId(String id);
+    String generateCarId();
 }

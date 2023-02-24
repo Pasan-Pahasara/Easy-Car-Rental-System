@@ -121,4 +121,9 @@ public class CarServiceImpl implements CarService {
         System.out.println(id);
         return mapper.map(repo.findById(id).get(), Car.class);
     }
+
+    @Override
+    public String generateCarId() {
+        return null;
+    }
 }
