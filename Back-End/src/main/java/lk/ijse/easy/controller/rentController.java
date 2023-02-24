@@ -23,7 +23,6 @@ public class rentController {
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping
     public ResponseUtil placeOrder(@RequestBody RentDTO dto) {
-        System.out.println(dto);
         service.bookingCars(dto);
         return new ResponseUtil("Ok", "Successfully Purchased.!", null);
     }

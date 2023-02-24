@@ -23,12 +23,11 @@ $("#addCarBtn").on('click', function () {
         data: formData,
         contentType: false,
         processData: false,
+        dataType: "json",
         success: function (resp) {
-            if (resp.data === true) {
-                alert(resp.message);
                 carLoadTable();
+                alert(resp.message);
                 setTextFieldValuesCar("","","","","","","","","","","","","","");
-            }
         },
         error: function (error) {
             let message = JSON.parse(error.responseText).message;
@@ -48,9 +47,10 @@ $("#updateCar").on('click', function () {
         data: formData,
         contentType: false,
         processData: false,
+        dataType: "json",
         success: function (res) {
-            alert(res.message);
             carLoadTable();
+            alert(res.message);
             setTextFieldValuesCar("","","","","","","","","","","","","","");
         },
         error: function (error) {
@@ -68,6 +68,7 @@ function carLoadTable() {
         url: carBaseUrl + "car",
         method: "get",
         contentType: "application/json",
+        dataType: "json",
         success: function (resp) {
             for (let car of resp.data) {
                 console.log(car);
@@ -202,12 +203,11 @@ $("#deleteCar").on('click', function () {
     $.ajax({
         url: driverBaseUrl + "car?car_Id=" + carID,
         method: "DELETE",
+        dataType: "json",
         success: function (res) {
-            if (res.code === 200) {
                 carLoadTable();
-                setTextFieldValuesCar("","","","","","","","","","","","","","");
                 alert(res.message);
-            }
+                setTextFieldValuesCar("","","","","","","","","","","","","","");
         },
         error: function (error) {
             let message = JSON.parse(error.responseText).message;

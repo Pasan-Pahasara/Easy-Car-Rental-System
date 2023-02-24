@@ -143,18 +143,18 @@ function loadCartTableDetail() {
     $("#tblRentCart").append(row);
 }
 
-$("#reservationBtn").on(function () {
+$("#reservationBtn").on('click',function () {
     let rentDetails = [];
     for (let i = 0; i < $("#tblRentCart tr").length; i++) {
         var rentDetail = {
             carID: $("#tblRentCart").children(`:eq(${i})`).children(":eq(0)").text(),
-            rentID: $("#rent_Id").val()
+            rentID: $("#rentId").val()
         }
         rentDetails.push(rentDetail);
     }
 
     for (let i = 0; i < $("#tblRentCart tr").length; i++) {
-        let rentID = $("#rent_Id").val();
+        let rentID = $("#rentId").val();
         let pickUpDate = $("#tblRentCart").children(`:eq(${i})`).children(":eq(1)").text();
         let pickUpTime = $("#tblRentCart").children(`:eq(${i})`).children(":eq(2)").text();
         let returnDate = $("#tblRentCart").children(`:eq(${i})`).children(":eq(3)").text();

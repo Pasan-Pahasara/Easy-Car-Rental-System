@@ -51,12 +51,11 @@ $("#addDriverBtn").on('click', function () {
         method: "post",
         contentType: "application/json",
         data: JSON.stringify(driverOb),
+        dataType: "json",
         success: function (resp) {
-            if (resp.data === true) {
                 driverLoadTable();
                 alert(resp.message);
                 setTextFieldValuesDriver("","","","","","","","","","");
-            }
         },
         error: function (error) {
             let message = JSON.parse(error.responseText).message;
@@ -122,12 +121,11 @@ $("#deleteDriver").on('click', function () {
     $.ajax({
         url: driverBaseUrl + "driver?user_Id=" + driverNicNo,
         method: "DELETE",
+        dataType: "json",
         success: function (res) {
-            if (res.code === 200) {
                 driverLoadTable();
-                setTextFieldValuesDriver("","","","","","","","","","");
                 alert(res.message);
-            }
+                setTextFieldValuesDriver("","","","","","","","","","");
         },
         error: function (error) {
             let message = JSON.parse(error.responseText).message;
@@ -186,6 +184,7 @@ function driverLoadTable() {
         url: driverBaseUrl + "driver",
         method: "GET",
         contentType: "application/json",
+        dataType: "json",
         success: function (resp) {
             for (let driver of resp.data) {
                 let row = `<tr><td>${driver.user_Id}</td><td>${driver.name.firstName}</td><td>${driver.name.lastName}</td><td>${driver.contact_No}</td><td>${driver.address}</td><td>${driver.email}</td><td>${driver.driver_Availability}</td><td>${driver.user.role_Type}</td><td>${driver.user.user_Name}</td><td>${driver.user.password}</td></tr>`;
