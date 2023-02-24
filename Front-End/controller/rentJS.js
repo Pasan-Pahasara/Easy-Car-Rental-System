@@ -4,6 +4,21 @@
  **/
 let rentBaseUrl = "http://localhost:8080/Back_End_war/";
 
+generateRentId();
+
+<!-- start generate rent ID function -->
+function generateRentId() {
+    $.ajax({
+        url: userBaseUrl + "rent/generateRentId",
+        method: "get",
+        dataType: "json",
+        success: function (res) {
+            $('#rentId').val(res.data);
+        }
+    })
+}
+<!-- end generate rent ID function -->
+
 $("#fuelType").on('click', function () {
     let carType = $("#carType").val();
     let fuel_Type = $("#fuelType").val();
@@ -187,6 +202,7 @@ $("#reservationBtn").on('click',function () {
             dataType: "json",
             data: JSON.stringify(rentOB),
             success: function (res) {
+                generateRentId();
                 alert(res.message);
             },
             error: function (error) {
@@ -196,3 +212,4 @@ $("#reservationBtn").on('click',function () {
         });
     }
 });
+
