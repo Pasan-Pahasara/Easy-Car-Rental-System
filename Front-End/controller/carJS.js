@@ -230,6 +230,7 @@ function generateCarId() {
         method: "get",
         dataType: "json",
         success: function (res) {
+            alert(res.data);
             $('#carId').val(res.data);
         }
     })
