@@ -31,7 +31,7 @@ public class rentController {
     @ResponseStatus(HttpStatus.ACCEPTED)
     @GetMapping(path = "/generateRentId", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseUtil generateRentId() {
-        return null;
+        return new ResponseUtil("OK", "Successfully Generated ID..!", service.generateRentId());
     }
 
 }
