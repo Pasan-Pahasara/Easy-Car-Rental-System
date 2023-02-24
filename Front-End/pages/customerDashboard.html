@@ -317,7 +317,8 @@
                                                             id="addCartBtn">
                                                         Cart
                                                     </button>
-                                                    <button type="button" class="btn btn-primary btn" id="reservationBtn">
+                                                    <button type="button" class="btn btn-primary btn"
+                                                            id="reservationBtn">
                                                         Reservation Car
                                                     </button>
                                                 </div>
@@ -339,7 +340,8 @@
 
                                         <!-- start booking car images -->
                                         <div id="imagesForm" class="row">
-                                            <section id="secCarImages" class="row mx-0 gap-3 d-flex justify-content-center align-items-center">
+                                            <section id="secCarImages"
+                                                     class="row mx-0 gap-3 d-flex justify-content-center align-items-center">
                                                 <div id="frontImage" class="col-xl-4">
                                                 </div>
                                                 <div id="interiorImage" class="col-xl-3">
@@ -788,13 +790,38 @@
     let user;
 
     $.ajax({
-        url: currentBaseUrl+ "user/current",
-        method:"get",
-        success:function (res) {
-            user=res.data;
+        url: currentBaseUrl + "user/current",
+        method: "get",
+        success: function (res) {
+            user = res.data.user_Id;
             $("#userID").val(res.data.user_Id);
+            console.log(user);
         }
     })
+
+    $.ajax({
+        url: currentBaseUrl + "customer",
+        method: "get",
+        contentType: "application/json",
+        dataType: "json",
+        success: function (res) {
+            for (var cus of res.data) {
+                if (user === cus.user_Id) {
+                    $("#cusUserID").val(cus.user_Id);
+                    $("#userFirstName").val(cus.name.firstName);
+                    $("#userLastName").val(cus.name.lastName);
+                    $("#customerContactNo").val(cus.contact_No);
+                    $("#customerAddress").val(cus.address);
+                    $("#customerDriverEmail").val(cus.email);
+                    $("#customerNic").val(cus.nic);
+                    $("#customerLicence").val(cus.license_No);
+                    $("#customerUserName").val(cus.user.user_Name);
+                    $("#customerPassword").val(cus.user.password);
+                }
+            }
+        }
+    })
+
 </script>
 </body>
 </html>

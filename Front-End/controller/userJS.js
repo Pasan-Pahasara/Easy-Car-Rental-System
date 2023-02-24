@@ -30,6 +30,7 @@ $("#addCustomerBtn").on('click', function () {
         success: function (res) {
             alert(res.message);
             manageCustomerLoadTable();
+            setTextFieldValuesCustomer("","","","","","","","","","");
             generateCustomerId();
         }, error: function (error) {
             let message = JSON.parse(error.responseText).message;
