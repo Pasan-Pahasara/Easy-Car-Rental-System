@@ -124,6 +124,22 @@ public class CarServiceImpl implements CarService {
 
     @Override
     public String generateCarId() {
-        return null;
+        String lastId = repo.generateCarId();
+        String id = "";
+
+        if (lastId != null) {
+            int tempId = Integer.parseInt(lastId.split("-")[1]);
+            tempId = tempId + 1;
+            if (tempId <= 9) {
+                id = "V00-00" + tempId;
+            } else if (tempId <= 99) {
+                id = "V00-0" + tempId;
+            } else if (tempId <= 999) {
+                id = "V00-" + tempId;
+            }
+        } else {
+            id = "V00-001";
+        }
+        return id;
     }
 }
