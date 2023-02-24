@@ -28,7 +28,6 @@ public class RegUserController {
     public ResponseUtil saveRegUser(@ModelAttribute RegUserDTO regUserDTO, @ModelAttribute UserDTO userDTO, @ModelAttribute Name name) {
         regUserDTO.setUser(userDTO);
         regUserDTO.setName(name);
-        System.out.println(regUserDTO);
         service.saveRegUser(regUserDTO);
         return new ResponseUtil("OK", "Successfully Registered..!", null);
     }
@@ -47,8 +46,10 @@ public class RegUserController {
     }
 
     @ResponseStatus(HttpStatus.ACCEPTED)
-    @PutMapping(produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseUtil updateRegUser(@RequestBody RegUserDTO regUserDTO){
+    @PostMapping(path = "/update")
+    public ResponseUtil updateRegUser(@ModelAttribute RegUserDTO regUserDTO, @ModelAttribute UserDTO userDTO, @ModelAttribute Name name){
+        regUserDTO.setUser(userDTO);
+        regUserDTO.setName(name);
         service.updateRegUser(regUserDTO);
         return new ResponseUtil("OK","Successfully Updated..! : "+regUserDTO.getUser_Id(),null);
     }
