@@ -78,6 +78,6 @@ public class CarController {
     @ResponseStatus(HttpStatus.ACCEPTED)
     @GetMapping(path = "/generateCarId", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseUtil generateCarId() {
-        return null;
+        return new ResponseUtil("OK", "Successfully Generated ID..!", service.generateCarId());
     }
 }
