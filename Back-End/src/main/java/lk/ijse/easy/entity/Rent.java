@@ -31,15 +31,12 @@ public class Rent {
     @Enumerated(EnumType.STRING)
     private RequestType requestType;
     @Enumerated(EnumType.STRING)
-    private RentRequestType rentType;
+    private RequestType rentType;
     private String location;
 
     @ManyToOne(cascade = {CascadeType.REFRESH,CascadeType.DETACH})
     @JoinColumn(name = "userID",referencedColumnName = "user_Id",nullable = false)
     private RegUser regUser;
-
-//    @OneToMany(mappedBy = "rent",cascade = CascadeType.ALL)
-//    private List<DriverSchedule> driverSchedules;
 
     @OneToMany(mappedBy = "rent",cascade = CascadeType.ALL)
     private List<RentDetails> rentDetails;
