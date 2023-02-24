@@ -74,4 +74,10 @@ public class CarController {
     public Car searchCusId(String car_Id) {
         return service.searchCarId(car_Id);
     }
+
+    @ResponseStatus(HttpStatus.ACCEPTED)
+    @GetMapping(path = "/generateCarId", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil generateCarId() {
+        return null;
+    }
 }
