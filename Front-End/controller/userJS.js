@@ -190,46 +190,19 @@ $("#deleteCustomer").on('click', function () {
 
 <!-- start driver update -->
 $("#updateCustomer").on('click', function () {
-    let userID = $("#userID").val();
-    let userFirstName = $("#userFirstName").val();
-    let userLastName = $("#userLastName").val();
-    let customerContactNo = $("#customerContactNo").val();
-    let customerAddress = $("#customerAddress").val();
-    let customerDriverEmail = $("#customerDriverEmail").val();
-    let customerNic = $("#customerNic").val();
-    let customerLicence = $("#customerLicence").val();
-    let customerUserName = $("#customerUserName").val();
-    let customerPassword = $("#customerPassword").val();
-
-    var CustomerOb = {
-        user_Id: userID,
-        name: {
-            firstName: userFirstName,
-            lastName: userLastName
-        },
-        contact_No: customerContactNo,
-        address: customerAddress,
-        email: customerDriverEmail,
-        nic: customerNic,
-        license_No: customerLicence,
-        user: {
-            user_Id: userID,
-            user_Name: customerUserName,
-            password: customerPassword
-        }
-    }
-
+    let formData = new FormData($("#customerForm")[0]);
+    console.log(formData);
     $.ajax({
-        url: userBaseUrl + "customer",
-        method: "put",
-        contentType: "application/json",
-        data: JSON.stringify(CustomerOb),
+        url: userBaseUrl + "customer/update",
+        method: "post",
+        data: formData,
+        contentType: false,
+        processData: false,
         dataType: "json",
         success: function (res) {
-            manageCustomerLoadTable();
             alert(res.message);
-        },
-        error: function (error) {
+            manageCustomerLoadTable();
+        }, error: function (error) {
             let message = JSON.parse(error.responseText).message;
             alert(message);
         }
