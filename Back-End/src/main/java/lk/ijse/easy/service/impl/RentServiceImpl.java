@@ -39,7 +39,8 @@ public class RentServiceImpl implements RentService {
     private ModelMapper mapper;
     @Override
     public void bookingCars(RentDTO dto) {
-        Rent rent = mapper.map(dto, Rent.class);
+//        Rent rent = mapper.map(dto, Rent.class);
+        Rent rent = new Rent(dto.getRentID(),dto.getPickUpDate(),dto.getPickUpTime(),dto.getReturnDate(),dto.getReturnTime(),dto.getRequestType(),dto.getRentType(),dto.getLocation(),dto.getRegUser(),dto.getRentDetails());
 
         if (repo.existsById(dto.getRentID())) {
             throw new RuntimeException("Booking" + dto.getRentID() + " Already added.!");

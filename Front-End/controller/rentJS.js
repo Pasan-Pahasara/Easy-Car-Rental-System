@@ -148,7 +148,8 @@ $("#reservationBtn").on('click',function () {
     for (let i = 0; i < $("#tblRentCart tr").length; i++) {
         var rentDetail = {
             carID: $("#tblRentCart").children(`:eq(${i})`).children(":eq(0)").text(),
-            rentID: $("#rentId").val()
+            rentID: $("#rentId").val(),
+            driverID: null
         }
         rentDetails.push(rentDetail);
     }

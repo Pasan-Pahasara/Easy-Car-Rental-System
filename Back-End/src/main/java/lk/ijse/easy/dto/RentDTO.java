@@ -1,6 +1,7 @@
 package lk.ijse.easy.dto;
 
 import lk.ijse.easy.entity.RegUser;
+import lk.ijse.easy.entity.RentDetails;
 import lk.ijse.easy.enums.RentRequestType;
 import lk.ijse.easy.enums.RequestType;
 import lombok.AllArgsConstructor;
@@ -30,5 +31,5 @@ public class RentDTO {
     private RentRequestType rentType;
     private String location;
     private RegUser regUser;
-    private List<RentDetailsDTO> rentDetails;
+    private List<RentDetails> rentDetails;
 }

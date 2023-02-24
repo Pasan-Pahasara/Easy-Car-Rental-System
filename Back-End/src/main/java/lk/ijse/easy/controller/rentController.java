@@ -5,6 +5,7 @@ import lk.ijse.easy.service.RentService;
 import lk.ijse.easy.util.ResponseUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 /**
@@ -26,4 +27,11 @@ public class rentController {
         service.bookingCars(dto);
         return new ResponseUtil("Ok", "Successfully Purchased.!", null);
     }
+
+    @ResponseStatus(HttpStatus.ACCEPTED)
+    @GetMapping(path = "/generateRentId", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil generateRentId() {
+        return null;
+    }
+
 }
