@@ -30,7 +30,5 @@ public class RentDTO {
     private RentRequestType rentType;
     private String location;
     private RegUser regUser;
-
-//    private List<DriverSchedule> driverSchedules;
     private List<RentDetailsDTO> rentDetails;
 }

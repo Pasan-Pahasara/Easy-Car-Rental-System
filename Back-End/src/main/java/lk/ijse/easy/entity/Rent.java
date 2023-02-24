@@ -31,7 +31,7 @@ public class Rent {
     @Enumerated(EnumType.STRING)
     private RequestType requestType;
     @Enumerated(EnumType.STRING)
-    private RequestType rentType;
+    private RentRequestType rentType;
     private String location;
 
     @ManyToOne(cascade = {CascadeType.REFRESH,CascadeType.DETACH})
