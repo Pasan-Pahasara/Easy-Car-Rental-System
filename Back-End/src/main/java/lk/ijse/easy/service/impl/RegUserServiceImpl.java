@@ -79,10 +79,41 @@ public class RegUserServiceImpl implements RegUserService {
     }
 
     public void updateRegUser(RegUserDTO regUserDTO) {
-        if (!repo.existsById(regUserDTO.getUser_Id())) {
+        RegUser regUser = new RegUser(regUserDTO.getUser_Id(), regUserDTO.getName(), regUserDTO.getContact_No(), regUserDTO.getAddress(), regUserDTO.getEmail(), regUserDTO.getNic(), regUserDTO.getLicense_No(), "", "", new User(regUserDTO.getUser().getUser_Id(), regUserDTO.getUser().getRole_Type(), regUserDTO.getUser().getUser_Name(), regUserDTO.getUser().getPassword()));
+        if (!repo.existsById(regUserDTO.getUser_Id()))
             throw new RuntimeException("Wrong ID..No Such a User to Update..!");
+
+        try {
+            byte[] bytes1 = regUserDTO.getLicense_Img().getBytes();
+            byte[] bytes2 = regUserDTO.getNic_Img().getBytes();
+
+//            String projectPath="D:\\IJSE\\Second Semester\\AAD (Advance API Development)\\Easy-Car-Rental-System\\Front-End\\assets\\img"
+
+            String projectPath = new File(this.getClass().getProtectionDomain().getCodeSource().getLocation().toURI()).getParentFile().getParentFile().getAbsolutePath();
+            File uploadsDir = new File(projectPath + "/uploads");
+            System.out.println(projectPath);
+            uploadsDir.mkdir();
+
+            Path location2 = Paths.get(uploadsDir + "/nic" + regUser.getNic() + ".png");
+            Path location1 = Paths.get(uploadsDir + "/license" + regUser.getLicense_No() + ".png");
+
+            Files.write(location1, bytes1);
+            Files.write(location2, bytes2);
+
+            regUserDTO.getLicense_Img().transferTo(location1);
+            regUserDTO.getNic_Img().transferTo(location2);
+
+            regUser.setLicense_Img(location1.toString());
+            regUser.setNic_Img(location2.toString());
+
+            System.out.println(regUser);
+//          repo.save(regUser);
+            repo.save(mapper.map(regUser, RegUser.class));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        } catch (URISyntaxException e) {
+            throw new RuntimeException(e);
         }
-        repo.save(mapper.map(regUserDTO, RegUser.class));
     }
 
     public ArrayList<RegUserDTO> getAllRegUsers() {
