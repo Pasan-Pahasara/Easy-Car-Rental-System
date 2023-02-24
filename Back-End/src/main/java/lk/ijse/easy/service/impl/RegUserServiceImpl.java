@@ -3,6 +3,7 @@ package lk.ijse.easy.service.impl;
 import lk.ijse.easy.dto.RegUserDTO;
 import lk.ijse.easy.entity.RegUser;
 import lk.ijse.easy.entity.User;
+import lk.ijse.easy.enums.RoleType;
 import lk.ijse.easy.repo.RegUserRepo;
 import lk.ijse.easy.service.RegUserService;
 import org.modelmapper.ModelMapper;
@@ -108,6 +109,7 @@ public class RegUserServiceImpl implements RegUserService {
 
             System.out.println(regUser);
 //          repo.save(regUser);
+            regUser.getUser().setRole_Type(RoleType.REGISTERED_USER);
             repo.save(mapper.map(regUser, RegUser.class));
         } catch (IOException e) {
             throw new RuntimeException(e);
