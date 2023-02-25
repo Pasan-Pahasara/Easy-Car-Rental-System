@@ -198,7 +198,7 @@ $("#reservationBtn").on('click', function () {
             pickUpTime: pickUpTime,
             returnDate: returnDate,
             returnTime: returnTime,
-            requestType: requestType,
+            driverRequestType: requestType,
             rentType: rentType,
             location: location,
             regUser: {

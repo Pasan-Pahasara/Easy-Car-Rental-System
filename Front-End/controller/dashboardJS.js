@@ -64,3 +64,48 @@ $.ajax({
 
     }
 });
+
+$("#availableCars").val("00");
+$.ajax({
+    url: dashboardBaseUrl + "car/numberOfAvailableCars",
+    method: "GET",
+    contentType: "application/json",
+    dataType: "json",
+    success: function (resp) {
+        let num = resp.data.count;
+        $("#availableCars").text(num);
+    },
+    error: function (ob, statusText, error) {
+
+    }
+});
+
+$("#reservedCars").val("00");
+$.ajax({
+    url: dashboardBaseUrl + "car/numberOfReservedCars",
+    method: "GET",
+    contentType: "application/json",
+    dataType: "json",
+    success: function (resp) {
+        let num = resp.data.count;
+        $("#reservedCars").text(num);
+    },
+    error: function (ob, statusText, error) {
+
+    }
+});
+
+$("#maintenanceCars").val("00");
+$.ajax({
+    url: dashboardBaseUrl + "car/numberOfMaintenanceCars",
+    method: "GET",
+    contentType: "application/json",
+    dataType: "json",
+    success: function (resp) {
+        let num = resp.data.count;
+        $("#maintenanceCars").text(num);
+    },
+    error: function (ob, statusText, error) {
+
+    }
+});

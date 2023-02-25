@@ -39,15 +39,13 @@ public class RentServiceImpl implements RentService {
     @Override
     public void bookingCars(RentDTO dto) {
         Rent rent = mapper.map(dto, Rent.class);
-//        new Rent(dto.getRentID(), dto.getPickUpDate(),dto.getPickUpTime(),dto.getReturnDate(),dto.getReturnTime(),dto.getDriverRequestType(),dto.getRentType(), dto.getLocation(), new RegUser(dto.getRegUser().getUser_Id()));
 
         if (repo.existsById(dto.getRentID())) {
             throw new RuntimeException("Booking" + dto.getRentID() + " Already added.!");
         }
 
-        System.out.println(dto);
 
-//        if(dto.getDriverRequestType().equals(DriverRequestType.YES)){
+        if(dto.getDriverRequestType().equals(DriverRequestType.YES)){
             List<Driver> drivers = driverRepo.availableDrivers();
             int x;
 
@@ -62,7 +60,7 @@ public class RentServiceImpl implements RentService {
                 drivers.get(x).setDriver_Availability(UNAVAILABLE);
                 driverRepo.save(drivers.get(x));
             }
-//        }
+        }
         repo.save(rent);
     }
 

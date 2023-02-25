@@ -7,5 +7,5 @@ package lk.ijse.easy.enums;
  * @since : 0.1.0
  **/
 public enum Availability {
-    AVAILABLE,UNAVAILABLE,
+    AVAILABLE,UNAVAILABLE,MAINTAIN,UNDER_MAINTAIN
 }

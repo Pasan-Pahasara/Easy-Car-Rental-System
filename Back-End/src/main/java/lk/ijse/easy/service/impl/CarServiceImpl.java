@@ -1,6 +1,7 @@
 package lk.ijse.easy.service.impl;
 
 import lk.ijse.easy.dto.CarDTO;
+import lk.ijse.easy.dto.CustomDTO;
 import lk.ijse.easy.embeded.Image;
 import lk.ijse.easy.entity.Car;
 import lk.ijse.easy.enums.Availability;
@@ -141,5 +142,20 @@ public class CarServiceImpl implements CarService {
             id = "V00-001";
         }
         return id;
+    }
+
+    @Override
+    public CustomDTO getSumAvailableCars() {
+        return new CustomDTO(repo.getSumAvailableCars());
+    }
+
+    @Override
+    public CustomDTO getSumReservedCars() {
+        return new CustomDTO(repo.getSumReservedCars());
+    }
+
+    @Override
+    public CustomDTO getSumMaintainCars() {
+        return new CustomDTO(repo.getSumMaintainCars());
     }
 }

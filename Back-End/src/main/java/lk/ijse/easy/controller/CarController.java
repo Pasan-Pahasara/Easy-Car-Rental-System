@@ -80,4 +80,20 @@ public class CarController {
     public ResponseUtil generateCarId() {
         return new ResponseUtil("OK", "Successfully Generated ID..!", service.generateCarId());
     }
+
+    @ResponseStatus(HttpStatus.ACCEPTED)
+    @GetMapping(path = "/numberOfAvailableCars", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil getSumAvailableCars() {
+        return new ResponseUtil("OK", "Successfully Loaded Count..!", service.getSumAvailableCars());
+    }
+    @ResponseStatus(HttpStatus.ACCEPTED)
+    @GetMapping(path = "/numberOfReservedCars", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil getSumReservedCars() {
+        return new ResponseUtil("OK", "Successfully Loaded Count..!", service.getSumReservedCars());
+    }
+    @ResponseStatus(HttpStatus.ACCEPTED)
+    @GetMapping(path = "/numberOfMaintenanceCars", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil getSumMaintainCars() {
+        return new ResponseUtil("OK", "Successfully Loaded Count..!", service.getSumMaintainCars());
+    }
 }
