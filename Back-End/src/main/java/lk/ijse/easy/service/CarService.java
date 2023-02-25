@@ -23,4 +23,5 @@ public interface CarService {
     CustomDTO getSumAvailableCars();
     CustomDTO getSumReservedCars();
     CustomDTO getSumMaintainCars();
+    CustomDTO getSumUnderMaintainCars();
 }

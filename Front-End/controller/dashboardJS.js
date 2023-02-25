@@ -109,3 +109,18 @@ $.ajax({
 
     }
 });
+
+$("#underMaintenanceCars").val("00");
+$.ajax({
+    url: dashboardBaseUrl + "car/numberOfUnderMaintenanceCars",
+    method: "GET",
+    contentType: "application/json",
+    dataType: "json",
+    success: function (resp) {
+        let num = resp.data.count;
+        $("#underMaintenanceCars").text(num);
+    },
+    error: function (ob, statusText, error) {
+
+    }
+});

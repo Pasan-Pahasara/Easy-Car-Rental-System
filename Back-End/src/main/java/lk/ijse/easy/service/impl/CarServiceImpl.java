@@ -4,10 +4,6 @@ import lk.ijse.easy.dto.CarDTO;
 import lk.ijse.easy.dto.CustomDTO;
 import lk.ijse.easy.embeded.Image;
 import lk.ijse.easy.entity.Car;
-import lk.ijse.easy.enums.Availability;
-import lk.ijse.easy.enums.CarType;
-import lk.ijse.easy.enums.FuelType;
-import lk.ijse.easy.enums.TransmissionType;
 import lk.ijse.easy.repo.CarRepo;
 import lk.ijse.easy.service.CarService;
 import org.modelmapper.ModelMapper;
@@ -157,5 +153,10 @@ public class CarServiceImpl implements CarService {
     @Override
     public CustomDTO getSumMaintainCars() {
         return new CustomDTO(repo.getSumMaintainCars());
+    }
+
+    @Override
+    public CustomDTO getSumUnderMaintainCars() {
+        return new CustomDTO(repo.getSumUnderMaintainCars());
     }
 }

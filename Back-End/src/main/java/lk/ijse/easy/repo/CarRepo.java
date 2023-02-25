@@ -23,4 +23,6 @@ public interface CarRepo extends JpaRepository<Car,String> {
     int getSumReservedCars();
     @Query(value = "SELECT COUNT(car_Id) FROM Car WHERE car_Availability='MAINTAIN'", nativeQuery = true)
     int getSumMaintainCars();
+    @Query(value = "SELECT COUNT(car_Id) FROM Car WHERE car_Availability='UNDER_MAINTAIN';", nativeQuery = true)
+    int getSumUnderMaintainCars();
 }

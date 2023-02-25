@@ -1,7 +1,6 @@
 package lk.ijse.easy.controller;
 
 import lk.ijse.easy.dto.CarDTO;
-import lk.ijse.easy.embeded.Image;
 import lk.ijse.easy.embeded.ImageDTO;
 import lk.ijse.easy.embeded.Rate;
 import lk.ijse.easy.entity.Car;
@@ -11,10 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.multipart.MultipartFile;
 
-import java.io.File;
-import java.io.IOException;
 import java.util.ArrayList;
 
 /**
@@ -95,5 +91,10 @@ public class CarController {
     @GetMapping(path = "/numberOfMaintenanceCars", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseUtil getSumMaintainCars() {
         return new ResponseUtil("OK", "Successfully Loaded Count..!", service.getSumMaintainCars());
+    }
+    @ResponseStatus(HttpStatus.ACCEPTED)
+    @GetMapping(path = "/numberOfUnderMaintenanceCars", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil getSumUnderMaintainCars() {
+        return new ResponseUtil("OK", "Successfully Loaded Count..!", service.getSumUnderMaintainCars());
     }
 }
