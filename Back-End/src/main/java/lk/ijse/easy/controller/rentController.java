@@ -37,6 +37,11 @@ public class rentController {
     @ResponseStatus(HttpStatus.ACCEPTED)
     @GetMapping(path = "/dailyBookings", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseUtil getNumberOfBookings() {
-        return new ResponseUtil("OK", "Successfully Generated ID..!", service.getNumberOfBookings());
+        return new ResponseUtil("OK", "Successfully Loaded Count..!", service.getNumberOfBookings());
+    }
+    @ResponseStatus(HttpStatus.ACCEPTED)
+    @GetMapping(path = "/dailyActiveBookings", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil getSumOfBookingActive() {
+        return new ResponseUtil("OK", "Successfully Loaded Count..!", service.getSumOfBookingActive());
     }
 }

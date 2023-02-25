@@ -10,17 +10,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9d9c7e19-daae-4dea-98be-3ff2eb93366f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End/src/main/java/lk/ijse/easy/controller/RegUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/src/main/java/lk/ijse/easy/controller/RegUserController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Back-End/src/main/java/lk/ijse/easy/controller/rentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/src/main/java/lk/ijse/easy/controller/rentController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Back-End/src/main/java/lk/ijse/easy/repo/RentRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/src/main/java/lk/ijse/easy/repo/RentRepo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Back-End/src/main/java/lk/ijse/easy/service/RentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/src/main/java/lk/ijse/easy/service/RentService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Back-End/src/main/java/lk/ijse/easy/service/impl/RentServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/src/main/java/lk/ijse/easy/service/impl/RentServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End/target/Back-End-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/target/Back-End-1.0-SNAPSHOT.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End/target/Back-End-1.0-SNAPSHOT/WEB-INF/classes/lk/ijse/easy/controller/RegUserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/target/Back-End-1.0-SNAPSHOT/WEB-INF/classes/lk/ijse/easy/controller/RegUserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End/target/classes/lk/ijse/easy/controller/RegUserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/target/classes/lk/ijse/easy/controller/RegUserController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Front-End/controller/dashboardJS.js" beforeDir="false" afterPath="$PROJECT_DIR$/Front-End/controller/dashboardJS.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front-End/pages/adminDashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/Front-End/pages/adminDashboard.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -285,7 +279,7 @@
       <workItem from="1677244946546" duration="70000" />
       <workItem from="1677260658537" duration="1779000" />
       <workItem from="1677262456300" duration="1024000" />
-      <workItem from="1677293903461" duration="21826000" />
+      <workItem from="1677293903461" duration="22340000" />
     </task>
     <servers />
   </component>

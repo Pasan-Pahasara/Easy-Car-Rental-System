@@ -34,3 +34,18 @@ $.ajax({
 
     }
 });
+
+$("#activeBookings").val("00");
+$.ajax({
+    url: dashboardBaseUrl + "rent/dailyActiveBookings",
+    method: "GET",
+    contentType: "application/json",
+    dataType: "json",
+    success: function (resp) {
+        let num = resp.data.count;
+        $("#activeBookings").text(num);
+    },
+    error: function (ob, statusText, error) {
+
+    }
+});

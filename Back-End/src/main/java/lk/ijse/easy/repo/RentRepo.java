@@ -16,4 +16,7 @@ public interface RentRepo extends JpaRepository<Rent, String> {
 
     @Query(value = "SELECT COUNT(rentID) FROM rent", nativeQuery = true)
     int getNumberOfBookings();
+
+    @Query(value = "SELECT COUNT(rentID) FROM Rent WHERE rentType='CONFORM'", nativeQuery = true)
+    int getSumOfBookingActive();
 }

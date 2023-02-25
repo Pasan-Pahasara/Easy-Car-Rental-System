@@ -14,4 +14,5 @@ public interface RentService {
     void bookingCars(@RequestBody RentDTO dto);
     String generateRentId();
     CustomDTO getNumberOfBookings();
+    CustomDTO getSumOfBookingActive();
 }
