@@ -49,3 +49,18 @@ $.ajax({
 
     }
 });
+
+$("#availableDrivers").val("00");
+$.ajax({
+    url: dashboardBaseUrl + "driver/numberOfAvailableDrivers",
+    method: "GET",
+    contentType: "application/json",
+    dataType: "json",
+    success: function (resp) {
+        let num = resp.data.count;
+        $("#availableDrivers").text(num);
+    },
+    error: function (ob, statusText, error) {
+
+    }
+});

@@ -48,4 +48,9 @@ public class DriverController {
         service.updateDriver(driverDTO);
         return new ResponseUtil("OK","Successfully Updated..! : "+driverDTO.getUser_Id(),null);
     }
+    @ResponseStatus(HttpStatus.ACCEPTED)
+    @GetMapping(path = "/numberOfAvailableDrivers", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil getSumAvailableDrivers() {
+        return new ResponseUtil("OK", "Successfully Loaded Count..!", service.getSumAvailableDrivers());
+    }
 }

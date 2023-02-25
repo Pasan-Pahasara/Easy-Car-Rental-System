@@ -1,5 +1,6 @@
 package lk.ijse.easy.service.impl;
 
+import lk.ijse.easy.dto.CustomDTO;
 import lk.ijse.easy.dto.DriverDTO;
 import lk.ijse.easy.entity.Driver;
 import lk.ijse.easy.entity.User;
@@ -51,5 +52,10 @@ public class DriverServiceImpl implements DriverService {
 
     public ArrayList<DriverDTO> getAllDrivers() {
         return mapper.map(repo.findAll(),new TypeToken<ArrayList<DriverDTO>>() {}.getType());
+    }
+
+    @Override
+    public CustomDTO getSumAvailableDrivers() {
+        return new CustomDTO(repo.getSumAvailableDrivers());
     }
 }
