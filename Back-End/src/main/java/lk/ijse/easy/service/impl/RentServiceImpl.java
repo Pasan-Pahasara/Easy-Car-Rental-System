@@ -1,10 +1,8 @@
 package lk.ijse.easy.service.impl;
 
+import lk.ijse.easy.dto.RegUserDTO;
 import lk.ijse.easy.dto.RentDTO;
-import lk.ijse.easy.entity.Car;
-import lk.ijse.easy.entity.Driver;
-import lk.ijse.easy.entity.Rent;
-import lk.ijse.easy.entity.RentDetails;
+import lk.ijse.easy.entity.*;
 import lk.ijse.easy.enums.DriverRequestType;
 import lk.ijse.easy.repo.CarRepo;
 import lk.ijse.easy.repo.DriverRepo;
@@ -40,6 +38,7 @@ public class RentServiceImpl implements RentService {
     @Override
     public void bookingCars(RentDTO dto) {
         Rent rent = mapper.map(dto, Rent.class);
+//        new Rent(dto.getRentID(), dto.getPickUpDate(),dto.getPickUpTime(),dto.getReturnDate(),dto.getReturnTime(),dto.getDriverRequestType(),dto.getRentType(), dto.getLocation(), new RegUser(dto.getRegUser().getUser_Id()));
 
         if (repo.existsById(dto.getRentID())) {
             throw new RuntimeException("Booking" + dto.getRentID() + " Already added.!");
@@ -47,11 +46,11 @@ public class RentServiceImpl implements RentService {
 
         System.out.println(dto);
 
-        if(dto.getDriverRequestType().equals("YES")){
+//        if(dto.getDriverRequestType().equals(DriverRequestType.YES)){
             List<Driver> drivers = driverRepo.availableDrivers();
             int x;
 
-            System.out.println("come");
+            System.out.println(drivers);
 
             for (RentDetails rentDetails : rent.getRentDetails()){
                 x=new Random().nextInt(drivers.size());
@@ -62,7 +61,7 @@ public class RentServiceImpl implements RentService {
                 drivers.get(x).setDriver_Availability(UNAVAILABLE);
                 driverRepo.save(drivers.get(x));
             }
-        }
+//        }
         repo.save(rent);
     }
 

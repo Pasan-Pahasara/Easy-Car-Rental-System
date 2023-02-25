@@ -27,4 +27,5 @@ public class RegUserDTO {
     private MultipartFile nic_Img;
     private MultipartFile license_Img;
     private UserDTO user;
+
 }

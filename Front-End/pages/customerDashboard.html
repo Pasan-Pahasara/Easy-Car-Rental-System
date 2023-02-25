@@ -304,9 +304,9 @@
                                                 <div class="mt-lg-4 col-xl-3 col-lg-6">
                                                     <!-- Checkbox -->
                                                     <div class="form-check">
-                                                        <input type="hidden" name="requestType" value="NO"/>
+                                                        <input type="hidden" name="driver_Availability" value="NO"/>
                                                         <input grouping="" class="form-check-input"
-                                                               id="driverAvailability" name="requestType" type="checkbox"
+                                                               id="driverAvailability" name="driver_Availability" type="checkbox"
                                                                value="YES"/>
                                                         <label class="form-check-label" for="driverAvailability">Need A
                                                             Driver</label>
@@ -830,6 +830,7 @@
                     $("#imgLicence").val(cus.license_Img);
                     $("#customerUserName").val(cus.user.user_Name);
                     $("#customerPassword").val(cus.user.password);
+                    customer= res.data;
                 }
             }
         }

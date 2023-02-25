@@ -4,6 +4,9 @@
  **/
 let rentBaseUrl = "http://localhost:8080/Back_End_war/";
 
+let customer;
+
+
 generateRentId();
 
 <!-- start generate rent ID function -->
@@ -17,6 +20,7 @@ function generateRentId() {
         }
     })
 }
+
 <!-- end generate rent ID function -->
 
 $("#fuelType").on('click', function () {
@@ -158,15 +162,15 @@ function loadCartTableDetail() {
     $("#tblRentCart").append(row);
 }
 
-$('#driverAvailability').on('click',function () {
-    if ($('#driverAvailability').is(':checked')){
+$('#driverAvailability').on('click', function () {
+    if ($('#driverAvailability').is(':checked')) {
         // alert('Expensive')
-    }else {
+    } else {
 
     }
 });
 
-$("#reservationBtn").on('click',function () {
+$("#reservationBtn").on('click', function () {
     let rentDetails = [];
     for (let i = 0; i < $("#tblRentCart tr").length; i++) {
         var rentDetail = {
@@ -197,7 +201,8 @@ $("#reservationBtn").on('click',function () {
             requestType: requestType,
             rentType: rentType,
             location: location,
-            regUser: {user_Id: userID},
+            regUser: {
+                user_Id: userID},
             rentDetails: rentDetails
         }
         console.log(rentDetails)

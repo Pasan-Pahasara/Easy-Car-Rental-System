@@ -11,15 +11,13 @@
   <component name="ChangeListManager">
     <list default="true" id="9d9c7e19-daae-4dea-98be-3ff2eb93366f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End/src/main/java/lk/ijse/easy/dto/RegUserDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/src/main/java/lk/ijse/easy/dto/RegUserDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Back-End/src/main/java/lk/ijse/easy/dto/RentDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/src/main/java/lk/ijse/easy/dto/RentDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End/src/main/java/lk/ijse/easy/entity/Rent.java" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/src/main/java/lk/ijse/easy/entity/Rent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End/src/main/java/lk/ijse/easy/enums/RequestType.java" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/src/main/java/lk/ijse/easy/enums/DriverRequestType.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Back-End/src/main/java/lk/ijse/easy/service/impl/RentServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/src/main/java/lk/ijse/easy/service/impl/RentServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Back-End/target/Back-End-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/target/Back-End-1.0-SNAPSHOT.war" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Back-End/target/Back-End-1.0-SNAPSHOT/WEB-INF/classes/lk/ijse/easy/dto/RentDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/target/Back-End-1.0-SNAPSHOT/WEB-INF/classes/lk/ijse/easy/dto/RentDTO.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Back-End/target/Back-End-1.0-SNAPSHOT/WEB-INF/classes/lk/ijse/easy/service/impl/RentServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/target/Back-End-1.0-SNAPSHOT/WEB-INF/classes/lk/ijse/easy/service/impl/RentServiceImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Back-End/target/classes/lk/ijse/easy/dto/RentDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/target/classes/lk/ijse/easy/dto/RentDTO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End/target/classes/lk/ijse/easy/enums/RequestType.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Back-End/target/classes/lk/ijse/easy/service/impl/RentServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/target/classes/lk/ijse/easy/service/impl/RentServiceImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Front-End/controller/rentJS.js" beforeDir="false" afterPath="$PROJECT_DIR$/Front-End/controller/rentJS.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Front-End/pages/customerDashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/Front-End/pages/customerDashboard.html" afterDir="false" />
@@ -287,7 +285,7 @@
       <workItem from="1677244946546" duration="70000" />
       <workItem from="1677260658537" duration="1779000" />
       <workItem from="1677262456300" duration="1024000" />
-      <workItem from="1677293903461" duration="3843000" />
+      <workItem from="1677293903461" duration="14951000" />
     </task>
     <servers />
   </component>

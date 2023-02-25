@@ -29,6 +29,6 @@ public class RentDTO {
     private DriverRequestType driverRequestType;
     private RentRequestType rentType;
     private String location;
-    private RegUser regUser;
+    private RegUserDTO regUser;
     private List<RentDetailsDTO> rentDetails;
 }
