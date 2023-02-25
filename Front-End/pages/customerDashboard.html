@@ -843,6 +843,7 @@
                 for (var customer of res.data) {
                     if (user === customer.regUser.user_Id) {
                         $("#tblResponse").append(`<tr><td>${customer.rentID}</td><td>${customer.regUser.user_Id}</td><td>${customer.rentDetails.at(carID).carID}</td><td>${customer.pickUpDate}</td><td>${customer.returnDate}</td><td>${customer.location}</td><td>${customer.rentType}</td>`);
+                        cusRentBindClickEvents();
                     }
                 }
             },
@@ -853,6 +854,11 @@
         });
     }
 
+    function cusRentBindClickEvents() {
+        $("#tblResponse>tr").on('click', function () {
+            $("#responseRentId").val($(this).children().eq(0).text());
+        });
+    }
 </script>
 </body>
 </html>
