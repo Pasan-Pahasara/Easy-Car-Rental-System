@@ -50,4 +50,11 @@ public class rentController {
     public ResponseUtil getSumOfBookingActive() {
         return new ResponseUtil("OK", "Successfully Loaded Count..!", service.getSumOfBookingActive());
     }
+
+    @ResponseStatus(HttpStatus.ACCEPTED)
+    @DeleteMapping(params = {"rentID"},produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil deleteDriver(@RequestParam(name ="rentID") String id) {
+        service.deleteRent(id);
+        return new ResponseUtil("OK","Successfully Deleted..! : "+id,null);
+    }
 }

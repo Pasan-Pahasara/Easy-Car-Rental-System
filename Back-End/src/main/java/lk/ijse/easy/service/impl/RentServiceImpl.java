@@ -20,6 +20,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+import static lk.ijse.easy.enums.Availability.AVAILABLE;
 import static lk.ijse.easy.enums.Availability.UNAVAILABLE;
 
 /**
@@ -38,7 +39,10 @@ public class RentServiceImpl implements RentService {
     @Autowired
     private DriverRepo driverRepo;
     @Autowired
+    private RentRepo rentRepo;
+    @Autowired
     private ModelMapper mapper;
+
     @Override
     public void bookingCars(RentDTO dto) {
         Rent rent = mapper.map(dto, Rent.class);
@@ -48,14 +52,14 @@ public class RentServiceImpl implements RentService {
         }
 
 
-        if(dto.getDriverRequestType().equals(DriverRequestType.YES)){
+        if (dto.getDriverRequestType().equals(DriverRequestType.YES)) {
             List<Driver> drivers = driverRepo.availableDrivers();
             int x;
 
             System.out.println(drivers);
 
-            for (RentDetails rentDetails : rent.getRentDetails()){
-                x=new Random().nextInt(drivers.size());
+            for (RentDetails rentDetails : rent.getRentDetails()) {
+                x = new Random().nextInt(drivers.size());
                 rentDetails.setDriverID(drivers.get(x).getUser_Id());
                 Car car = carRepo.findById(rentDetails.getCarID()).get();
                 car.setCar_Availability(UNAVAILABLE);
@@ -65,6 +69,25 @@ public class RentServiceImpl implements RentService {
             }
         }
         repo.save(rent);
+    }
+
+    @Override
+    public void deleteRent(String id) {
+        if (!repo.existsById(id)) {
+            throw new RuntimeException("Wrong ID..Please enter valid id..!");
+        }
+
+        Rent rent = rentRepo.findById(id).get();
+        Driver drivers = driverRepo.findById(rent.getRentDetails().get(0).getDriverID()).get();
+        Car car = carRepo.findById(rent.getRentDetails().get(0).getCarID()).get();
+
+        if (rent.getRentDetails().get(0).getDriverID() != null) {
+            drivers.setDriver_Availability(AVAILABLE);
+            driverRepo.save(drivers);
+            car.setCar_Availability(AVAILABLE);
+            carRepo.save(car);
+        }
+        repo.deleteById(id);
     }
 
     @Override
@@ -100,6 +123,7 @@ public class RentServiceImpl implements RentService {
 
     @Override
     public ArrayList<RentDTO> getAllRents() {
-        return mapper.map(repo.findAll(),new TypeToken<ArrayList<RentDTO>>() {}.getType());
+        return mapper.map(repo.findAll(), new TypeToken<ArrayList<RentDTO>>() {
+        }.getType());
     }
 }

@@ -445,7 +445,7 @@
                                                             <input type="text" class="form-control" placeholder="Rent ID"
                                                                    id="responseRentId" name="rent_Id">
                                                             <span class="uil uil-history search-icon"></span>
-                                                            <button class="input-group-text btn-danger" type="button" id="btnDeleteRental">Cancel Rental</button>
+                                                            <button class="input-group-text btn-danger" type="button" id="btnCancelRental">Cancel Rental</button>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -859,6 +859,29 @@
             $("#responseRentId").val($(this).children().eq(0).text());
         });
     }
+
+    function setTextFieldValuesRentId(rentId) {
+        $("#responseRentId").val(rentId);
+    }
+
+    $("#btnCancelRental").on('click',function () {
+        let id=$("#responseRentId").val();
+        $.ajax({
+            url: currentBaseUrl + "rent?rentID=" + id,
+            method: "DELETE",
+            contentType: "application/json",
+            dataType: "json",
+            success: function (res){
+                loadBookingResponseToCustomers();
+                alert(res.message);
+                setTextFieldValuesRentId("");
+            },
+            error: function (error) {
+                let message = JSON.parse(error.responseText).message;
+                alert(message);
+            }
+        });
+    })
 </script>
 </body>
 </html>

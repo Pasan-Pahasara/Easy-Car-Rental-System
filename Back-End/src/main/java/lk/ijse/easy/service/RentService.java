@@ -14,12 +14,9 @@ import java.util.ArrayList;
  **/
 public interface RentService {
     void bookingCars(@RequestBody RentDTO dto);
-
+    void deleteRent(String id);
     String generateRentId();
-
     CustomDTO getNumberOfBookings();
-
     CustomDTO getSumOfBookingActive();
-
     ArrayList<RentDTO> getAllRents();
 }
