@@ -61,15 +61,15 @@
                 <li class="side-nav-title side-nav-item">Navigation</li>
 
                 <li class="side-nav-item">
-                    <a href="#" id="LinkBookingRequest" class="side-nav-link">
-                        <i class="uil uil-repeat"></i>
-                        <span>Booking Request</span>
+                    <a href="#" id="LinkBookingResponse" class="side-nav-link">
+                        <i class="uil uil-estate"></i>
+                        <span>Dashboard</span>
                     </a>
                 </li>
                 <li class="side-nav-item">
-                    <a href="#" id="LinkBookingResponse" class="side-nav-link">
-                        <i class="uil uil-receipt"></i>
-                        <span>Booking Response</span>
+                    <a href="#" id="LinkBookingRequest" class="side-nav-link">
+                        <i class="uil uil-repeat"></i>
+                        <span>Booking Request</span>
                     </a>
                 </li>
                 <li class="side-nav-item">
@@ -432,47 +432,22 @@
                                         <!-- start booking response details -->
                                         <form id="responseForm" class="row mb-3">
                                             <section id="secResponseDetails" class="row mx-0">
-                                                <div class="mb-2 col-xl-4 col-sm-6">
-                                                    <label class="form-label" for="responseRentId">Rent ID<span
-                                                            class="text-danger">*</span></label>
-                                                    <input class="form-control" id="responseRentId" readonly
-                                                           name="rent_Id"
-                                                           placeholder="Rent ID" type="text">
-                                                </div>
-                                                <div class="mb-2 col-xl-4 col-sm-6">
-                                                    <label class="form-label" for="responseUserId">User ID<span
-                                                            class="text-danger">*</span></label>
-                                                    <input class="form-control" id="responseUserId" readonly
-                                                           name="user_Id"
-                                                           placeholder="User ID" type="text">
-                                                </div>
-                                                <div class="mb-2 col-xl-4 col-sm-6">
-                                                    <label class="form-label" for="responseCarId">Car ID<span
-                                                            class="text-danger">*</span></label>
-                                                    <input class="form-control" id="responseCarId" readonly
-                                                           name="car_Id"
-                                                           placeholder="Car ID" type="text">
-                                                </div>
-                                                <div class="mb-2 col-xl-4 col-sm-6">
-                                                    <label class="form-label" for="responsePickUpDate">Pick-Up Date<span
-                                                            class="text-danger">*</span></label>
-                                                    <input class="form-control" id="responsePickUpDate" readonly
-                                                           name="pick_Up_Date"
-                                                           placeholder="Pick-Up Date" type="text">
-                                                </div>
-                                                <div class="mb-2 col-xl-4 col-sm-6">
-                                                    <label class="form-label" for="responseReturnDate">Return Date<span
-                                                            class="text-danger">*</span></label>
-                                                    <input class="form-control" id="responseReturnDate" readonly
-                                                           name="return_Date"
-                                                           placeholder="Return Date" type="text">
-                                                </div>
-                                                <div class="mb-2 col-xl-4 col-sm-6">
-                                                    <label class="form-label" for="responseLocation">Location<span
-                                                            class="text-danger">*</span></label>
-                                                    <input class="form-control" id="responseLocation" readonly
-                                                           name="location"
-                                                           placeholder="Location" type="text">
+<!--                                                <div class="mb-2 col-xl-4 col-sm-6">-->
+<!--                                                    <label class="form-label" for="responseRentId">Rent ID<span-->
+<!--                                                            class="text-danger">*</span></label>-->
+<!--                                                    <input class="form-control" id="responseRentId" readonly-->
+<!--                                                           name="rent_Id"-->
+<!--                                                           placeholder="Rent ID" type="text">-->
+<!--                                                </div>-->
+                                                <div class="app-search d-flex justify-content-center">
+                                                    <div id="carSearchForm" class="col-xl-4 col-sm-6">
+                                                        <div class="input-group">
+                                                            <input type="text" class="form-control" placeholder="Rent ID"
+                                                                   id="responseRentId" name="rent_Id">
+                                                            <span class="uil uil-history search-icon"></span>
+                                                            <button class="input-group-text btn-danger" type="button" id="btnDeleteRental">Cancel Rental</button>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </section>
                                         </form>
@@ -489,6 +464,7 @@
                                                     <th>Pick-Up Date</th>
                                                     <th>Return Date</th>
                                                     <th>Location</th>
+                                                    <th>Request Type</th>
                                                 </tr>
                                                 </thead>
                                                 <tbody id="tblResponse">
@@ -499,15 +475,11 @@
                                         <!-- end response table content-->
 
                                         <!-- start button content-->
-                                        <div class="mb-3 mt-3 d-grid gap-1 d-md-flex justify-content-md-center">
-                                            <button type="button" class="btn btn-danger btn" id="btnDeleteRental">
-                                                Delete Rental
-                                            </button>
-                                            <button type="button" class="btn btn-warning btn me-md-1"
-                                                    id="btnClear">
-                                                Clear
-                                            </button>
-                                        </div>
+<!--                                        <div class="mb-3 mt-3 d-grid gap-1 d-md-flex justify-content-md-center">-->
+<!--                                            <button type="button" class="btn btn-danger btn" id="btnDeleteRental" style="border-radius: 0.5rem;">-->
+<!--                                                Cancel Rental-->
+<!--                                            </button>-->
+<!--                                        </div>-->
                                         <!-- end button content-->
 
                                     </div>
@@ -753,10 +725,12 @@
 <script>
     let currentBaseUrl = "http://localhost:8080/Back_End_war/";
 
+    loadBookingResponseToCustomers();
+
     //<!-- Start Document Ready Navigation -->
     $(function () {
-        $("#bookingRequest").css("display", "block");
-        $("#bookingResponse").css("display", "none");
+        $("#bookingRequest").css("display", "none");
+        $("#bookingResponse").css("display", "block");
         $("#manageProfile").css("display", "none");
         $("#customerPayment").css("display", "none");
     });
@@ -857,6 +831,27 @@
         });
     });
     <!-- end customer update -->
+
+    function loadBookingResponseToCustomers() {
+        $("#tblResponse").empty();
+        $.ajax({
+            url: currentBaseUrl + "rent",
+            method: "GET",
+            contentType: "application/json",
+            dataType: "json",
+            success: function (res){
+                for (var customer of res.data) {
+                    if (user === customer.regUser.user_Id) {
+                        $("#tblResponse").append(`<tr><td>${customer.rentID}</td><td>${customer.regUser.user_Id}</td><td>${customer.rentDetails.at(carID).carID}</td><td>${customer.pickUpDate}</td><td>${customer.returnDate}</td><td>${customer.location}</td><td>${customer.rentType}</td>`);
+                    }
+                }
+            },
+            error: function (error) {
+                let message = JSON.parse(error.responseText).message;
+                alert(message);
+            }
+        });
+    }
 
 </script>
 </body>

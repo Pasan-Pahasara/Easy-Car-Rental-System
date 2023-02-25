@@ -4,6 +4,8 @@ import lk.ijse.easy.dto.CustomDTO;
 import lk.ijse.easy.dto.RentDTO;
 import org.springframework.web.bind.annotation.RequestBody;
 
+import java.util.ArrayList;
+
 /**
  * @author : ShEnUx
  * @time : 11:53 PM
@@ -12,7 +14,12 @@ import org.springframework.web.bind.annotation.RequestBody;
  **/
 public interface RentService {
     void bookingCars(@RequestBody RentDTO dto);
+
     String generateRentId();
+
     CustomDTO getNumberOfBookings();
+
     CustomDTO getSumOfBookingActive();
+
+    ArrayList<RentDTO> getAllRents();
 }

@@ -1,6 +1,7 @@
 package lk.ijse.easy.service.impl;
 
 import lk.ijse.easy.dto.CustomDTO;
+import lk.ijse.easy.dto.DriverDTO;
 import lk.ijse.easy.dto.RegUserDTO;
 import lk.ijse.easy.dto.RentDTO;
 import lk.ijse.easy.entity.*;
@@ -10,10 +11,12 @@ import lk.ijse.easy.repo.DriverRepo;
 import lk.ijse.easy.repo.RentRepo;
 import lk.ijse.easy.service.RentService;
 import org.modelmapper.ModelMapper;
+import org.modelmapper.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
@@ -93,5 +96,10 @@ public class RentServiceImpl implements RentService {
     @Override
     public CustomDTO getSumOfBookingActive() {
         return new CustomDTO(repo.getSumOfBookingActive());
+    }
+
+    @Override
+    public ArrayList<RentDTO> getAllRents() {
+        return mapper.map(repo.findAll(),new TypeToken<ArrayList<RentDTO>>() {}.getType());
     }
 }

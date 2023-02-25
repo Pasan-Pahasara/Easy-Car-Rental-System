@@ -21,6 +21,12 @@ public class rentController {
     @Autowired
     private RentService service;
 
+    @ResponseStatus(HttpStatus.ACCEPTED)
+    @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil getAllRents(){
+        return new ResponseUtil("OK","Successfully Loaded..!",service.getAllRents());
+    }
+
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping
     public ResponseUtil placeOrder(@RequestBody RentDTO dto) {

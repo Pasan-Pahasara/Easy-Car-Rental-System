@@ -6,7 +6,6 @@ let rentBaseUrl = "http://localhost:8080/Back_End_war/";
 
 let customer;
 
-
 generateRentId();
 
 <!-- start generate rent ID function -->
@@ -225,4 +224,3 @@ $("#reservationBtn").on('click', function () {
         });
     }
 });
-
