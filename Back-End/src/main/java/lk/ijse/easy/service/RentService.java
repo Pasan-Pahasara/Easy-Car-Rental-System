@@ -1,5 +1,6 @@
 package lk.ijse.easy.service;
 
+import lk.ijse.easy.dto.CustomDTO;
 import lk.ijse.easy.dto.RentDTO;
 import org.springframework.web.bind.annotation.RequestBody;
 
@@ -12,4 +13,5 @@ import org.springframework.web.bind.annotation.RequestBody;
 public interface RentService {
     void bookingCars(@RequestBody RentDTO dto);
     String generateRentId();
+    CustomDTO getNumberOfBookings();
 }

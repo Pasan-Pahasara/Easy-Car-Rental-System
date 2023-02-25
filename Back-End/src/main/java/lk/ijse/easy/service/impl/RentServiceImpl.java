@@ -1,5 +1,6 @@
 package lk.ijse.easy.service.impl;
 
+import lk.ijse.easy.dto.CustomDTO;
 import lk.ijse.easy.dto.RegUserDTO;
 import lk.ijse.easy.dto.RentDTO;
 import lk.ijse.easy.entity.*;
@@ -84,5 +85,10 @@ public class RentServiceImpl implements RentService {
             id = "RE0-001";
         }
         return id;
+    }
+
+    @Override
+    public CustomDTO getNumberOfBookings() {
+        return new CustomDTO(repo.getNumberOfBookings());
     }
 }

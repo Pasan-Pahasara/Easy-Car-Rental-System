@@ -61,8 +61,8 @@ public class RegUserController {
     }
 
     @ResponseStatus(HttpStatus.ACCEPTED)
-    @GetMapping(path = "/numberOfUsers")
+    @GetMapping(path = "/numberOfUsers", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseUtil getSumOfUsers() {
-        return new ResponseUtil("OK", "Successfully Generated ID..!", service.getSumOfUsers());
+        return new ResponseUtil("OK", "Successfully Loaded Count..!", service.getSumOfUsers());
     }
 }

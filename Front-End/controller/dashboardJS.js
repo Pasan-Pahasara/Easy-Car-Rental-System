@@ -19,3 +19,18 @@ $.ajax({
 
     }
 });
+
+$("#numberOfBookings").val("00");
+$.ajax({
+    url: dashboardBaseUrl + "rent/dailyBookings",
+    method: "GET",
+    contentType: "application/json",
+    dataType: "json",
+    success: function (resp) {
+        let num = resp.data.count;
+        $("#numberOfBookings").text(num);
+    },
+    error: function (ob, statusText, error) {
+
+    }
+});

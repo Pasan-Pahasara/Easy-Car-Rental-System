@@ -34,4 +34,9 @@ public class rentController {
         return new ResponseUtil("OK", "Successfully Generated ID..!", service.generateRentId());
     }
 
+    @ResponseStatus(HttpStatus.ACCEPTED)
+    @GetMapping(path = "/dailyBookings", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil getNumberOfBookings() {
+        return new ResponseUtil("OK", "Successfully Generated ID..!", service.getNumberOfBookings());
+    }
 }
