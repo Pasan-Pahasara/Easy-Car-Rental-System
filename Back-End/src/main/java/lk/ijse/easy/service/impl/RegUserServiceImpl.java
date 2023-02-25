@@ -1,5 +1,6 @@
 package lk.ijse.easy.service.impl;
 
+import lk.ijse.easy.dto.CustomDTO;
 import lk.ijse.easy.dto.RegUserDTO;
 import lk.ijse.easy.entity.RegUser;
 import lk.ijse.easy.entity.User;
@@ -142,5 +143,10 @@ public class RegUserServiceImpl implements RegUserService {
             id = "C00-001";
         }
         return id;
+    }
+
+    @Override
+    public CustomDTO getSumOfUsers() {
+        return new CustomDTO(repo.getSumOfUsers());
     }
 }

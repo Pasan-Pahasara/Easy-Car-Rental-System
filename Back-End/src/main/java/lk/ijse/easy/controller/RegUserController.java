@@ -60,4 +60,9 @@ public class RegUserController {
         return new ResponseUtil("OK", "Successfully Generated ID..!", service.generateCustomerId());
     }
 
+    @ResponseStatus(HttpStatus.ACCEPTED)
+    @GetMapping(path = "/numberOfUsers")
+    public ResponseUtil getSumOfUsers() {
+        return new ResponseUtil("OK", "Successfully Generated ID..!", service.getSumOfUsers());
+    }
 }
