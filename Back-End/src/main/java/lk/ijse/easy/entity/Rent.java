@@ -1,7 +1,7 @@
 package lk.ijse.easy.entity;
 
 import lk.ijse.easy.enums.RentRequestType;
-import lk.ijse.easy.enums.RequestType;
+import lk.ijse.easy.enums.DriverRequestType;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -29,7 +29,7 @@ public class Rent {
     private LocalDate returnDate;
     private LocalTime returnTime;
     @Enumerated(EnumType.STRING)
-    private RequestType requestType;
+    private DriverRequestType driverRequestType;
     @Enumerated(EnumType.STRING)
     private RentRequestType rentType;
     private String location;

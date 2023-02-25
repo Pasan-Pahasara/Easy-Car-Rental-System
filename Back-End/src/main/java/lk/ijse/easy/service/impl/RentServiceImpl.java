@@ -5,7 +5,7 @@ import lk.ijse.easy.entity.Car;
 import lk.ijse.easy.entity.Driver;
 import lk.ijse.easy.entity.Rent;
 import lk.ijse.easy.entity.RentDetails;
-import lk.ijse.easy.enums.RequestType;
+import lk.ijse.easy.enums.DriverRequestType;
 import lk.ijse.easy.repo.CarRepo;
 import lk.ijse.easy.repo.DriverRepo;
 import lk.ijse.easy.repo.RentRepo;
@@ -39,16 +39,19 @@ public class RentServiceImpl implements RentService {
     private ModelMapper mapper;
     @Override
     public void bookingCars(RentDTO dto) {
-//        Rent rent = mapper.map(dto, Rent.class);
-        Rent rent = new Rent(dto.getRentID(),dto.getPickUpDate(),dto.getPickUpTime(),dto.getReturnDate(),dto.getReturnTime(),dto.getRequestType(),dto.getRentType(),dto.getLocation(),dto.getRegUser(),dto.getRentDetails());
+        Rent rent = mapper.map(dto, Rent.class);
 
         if (repo.existsById(dto.getRentID())) {
             throw new RuntimeException("Booking" + dto.getRentID() + " Already added.!");
         }
 
-        if(dto.getRequestType().equals(RequestType.YES)){
+        System.out.println(dto);
+
+        if(dto.getDriverRequestType().equals("YES")){
             List<Driver> drivers = driverRepo.availableDrivers();
             int x;
+
+            System.out.println("come");
 
             for (RentDetails rentDetails : rent.getRentDetails()){
                 x=new Random().nextInt(drivers.size());

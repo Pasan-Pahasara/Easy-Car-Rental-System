@@ -1,9 +1,8 @@
 package lk.ijse.easy.dto;
 
 import lk.ijse.easy.entity.RegUser;
-import lk.ijse.easy.entity.RentDetails;
 import lk.ijse.easy.enums.RentRequestType;
-import lk.ijse.easy.enums.RequestType;
+import lk.ijse.easy.enums.DriverRequestType;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -27,9 +26,9 @@ public class RentDTO {
     private LocalTime pickUpTime;
     private LocalDate returnDate;
     private LocalTime returnTime;
-    private RequestType requestType;
+    private DriverRequestType driverRequestType;
     private RentRequestType rentType;
     private String location;
     private RegUser regUser;
-    private List<RentDetails> rentDetails;
+    private List<RentDetailsDTO> rentDetails;
 }

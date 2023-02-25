@@ -24,7 +24,7 @@ $("#fuelType").on('click', function () {
     let fuel_Type = $("#fuelType").val();
     console.log(carType);
     console.log(fuel_Type);
-    $("#carID").empty();
+    // $("#carID").empty();
     $.ajax({
         url: rentBaseUrl + "car/filterCarDetails/?type=" + carType + "&fuel_Type=" + fuel_Type,
         method: "GET",
@@ -150,13 +150,21 @@ function loadCartTableDetail() {
     rentPickFromTime = $("#rentPickFromTime").val();
     rentReturnFromDate = $("#rentReturnFromDate").val();
     rentReturnFromTime = $("#rentReturnFromTime").val();
-    driverAvailability = $("#driverAvailability").val();
+    driverAvailability = $('#driverAvailability').is(':checked') ? "YES" : "NO";
     rentLocation = $("#rentLocation").val();
 
     let row = `<tr><td>${carID}</td><td>${rentPickFromDate}</td><td>${rentPickFromTime}</td><td>${rentReturnFromDate}</td><td>${rentReturnFromTime}</td><td>${driverAvailability}</td><td>${rentLocation}</td></tr>`;
 
     $("#tblRentCart").append(row);
 }
+
+$('#driverAvailability').on('click',function () {
+    if ($('#driverAvailability').is(':checked')){
+        // alert('Expensive')
+    }else {
+
+    }
+});
 
 $("#reservationBtn").on('click',function () {
     let rentDetails = [];
@@ -175,7 +183,7 @@ $("#reservationBtn").on('click',function () {
         let pickUpTime = $("#tblRentCart").children(`:eq(${i})`).children(":eq(2)").text();
         let returnDate = $("#tblRentCart").children(`:eq(${i})`).children(":eq(3)").text();
         let returnTime = $("#tblRentCart").children(`:eq(${i})`).children(":eq(4)").text();
-        let requestType = $("#tblRentCart").children(`:eq(${i})`).children(":eq(5)").text();
+        let requestType = $('#driverAvailability').is(':checked') ? "YES" : "NO";
         let rentType = "PENDING";
         let location = $("#tblRentCart").children(`:eq(${i})`).children(":eq(6)").text();
         let userID = $("#userID").val();
