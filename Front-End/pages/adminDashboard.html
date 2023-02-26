@@ -1288,6 +1288,7 @@
     loadCustomerRequestDetails();
     generatePaymentId();
     changeDriverID();
+    loadPaymentDetails();
 
     // default submit false
     $(function () {
@@ -1585,7 +1586,27 @@
 
     //<!------------------------------------ Payment Details ------------------------------------>
 
+    <!-- Start Payment Details get function -->
+    function loadPaymentDetails() {
+        $("#tblPayments").empty();
+        $.ajax({
+            url: cusRequestBaseUrl + "payment",
+            contentType: "application/json",
+            dataType: "json",
+            success: function (res) {
+                for (var payment of res.data) {
+                    console.log("HI"+res.data)
 
+                    // $("#tblPayments").append(`<tr><td>${payment.paymentID}</td><td>${payment.date}</td><td>${payment.total}</td></tr>`);
+                }
+            },
+            error: function (error) {
+                let message = JSON.parse(error.responseText).message;
+                alert(message);
+            }
+        });
+    }
+    <!-- End Payment Details get function -->
 </script>
 </body>
 </html>

@@ -1,16 +1,16 @@
 package lk.ijse.easy.service.impl;
 
 import lk.ijse.easy.dto.PaymentDTO;
-import lk.ijse.easy.entity.Driver;
 import lk.ijse.easy.entity.Payment;
-import lk.ijse.easy.repo.CarRepo;
 import lk.ijse.easy.repo.PaymentRepo;
 import lk.ijse.easy.service.PaymentService;
 import org.modelmapper.ModelMapper;
+import org.modelmapper.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.util.ArrayList;
 
 /**
  * @author : ShEnUx
@@ -53,5 +53,10 @@ public class PaymentServiceImpl implements PaymentService {
         }
         System.out.println(paymentDTO);
         paymentRepo.save(mapper.map(paymentDTO, Payment.class));
+    }
+
+    @Override
+    public ArrayList<PaymentDTO> getAllPayments() {
+        return mapper.map(paymentRepo.findAll(),new TypeToken<ArrayList<PaymentDTO>>() {}.getType());
     }
 }

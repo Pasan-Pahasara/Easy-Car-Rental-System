@@ -21,6 +21,12 @@ import org.springframework.web.bind.annotation.*;
 public class PaymentController {
     @Autowired
     private PaymentService service;
+
+    @ResponseStatus(HttpStatus.ACCEPTED)
+    @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil getAllPayments(){
+        return new ResponseUtil("OK","Successfully Loaded..!",service.getAllPayments());
+    }
     @ResponseStatus(HttpStatus.ACCEPTED)
     @GetMapping(path = "/generatePaymentId", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseUtil generatePaymentId() {

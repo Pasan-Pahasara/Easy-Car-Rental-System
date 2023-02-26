@@ -2,6 +2,8 @@ package lk.ijse.easy.service;
 
 import lk.ijse.easy.dto.PaymentDTO;
 
+import java.util.ArrayList;
+
 /**
  * @author : ShEnUx
  * @time : 2:12 PM
@@ -11,4 +13,5 @@ import lk.ijse.easy.dto.PaymentDTO;
 public interface PaymentService {
     String generatePaymentId();
     void savePayment(PaymentDTO paymentDTO);
+    ArrayList<PaymentDTO> getAllPayments();
 }
