@@ -30,8 +30,7 @@ public class PaymentController {
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseUtil savePayment(@RequestBody PaymentDTO paymentDTO) {
-//        service.saveDriver(paymentDTO);
-        System.out.println(paymentDTO.toString());
+        service.savePayment(paymentDTO);
         return new ResponseUtil("OK", "Successfully Registered..!", null);
     }
 }

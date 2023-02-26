@@ -1,5 +1,9 @@
 package lk.ijse.easy.service.impl;
 
+import lk.ijse.easy.dto.PaymentDTO;
+import lk.ijse.easy.entity.Driver;
+import lk.ijse.easy.entity.Payment;
+import lk.ijse.easy.repo.CarRepo;
 import lk.ijse.easy.repo.PaymentRepo;
 import lk.ijse.easy.service.PaymentService;
 import org.modelmapper.ModelMapper;
@@ -18,12 +22,12 @@ import javax.transaction.Transactional;
 @Transactional
 public class PaymentServiceImpl implements PaymentService {
     @Autowired
-    private PaymentRepo repo;
+    private PaymentRepo paymentRepo;
     @Autowired
     private ModelMapper mapper;
     @Override
     public String generatePaymentId() {
-        String lastId = repo.generatePaymentId();
+        String lastId = paymentRepo.generatePaymentId();
         String id = "";
 
         if (lastId != null) {
@@ -40,5 +44,14 @@ public class PaymentServiceImpl implements PaymentService {
             id = "P00-001";
         }
         return id;
+    }
+
+    @Override
+    public void savePayment(PaymentDTO paymentDTO) {
+        if (paymentRepo.existsById(paymentDTO.getPaymentID())) {
+            throw new RuntimeException("User Already Exist. Please enter another id..!");
+        }
+        System.out.println(paymentDTO);
+        paymentRepo.save(mapper.map(paymentDTO, Payment.class));
     }
 }

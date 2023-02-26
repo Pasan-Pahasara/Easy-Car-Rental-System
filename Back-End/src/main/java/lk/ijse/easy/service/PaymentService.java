@@ -1,5 +1,7 @@
 package lk.ijse.easy.service;
 
+import lk.ijse.easy.dto.PaymentDTO;
+
 /**
  * @author : ShEnUx
  * @time : 2:12 PM
@@ -8,4 +10,5 @@ package lk.ijse.easy.service;
  **/
 public interface PaymentService {
     String generatePaymentId();
+    void savePayment(PaymentDTO paymentDTO);
 }

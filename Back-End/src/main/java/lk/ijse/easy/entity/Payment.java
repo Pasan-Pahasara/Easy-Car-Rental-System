@@ -26,8 +26,8 @@ public class Payment {
     @JoinColumn(name = "rentID", referencedColumnName = "rentID", nullable = false)
     private Rent rentID;
     private PaymentType paymentType;
-    private LocalDate date;
-    private LocalTime time;
+    private String date;
+    private String time;
     private Double lostDamage;
     private Double rentFee;
     private Double driverFee;
