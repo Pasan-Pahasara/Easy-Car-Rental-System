@@ -1590,14 +1590,13 @@
     function loadPaymentDetails() {
         $("#tblPayments").empty();
         $.ajax({
+            method: "GET",
             url: cusRequestBaseUrl + "payment",
             contentType: "application/json",
             dataType: "json",
             success: function (res) {
                 for (var payment of res.data) {
-                    console.log("HI"+res.data)
-
-                    // $("#tblPayments").append(`<tr><td>${payment.paymentID}</td><td>${payment.date}</td><td>${payment.total}</td></tr>`);
+                    $("#tblPayments").append(`<tr><td>${payment.paymentID}</td><td>${payment.date}</td><td>${payment.total}</td><td>${payment.rentID.rentID}</td><td>${payment.rentID.regUser.user.user_Id}</td></tr>`);
                 }
             },
             error: function (error) {
