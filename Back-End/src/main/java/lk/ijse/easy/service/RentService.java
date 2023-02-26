@@ -19,4 +19,5 @@ public interface RentService {
     CustomDTO getNumberOfBookings();
     CustomDTO getSumOfBookingActive();
     ArrayList<RentDTO> getAllRents();
+    void bookingConfirm(String rentID, String driverId);
 }

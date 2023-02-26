@@ -22,6 +22,7 @@ import java.util.Random;
 
 import static lk.ijse.easy.enums.Availability.AVAILABLE;
 import static lk.ijse.easy.enums.Availability.UNAVAILABLE;
+import static lk.ijse.easy.enums.RentRequestType.CONFORM;
 
 /**
  * @author : ShEnUx
@@ -125,5 +126,26 @@ public class RentServiceImpl implements RentService {
     public ArrayList<RentDTO> getAllRents() {
         return mapper.map(repo.findAll(), new TypeToken<ArrayList<RentDTO>>() {
         }.getType());
+    }
+
+    @Override
+    public void bookingConfirm(String rentID, String driverId) {
+        Rent rent = rentRepo.findById(rentID).get();
+        if (rent.getRentDetails().get(0).getDriverID() != null) {
+
+            Driver drivers = driverRepo.findById(rent.getRentDetails().get(0).getDriverID()).get();
+            drivers.setDriver_Availability(AVAILABLE);
+            driverRepo.save(drivers);
+
+            rent.getRentDetails().get(0).setDriverID(driverId);
+            Driver driver = driverRepo.findById(rent.getRentDetails().get(0).getDriverID()).get();
+            driver.setDriver_Availability(UNAVAILABLE);
+            rent.setRentType(CONFORM);
+            rentRepo.save(rent);
+        }
+        if (rent.getRentDetails().get(0).getDriverID() == null) {
+            rent.setRentType(CONFORM);
+            rentRepo.save(rent);
+        }
     }
 }

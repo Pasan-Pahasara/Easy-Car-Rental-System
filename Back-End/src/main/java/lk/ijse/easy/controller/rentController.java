@@ -57,4 +57,11 @@ public class rentController {
         service.deleteRent(id);
         return new ResponseUtil("OK","Successfully Deleted..! : "+id,null);
     }
+
+    @ResponseStatus(HttpStatus.CREATED)
+    @PostMapping(path = "/rentConfirm", params = {"rentID", "driverId"})
+    public ResponseUtil bookingConform(@RequestParam String rentID, @RequestParam String driverId) {
+        service.bookingConfirm(rentID,driverId);
+        return new ResponseUtil("OK", "Successfully Conformed.!", null);
+    }
 }

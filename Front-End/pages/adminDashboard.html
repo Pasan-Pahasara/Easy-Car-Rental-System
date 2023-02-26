@@ -1286,7 +1286,7 @@
 
     loadCustomerRequestDetails();
     generatePaymentId();
-
+    let driverId;
     // default submit false
     $(function () {
         $("#customerRequestSearchForm").submit(function () {
@@ -1451,6 +1451,7 @@
         $("#tblRequest>tr").on('click', function () {
             //Set values to the text-fields
             $("#rentId").val($(this).children().eq(0).text());
+            driverId = $(this).children().eq(3).text();
             $("#paymentDate").val(date);
             $("#paymentTime").val(time);
         });
@@ -1513,6 +1514,25 @@
         });
     });
     <!-- end payment add -->
+
+    $("#btnAccept").on('click',function () {
+        let rentID = $("#rentId").val();
+        let driverID =  driverId;
+        $.ajax({
+            url: cusRequestBaseUrl + "rent/rentConfirm/?rentID=" + rentID + "&driverId=" + driverID,
+            method: "post",
+            dataType: "json",
+            success: function (res) {
+                alert(res.message);
+                $("#tblRequest").empty();
+                loadCustomerRequestDetails();
+            },
+            error: function (error) {
+                let message = JSON.parse(error.responseText).message;
+                alert(message);
+            }
+        });
+    });
 
 </script>
 </body>
