@@ -1261,6 +1261,13 @@
 
     loadCustomerRequestDetails();
 
+    // default submit false
+    $(function () {
+        $("#customerRequestSearchForm").submit(function () {
+            return false;
+        });
+    });
+
     //<!-- Start Document Ready Navigation -->
     $(function () {
         $("#adminDashboard").css("display", "block");
