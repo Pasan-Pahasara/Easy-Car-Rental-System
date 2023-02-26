@@ -53,4 +53,10 @@ public class DriverController {
     public ResponseUtil getSumAvailableDrivers() {
         return new ResponseUtil("OK", "Successfully Loaded Count..!", service.getSumAvailableDrivers());
     }
+
+    @ResponseStatus(HttpStatus.CREATED)
+    @GetMapping(path = "/loadAvailabilityDrivers")
+    public ResponseUtil getAllAvailableDriver() {
+        return new ResponseUtil("OK", "Successfully Loaded. :", service.getAllAvailableDriver());
+    }
 }

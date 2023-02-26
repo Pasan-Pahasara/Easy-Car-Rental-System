@@ -17,4 +17,5 @@ public interface DriverService {
     void updateDriver(DriverDTO driverDTO);
     ArrayList<DriverDTO> getAllDrivers();
     CustomDTO getSumAvailableDrivers();
+    ArrayList<DriverDTO> getAllAvailableDriver();
 }

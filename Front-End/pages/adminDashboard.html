@@ -990,11 +990,12 @@
                                             <section id="secResponseDetails"
                                                      class="row mx-0 d-flex justify-content-center">
                                                 <div class="mb-1 col-xl-3 col-sm-6">
-                                                    <label class="form-label" for="requestRentId">Driver ID<span
+                                                    <label class="form-label" for="changeDriverId">Change Driver ID<span
                                                             class="text-danger">*</span></label>
-                                                    <input class="form-control" id="requestRentId" readonly
-                                                           name="rent_Id"
-                                                           placeholder="Rent ID" type="text">
+                                                    <select class="form-control" id="changeDriverId"
+                                                            name="user_Id">
+                                                        <option value="">- Change Driver ID -</option>
+                                                    </select>
                                                 </div>
                                             </section>
                                         </form>
@@ -1286,13 +1287,16 @@
 
     loadCustomerRequestDetails();
     generatePaymentId();
-    let driverId;
+    changeDriverID();
+
     // default submit false
     $(function () {
         $("#customerRequestSearchForm").submit(function () {
             return false;
         });
     });
+
+    //<!------------------------------------ Navigations ------------------------------------>
 
     //<!-- Start Document Ready Navigation -->
     $(function () {
@@ -1372,6 +1376,8 @@
     });
     <!-- End Customer Request Navigation -->
 
+    //<!------------------------------------ Customer Request ------------------------------------>
+
     <!-- Start Customer Request Details get function -->
     function loadCustomerRequestDetails() {
         $("#tblRequest").empty();
@@ -1391,7 +1397,6 @@
             }
         });
     }
-
     <!-- End Customer Request Details get function -->
 
     <!-- start search customer request using search button -->
@@ -1432,7 +1437,6 @@
             }
         });
     }
-
     <!-- end search customer request function -->
 
     <!-- start bind click events to the table rows function -->
@@ -1451,12 +1455,11 @@
         $("#tblRequest>tr").on('click', function () {
             //Set values to the text-fields
             $("#rentId").val($(this).children().eq(0).text());
-            driverId = $(this).children().eq(3).text();
             $("#paymentDate").val(date);
             $("#paymentTime").val(time);
+            $("#changeDriverId").val($(this).children().eq(3).text());
         });
     }
-
     <!-- end bind click events to the table rows function -->
 
     <!-- start generate payment id function -->
@@ -1515,9 +1518,10 @@
     });
     <!-- end payment add -->
 
-    $("#btnAccept").on('click',function () {
+    <!-- start accept button add -->
+    $("#btnAccept").on('click', function () {
         let rentID = $("#rentId").val();
-        let driverID =  driverId;
+        let driverID = $("#changeDriverId").val();
         $.ajax({
             url: cusRequestBaseUrl + "rent/rentConfirm/?rentID=" + rentID + "&driverId=" + driverID,
             method: "post",
@@ -1526,6 +1530,8 @@
                 alert(res.message);
                 $("#tblRequest").empty();
                 loadCustomerRequestDetails();
+                $("#changeDriverId").empty();
+                changeDriverID();
             },
             error: function (error) {
                 let message = JSON.parse(error.responseText).message;
@@ -1533,10 +1539,12 @@
             }
         });
     });
+    <!-- end accept button add -->
 
+    <!-- start reject button add -->
     $("#btnReject").on("click", function () {
         let rentID = $("#rentId").val();
-        let driverID =  driverId;
+        let driverID = $("#changeDriverId").val();
         $.ajax({
             url: cusRequestBaseUrl + "rent/rentReject/?rentID=" + rentID + "&driverId=" + driverID,
             method: "post",
@@ -1553,6 +1561,30 @@
         });
 
     });
+    <!-- end reject button add -->
+
+    <!-- start change driver id function -->
+    function changeDriverID() {
+        $.ajax({
+            url: cusRequestBaseUrl + "driver/loadAvailabilityDrivers",
+            method: "GET",
+            contentType: "application/json",
+            dataType: "json",
+            success: function (res) {
+                for (let i of res.data) {
+                    $("#changeDriverId").append(`<option>${i.user_Id}</option>`);
+                }
+            },
+            error: function (error) {
+                let message = JSON.parse(error.responseText).message;
+                alert(message);
+            }
+        });
+    }
+    <!-- end change driver id function -->
+
+    //<!------------------------------------ Payment Details ------------------------------------>
+
 
 </script>
 </body>

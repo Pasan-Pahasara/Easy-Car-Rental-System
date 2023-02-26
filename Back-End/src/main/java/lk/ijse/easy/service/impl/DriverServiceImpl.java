@@ -58,4 +58,8 @@ public class DriverServiceImpl implements DriverService {
     public CustomDTO getSumAvailableDrivers() {
         return new CustomDTO(repo.getSumAvailableDrivers());
     }
+
+    @Override
+    public ArrayList<DriverDTO> getAllAvailableDriver() {
+        return mapper.map(repo.availableDrivers(), new TypeToken<ArrayList<Driver>>() {}.getType());    }
 }
