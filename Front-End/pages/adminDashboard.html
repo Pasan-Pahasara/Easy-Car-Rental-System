@@ -1358,6 +1358,12 @@
     }
     <!-- End Customer Request Details get function -->
 
+    <!-- start search customer request using search driver button -->
+    $("#CustomerRequestSearch").on('click', function () {
+        searchCustomerRequest();
+    });
+    <!-- end search customer request using search driver button -->
+
     <!-- start search customer request function -->
     function searchCustomerRequest() {
         $("#tblRequest").empty();
