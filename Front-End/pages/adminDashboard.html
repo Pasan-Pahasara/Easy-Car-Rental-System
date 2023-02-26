@@ -989,81 +989,30 @@
                                     <div class="col-xl-12">
 
                                         <!-- start booking request details -->
-                                        <form id="customerRequestForm" class="row mb-3">
-                                            <section id="secResponseDetails" class="row mx-0">
-                                                <div class="mb-2 col-xl-3 col-sm-6">
-                                                    <label class="form-label" for="requestRentId">Rent ID<span
+                                        <form id="customerRequestForm" class="row mb-1">
+                                            <section id="secResponseDetails" class="row mx-0 d-flex justify-content-center">
+                                                <div class="mb-1 col-xl-3 col-sm-6">
+                                                    <label class="form-label" for="requestRentId">Driver ID<span
                                                             class="text-danger">*</span></label>
                                                     <input class="form-control" id="requestRentId" readonly
                                                            name="rent_Id"
                                                            placeholder="Rent ID" type="text">
                                                 </div>
-                                                <div class="mb-2 col-xl-3 col-sm-6">
-                                                    <label class="form-label" for="requestPickUpDate">Pick-Up Date<span
-                                                            class="text-danger">*</span></label>
-                                                    <input class="form-control" id="requestPickUpDate" readonly
-                                                           name="pick_Up_Date"
-                                                           placeholder="Pick-Up Date" type="text">
-                                                </div>
-                                                <div class="mb-2 col-xl-3 col-sm-6">
-                                                    <label class="form-label" for="requestReturnDate">Return Date<span
-                                                            class="text-danger">*</span></label>
-                                                    <input class="form-control" id="requestReturnDate" readonly
-                                                           name="return_Date"
-                                                           placeholder="Return Date" type="text">
-                                                </div>
-                                                <div class="mb-2 col-xl-3 col-sm-6">
-                                                    <label class="form-label" for="requestLocation">Location<span
-                                                            class="text-danger">*</span></label>
-                                                    <input class="form-control" id="requestLocation" readonly
-                                                           name="location"
-                                                           placeholder="Location" type="text">
-                                                </div>
-                                                <div class="mb-2 col-xl-3 col-sm-6">
-                                                    <label class="form-label" for="requestCarId">Car ID<span
-                                                            class="text-danger">*</span></label>
-                                                    <input class="form-control" id="requestCarId" readonly
-                                                           name="car_Id"
-                                                           placeholder="Car ID" type="text">
-                                                </div>
-                                                <div class="mb-2 col-xl-3 col-sm-6">
-                                                    <label class="form-label" for="requestUserId">Customer ID<span
-                                                            class="text-danger">*</span></label>
-                                                    <input class="form-control" id="requestUserId" readonly
-                                                           name="user_Id"
-                                                           placeholder="Customer ID" type="text">
-                                                </div>
-                                                <div class="mb-2 col-xl-3 col-sm-6">
-                                                    <label class="form-label" for="requestNicOrLicenceNo">Nic or Licence
-                                                        No<span
-                                                                class="text-danger">*</span></label>
-                                                    <input class="form-control" id="requestNicOrLicenceNo" readonly
-                                                           name="nic"
-                                                           placeholder="Nic or Licence No" type="text">
-                                                </div>
-                                                <div class="mb-2 col-xl-3 col-sm-6">
-                                                    <label class="form-label" for="requestDriverState">Driver State<span
-                                                            class="text-danger">*</span></label>
-                                                    <input class="form-control" id="requestDriverState" readonly
-                                                           name="driver_Request_Type"
-                                                           placeholder="Driver State" type="text">
-                                                </div>
-
                                             </section>
                                         </form>
                                         <!-- end booking request details -->
 
                                         <!-- start button content-->
-                                        <div class="mb-3 mt-2 d-grid gap-1 d-md-flex justify-content-md-end">
+                                        <div class="mb-3 mt-1 d-grid gap-1 d-md-flex justify-content-md-end">
                                             <button type="button" class="btn btn-success btn" id="btnAccept">
                                                 Accept
                                             </button>
                                             <button type="button" class="btn btn-danger btn" id="btnReject">
                                                 Reject
                                             </button>
-                                            <button type="button" class="btn btn-warning btn me-md-1"
-                                                    id="btnClear">
-                                                Clear
+                                            <!-- Button payment modal -->
+                                            <button type="button" class="btn btn-warning btn me-md-1 text-white" data-bs-toggle="modal" data-bs-target="#exampleModal" id="btnPayment">
+                                                Payment
                                             </button>
                                         </div>
                                         <!-- end button content-->
@@ -1090,11 +1039,15 @@
                                                 <thead class="btn-primary">
                                                 <tr>
                                                     <th>Rent ID</th>
-                                                    <th>Customer ID</th>
-                                                    <th>Nic Or Licence</th>
                                                     <th>Car ID</th>
+                                                    <th>Customer ID</th>
+                                                    <th>Driver ID</th>
+                                                    <th>Driver State</th>
+                                                    <th>Rent State</th>
                                                     <th>Pick-Up Date</th>
+                                                    <th>Pick-Up Time</th>
                                                     <th>Return Date</th>
+                                                    <th>Return Time</th>
                                                     <th>Location</th>
                                                 </tr>
                                                 </thead>
@@ -1104,6 +1057,91 @@
                                             </table>
                                         </div>
                                         <!-- end request table content-->
+
+                                        <!-- Modal -->
+                                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog modal-lg">
+                                                <div class="modal-content" style="border-radius: 1.5rem;">
+                                                    <div class="modal-header">
+                                                        <h1 class="modal-title fs-3 fw-bolder" id="exampleModalLabel">Payment Rent</h1>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                    </div>
+                                                    <div class="modal-body">
+
+
+                                                        <div class="col-xl-12">
+                                                            <form id="paymentForm" class="row">
+                                                                    <div class="mb-3 col-xl-3">
+                                                                        <label class="form-label" for="paymentId">Payment ID<span
+                                                                                class="text-danger">*</span></label>
+                                                                        <input class="form-control" id="paymentId" name="paymentID"
+                                                                               placeholder="Payment ID" type="text">
+                                                                    </div>
+                                                                    <div class="mb-3 col-xl-3">
+                                                                        <label class="form-label" for="rentId">Rent ID<span
+                                                                                class="text-danger">*</span></label>
+                                                                        <input class="form-control" id="rentId" name="rentID"
+                                                                               placeholder="Rent ID" type="text">
+                                                                    </div>
+                                                                    <div class="mb-3 col-xl-3">
+                                                                        <label class="form-label" for="paymentType">Payment Type<span
+                                                                                    class="text-danger">*</span></label>
+                                                                        <select class="form-control" id="paymentType"
+                                                                                name="paymentType">
+                                                                            <option value="">- Select Payment Type -</option>
+                                                                            <option value="NORMAL">NORMAL</option>
+                                                                            <option value="LOST_DAMAGE">LOST_DAMAGE</option>
+                                                                        </select>
+                                                                    </div>
+                                                                    <div class="mb-3 col-xl-3">
+                                                                        <label class="form-label" for="paymentDate">Payment Date<span
+                                                                                class="text-danger">*</span></label>
+                                                                        <input class="form-control" id="paymentDate" name="date"
+                                                                               placeholder="Payment Date" type="text">
+                                                                    </div>
+                                                                    <div class="mb-3 col-xl-3">
+                                                                        <label class="form-label" for="paymentTime">Payment Time<span
+                                                                                class="text-danger">*</span></label>
+                                                                        <input class="form-control" id="paymentTime" name="time"
+                                                                               placeholder="Payment Time" type="text">
+                                                                    </div>
+                                                                    <div class="mb-3 col-xl-3">
+                                                                        <label class="form-label" for="lostDamage">Lost Damage<span
+                                                                                class="text-danger">*</span></label>
+                                                                        <input class="form-control" id="lostDamage" name="lostDamage"
+                                                                               placeholder="Lost Damage" type="text">
+                                                                    </div>
+                                                                    <div class="mb-3 col-xl-3">
+                                                                        <label class="form-label" for="carFee">Car Fee<span
+                                                                                class="text-danger">*</span></label>
+                                                                        <input class="form-control" id="carFee" name="rentFee"
+                                                                               placeholder="Car Fee" type="text">
+                                                                    </div>
+                                                                    <div class="mb-3 col-xl-3">
+                                                                        <label class="form-label" for="driverFee">Driver Fee<span
+                                                                                class="text-danger">*</span></label>
+                                                                        <input class="form-control" id="driverFee" name="driverFee"
+                                                                               placeholder="Driver Fee" type="text">
+                                                                    </div>
+                                                                    <div class="mb-3 col-xl-3">
+                                                                        <label class="form-label" for="total">Total<span
+                                                                                class="text-danger">*</span></label>
+                                                                        <input class="form-control" id="total" name="total"
+                                                                               placeholder="Total" type="text">
+                                                                    </div>
+                                                            </form>
+                                                        </div>
+
+
+
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                        <button type="button" class="btn btn-success btn">Pay now</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
 
                                     </div>
                                     <!-- end col-->

@@ -158,16 +158,17 @@
                                     <div class="col-xl-12">
                                         <div class="row">
 
-                                            <div class="table-responsive-xxl table-nowrap flex-grow-0 col-xl-8">
+                                            <div class="table-nowrap flex-grow-0 col-xl-8" style="overflow-x:auto;-webkit-overflow-scrolling:touch;">
                                                 <table class="table table-centered mb-0 col-xxl-6">
                                                     <thead class="btn-primary">
                                                     <tr>
                                                         <th scope="col">Driver ID</th>
-                                                        <th scope="col">Driver Name</th>
                                                         <th scope="col">Rent ID</th>
                                                         <th scope="col">Car ID</th>
                                                         <th scope="col">Pick-Up Date</th>
                                                         <th scope="col">Pick-Up Time</th>
+                                                        <th scope="col">Return Date</th>
+                                                        <th scope="col">Return Time</th>
                                                         <th scope="col">Location</th>
                                                     </tr>
                                                     </thead>
@@ -217,11 +218,41 @@
 <!-- jQuery -->
 <script src="../assets/jQuery/jquery-3.6.0.min.js"></script>
 <script>
+    let driverScheduleBaseUrl = "http://localhost:8080/Back_End_war/";
+    let newDriver;
+
     //<!-- Start Document Ready Navigation -->
     $(function () {
         $("#driverSchedule").css("display", "block");
     });
     <!-- End Document Ready Navigation -->
+
+    $.ajax({
+        url: driverScheduleBaseUrl + "user/current",
+        method: "get",
+        success: function (res) {
+            newDriver = res.data.user_Id;
+        }
+    })
+    loadScheduleToDrivers();
+
+
+    function loadScheduleToDrivers() {
+        $.ajax({
+            url: driverScheduleBaseUrl + "rent",
+            method: "get",
+            contentType: "application/json",
+            dataType: "json",
+            success: function (res) {
+                for (var driver of res.data) {
+                    if (newDriver === driver.rentDetails.at(0).driverID) {
+                        $("#tblDriverSchedule").append(`<tr><td>${driver.rentDetails.at(0).driverID}</td><td>${driver.rentID}</td><td>${driver.rentDetails.at(0).carID}</td><td>${driver.pickUpDate}</td><td>${driver.pickUpTime}</td><td>${driver.returnDate}</td><td>${driver.returnTime}</td><td>${driver.location}</td></tr>`);
+                    }
+                }
+            }
+        })
+    }
+
 </script>
 </body>
 </html>

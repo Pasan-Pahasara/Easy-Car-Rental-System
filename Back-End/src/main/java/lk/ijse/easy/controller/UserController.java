@@ -23,19 +23,19 @@ public class UserController {
 
     @ResponseStatus(HttpStatus.ACCEPTED)
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseUtil getAllRegUser(){
+    public ResponseUtil getAllRegUser() {
         System.out.println(service.getAllRegUsers());
-        return new ResponseUtil("OK","Successfully Loaded..!",service.getAllRegUsers());
+        return new ResponseUtil("OK", "Successfully Loaded..!", service.getAllRegUsers());
     }
 
     @GetMapping(params = {"username"})
-    public ResponseUtil setUser(String username,String password){
-        Current.currentUser=service.getRegUsers(username,password);
-        return new ResponseUtil("OK","Successfully Loaded..!","");
+    public ResponseUtil setUser(String username, String password) {
+        Current.currentUser = service.getRegUsers(username, password);
+        return new ResponseUtil("OK", "Successfully Loaded..!", "");
     }
 
     @GetMapping(path = "current")
-    public ResponseUtil getCurrentUser(){
-        return new ResponseUtil("OK","Successfully Loaded..!",Current.currentUser);
+    public ResponseUtil getCurrentUser() {
+        return new ResponseUtil("OK", "Successfully Loaded..!", Current.currentUser);
     }
 }

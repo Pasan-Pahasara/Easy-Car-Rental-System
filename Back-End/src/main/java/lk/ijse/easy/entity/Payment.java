@@ -1,11 +1,13 @@
 package lk.ijse.easy.entity;
 
+import lk.ijse.easy.enums.PaymentType;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.time.LocalTime;
 
 /**
  * @author : ShEnUx
@@ -20,10 +22,14 @@ import java.time.LocalDate;
 public class Payment {
     @Id
     private String paymentID;
-    private LocalDate paymentDate;
-    private double amount;
-
     @ManyToOne(cascade = {CascadeType.REFRESH, CascadeType.DETACH})
     @JoinColumn(name = "rentID", referencedColumnName = "rentID", nullable = false)
-    private Rent rent;
+    private Rent rentID;
+    private PaymentType paymentType;
+    private LocalDate date;
+    private LocalTime time;
+    private Double lostDamage;
+    private Double rentFee;
+    private Double driverFee;
+    private Double total;
 }
