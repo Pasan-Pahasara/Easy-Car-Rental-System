@@ -1358,6 +1358,30 @@
     }
     <!-- End Customer Request Details get function -->
 
+    <!-- start search customer request function -->
+    function searchCustomerRequest() {
+        $("#tblRequest").empty();
+        let searchCustomerRequest = $("#txtCustomerRequestSearch").val();
+        $.ajax({
+            url: driverBaseUrl + "rent",
+            contentType: "application/json",
+            dataType: "json",
+            success: function (res) {
+                for (var reqCus of res.data) {
+                    if (searchCustomerRequest.trim() === reqCus.rentID) {
+                        $("#tblRequest").append(`<tr><td>${reqCus.rentID}</td><td>${reqCus.rentDetails.at(0).carID}</td><td>${reqCus.regUser.user.user_Id}</td><td>${reqCus.rentDetails.at(0).driverID}</td><td>${reqCus.driverRequestType}</td><td>${reqCus.rentType}</td><td>${reqCus.pickUpDate}</td><td>${reqCus.pickUpTime}</td><td>${reqCus.returnDate}</td><td>${reqCus.returnTime}</td><td>${reqCus.location}</td></tr>`);
+                        return;
+                    }
+                }
+                if (searchCustomerRequest.trim() !== reqCus.rentID) {
+                    loadCustomerRequestDetails();
+                    $("#txtCustomerRequestSearch").val("");
+                    alert("There is no item available for that " + searchCustomerRequest);
+                }
+            }
+        });
+    }
+    <!-- end search customer request function -->
 </script>
 </body>
 </html>
