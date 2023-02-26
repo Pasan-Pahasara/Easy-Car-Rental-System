@@ -1153,7 +1153,7 @@
                                                         <button type="button" class="btn btn-secondary"
                                                                 data-bs-dismiss="modal">Close
                                                         </button>
-                                                        <button type="button" id="btnPayRentFee"
+                                                        <button type="button" id="btnPayRent" form="paymentForm"
                                                                 class="btn btn-success btn">Pay now
                                                         </button>
                                                     </div>
@@ -1296,7 +1296,7 @@
 
     //<!-- Start Document Ready Navigation -->
     $(function () {
-        $("#total").val($("#lostDamage").val()+$("#carFee").val()+$("#driverFee").val());
+        $("#total").val($("#lostDamage").val() + $("#carFee").val() + $("#driverFee").val());
         $("#adminDashboard").css("display", "block");
         $("#manageCar").css("display", "none");
         $("#manageDriver").css("display", "none");
@@ -1469,13 +1469,12 @@
             }
         })
     }
-
     <!-- end generate payment id function -->
 
     <!-- start payment add -->
-    $("#btnPayRentFee").on('click', function () {
+    $("#btnPayRent").on('click', function () {
         let paymentId = $("#paymentId").val();
-        let rentId = $("#rentId").val();
+        let rentID = $("#rentId").val();
         let paymentType = $("#paymentType").val();
         let paymentDate = $("#paymentDate").val();
         let paymentTime = $("#paymentTime").val();
@@ -1484,9 +1483,11 @@
         let driverFee = $("#driverFee").val();
         let total = $("#total").val();
 
-        if (paymentId) var paymentOb = {
+        var paymentOb = {
             paymentID: paymentId,
-            rentID: rentId,
+            rentID: {
+                rentID: rentID
+            },
             paymentType: paymentType,
             date: paymentDate,
             time: paymentTime,
@@ -1498,12 +1499,12 @@
 
         $.ajax({
             url: cusRequestBaseUrl + "payment",
-            method: "post",
-            contentType: "application/json",
+            method: "POST",
             data: JSON.stringify(paymentOb),
             dataType: "json",
-            success: function (resp) {
-                alert(resp.message);
+            contentType: "application/json",
+            success: function (res) {
+                alert(res.message);
             },
             error: function (error) {
                 let message = JSON.parse(error.responseText).message;
