@@ -306,7 +306,8 @@
                                                     <div class="form-check">
                                                         <input type="hidden" name="driver_Availability" value="NO"/>
                                                         <input grouping="" class="form-check-input"
-                                                               id="driverAvailability" name="driver_Availability" type="checkbox"
+                                                               id="driverAvailability" name="driver_Availability"
+                                                               type="checkbox"
                                                                value="YES"/>
                                                         <label class="form-check-label" for="driverAvailability">Need A
                                                             Driver</label>
@@ -432,20 +433,23 @@
                                         <!-- start booking response details -->
                                         <form id="responseForm" class="row mb-3">
                                             <section id="secResponseDetails" class="row mx-0">
-<!--                                                <div class="mb-2 col-xl-4 col-sm-6">-->
-<!--                                                    <label class="form-label" for="responseRentId">Rent ID<span-->
-<!--                                                            class="text-danger">*</span></label>-->
-<!--                                                    <input class="form-control" id="responseRentId" readonly-->
-<!--                                                           name="rent_Id"-->
-<!--                                                           placeholder="Rent ID" type="text">-->
-<!--                                                </div>-->
+                                                <!--                                                <div class="mb-2 col-xl-4 col-sm-6">-->
+                                                <!--                                                    <label class="form-label" for="responseRentId">Rent ID<span-->
+                                                <!--                                                            class="text-danger">*</span></label>-->
+                                                <!--                                                    <input class="form-control" id="responseRentId" readonly-->
+                                                <!--                                                           name="rent_Id"-->
+                                                <!--                                                           placeholder="Rent ID" type="text">-->
+                                                <!--                                                </div>-->
                                                 <div class="app-search d-flex justify-content-center">
                                                     <div id="carSearchForm" class="col-xl-4 col-sm-6">
                                                         <div class="input-group">
-                                                            <input type="text" class="form-control" placeholder="Rent ID"
+                                                            <input type="text" class="form-control"
+                                                                   placeholder="Rent ID"
                                                                    id="responseRentId" name="rent_Id">
                                                             <span class="uil uil-history search-icon"></span>
-                                                            <button class="input-group-text btn-danger" type="button" id="btnCancelRental">Cancel Rental</button>
+                                                            <button class="input-group-text btn-danger" type="button"
+                                                                    id="btnCancelRental">Cancel Rental
+                                                            </button>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -475,11 +479,11 @@
                                         <!-- end response table content-->
 
                                         <!-- start button content-->
-<!--                                        <div class="mb-3 mt-3 d-grid gap-1 d-md-flex justify-content-md-center">-->
-<!--                                            <button type="button" class="btn btn-danger btn" id="btnDeleteRental" style="border-radius: 0.5rem;">-->
-<!--                                                Cancel Rental-->
-<!--                                            </button>-->
-<!--                                        </div>-->
+                                        <!--                                        <div class="mb-3 mt-3 d-grid gap-1 d-md-flex justify-content-md-center">-->
+                                        <!--                                            <button type="button" class="btn btn-danger btn" id="btnDeleteRental" style="border-radius: 0.5rem;">-->
+                                        <!--                                                Cancel Rental-->
+                                        <!--                                            </button>-->
+                                        <!--                                        </div>-->
                                         <!-- end button content-->
 
                                     </div>
@@ -726,6 +730,9 @@
     let currentBaseUrl = "http://localhost:8080/Back_End_war/";
 
     loadBookingResponseToCustomers();
+    loadCustomerPaymentDetails();
+    let user;
+    //<!------------------------------------ Navigations ------------------------------------>
 
     //<!-- Start Document Ready Navigation -->
     $(function () {
@@ -772,7 +779,7 @@
     });
     <!-- End Customer Payment Navigation -->
 
-    let user;
+    //<!------------------------------------ Get Login User Id ------------------------------------------------>
 
     $.ajax({
         url: currentBaseUrl + "user/current",
@@ -782,33 +789,70 @@
             $("#userID").val(res.data.user_Id);
             console.log(user);
         }
-    })
+    });
 
-    $.ajax({
-        url: currentBaseUrl + "customer",
-        method: "get",
-        contentType: "application/json",
-        dataType: "json",
-        success: function (res) {
-            for (var cus of res.data) {
-                if (user === cus.user_Id) {
-                    $("#cusUserID").val(cus.user_Id);
-                    $("#userFirstName").val(cus.name.firstName);
-                    $("#userLastName").val(cus.name.lastName);
-                    $("#customerContactNo").val(cus.contact_No);
-                    $("#customerAddress").val(cus.address);
-                    $("#customerDriverEmail").val(cus.email);
-                    $("#customerNic").val(cus.nic);
-                    $("#imgNiC").val(cus.nic_Img);
-                    $("#customerLicence").val(cus.license_No);
-                    $("#imgLicence").val(cus.license_Img);
-                    $("#customerUserName").val(cus.user.user_Name);
-                    $("#customerPassword").val(cus.user.password);
-                    customer= res.data;
+    //<!------------------------------------ Booking Request -------------------------------------------->
+
+    <!-- start load booking response to customers function -->
+    function loadBookingResponseToCustomers() {
+        $("#tblResponse").empty();
+        $.ajax({
+            url: currentBaseUrl + "rent",
+            method: "GET",
+            contentType: "application/json",
+            dataType: "json",
+            success: function (res) {
+                for (var customer of res.data) {
+                    if (user === customer.regUser.user_Id) {
+                        $("#tblResponse").append(`<tr><td>${customer.rentID}</td><td>${customer.regUser.user_Id}</td><td>${customer.rentDetails.at(carID).carID}</td><td>${customer.pickUpDate}</td><td>${customer.returnDate}</td><td>${customer.location}</td><td>${customer.rentType}</td>`);
+                        cusRentBindClickEvents();
+                    }
                 }
+            },
+            error: function (error) {
+                let message = JSON.parse(error.responseText).message;
+                alert(message);
             }
-        }
-    })
+        });
+    }
+    <!-- end load booking response to customers function -->
+
+    <!-- start cusRentBindClickEvents function -->
+    function cusRentBindClickEvents() {
+        $("#tblResponse>tr").on('click', function () {
+            $("#responseRentId").val($(this).children().eq(0).text());
+        });
+    }
+    <!-- end cusRentBindClickEvents function -->
+
+    <!-- start set text fields values function -->
+    function setTextFieldValuesRentId(rentId) {
+        $("#responseRentId").val(rentId);
+    }
+    <!-- end set text fields values function -->
+
+    <!-- start cancel rental button -->
+    $("#btnCancelRental").on('click', function () {
+        let id = $("#responseRentId").val();
+        $.ajax({
+            url: currentBaseUrl + "rent?rentID=" + id,
+            method: "DELETE",
+            contentType: "application/json",
+            dataType: "json",
+            success: function (res) {
+                loadBookingResponseToCustomers();
+                alert(res.message);
+                setTextFieldValuesRentId("");
+            },
+            error: function (error) {
+                let message = JSON.parse(error.responseText).message;
+                alert(message);
+            }
+        });
+    });
+    <!-- end cancel rental button -->
+
+    //<!------------------------------------ Manage Profile --------------------------------------------->
 
     <!-- start customer update -->
     $("#updateCustomer").on('click', function () {
@@ -832,18 +876,48 @@
     });
     <!-- end customer update -->
 
-    function loadBookingResponseToCustomers() {
-        $("#tblResponse").empty();
+    <!-- start customers values to text fields -->
+    $.ajax({
+        url: currentBaseUrl + "customer",
+        method: "get",
+        contentType: "application/json",
+        dataType: "json",
+        success: function (res) {
+            for (var cus of res.data) {
+                if (user === cus.user_Id) {
+                    $("#cusUserID").val(cus.user_Id);
+                    $("#userFirstName").val(cus.name.firstName);
+                    $("#userLastName").val(cus.name.lastName);
+                    $("#customerContactNo").val(cus.contact_No);
+                    $("#customerAddress").val(cus.address);
+                    $("#customerDriverEmail").val(cus.email);
+                    $("#customerNic").val(cus.nic);
+                    $("#imgNiC").val(cus.nic_Img);
+                    $("#customerLicence").val(cus.license_No);
+                    $("#imgLicence").val(cus.license_Img);
+                    $("#customerUserName").val(cus.user.user_Name);
+                    $("#customerPassword").val(cus.user.password);
+                    customer = res.data;
+                }
+            }
+        }
+    });
+    <!-- end customers values to text fields -->
+
+    //<!------------------------------------ Customer Payment Details ------------------------------------>
+
+    <!-- Start Customer Payment Details get function -->
+    function loadCustomerPaymentDetails() {
+        $("#tblPayments").empty();
         $.ajax({
-            url: currentBaseUrl + "rent",
             method: "GET",
+            url: currentBaseUrl + "payment",
             contentType: "application/json",
             dataType: "json",
-            success: function (res){
-                for (var customer of res.data) {
-                    if (user === customer.regUser.user_Id) {
-                        $("#tblResponse").append(`<tr><td>${customer.rentID}</td><td>${customer.regUser.user_Id}</td><td>${customer.rentDetails.at(carID).carID}</td><td>${customer.pickUpDate}</td><td>${customer.returnDate}</td><td>${customer.location}</td><td>${customer.rentType}</td>`);
-                        cusRentBindClickEvents();
+            success: function (res) {
+                for (var payment of res.data) {
+                    if (user === payment.rentID.regUser.user.user_Id) {
+                        $("#tblPayments").append(`<tr><td>${payment.paymentID}</td><td>${payment.date}</td><td>${payment.total}</td><td>${payment.rentID.rentID}</td><td>${payment.rentID.regUser.user.user_Id}</td></tr>`);
                     }
                 }
             },
@@ -853,35 +927,8 @@
             }
         });
     }
+    <!-- End Customer Payment Details get function -->
 
-    function cusRentBindClickEvents() {
-        $("#tblResponse>tr").on('click', function () {
-            $("#responseRentId").val($(this).children().eq(0).text());
-        });
-    }
-
-    function setTextFieldValuesRentId(rentId) {
-        $("#responseRentId").val(rentId);
-    }
-
-    $("#btnCancelRental").on('click',function () {
-        let id=$("#responseRentId").val();
-        $.ajax({
-            url: currentBaseUrl + "rent?rentID=" + id,
-            method: "DELETE",
-            contentType: "application/json",
-            dataType: "json",
-            success: function (res){
-                loadBookingResponseToCustomers();
-                alert(res.message);
-                setTextFieldValuesRentId("");
-            },
-            error: function (error) {
-                let message = JSON.parse(error.responseText).message;
-                alert(message);
-            }
-        });
-    })
 </script>
 </body>
 </html>
