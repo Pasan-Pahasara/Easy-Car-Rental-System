@@ -1534,6 +1534,26 @@
         });
     });
 
+    $("#btnReject").on("click", function () {
+        let rentID = $("#rentId").val();
+        let driverID =  driverId;
+        $.ajax({
+            url: cusRequestBaseUrl + "rent/rentReject/?rentID=" + rentID + "&driverId=" + driverID,
+            method: "post",
+            dataType: "json",
+            success: function (res) {
+                alert(res.message);
+                $("#tblRequest").empty();
+                loadCustomerRequestDetails();
+            },
+            error: function (error) {
+                let message = JSON.parse(error.responseText).message;
+                alert(message);
+            }
+        });
+
+    });
+
 </script>
 </body>
 </html>

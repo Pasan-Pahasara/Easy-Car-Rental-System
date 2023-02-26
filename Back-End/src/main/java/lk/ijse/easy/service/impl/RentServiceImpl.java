@@ -23,6 +23,7 @@ import java.util.Random;
 import static lk.ijse.easy.enums.Availability.AVAILABLE;
 import static lk.ijse.easy.enums.Availability.UNAVAILABLE;
 import static lk.ijse.easy.enums.RentRequestType.CONFORM;
+import static lk.ijse.easy.enums.RentRequestType.REJECT;
 
 /**
  * @author : ShEnUx
@@ -148,4 +149,31 @@ public class RentServiceImpl implements RentService {
             rentRepo.save(rent);
         }
     }
+
+    @Override
+    public void bookingReject(String rentID, String driverId) {
+        Rent rent = rentRepo.findById(rentID).get();
+        if (rent.getRentDetails().get(0).getDriverID() != null) {
+
+            Driver drivers = driverRepo.findById(rent.getRentDetails().get(0).getDriverID()).get();
+            drivers.setDriver_Availability(AVAILABLE);
+            driverRepo.save(drivers);
+
+            Car car = carRepo.findById(rent.getRentDetails().get(0).getCarID()).get();
+            car.setCar_Availability(AVAILABLE);
+            carRepo.save(car);
+
+            rent.setRentType(REJECT);
+            rentRepo.save(rent);
+        }
+        if (rent.getRentDetails().get(0).getDriverID() == null) {
+            Car car = carRepo.findById(rent.getRentDetails().get(0).getCarID()).get();
+            car.setCar_Availability(AVAILABLE);
+            carRepo.save(car);
+
+            rent.setRentType(REJECT);
+            rentRepo.save(rent);
+        }
+    }
+
 }

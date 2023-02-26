@@ -64,4 +64,10 @@ public class rentController {
         service.bookingConfirm(rentID,driverId);
         return new ResponseUtil("OK", "Successfully Conformed.!", null);
     }
+    @ResponseStatus(HttpStatus.CREATED)
+    @PostMapping(path = "/rentReject", params = {"rentID", "driverId"})
+    public ResponseUtil bookingReject(@RequestParam String rentID, @RequestParam String driverId) {
+        service.bookingReject(rentID,driverId);
+        return new ResponseUtil("OK", "Successfully Conformed.!", null);
+    }
 }
