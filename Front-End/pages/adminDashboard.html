@@ -1073,7 +1073,7 @@
                                                                     <div class="mb-3 col-xl-3">
                                                                         <label class="form-label" for="rentId">Rent ID<span
                                                                                 class="text-danger">*</span></label>
-                                                                        <input class="form-control" id="rentId" name="rentID"
+                                                                        <input class="form-control" id="rentId" readonly name="rentID"
                                                                                placeholder="Rent ID" type="text">
                                                                     </div>
                                                                     <div class="mb-3 col-xl-3">
@@ -1356,6 +1356,7 @@
                 for (var reqCus of res.data) {
                     $("#tblRequest").append(`<tr><td>${reqCus.rentID}</td><td>${reqCus.rentDetails.at(0).carID}</td><td>${reqCus.regUser.user.user_Id}</td><td>${reqCus.rentDetails.at(0).driverID}</td><td>${reqCus.driverRequestType}</td><td>${reqCus.rentType}</td><td>${reqCus.pickUpDate}</td><td>${reqCus.pickUpTime}</td><td>${reqCus.returnDate}</td><td>${reqCus.returnTime}</td><td>${reqCus.location}</td></tr>`);
                 }
+                customerRequestBindClickEvents();
             },
             error:function (error) {
                 let message = JSON.parse(error.responseText).message;
@@ -1391,6 +1392,7 @@
                 for (var reqCus of res.data) {
                     if (searchCustomerRequest.trim() === reqCus.rentID) {
                         $("#tblRequest").append(`<tr><td>${reqCus.rentID}</td><td>${reqCus.rentDetails.at(0).carID}</td><td>${reqCus.regUser.user.user_Id}</td><td>${reqCus.rentDetails.at(0).driverID}</td><td>${reqCus.driverRequestType}</td><td>${reqCus.rentType}</td><td>${reqCus.pickUpDate}</td><td>${reqCus.pickUpTime}</td><td>${reqCus.returnDate}</td><td>${reqCus.returnTime}</td><td>${reqCus.location}</td></tr>`);
+                        customerRequestBindClickEvents();
                         return;
                     }
                 }
@@ -1403,6 +1405,15 @@
         });
     }
     <!-- end search customer request function -->
+
+    <!-- start bind click events to the table rows function -->
+    function customerRequestBindClickEvents() {
+        $("#tblRequest>tr").on('click', function () {
+            //Set values to the text-fields
+            $("#rentId").val($(this).children().eq(0).text());
+        });
+    }
+    <!-- end bind click events to the table rows function -->
 </script>
 </body>
 </html>
