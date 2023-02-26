@@ -388,7 +388,9 @@
                                             <input type="text" class="form-control" placeholder="Search..."
                                                    id="txtCarSearch">
                                             <span class="uil uil-search search-icon"></span>
-                                            <button class="input-group-text btn-primary" type="button" id="btnSearchCar">Search</button>
+                                            <button class="input-group-text btn-primary" type="button"
+                                                    id="btnSearchCar">Search
+                                            </button>
                                         </div>
                                     </form>
                                 </div>
@@ -552,7 +554,8 @@
                                             </section>
                                         </form>
 
-                                        <div class="flex-grow-0" style="overflow-x:auto;-webkit-overflow-scrolling:touch;">
+                                        <div class="flex-grow-0"
+                                             style="overflow-x:auto;-webkit-overflow-scrolling:touch;">
                                             <table class="table-nowrap table table-centered mb-0">
                                                 <thead class="btn-primary">
                                                 <tr>
@@ -734,7 +737,8 @@
                                             </section>
                                         </form>
 
-                                        <div class="table-responsive-xxl flex-grow-0" style="overflow-x:auto;-webkit-overflow-scrolling:touch;">
+                                        <div class="table-responsive-xxl flex-grow-0"
+                                             style="overflow-x:auto;-webkit-overflow-scrolling:touch;">
                                             <table class="table-nowrap table table-centered mb-0">
                                                 <thead class="btn-primary">
                                                 <tr>
@@ -983,7 +987,8 @@
 
                                         <!-- start booking request details -->
                                         <form id="customerRequestForm" class="row mb-1">
-                                            <section id="secResponseDetails" class="row mx-0 d-flex justify-content-center">
+                                            <section id="secResponseDetails"
+                                                     class="row mx-0 d-flex justify-content-center">
                                                 <div class="mb-1 col-xl-3 col-sm-6">
                                                     <label class="form-label" for="requestRentId">Driver ID<span
                                                             class="text-danger">*</span></label>
@@ -1004,7 +1009,9 @@
                                                 Reject
                                             </button>
                                             <!-- Button payment modal -->
-                                            <button type="button" class="btn btn-warning btn me-md-1 text-white" data-bs-toggle="modal" data-bs-target="#exampleModal" id="btnPayment">
+                                            <button type="button" class="btn btn-warning btn me-md-1 text-white"
+                                                    data-bs-toggle="modal" data-bs-target="#exampleModal"
+                                                    id="btnPayment">
                                                 Payment
                                             </button>
                                         </div>
@@ -1052,85 +1059,103 @@
                                         <!-- end request table content-->
 
                                         <!-- Modal -->
-                                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal fade" id="exampleModal" tabindex="-1"
+                                             aria-labelledby="exampleModalLabel" aria-hidden="true">
                                             <div class="modal-dialog modal-lg">
                                                 <div class="modal-content" style="border-radius: 1.5rem;">
                                                     <div class="modal-header">
-                                                        <h1 class="modal-title fs-3 fw-bolder" id="exampleModalLabel">Payment Rent</h1>
-                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                        <h1 class="modal-title fs-3 fw-bolder" id="exampleModalLabel">
+                                                            Payment Rent</h1>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                                aria-label="Close"></button>
                                                     </div>
                                                     <div class="modal-body">
 
 
                                                         <div class="col-xl-12">
                                                             <form id="paymentForm" class="row">
-                                                                    <div class="mb-3 col-xl-3">
-                                                                        <label class="form-label" for="paymentId">Payment ID<span
+                                                                <div class="mb-3 col-xl-3">
+                                                                    <label class="form-label" for="paymentId">Payment ID<span
+                                                                            class="text-danger">*</span></label>
+                                                                    <input class="form-control" id="paymentId" readonly
+                                                                           name="paymentID"
+                                                                           placeholder="Payment ID" type="text">
+                                                                </div>
+                                                                <div class="mb-3 col-xl-3">
+                                                                    <label class="form-label" for="rentId">Rent ID<span
+                                                                            class="text-danger">*</span></label>
+                                                                    <input class="form-control" id="rentId" readonly
+                                                                           name="rentID"
+                                                                           placeholder="Rent ID" type="text">
+                                                                </div>
+                                                                <div class="mb-3 col-xl-3">
+                                                                    <label class="form-label" for="paymentType">Payment
+                                                                        Type<span
                                                                                 class="text-danger">*</span></label>
-                                                                        <input class="form-control" id="paymentId" name="paymentID"
-                                                                               placeholder="Payment ID" type="text">
-                                                                    </div>
-                                                                    <div class="mb-3 col-xl-3">
-                                                                        <label class="form-label" for="rentId">Rent ID<span
+                                                                    <select class="form-control" id="paymentType"
+                                                                            name="paymentType">
+                                                                        <option value="">- Select Payment Type -
+                                                                        </option>
+                                                                        <option value="NORMAL">NORMAL</option>
+                                                                        <option value="LOST_DAMAGE">LOST_DAMAGE</option>
+                                                                    </select>
+                                                                </div>
+                                                                <div class="mb-3 col-xl-3">
+                                                                    <label class="form-label" for="paymentDate">Payment
+                                                                        Date<span
                                                                                 class="text-danger">*</span></label>
-                                                                        <input class="form-control" id="rentId" readonly name="rentID"
-                                                                               placeholder="Rent ID" type="text">
-                                                                    </div>
-                                                                    <div class="mb-3 col-xl-3">
-                                                                        <label class="form-label" for="paymentType">Payment Type<span
-                                                                                    class="text-danger">*</span></label>
-                                                                        <select class="form-control" id="paymentType"
-                                                                                name="paymentType">
-                                                                            <option value="">- Select Payment Type -</option>
-                                                                            <option value="NORMAL">NORMAL</option>
-                                                                            <option value="LOST_DAMAGE">LOST_DAMAGE</option>
-                                                                        </select>
-                                                                    </div>
-                                                                    <div class="mb-3 col-xl-3">
-                                                                        <label class="form-label" for="paymentDate">Payment Date<span
+                                                                    <input class="form-control" id="paymentDate"
+                                                                           readonly name="date"
+                                                                           placeholder="Payment Date" type="text">
+                                                                </div>
+                                                                <div class="mb-3 col-xl-3">
+                                                                    <label class="form-label" for="paymentTime">Payment
+                                                                        Time<span
                                                                                 class="text-danger">*</span></label>
-                                                                        <input class="form-control" id="paymentDate" name="date"
-                                                                               placeholder="Payment Date" type="text">
-                                                                    </div>
-                                                                    <div class="mb-3 col-xl-3">
-                                                                        <label class="form-label" for="paymentTime">Payment Time<span
+                                                                    <input class="form-control" id="paymentTime"
+                                                                           readonly name="time"
+                                                                           placeholder="Payment Time" type="text">
+                                                                </div>
+                                                                <div class="mb-3 col-xl-3">
+                                                                    <label class="form-label" for="lostDamage">Lost
+                                                                        Damage<span
                                                                                 class="text-danger">*</span></label>
-                                                                        <input class="form-control" id="paymentTime" name="time"
-                                                                               placeholder="Payment Time" type="text">
-                                                                    </div>
-                                                                    <div class="mb-3 col-xl-3">
-                                                                        <label class="form-label" for="lostDamage">Lost Damage<span
-                                                                                class="text-danger">*</span></label>
-                                                                        <input class="form-control" id="lostDamage" name="lostDamage"
-                                                                               placeholder="Lost Damage" type="text">
-                                                                    </div>
-                                                                    <div class="mb-3 col-xl-3">
-                                                                        <label class="form-label" for="carFee">Car Fee<span
-                                                                                class="text-danger">*</span></label>
-                                                                        <input class="form-control" id="carFee" name="rentFee"
-                                                                               placeholder="Car Fee" type="text">
-                                                                    </div>
-                                                                    <div class="mb-3 col-xl-3">
-                                                                        <label class="form-label" for="driverFee">Driver Fee<span
-                                                                                class="text-danger">*</span></label>
-                                                                        <input class="form-control" id="driverFee" name="driverFee"
-                                                                               placeholder="Driver Fee" type="text">
-                                                                    </div>
-                                                                    <div class="mb-3 col-xl-3">
-                                                                        <label class="form-label" for="total">Total<span
-                                                                                class="text-danger">*</span></label>
-                                                                        <input class="form-control" id="total" name="total"
-                                                                               placeholder="Total" type="text">
-                                                                    </div>
+                                                                    <input class="form-control" id="lostDamage"
+                                                                           name="lostDamage"
+                                                                           placeholder="Lost Damage" type="text">
+                                                                </div>
+                                                                <div class="mb-3 col-xl-3">
+                                                                    <label class="form-label" for="carFee">Car Fee<span
+                                                                            class="text-danger">*</span></label>
+                                                                    <input class="form-control" id="carFee"
+                                                                           name="rentFee"
+                                                                           placeholder="Car Fee" type="text">
+                                                                </div>
+                                                                <div class="mb-3 col-xl-3">
+                                                                    <label class="form-label" for="driverFee">Driver Fee<span
+                                                                            class="text-danger">*</span></label>
+                                                                    <input class="form-control" id="driverFee"
+                                                                           name="driverFee"
+                                                                           placeholder="Driver Fee" type="text">
+                                                                </div>
+                                                                <div class="mb-3 col-xl-3">
+                                                                    <label class="form-label" for="total">Total<span
+                                                                            class="text-danger">*</span></label>
+                                                                    <input class="form-control" id="total" name="total"
+                                                                           placeholder="Total" type="text">
+                                                                </div>
                                                             </form>
                                                         </div>
 
 
-
                                                     </div>
                                                     <div class="modal-footer">
-                                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                                        <button type="button" class="btn btn-success btn">Pay now</button>
+                                                        <button type="button" class="btn btn-secondary"
+                                                                data-bs-dismiss="modal">Close
+                                                        </button>
+                                                        <button type="button" id="btnPayRentFee"
+                                                                class="btn btn-success btn">Pay now
+                                                        </button>
                                                     </div>
                                                 </div>
                                             </div>
@@ -1260,6 +1285,7 @@
     let cusRequestBaseUrl = "http://localhost:8080/Back_End_war/";
 
     loadCustomerRequestDetails();
+    generatePaymentId();
 
     // default submit false
     $(function () {
@@ -1270,6 +1296,7 @@
 
     //<!-- Start Document Ready Navigation -->
     $(function () {
+        $("#total").val($("#lostDamage").val()+$("#carFee").val()+$("#driverFee").val());
         $("#adminDashboard").css("display", "block");
         $("#manageCar").css("display", "none");
         $("#manageDriver").css("display", "none");
@@ -1358,12 +1385,13 @@
                 }
                 customerRequestBindClickEvents();
             },
-            error:function (error) {
+            error: function (error) {
                 let message = JSON.parse(error.responseText).message;
                 alert(message);
             }
         });
     }
+
     <!-- End Customer Request Details get function -->
 
     <!-- start search customer request using search button -->
@@ -1404,16 +1432,87 @@
             }
         });
     }
+
     <!-- end search customer request function -->
 
     <!-- start bind click events to the table rows function -->
     function customerRequestBindClickEvents() {
+        var now = new Date();
+        var year = now.getFullYear();
+        var month = now.getMonth() + 1;
+        var day = now.getDate();
+        var hour = now.getHours();
+        var minute = now.getMinutes();
+        var second = now.getSeconds();
+        var formattedDate = year + "-" + month.toString().padStart(2, "0") + "-" + day.toString().padStart(2, "0");
+        var formattedTime = hour.toString().padStart(2, "0") + ":" + minute.toString().padStart(2, "0") + ":" + second.toString().padStart(2, "0");
+        var date = formattedDate;
+        var time = formattedTime;
         $("#tblRequest>tr").on('click', function () {
             //Set values to the text-fields
             $("#rentId").val($(this).children().eq(0).text());
+            $("#paymentDate").val(date);
+            $("#paymentTime").val(time);
         });
     }
+
     <!-- end bind click events to the table rows function -->
+
+    <!-- start generate payment id function -->
+    function generatePaymentId() {
+        $.ajax({
+            url: cusRequestBaseUrl + "payment/generatePaymentId",
+            method: "get",
+            dataType: "json",
+            success: function (res) {
+                $('#paymentId').val(res.data);
+            }
+        })
+    }
+
+    <!-- end generate payment id function -->
+
+    <!-- start payment add -->
+    $("#btnPayRentFee").on('click', function () {
+        let paymentId = $("#paymentId").val();
+        let rentId = $("#rentId").val();
+        let paymentType = $("#paymentType").val();
+        let paymentDate = $("#paymentDate").val();
+        let paymentTime = $("#paymentTime").val();
+        let lostDamage = $("#lostDamage").val();
+        let carFee = $("#carFee").val();
+        let driverFee = $("#driverFee").val();
+        let total = $("#total").val();
+
+        if (paymentId) var paymentOb = {
+            paymentID: paymentId,
+            rentID: rentId,
+            paymentType: paymentType,
+            date: paymentDate,
+            time: paymentTime,
+            lostDamage: lostDamage,
+            rentFee: carFee,
+            driverFee: driverFee,
+            total: total,
+        }
+
+        $.ajax({
+            url: cusRequestBaseUrl + "payment",
+            method: "post",
+            contentType: "application/json",
+            data: JSON.stringify(paymentOb),
+            dataType: "json",
+            success: function (resp) {
+                alert(resp.message);
+            },
+            error: function (error) {
+                let message = JSON.parse(error.responseText).message;
+                alert(message);
+            }
+        });
+    });
+    <!-- end payment add -->
+
 </script>
 </body>
 </html>
