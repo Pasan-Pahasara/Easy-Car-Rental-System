@@ -246,4 +246,19 @@ function setTextFieldValuesDriver(driverNicNo, driverFirstName, driverLastName, 
 }
 <!-- end set text fields values function -->
 
+//<!------------------------------------ RegEx Driver ------------------------------------>
+
+<!-- start regex patterns -->
+const regExDriverId = /^([0-9]{12}|[0-9V]{10})$/;
+const regExDriverFirstName = /^[A-z ]{3,20}$/;
+const regExDriverLastName = /^[A-z ]{3,20}$/;
+const regExDriverContactNumber = /^(07(0|1|2|4|5|6|7|8)[0-9]{7})$/;
+const regExDriverAddress = /^[A-z0-9/ ]{4,30}$/;
+const regExDriverEmailAddress = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+const regExDriverUserName = /^[A-z0-9/ ]{4,30}$/;
+const regExDriverPassword = /^([A-Z a-z]{5,15}[0-9]{1,10})$/;
+<!-- end regex patterns -->
+
+
+
 <!-- End Driver Section -->
