@@ -178,12 +178,12 @@
                                                 </table>
                                             </div>
 
-<!--                                            <div class="col-xl-4 shadow">-->
-<!--                                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63397.34482830807!2d79.89441649307884!3d6.729034954627545!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae24616c169e7c3%3A0xd21e80c970651d56!2sPanadura!5e0!3m2!1sen!2slk!4v1676916771183!5m2!1sen!2slk"-->
-<!--                                                        height="400" style="border:0;" allowfullscreen=""-->
-<!--                                                        loading="lazy" class="col-12 col-xl-12 rounded-3"-->
-<!--                                                        referrerpolicy="no-referrer-when-downgrade"></iframe>-->
-<!--                                            </div>-->
+                                            <div class="col-xl-4 shadow">
+                                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63397.34482830807!2d79.89441649307884!3d6.729034954627545!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae24616c169e7c3%3A0xd21e80c970651d56!2sPanadura!5e0!3m2!1sen!2slk!4v1676916771183!5m2!1sen!2slk"
+                                                        height="400" style="border:0;" allowfullscreen=""
+                                                        loading="lazy" class="col-12 col-xl-12 rounded-3"
+                                                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                            </div>
 
                                         </div>
                                     </div>
@@ -219,7 +219,10 @@
 <script src="../assets/jQuery/jquery-3.6.0.min.js"></script>
 <script>
     let driverScheduleBaseUrl = "http://localhost:8080/Back_End_war/";
+    loadScheduleToDrivers();
     let newDriver;
+
+    //<!------------------------------------ Navigations ------------------------------------------------>
 
     //<!-- Start Document Ready Navigation -->
     $(function () {
@@ -227,16 +230,19 @@
     });
     <!-- End Document Ready Navigation -->
 
+    //<!------------------------------------ Get Login User Id ------------------------------------------>
+
     $.ajax({
         url: driverScheduleBaseUrl + "user/current",
         method: "get",
         success: function (res) {
             newDriver = res.data.user_Id;
         }
-    })
-    loadScheduleToDrivers();
+    });
 
+    //<!------------------------------------ Driver Schedule -------------------------------------------->
 
+    <!-- start load driver Schedule function -->
     function loadScheduleToDrivers() {
         $.ajax({
             url: driverScheduleBaseUrl + "rent",
@@ -252,6 +258,7 @@
             }
         })
     }
+    <!-- end load driver Schedule function -->
 
 </script>
 </body>
