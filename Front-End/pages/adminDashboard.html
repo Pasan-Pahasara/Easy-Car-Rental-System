@@ -1358,11 +1358,19 @@
     }
     <!-- End Customer Request Details get function -->
 
-    <!-- start search customer request using search driver button -->
+    <!-- start search customer request using search button -->
     $("#CustomerRequestSearch").on('click', function () {
         searchCustomerRequest();
     });
-    <!-- end search customer request using search driver button -->
+    <!-- end search customer request using search button -->
+
+    <!-- start search customer request using press ENTER -->
+    $("#txtCustomerRequestSearch").on('keyup', function (event) {
+        if (event.code === "Enter") {
+            searchCustomerRequest();
+        }
+    });
+    <!-- end search customer request using press ENTER -->
 
     <!-- start search customer request function -->
     function searchCustomerRequest() {
