@@ -95,13 +95,6 @@
 
                 <li class="side-nav-item">
                     <a href="#" id="LinkUserRequest" class="side-nav-link">
-                        <i class="uil-check-circle"></i>
-                        <span> Customer Requests </span>
-                    </a>
-                </li>
-
-                <li class="side-nav-item">
-                    <a href="#" class="side-nav-link">
                         <i class="uil-repeat"></i>
                         <span> Rental Returns </span>
                     </a>
@@ -1264,6 +1257,10 @@
 <script src="../controller/userJS.js"></script>
 <script src="../controller/dashboardJS.js"></script>
 <script>
+    let cusRequestBaseUrl = "http://localhost:8080/Back_End_war/";
+
+    loadCustomerRequestDetails();
+
     //<!-- Start Document Ready Navigation -->
     $(function () {
         $("#adminDashboard").css("display", "block");
@@ -1340,6 +1337,26 @@
         $("#userRequest").css("display", "block");
     });
     <!-- End Customer Request Navigation -->
+
+    <!-- Start Customer Request Details get function -->
+    function loadCustomerRequestDetails() {
+        $("#tblRequest").empty();
+        $.ajax({
+            url: cusRequestBaseUrl + "rent",
+            contentType: "application/json",
+            dataType: "json",
+            success: function (res) {
+                for (var reqCus of res.data) {
+                    $("#tblRequest").append(`<tr><td>${reqCus.rentID}</td><td>${reqCus.rentDetails.at(0).carID}</td><td>${reqCus.regUser.user.user_Id}</td><td>${reqCus.rentDetails.at(0).driverID}</td><td>${reqCus.driverRequestType}</td><td>${reqCus.rentType}</td><td>${reqCus.pickUpDate}</td><td>${reqCus.pickUpTime}</td><td>${reqCus.returnDate}</td><td>${reqCus.returnTime}</td><td>${reqCus.location}</td></tr>`);
+                }
+            },
+            error:function (error) {
+                let message = JSON.parse(error.responseText).message;
+                alert(message);
+            }
+        });
+    }
+    <!-- End Customer Request Details get function -->
 
 </script>
 </body>
