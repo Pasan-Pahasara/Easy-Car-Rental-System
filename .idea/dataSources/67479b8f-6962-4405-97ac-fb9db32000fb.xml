@@ -1,0 +1,496 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="easyCarRentalSystem@localhost">
+  <database-model serializer="dbm" dbms="MYSQL" family-id="MYSQL" format-version="4.45">
+    <root id="1">
+      <DefaultCasing>lower/lower</DefaultCasing>
+      <DefaultEngine>InnoDB</DefaultEngine>
+      <DefaultTmpEngine>InnoDB</DefaultTmpEngine>
+      <ServerVersion>8.0.22</ServerVersion>
+    </root>
+    <schema id="2" parent="1" name="easycarrentalsystem">
+      <Current>1</Current>
+    </schema>
+    <schema id="3" parent="1" name="information_schema"/>
+    <schema id="4" parent="1" name="mysql"/>
+    <schema id="5" parent="1" name="performance_schema"/>
+    <schema id="6" parent="1" name="sakila"/>
+    <schema id="7" parent="1" name="sys"/>
+    <schema id="8" parent="1" name="world"/>
+    <table id="9" parent="2" name="admin">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </table>
+    <table id="10" parent="2" name="car">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </table>
+    <table id="11" parent="2" name="driver">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </table>
+    <table id="12" parent="2" name="payment">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </table>
+    <table id="13" parent="2" name="reguser">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </table>
+    <table id="14" parent="2" name="rent">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </table>
+    <table id="15" parent="2" name="rentdetails">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </table>
+    <table id="16" parent="2" name="user">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </table>
+    <column id="17" parent="9" name="admin_Id">
+      <DasType>varchar(255)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="18" parent="9" name="address">
+      <DasType>varchar(255)|0s</DasType>
+      <Position>2</Position>
+    </column>
+    <column id="19" parent="9" name="contact_No">
+      <DasType>varchar(255)|0s</DasType>
+      <Position>3</Position>
+    </column>
+    <column id="20" parent="9" name="email">
+      <DasType>varchar(255)|0s</DasType>
+      <Position>4</Position>
+    </column>
+    <column id="21" parent="9" name="firstName">
+      <DasType>varchar(255)|0s</DasType>
+      <Position>5</Position>
+    </column>
+    <column id="22" parent="9" name="lastName">
+      <DasType>varchar(255)|0s</DasType>
+      <Position>6</Position>
+    </column>
+    <column id="23" parent="9" name="nic">
+      <DasType>varchar(255)|0s</DasType>
+      <Position>7</Position>
+    </column>
+    <column id="24" parent="9" name="user_user_Id">
+      <DasType>varchar(255)|0s</DasType>
+      <Position>8</Position>
+    </column>
+    <foreign-key id="25" parent="9" name="FK4yswii4ngcpsyd4ihjky6x49p">
+      <ColNames>user_user_Id</ColNames>
+      <RefColNames>user_Id</RefColNames>
+      <RefTableName>user</RefTableName>
+    </foreign-key>
+    <index id="26" parent="9" name="PRIMARY">
+      <ColNames>admin_Id</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <index id="27" parent="9" name="FK4yswii4ngcpsyd4ihjky6x49p">
+      <ColNames>user_user_Id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="28" parent="9" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="29" parent="10" name="car_Id">
+      <DasType>varchar(255)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="30" parent="10" name="car_Availability">
+      <DasType>varchar(255)|0s</DasType>
+      <Position>2</Position>
+    </column>
+    <column id="31" parent="10" name="car_brand">
+      <DasType>varchar(255)|0s</DasType>
+      <Position>3</Position>
+    </column>
+    <column id="32" parent="10" name="car_name">
+      <DasType>varchar(255)|0s</DasType>
+      <Position>4</Position>
+    </column>
+    <column id="33" parent="10" name="color">
+      <DasType>varchar(255)|0s</DasType>
+      <Position>5</Position>
+    </column>
+    <column id="34" parent="10" name="free_Mileage">
+      <DasType>double|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>6</Position>
+    </column>
+    <column id="35" parent="10" name="fuel_Type">
+      <DasType>varchar(255)|0s</DasType>
+      <Position>7</Position>
+    </column>
+    <column id="36" parent="10" name="back_View">
+      <DasType>varchar(255)|0s</DasType>
+      <Position>8</Position>
+    </column>
+    <column id="37" parent="10" name="front_View">
+      <DasType>varchar(255)|0s</DasType>
+      <Position>9</Position>
+    </column>
+    <column id="38" parent="10" name="interior">
+      <DasType>varchar(255)|0s</DasType>
+      <Position>10</Position>
+    </column>
+    <column id="39" parent="10" name="side_View">
+      <DasType>varchar(255)|0s</DasType>
+      <Position>11</Position>
+    </column>
+    <column id="40" parent="10" name="number_Of_Passengers">
+      <DasType>int|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>12</Position>
+    </column>
+    <column id="41" parent="10" name="price_Extra_KM">
+      <DasType>varchar(255)|0s</DasType>
+      <Position>13</Position>
+    </column>
+    <column id="42" parent="10" name="registration_Number">
+      <DasType>varchar(255)|0s</DasType>
+      <Position>14</Position>
+    </column>
+    <column id="43" parent="10" name="daily_Rate">
+      <DasType>double|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>15</Position>
+    </column>
+    <column id="44" parent="10" name="monthly_Rate">
+      <DasType>double|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>16</Position>
+    </column>
+    <column id="45" parent="10" name="transmission_Type">
+      <DasType>varchar(255)|0s</DasType>
+      <Position>17</Position>
+    </column>
+    <column id="46" parent="10" name="type">
+      <DasType>varchar(255)|0s</DasType>
+      <Position>18</Position>
+    </column>
+    <index id="47" parent="10" name="PRIMARY">
+      <ColNames>car_Id</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <key id="48" parent="10" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="49" parent="11" name="user_Id">
+      <DasType>varchar(255)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="50" parent="11" name="address">
+      <DasType>varchar(255)|0s</DasType>
+      <Position>2</Position>
+    </column>
+    <column id="51" parent="11" name="contact_No">
+      <DasType>varchar(255)|0s</DasType>
+      <Position>3</Position>
+    </column>
+    <column id="52" parent="11" name="driver_Availability">
+      <DasType>varchar(255)|0s</DasType>
+      <Position>4</Position>
+    </column>
+    <column id="53" parent="11" name="email">
+      <DasType>varchar(255)|0s</DasType>
+      <Position>5</Position>
+    </column>
+    <column id="54" parent="11" name="firstName">
+      <DasType>varchar(255)|0s</DasType>
+      <Position>6</Position>
+    </column>
+    <column id="55" parent="11" name="lastName">
+      <DasType>varchar(255)|0s</DasType>
+      <Position>7</Position>
+    </column>
+    <column id="56" parent="11" name="user_user_Id">
+      <DasType>varchar(255)|0s</DasType>
+      <Position>8</Position>
+    </column>
+    <foreign-key id="57" parent="11" name="FKqo2aqpxbb0ny6w5mvy3k6qd7r">
+      <ColNames>user_user_Id</ColNames>
+      <RefColNames>user_Id</RefColNames>
+      <RefTableName>user</RefTableName>
+    </foreign-key>
+    <index id="58" parent="11" name="PRIMARY">
+      <ColNames>user_Id</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <index id="59" parent="11" name="FKqo2aqpxbb0ny6w5mvy3k6qd7r">
+      <ColNames>user_user_Id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="60" parent="11" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="61" parent="12" name="paymentID">
+      <DasType>varchar(255)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="62" parent="12" name="date">
+      <DasType>varchar(255)|0s</DasType>
+      <Position>2</Position>
+    </column>
+    <column id="63" parent="12" name="driverFee">
+      <DasType>double|0s</DasType>
+      <Position>3</Position>
+    </column>
+    <column id="64" parent="12" name="lostDamage">
+      <DasType>double|0s</DasType>
+      <Position>4</Position>
+    </column>
+    <column id="65" parent="12" name="paymentType">
+      <DasType>int|0s</DasType>
+      <Position>5</Position>
+    </column>
+    <column id="66" parent="12" name="rentFee">
+      <DasType>double|0s</DasType>
+      <Position>6</Position>
+    </column>
+    <column id="67" parent="12" name="time">
+      <DasType>varchar(255)|0s</DasType>
+      <Position>7</Position>
+    </column>
+    <column id="68" parent="12" name="total">
+      <DasType>double|0s</DasType>
+      <Position>8</Position>
+    </column>
+    <column id="69" parent="12" name="rentID">
+      <DasType>varchar(255)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>9</Position>
+    </column>
+    <foreign-key id="70" parent="12" name="FKnlm495ba750mepmdindd5xpkv">
+      <ColNames>rentID</ColNames>
+      <RefColNames>rentID</RefColNames>
+      <RefTableName>rent</RefTableName>
+    </foreign-key>
+    <index id="71" parent="12" name="PRIMARY">
+      <ColNames>paymentID</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <index id="72" parent="12" name="FKnlm495ba750mepmdindd5xpkv">
+      <ColNames>rentID</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="73" parent="12" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="74" parent="13" name="user_Id">
+      <DasType>varchar(255)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="75" parent="13" name="address">
+      <DasType>varchar(255)|0s</DasType>
+      <Position>2</Position>
+    </column>
+    <column id="76" parent="13" name="contact_No">
+      <DasType>varchar(255)|0s</DasType>
+      <Position>3</Position>
+    </column>
+    <column id="77" parent="13" name="email">
+      <DasType>varchar(255)|0s</DasType>
+      <Position>4</Position>
+    </column>
+    <column id="78" parent="13" name="license_Img">
+      <DasType>varchar(255)|0s</DasType>
+      <Position>5</Position>
+    </column>
+    <column id="79" parent="13" name="license_No">
+      <DasType>varchar(255)|0s</DasType>
+      <Position>6</Position>
+    </column>
+    <column id="80" parent="13" name="firstName">
+      <DasType>varchar(255)|0s</DasType>
+      <Position>7</Position>
+    </column>
+    <column id="81" parent="13" name="lastName">
+      <DasType>varchar(255)|0s</DasType>
+      <Position>8</Position>
+    </column>
+    <column id="82" parent="13" name="nic">
+      <DasType>varchar(255)|0s</DasType>
+      <Position>9</Position>
+    </column>
+    <column id="83" parent="13" name="nic_Img">
+      <DasType>varchar(255)|0s</DasType>
+      <Position>10</Position>
+    </column>
+    <column id="84" parent="13" name="user_user_Id">
+      <DasType>varchar(255)|0s</DasType>
+      <Position>11</Position>
+    </column>
+    <foreign-key id="85" parent="13" name="FKgt6kg1ytbct2iq63ixbu0jxk2">
+      <ColNames>user_user_Id</ColNames>
+      <RefColNames>user_Id</RefColNames>
+      <RefTableName>user</RefTableName>
+    </foreign-key>
+    <index id="86" parent="13" name="PRIMARY">
+      <ColNames>user_Id</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <index id="87" parent="13" name="FKgt6kg1ytbct2iq63ixbu0jxk2">
+      <ColNames>user_user_Id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="88" parent="13" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="89" parent="14" name="rentID">
+      <DasType>varchar(255)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="90" parent="14" name="driverRequestType">
+      <DasType>varchar(255)|0s</DasType>
+      <Position>2</Position>
+    </column>
+    <column id="91" parent="14" name="location">
+      <DasType>varchar(255)|0s</DasType>
+      <Position>3</Position>
+    </column>
+    <column id="92" parent="14" name="pickUpDate">
+      <DasType>date|0s</DasType>
+      <Position>4</Position>
+    </column>
+    <column id="93" parent="14" name="pickUpTime">
+      <DasType>time|0s</DasType>
+      <Position>5</Position>
+    </column>
+    <column id="94" parent="14" name="rentType">
+      <DasType>varchar(255)|0s</DasType>
+      <Position>6</Position>
+    </column>
+    <column id="95" parent="14" name="returnDate">
+      <DasType>date|0s</DasType>
+      <Position>7</Position>
+    </column>
+    <column id="96" parent="14" name="returnTime">
+      <DasType>time|0s</DasType>
+      <Position>8</Position>
+    </column>
+    <column id="97" parent="14" name="userID">
+      <DasType>varchar(255)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>9</Position>
+    </column>
+    <foreign-key id="98" parent="14" name="FKpfg34ngngfl1322o098g2mhe2">
+      <ColNames>userID</ColNames>
+      <RefColNames>user_Id</RefColNames>
+      <RefTableName>reguser</RefTableName>
+    </foreign-key>
+    <index id="99" parent="14" name="PRIMARY">
+      <ColNames>rentID</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <index id="100" parent="14" name="FKpfg34ngngfl1322o098g2mhe2">
+      <ColNames>userID</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="101" parent="14" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="102" parent="15" name="carID">
+      <DasType>varchar(255)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="103" parent="15" name="rentID">
+      <DasType>varchar(255)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <column id="104" parent="15" name="driverID">
+      <DasType>varchar(255)|0s</DasType>
+      <Position>3</Position>
+    </column>
+    <foreign-key id="105" parent="15" name="FKfue7vjl4jurgqetk8ab6oxfxc">
+      <ColNames>carID</ColNames>
+      <RefColNames>car_Id</RefColNames>
+      <RefTableName>car</RefTableName>
+    </foreign-key>
+    <foreign-key id="106" parent="15" name="FK1tiwhee4quoofcc6bpahe0sjv">
+      <ColNames>rentID</ColNames>
+      <RefColNames>rentID</RefColNames>
+      <RefTableName>rent</RefTableName>
+    </foreign-key>
+    <foreign-key id="107" parent="15" name="FKdmnrsler0y1o35mxxe4t30171">
+      <ColNames>driverID</ColNames>
+      <RefColNames>user_Id</RefColNames>
+      <RefTableName>driver</RefTableName>
+    </foreign-key>
+    <index id="108" parent="15" name="PRIMARY">
+      <ColNames>carID
+rentID</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <index id="109" parent="15" name="FK1tiwhee4quoofcc6bpahe0sjv">
+      <ColNames>rentID</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="110" parent="15" name="FKdmnrsler0y1o35mxxe4t30171">
+      <ColNames>driverID</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="111" parent="15" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="112" parent="16" name="user_Id">
+      <DasType>varchar(255)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="113" parent="16" name="password">
+      <DasType>varchar(255)|0s</DasType>
+      <Position>2</Position>
+    </column>
+    <column id="114" parent="16" name="role_Type">
+      <DasType>varchar(255)|0s</DasType>
+      <Position>3</Position>
+    </column>
+    <column id="115" parent="16" name="user_Name">
+      <DasType>varchar(255)|0s</DasType>
+      <Position>4</Position>
+    </column>
+    <index id="116" parent="16" name="PRIMARY">
+      <ColNames>user_Id</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <key id="117" parent="16" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+  </database-model>
+</dataSource>

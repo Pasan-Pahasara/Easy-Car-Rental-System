@@ -116,7 +116,7 @@
                 </li>
 
                 <li class="side-nav-item">
-                    <a href="#" class="side-nav-link">
+                    <a href="#" id="LinkIncomeReport" class="side-nav-link">
                         <i class="uil-analysis"></i>
                         <span> Income Report </span>
                     </a>
@@ -1386,10 +1386,8 @@
                                             <thead class="btn-primary">
                                             <tr>
                                                 <th>Date</th>
-                                                <th>Date</th>
-                                                <th>Amount (Rs.)</th>
-                                                <th>Rent ID</th>
-                                                <th>Customer ID</th>
+                                                <th>Booking</th>
+                                                <th>Daily Income (Rs.)</th>
                                             </tr>
                                             </thead>
                                             <tbody id="tblDaily">
@@ -1400,11 +1398,9 @@
                                         <table class="table table-centered mb-0">
                                             <thead class="btn-primary">
                                             <tr>
-                                                <th>Payment ID</th>
-                                                <th>Date</th>
-                                                <th>Amount (Rs.)</th>
-                                                <th>Rent ID</th>
-                                                <th>Customer ID</th>
+                                                <th>Month</th>
+                                                <th>Booking</th>
+                                                <th>Monthly Income (Rs.)</th>
                                             </tr>
                                             </thead>
                                             <tbody id="tblMonthly">
@@ -1415,11 +1411,9 @@
                                         <table class="table table-centered mb-0">
                                             <thead class="btn-primary">
                                             <tr>
-                                                <th>Payment ID</th>
-                                                <th>Date</th>
-                                                <th>Amount (Rs.)</th>
-                                                <th>Rent ID</th>
-                                                <th>Customer ID</th>
+                                                <th>Annual</th>
+                                                <th>Booking</th>
+                                                <th>Annually Income (Rs.)</th>
                                             </tr>
                                             </thead>
                                             <tbody id="tblYearly">
@@ -1466,6 +1460,7 @@
 <script src="../controller/driverJS.js"></script>
 <script src="../controller/userJS.js"></script>
 <script src="../controller/dashboardJS.js"></script>
+<script src="../controller/IncomeController.js"></script>
 <script>
     let cusRequestBaseUrl = "http://localhost:8080/Back_End_war/";
 
@@ -1545,6 +1540,7 @@
         $("#paymentDetails").css("display", "none");
         $("#userRequest").css("display", "none");
         $("#rentDetails").css("display", "none");
+        $("#incomeReport").css("display", "none");
     });
     <!-- End Manage Customer Navigation -->
 
@@ -1557,6 +1553,7 @@
         $("#paymentDetails").css("display", "block");
         $("#userRequest").css("display", "none");
         $("#rentDetails").css("display", "none");
+        $("#incomeReport").css("display", "none");
     });
     <!-- End Manage Payment Navigation -->
 
@@ -1569,6 +1566,7 @@
         $("#paymentDetails").css("display", "none");
         $("#userRequest").css("display", "block");
         $("#rentDetails").css("display", "none");
+        $("#incomeReport").css("display", "none");
     });
     <!-- End Customer Request Navigation -->
 
@@ -1581,8 +1579,22 @@
         $("#paymentDetails").css("display", "none");
         $("#userRequest").css("display", "none");
         $("#rentDetails").css("display", "block");
+        $("#incomeReport").css("display", "none");
     });
     <!-- End Rent Details Navigation -->
+
+    <!-- Start Income Details Navigation -->
+    $("#LinkIncomeReport").on('click', function () {
+        $("#adminDashboard").css("display", "none");
+        $("#manageCar").css("display", "none");
+        $("#manageDriver").css("display", "none");
+        $("#manageCustomer").css("display", "none");
+        $("#paymentDetails").css("display", "none");
+        $("#userRequest").css("display", "none");
+        $("#rentDetails").css("display", "none");
+        $("#incomeReport").css("display", "block");
+    });
+    <!-- End Income Details Navigation -->
 
     //<!------------------------------------ Customer Request ------------------------------------>
 
