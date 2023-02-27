@@ -62,7 +62,6 @@ function manageCustomerLoadTable() {
         }
     });
 }
-
 <!-- end load customer function -->
 
 <!-- start generate customer ID function -->
@@ -76,7 +75,6 @@ function generateCustomerId() {
         }
     })
 }
-
 <!-- end generate customer ID function -->
 
 <!-- start search customer using search customer button -->
@@ -119,7 +117,6 @@ function searchCustomer() {
         }
     });
 }
-
 <!-- end search customer function -->
 
 <!-- start bind click events to the table rows function -->
@@ -150,7 +147,6 @@ function customerBindClickEvents() {
         $("#customerPassword").val(customerPassword);
     });
 }
-
 <!-- end bind click events to the table rows function -->
 
 <!-- start set text fields values function -->
@@ -166,7 +162,6 @@ function setTextFieldValuesCustomer(userID, userFirstName, userLastName, custome
     $("#customerUserName").val(customerUserName);
     $("#customerPassword").val(customerPassword);
 }
-
 <!-- end set text fields values function -->
 
 <!-- start customer delete -->
@@ -210,5 +205,19 @@ $("#updateCustomer").on('click', function () {
     });
 });
 <!-- end customer update -->
+
+//<!------------------------------------ RegEx Customer ------------------------------------>
+
+<!-- start regex patterns -->
+const regExCusFirstName = /^[A-z ]{3,20}$/;
+const regExCusLastName = /^[A-z ]{3,20}$/;
+const regExCusContactNumber = /^(07(0|1|2|4|5|6|7|8)[0-9]{7})$/;
+const regExCusAddress = /^[A-z0-9/ ]{4,30}$/;
+const regExCusEmailAddress = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+const regExCusNic = /^([0-9]{12}|[0-9V]{10}|[0-9v]{10})$/;
+const regExCusLicense = /^([0-9]{12})$/;
+const regExCusUserName = /^[A-z0-9/ ]{4,30}$/;
+const regExCusPassword = /^([A-Z a-z]{5,15}[0-9]{1,10})$/;
+<!-- end regex patterns -->
 
 <!-- End User Section -->
