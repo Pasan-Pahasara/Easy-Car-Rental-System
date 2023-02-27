@@ -827,27 +827,27 @@
                                                 <div class="mb-3">
                                                     <label class="form-label" for="userID">User ID<span
                                                             class="text-danger">*</span></label>
-                                                    <input class="form-control" id="userID" name="user_Id"
-                                                           placeholder="User ID" type="text">
+                                                    <input class="form-control" id="userID" readonly name="user_Id"
+                                                           placeholder="Eg :- C00-001" type="text">
                                                 </div>
                                                 <div class="mb-3">
                                                     <label class="form-label" for="userFirstName">First Name<span
                                                             class="text-danger">*</span></label>
                                                     <input class="form-control" id="userFirstName" name="firstName"
-                                                           placeholder="First Name" type="text">
+                                                           placeholder="Eg :- Pasan" type="text">
                                                 </div>
                                                 <div class="mb-3">
                                                     <label class="form-label" for="userLastName">Last Name<span
                                                             class="text-danger">*</span></label>
                                                     <input class="form-control" id="userLastName" name="lastName"
-                                                           placeholder="Last Name" type="text">
+                                                           placeholder="Eg :- Pahasara" type="text">
                                                 </div>
                                                 <div class="mb-3">
                                                     <label class="form-label" for="customerContactNo">Contact
                                                         Number<span
                                                                 class="text-danger">*</span></label>
                                                     <input class="form-control" id="customerContactNo" name="contact_No"
-                                                           placeholder="Contact No" type="text">
+                                                           placeholder="Eg :- 0714548877" type="text">
                                                 </div>
                                             </section>
                                             <section id="sec2CustomerDetails" class="col-xl-4">
@@ -855,25 +855,25 @@
                                                     <label class="form-label" for="customerAddress">Address<span
                                                             class="text-danger">*</span></label>
                                                     <input class="form-control" id="customerAddress" name="address"
-                                                           placeholder="Address" type="text">
+                                                           placeholder="Eg :- Panadura" type="text">
                                                 </div>
                                                 <div class="mb-3">
                                                     <label class="form-label" for="customerDriverEmail">Email<span
                                                             class="text-danger">*</span></label>
                                                     <input class="form-control" id="customerDriverEmail" name="email"
-                                                           placeholder="Email" type="text">
+                                                           placeholder="Eg :- pahasara@gmail.com" type="text">
                                                 </div>
                                                 <div class="mb-3">
                                                     <label class="form-label" for="customerNic">Nic No<span
                                                             class="text-danger">*</span></label>
                                                     <input class="form-control" id="customerNic" name="nic"
-                                                           placeholder="Nic No" type="text">
+                                                           placeholder="Eg :- 781596458v / 200175968215" type="text">
                                                 </div>
                                                 <div class="mb-3">
                                                     <label class="form-label" for="customerLicence">Licence No<span
                                                             class="text-danger">*</span></label>
                                                     <input class="form-control" id="customerLicence" name="license_No"
-                                                           placeholder="Licence No" type="text">
+                                                           placeholder="Eg :- 587459621587" type="text">
                                                 </div>
 
                                             </section>
@@ -885,7 +885,7 @@
                                                         <span class="input-group-text"
                                                               id="customerInputGroupPrepend">@</span>
                                                         <input type="text" class="form-control" id="customerUserName"
-                                                               name="user_Name" placeholder="User Name"
+                                                               name="user_Name" placeholder="Eg :- pahasara"
                                                                aria-describedby="customerInputGroupPrepend" required>
                                                         <div class="invalid-feedback">
                                                             Please choose a username.
@@ -897,7 +897,7 @@
                                                             class="text-danger">*</span></label>
                                                     <div class="input-group input-group-merge">
                                                         <input type="password" id="customerPassword" name="password"
-                                                               class="form-control" placeholder="Password">
+                                                               class="form-control" placeholder="Eg :- vwYnL145">
                                                         <div class="input-group-text" data-password="false">
                                                             <span class="uil uil-eye-slash"></span>
                                                         </div>
@@ -916,7 +916,7 @@
                                             </section>
                                         </form>
 
-                                        <div class="table-responsive-xxl">
+                                        <div class="table-responsive-xxl" style="overflow-x:auto;-webkit-overflow-scrolling:touch;">
                                             <table class="table-nowrap table table-centered mb-0">
                                                 <thead class="btn-primary">
                                                 <tr>
@@ -1854,6 +1854,204 @@
     }
 
     <!-- End Payment Details get function -->
+
+
+    //<!------------------------------------ RegEx Customer ------------------------------------>
+
+    <!-- start regex patterns -->
+    const regExCusFirstName2 = /^[A-z ]{3,20}$/;
+    const regExCusLastName2 = /^[A-z ]{3,20}$/;
+    const regExCusContactNumber2 = /^(07(0|1|2|4|5|6|7|8)[0-9]{7})$/;
+    const regExCusAddress2 = /^[A-z0-9/ ]{4,30}$/;
+    const regExCusEmailAddress2 = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    const regExCusNic2 = /^([0-9]{12}|[0-9V]{10}|[0-9v]{10})$/;
+    const regExCusLicense2 = /^([0-9]{12})$/;
+    const regExCusUserName2 = /^[A-z0-9/ ]{4,30}$/;
+    const regExCusPassword2 = /^([A-Z a-z]{5,15}[0-9]{1,10})$/;
+    <!-- end regex patterns -->
+
+    // customer validation array
+    let cusValidations2 = [];
+
+    cusValidations2.push({
+        cusReg: regExCusFirstName2,
+        cusField: $('#userFirstName')
+    });
+    cusValidations2.push({
+        cusReg: regExCusLastName2,
+        cusField: $('#userLastName')
+    });
+    cusValidations2.push({
+        cusReg: regExCusContactNumber2,
+        cusField: $('#customerContactNo')
+    });
+    cusValidations2.push({
+        cusReg: regExCusAddress2,
+        cusField: $('#customerAddress')
+    });
+    cusValidations2.push({
+        cusReg: regExCusEmailAddress2,
+        cusField: $('#customerDriverEmail')
+    });
+    cusValidations2.push({
+        cusReg: regExCusNic2,
+        cusField: $('#customerNic')
+    });
+    cusValidations2.push({
+        cusReg: regExCusLicense2,
+        cusField: $('#customerLicence')
+    });
+    cusValidations2.push({
+        cusReg: regExCusUserName2,
+        cusField: $('#customerUserName')
+    });
+    cusValidations2.push({
+        cusReg: regExCusPassword2,
+        cusField: $('#customerPassword')
+    });
+
+    // disable tab key of all four text fields using grouping selector in CSS
+    $("#userFirstName, #userLastName, #customerContactNo, #customerAddress,#customerDriverEmail, #customerNic, #customerLicence, #customerUserName,#customerPassword").on('keydown', function (event) {
+        if (event.key === "Tab") {
+            event.preventDefault();
+        }
+    });
+
+    // grouping all fields keyup event using and call check validity function
+    $("#userFirstName, #userLastName, #customerContactNo, #customerAddress,#customerDriverEmail, #customerNic, #customerLicence, #customerUserName,#customerPassword").on('keyup', function (event) {
+        checkCusValidity();
+    });
+
+    // grouping all fields blur event using and call check validity function
+    $("#userFirstName, #userLastName, #customerContactNo, #customerAddress,#customerDriverEmail, #customerNic, #customerLicence, #customerUserName,#customerPassword").on('blur', function (event) {
+        checkCusValidity();
+    });
+
+    // customer-first-name focus event
+    $("#userFirstName").on('keydown', function (event) {
+        if (event.key === "Enter" && cusCheck(regExCusFirstName, $("#userFirstName"))) {
+            $("#userLastName").focus();
+        } else {
+            focusCusText($("#userFirstName"));
+        }
+    });
+
+    // customer-last-name focus event
+    $("#userLastName").on('keydown', function (event) {
+        if (event.key === "Enter" && cusCheck(regExCusLastName, $("#userLastName"))) {
+            focusCusText($("#customerContactNo"));
+        }
+    });
+
+    // customer-contact focus event
+    $("#customerContactNo").on('keydown', function (event) {
+        if (event.key === "Enter" && cusCheck(regExCusContactNumber, $("#customerContactNo"))) {
+            focusCusText($("#customerAddress"));
+        }
+    });
+
+    // customer-address focus event
+    $("#customerAddress").on('keydown', function (event) {
+        if (event.key === "Enter" && cusCheck(regExCusAddress, $("#customerAddress"))) {
+            focusCusText($("#customerDriverEmail"));
+        }
+    });
+
+    // customer-email focus event
+    $("#customerDriverEmail").on('keydown', function (event) {
+        if (event.key === "Enter" && cusCheck(regExCusEmailAddress, $("#customerDriverEmail"))) {
+            focusCusText($("#customerNic"));
+        }
+    });
+
+    // customer-nic focus event
+    $("#customerNic").on('keydown', function (event) {
+        if (event.key === "Enter" && cusCheck(regExCusNic, $("#customerNic"))) {
+            focusCusText($("#customerLicence"));
+        }
+    });
+
+    // customer-licence focus event
+    $("#customerLicence").on('keydown', function (event) {
+        if (event.key === "Enter" && cusCheck(regExCusLicense, $("#customerLicence"))) {
+            focusCusText($("#customerUserName"));
+        }
+    });
+
+    // customer-user-name focus event
+    $("#customerUserName").on('keydown', function (event) {
+        if (event.key === "Enter" && cusCheck(regExCusUserName, $("#customerUserName"))) {
+            focusCusText($("#customerPassword"));
+        }
+    });
+
+    // customer-password focus event
+    $("#customerPassword").on('keydown', function (event) {
+        if (event.key === "Enter" && cusCheck(regExCusPassword, $("#customerPassword"))) {
+            $("#updateCustomer").focus();
+        }
+    });
+
+    // check validity function
+    function checkCusValidity() {
+        let cusErrorCount2 = 0;
+        for (let cusValidation2 of cusValidations2) {
+            if (cusCheck(cusValidation2.cusReg, cusValidation2.cusField)) {
+                textItemSuccess(cusValidation2.cusField, "");
+            } else {
+                cusErrorCount2 = cusErrorCount2 + 1;
+                setItemTextError(cusValidation2.cusField);
+            }
+        }
+        setItemButtonState(cusErrorCount2);
+    }
+
+    // check regex pattern function
+    function cusCheck(regex, txtField) {
+        let cusInputValue = txtField.val();
+        return regex.test(cusInputValue) ? true : false;
+    }
+
+    // error text fields function
+    function setItemTextError(txtField) {
+        if (txtField.val().length <= 0) {
+            defaultItemText(txtField, "");
+        } else {
+            txtField.css('border', '2px solid red');
+        }
+    }
+
+    // success text fields function
+    function textItemSuccess(txtField) {
+        if (txtField.val().length <= 0) {
+            defaultItemText(txtField, "");
+        } else {
+            txtField.css('border', '2px solid green');
+        }
+    }
+
+    // default text fields function
+    function defaultItemText(txtField) {
+        txtField.css("border", "1px solid #ced4da");
+    }
+
+    // focus texts function
+    function focusCusText(txtField) {
+        txtField.focus();
+    }
+
+    // button state function
+    function setItemButtonState(value) {
+        if (value > 0) {
+            $("#updateCustomer").attr('disabled', true);
+            $("#deleteCustomer").attr('disabled', true);
+        } else {
+            $("#updateCustomer").attr('disabled', false);
+            $("#deleteCustomer").attr('disabled', false);
+        }
+    }
+
+    // Regex Patterns End
 
     let val = $("#paymentDetailsPickFromDate").val();
     console.log(val);
