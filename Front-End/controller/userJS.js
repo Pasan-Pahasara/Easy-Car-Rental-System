@@ -30,7 +30,7 @@ $("#addCustomerBtn").on('click', function () {
         success: function (res) {
             alert(res.message);
             manageCustomerLoadTable();
-            setTextFieldValuesCustomer("","","","","","","","","","");
+            setTextFieldValuesCustomer("", "", "", "", "", "", "", "", "", "");
             generateCustomerId();
         }, error: function (error) {
             let message = JSON.parse(error.responseText).message;
@@ -62,6 +62,7 @@ function manageCustomerLoadTable() {
         }
     });
 }
+
 <!-- end load customer function -->
 
 <!-- start generate customer ID function -->
@@ -75,6 +76,7 @@ function generateCustomerId() {
         }
     })
 }
+
 <!-- end generate customer ID function -->
 
 <!-- start search customer using search customer button -->
@@ -117,6 +119,7 @@ function searchCustomer() {
         }
     });
 }
+
 <!-- end search customer function -->
 
 <!-- start bind click events to the table rows function -->
@@ -147,6 +150,7 @@ function customerBindClickEvents() {
         $("#customerPassword").val(customerPassword);
     });
 }
+
 <!-- end bind click events to the table rows function -->
 
 <!-- start set text fields values function -->
@@ -162,6 +166,7 @@ function setTextFieldValuesCustomer(userID, userFirstName, userLastName, custome
     $("#customerUserName").val(customerUserName);
     $("#customerPassword").val(customerPassword);
 }
+
 <!-- end set text fields values function -->
 
 <!-- start customer delete -->
@@ -219,5 +224,200 @@ const regExCusLicense = /^([0-9]{12})$/;
 const regExCusUserName = /^[A-z0-9/ ]{4,30}$/;
 const regExCusPassword = /^([A-Z a-z]{5,15}[0-9]{1,10})$/;
 <!-- end regex patterns -->
+
+// customer validation array
+let cusValidations = [];
+
+cusValidations.push({
+    cusReg: regExCusFirstName,
+    cusField: $('#cusFirstName')
+});
+cusValidations.push({
+    cusReg: regExCusLastName,
+    cusField: $('#cusLastName')
+});
+cusValidations.push({
+    cusReg: regExCusContactNumber,
+    cusField: $('#contactNo')
+});
+cusValidations.push({
+    cusReg: regExCusAddress,
+    cusField: $('#address')
+});
+cusValidations.push({
+    cusReg: regExCusEmailAddress,
+    cusField: $('#cusEmail')
+});
+cusValidations.push({
+    cusReg: regExCusNic,
+    cusField: $('#nicNo')
+});
+cusValidations.push({
+    cusReg: regExCusLicense,
+    cusField: $('#cusLicence')
+});
+cusValidations.push({
+    cusReg: regExCusUserName,
+    cusField: $('#cusUserName')
+});
+cusValidations.push({
+    cusReg: regExCusPassword,
+    cusField: $('#cusPassword')
+});
+
+// disable tab key of all four text fields using grouping selector in CSS
+$("#cusFirstName, #cusLastName, #contactNo, #address,#cusEmail, #nicNo, #cusLicence, #cusUserName,#cusPassword").on('keydown', function (event) {
+    if (event.key === "Tab") {
+        event.preventDefault();
+    }
+});
+
+// grouping all fields keyup event using and call check validity function
+$("#cusFirstName, #cusLastName, #contactNo, #address,#cusEmail, #nicNo, #cusLicence, #cusUserName,#cusPassword").on('keyup', function (event) {
+    checkCusValidity();
+});
+
+// grouping all fields blur event using and call check validity function
+$("#cusFirstName, #cusLastName, #contactNo, #address,#cusEmail, #nicNo, #cusLicence, #cusUserName,#cusPassword").on('blur', function (event) {
+    checkCusValidity();
+});
+
+// customer-first-name focus event
+$("#cusFirstName").on('keydown', function (event) {
+    if (event.key === "Enter" && cusCheck(regExCusFirstName, $("#cusFirstName"))) {
+        $("#cusLastName").focus();
+    } else {
+        focusCusText($("#cusFirstName"));
+    }
+});
+
+// customer-last-name focus event
+$("#cusLastName").on('keydown', function (event) {
+    if (event.key === "Enter" && cusCheck(regExCusLastName, $("#cusLastName"))) {
+        focusCusText($("#contactNo"));
+    }
+});
+
+// customer-contact focus event
+$("#contactNo").on('keydown', function (event) {
+    if (event.key === "Enter" && cusCheck(regExCusContactNumber, $("#contactNo"))) {
+        focusCusText($("#address"));
+    }
+});
+
+// customer-address focus event
+$("#address").on('keydown', function (event) {
+    if (event.key === "Enter" && cusCheck(regExCusAddress, $("#address"))) {
+        focusCusText($("#cusEmail"));
+    }
+});
+
+// customer-email focus event
+$("#cusEmail").on('keydown', function (event) {
+    if (event.key === "Enter" && cusCheck(regExCusEmailAddress, $("#cusEmail"))) {
+        focusCusText($("#nicNo"));
+    }
+});
+
+// customer-nic focus event
+$("#nicNo").on('keydown', function (event) {
+    if (event.key === "Enter" && cusCheck(regExCusNic, $("#nicNo"))) {
+       $("#imgNiC").focus();
+    }
+});
+
+// customer-nic-img focus event
+$("#imgNiC").on('keydown', function (event) {
+    if (event.key === "Enter") {
+        focusCusText($("#cusLicence"));
+    }
+});
+
+// customer-licence focus event
+$("#cusLicence").on('keydown', function (event) {
+    if (event.key === "Enter" && cusCheck(regExCusLicense, $("#cusLicence"))) {
+        $("#imgLicence").focus();
+    }
+});
+
+// customer-licence-img focus event
+$("#imgLicence").on('keydown', function (event) {
+    if (event.key === "Enter") {
+        focusCusText($("#cusUserName"));
+    }
+});
+
+// customer-user-name focus event
+$("#cusUserName").on('keydown', function (event) {
+    if (event.key === "Enter" && cusCheck(regExCusUserName, $("#cusUserName"))) {
+        focusCusText($("#cusPassword"));
+    }
+});
+
+// customer-password focus event
+$("#cusPassword").on('keydown', function (event) {
+    if (event.key === "Enter" && cusCheck(regExCusPassword, $("#cusPassword"))) {
+        $("#addCustomerBtn").focus();
+    }
+});
+
+// check validity function
+function checkCusValidity() {
+    let cusErrorCount = 0;
+    for (let cusValidation of cusValidations) {
+        if (cusCheck(cusValidation.cusReg, cusValidation.cusField)) {
+            textItemSuccess(cusValidation.cusField, "");
+        } else {
+            cusErrorCount = cusErrorCount + 1;
+            setItemTextError(cusValidation.cusField);
+        }
+    }
+    setItemButtonState(cusErrorCount);
+}
+
+// check regex pattern function
+function cusCheck(regex, txtField) {
+    let cusInputValue = txtField.val();
+    return regex.test(cusInputValue) ? true : false;
+}
+
+// error text fields function
+function setItemTextError(txtField) {
+    if (txtField.val().length <= 0) {
+        defaultItemText(txtField, "");
+    } else {
+        txtField.css('border', '2px solid red');
+    }
+}
+
+// success text fields function
+function textItemSuccess(txtField) {
+    if (txtField.val().length <= 0) {
+        defaultItemText(txtField, "");
+    } else {
+        txtField.css('border', '2px solid green');
+    }
+}
+
+// default text fields function
+function defaultItemText(txtField) {
+    txtField.css("border", "1px solid #ced4da");
+}
+
+// focus texts function
+function focusCusText(txtField) {
+    txtField.focus();
+}
+
+// button state function
+function setItemButtonState(value) {
+    if (value > 0) {
+        $("#addCustomerBtn").attr('disabled', true);
+    } else {
+        $("#addCustomerBtn").attr('disabled', false);
+    }
+}
+
+// Regex Patterns End
 
 <!-- End User Section -->
