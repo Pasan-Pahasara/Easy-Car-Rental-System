@@ -10,23 +10,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9d9c7e19-daae-4dea-98be-3ff2eb93366f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Back-End/src/main/java/lk/ijse/easy/controller/IncomeController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Back-End/src/main/java/lk/ijse/easy/dto/IncomeDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Back-End/src/main/java/lk/ijse/easy/repo/IncomeRepo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Back-End/src/main/java/lk/ijse/easy/service/IncomeService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Back-End/src/main/java/lk/ijse/easy/service/impl/IncomeServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Front-End/controller/IncomeController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/a3e7f839-b540-423b-8396-3f7d4ae1c2c5.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/a3e7f839-b540-423b-8396-3f7d4ae1c2c5/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/a3e7f839-b540-423b-8396-3f7d4ae1c2c5/storage_v2/_src_/schema/mysql.osA4Bg.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/a3e7f839-b540-423b-8396-3f7d4ae1c2c5/storage_v2/_src_/schema/performance_schema.kIw0nw.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/a3e7f839-b540-423b-8396-3f7d4ae1c2c5/storage_v2/_src_/schema/sys.zb4BAA.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End/target/Back-End-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/target/Back-End-1.0-SNAPSHOT.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End/target/Back-End-1.0-SNAPSHOT/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/target/Back-End-1.0-SNAPSHOT/META-INF/MANIFEST.MF" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Front-End/pages/adminDashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/Front-End/pages/adminDashboard.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front-End/pages/customerDashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/Front-End/pages/customerDashboard.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -306,7 +292,7 @@
       <workItem from="1677510652966" duration="309000" />
       <workItem from="1677511166914" duration="128000" />
       <workItem from="1677511322224" duration="4019000" />
-      <workItem from="1677518939422" duration="1179000" />
+      <workItem from="1677518939422" duration="3577000" />
     </task>
     <servers />
   </component>
