@@ -202,6 +202,7 @@ $("#updateCustomer").on('click', function () {
         dataType: "json",
         success: function (res) {
             alert(res.message);
+            setTextFieldValuesCustomer("", "", "", "", "", "", "", "", "", "");
             manageCustomerLoadTable();
         }, error: function (error) {
             let message = JSON.parse(error.responseText).message;
