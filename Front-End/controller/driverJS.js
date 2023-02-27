@@ -249,7 +249,7 @@ function setTextFieldValuesDriver(driverNicNo, driverFirstName, driverLastName, 
 //<!------------------------------------ RegEx Driver ------------------------------------>
 
 <!-- start regex patterns -->
-const regExDriverId = /^([0-9]{12}|[0-9V]{10})$/;
+const regExDriverId = /^([0-9]{12}|[0-9V]{10}|[0-9v]{10})$/;
 const regExDriverFirstName = /^[A-z ]{3,20}$/;
 const regExDriverLastName = /^[A-z ]{3,20}$/;
 const regExDriverContactNumber = /^(07(0|1|2|4|5|6|7|8)[0-9]{7})$/;
@@ -259,6 +259,181 @@ const regExDriverUserName = /^[A-z0-9/ ]{4,30}$/;
 const regExDriverPassword = /^([A-Z a-z]{5,15}[0-9]{1,10})$/;
 <!-- end regex patterns -->
 
+// driver validation array
+let driverValidations = [];
 
+driverValidations.push({
+    driverReg: regExDriverId,
+    driverField: $('#driverNicNo')
+});
+driverValidations.push({
+    driverReg: regExDriverFirstName,
+    driverField: $('#driverFirstName')
+});
+driverValidations.push({
+    driverReg: regExDriverLastName,
+    driverField: $('#driverLastName')
+});
+driverValidations.push({
+    driverReg: regExDriverContactNumber,
+    driverField: $('#contactNo')
+});
+driverValidations.push({
+    driverReg: regExDriverAddress,
+    driverField: $('#address')
+});
+driverValidations.push({
+    driverReg: regExDriverEmailAddress,
+    driverField: $('#driverEmail')
+});
+driverValidations.push({
+    driverReg: regExDriverUserName,
+    driverField: $('#driverUserName')
+});
+driverValidations.push({
+    driverReg: regExDriverPassword,
+    driverField: $('#driverPassword')
+});
+
+// disable tab key of all four text fields using grouping selector in CSS
+$("#driverNicNo, #driverFirstName, #driverLastName, #contactNo,#address, #driverEmail, #driverUserName, #driverPassword").on('keydown', function (event) {
+    if (event.key === "Tab") {
+        event.preventDefault();
+    }
+});
+
+// grouping all fields keyup event using and call check validity function
+$("#driverNicNo, #driverFirstName, #driverLastName, #contactNo,#address, #driverEmail, #driverUserName, #driverPassword").on('keyup', function (event) {
+    checkDriverValidity();
+});
+
+// grouping all fields blur event using and call check validity function
+$("#driverNicNo, #driverFirstName, #driverLastName, #contactNo,#address, #driverEmail, #driverUserName, #driverPassword").on('blur', function (event) {
+    checkDriverValidity();
+});
+
+// driver-id focus event
+$("#driverNicNo").on('keydown', function (event) {
+    if (event.key === "Enter" && driverCheck(regExDriverId, $("#driverNicNo"))) {
+        $("#driverFirstName").focus();
+    } else {
+        focusDriverText($("#driverNicNo"));
+    }
+});
+
+// driver=+-first-name focus event
+$("#driverFirstName").on('keydown', function (event) {
+    if (event.key === "Enter" && driverCheck(regExDriverFirstName, $("#driverFirstName"))) {
+        focusDriverText($("#driverLastName"));
+    }
+});
+
+// driver-last-name focus event
+$("#driverLastName").on('keydown', function (event) {
+    if (event.key === "Enter" && driverCheck(regExDriverLastName, $("#driverLastName"))) {
+        focusDriverText($("#contactNo"));
+    }
+});
+
+// driver-contact focus event
+$("#contactNo").on('keydown', function (event) {
+    if (event.key === "Enter" && driverCheck(regExDriverContactNumber, $("#contactNo"))) {
+        focusDriverText($("#address"));
+    }
+});
+// driver-address focus event
+$("#address").on('keydown', function (event) {
+    if (event.key === "Enter" && driverCheck(regExDriverAddress, $("#address"))) {
+        focusDriverText($("#driverEmail"));
+    }
+});
+
+// driver-email focus event
+$("#driverEmail").on('keydown', function (event) {
+    if (event.key === "Enter") {
+        $("#availability").focus();
+    }
+});
+
+// driver-availability focus event
+$("#availability").on('keydown', function (event) {
+    if (event.key === "Enter") {
+        focusDriverText($("#driverUserName"));
+    }
+});
+
+// driver-user-name focus event
+$("#driverUserName").on('keydown', function (event) {
+    if (event.key === "Enter" && driverCheck(regExDriverUserName, $("#driverUserName"))) {
+        focusDriverText($("#driverPassword"));
+    }
+});
+
+// driver=first-name focus event
+$("#driverPassword").on('keydown', function (event) {
+    if (event.key === "Enter" && driverCheck(regExDriverPassword, $("#driverPassword"))) {
+        $("#addDriverBtn").focus();
+    }
+});
+
+// check validity function
+function checkDriverValidity() {
+    let driverErrorCount = 0;
+    for (let driverValidation of driverValidations) {
+        if (driverCheck(driverValidation.driverReg, driverValidation.driverField)) {
+            textItemSuccess(driverValidation.driverField, "");
+        } else {
+            driverErrorCount = driverErrorCount + 1;
+            setItemTextError(driverValidation.driverField);
+        }
+    }
+    setItemButtonState(driverErrorCount);
+}
+
+// check regex pattern function
+function driverCheck(regex, txtField) {
+    let driverInputValue = txtField.val();
+    return regex.test(driverInputValue) ? true : false;
+}
+
+// error text fields function
+function setItemTextError(txtField) {
+    if (txtField.val().length <= 0) {
+        defaultItemText(txtField, "");
+    } else {
+        txtField.css('border', '2px solid red');
+    }
+}
+
+// success text fields function
+function textItemSuccess(txtField) {
+    if (txtField.val().length <= 0) {
+        defaultItemText(txtField, "");
+    } else {
+        txtField.css('border', '2px solid green');
+    }
+}
+
+// default text fields function
+function defaultItemText(txtField) {
+    txtField.css("border", "1px solid #ced4da");
+}
+
+// focus texts function
+function focusDriverText(txtField) {
+    txtField.focus();
+}
+
+// button state function
+function setItemButtonState(value) {
+    if (value > 0) {
+        $("#addDriverBtn").attr('disabled', true);
+        $("#updateDriver").attr('disabled', true);
+    } else {
+        $("#addDriverBtn").attr('disabled', false);
+        $("#updateDriver").attr('disabled', false);
+    }
+}
+// Regex Patterns End
 
 <!-- End Driver Section -->
