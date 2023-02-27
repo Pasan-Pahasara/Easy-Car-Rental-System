@@ -10,9 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9d9c7e19-daae-4dea-98be-3ff2eb93366f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/67479b8f-6962-4405-97ac-fb9db32000fb.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/67479b8f-6962-4405-97ac-fb9db32000fb.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End/target/Back-End-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/target/Back-End-1.0-SNAPSHOT.war" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Front-End/pages/adminDashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/Front-End/pages/adminDashboard.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -296,7 +294,7 @@
       <workItem from="1677518939422" duration="4880000" />
       <workItem from="1677523855443" duration="1935000" />
       <workItem from="1677526498354" duration="2556000" />
-      <workItem from="1677529707241" duration="1293000" />
+      <workItem from="1677529707241" duration="6779000" />
     </task>
     <servers />
   </component>

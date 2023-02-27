@@ -407,19 +407,19 @@
                                                     <label class="form-label" for="carId">Car ID<span
                                                             class="text-danger">*</span></label>
                                                     <input class="form-control" readonly id="carId" name="car_Id"
-                                                           placeholder="Car ID" type="text">
+                                                           placeholder="Eg :- V00-001" type="text">
                                                 </div>
                                                 <div class="mb-3">
                                                     <label class="form-label" for="carName">Car Name<span
                                                             class="text-danger">*</span></label>
                                                     <input class="form-control" id="carName" name="car_name"
-                                                           placeholder="Car Name" type="text">
+                                                           placeholder="Eg :- CHR" type="text">
                                                 </div>
                                                 <div class="mb-3">
                                                     <label class="form-label" for="driverLastName">Car Brand<span
                                                             class="text-danger">*</span></label>
                                                     <input class="form-control" id="carBrand" name="car_brand"
-                                                           placeholder="Car Brand" type="text">
+                                                           placeholder="Eg :- Toyota" type="text">
                                                 </div>
                                                 <div class="mb-3">
                                                     <label class="form-label" for="carType">Car Type<span
@@ -464,7 +464,7 @@
                                                                 class="text-danger">*</span></label>
                                                     <input class="form-control" id="numberOfPassengers"
                                                            name="number_Of_Passengers"
-                                                           placeholder="N0 Of Passengers" type="text">
+                                                           placeholder="Eg :- 4" type="text">
                                                 </div>
                                                 <div class="mb-3">
                                                     <label class="form-label" for="transmissionType">Transmission
@@ -493,19 +493,19 @@
                                                     <label class="form-label" for="dailyRate">Daily Rate<span
                                                             class="text-danger">*</span></label>
                                                     <input class="form-control" id="dailyRate" name="daily_Rate"
-                                                           placeholder="Daily Rate" type="text">
+                                                           placeholder="Eg :- 2500" type="text">
                                                 </div>
                                                 <div class="mb-3">
                                                     <label class="form-label" for="monthlyRate">Monthly Rate<span
                                                             class="text-danger">*</span></label>
                                                     <input class="form-control" id="monthlyRate" name="monthly_Rate"
-                                                           placeholder="Monthly Rate" type="text">
+                                                           placeholder="Eg :- 35000" type="text">
                                                 </div>
                                                 <div class="mb-3">
                                                     <label class="form-label" for="priceExtraKM">Price Extra KM<span
                                                             class="text-danger">*</span></label>
                                                     <input class="form-control" id="priceExtraKM" name="price_Extra_KM"
-                                                           placeholder="Price Extra KM" type="text">
+                                                           placeholder="Eg :- 60" type="text">
                                                 </div>
                                                 <div class="mb-3">
                                                     <label class="form-label" for="registrationNumber">Registration
@@ -513,7 +513,7 @@
                                                                 class="text-danger">*</span></label>
                                                     <input class="form-control" id="registrationNumber"
                                                            name="registration_Number"
-                                                           placeholder="Registration Number" type="text">
+                                                           placeholder="Eg :- BW-5286" type="text">
                                                 </div>
                                             </section>
                                             <section id="sec4Car" class="col-xl-3">
@@ -521,13 +521,13 @@
                                                     <label class="form-label" for="freeMileage">Free Mileage<span
                                                             class="text-danger">*</span></label>
                                                     <input class="form-control" id="freeMileage" name="free_Mileage"
-                                                           placeholder="Free Mileage" type="text">
+                                                           placeholder="Eg :- 5" type="text">
                                                 </div>
                                                 <div class="mb-3">
                                                     <label class="form-label" for="color">Color<span
                                                             class="text-danger">*</span></label>
                                                     <input class="form-control" id="color" name="color"
-                                                           placeholder="Color" type="text">
+                                                           placeholder="Eg :- Gray" type="text">
                                                 </div>
                                                 <div class="mb-3">
                                                     <label class="form-label" for="carAvailability">Car
@@ -2048,6 +2048,260 @@
         } else {
             $("#updateCustomer").attr('disabled', false);
             $("#deleteCustomer").attr('disabled', false);
+        }
+    }
+
+    // Regex Patterns End
+
+    //<!------------------------------------ RegEx Car ------------------------------------>
+
+    <!-- start regex patterns -->
+    const regExName = /^[A-z 0-9]{3,20}$/;
+    const regExBrand = /^[A-z ]{3,20}$/;
+    const regExNoPassengers = /^[0-9 ]{1,2}$/;
+    const regExDailyRate = /^[0-9 ]{1,20}$/;
+    const regExMonthlyRate = /^[0-9 ]{1,20}$/;
+    const regExKM = /^[0-9 ]{1,4}$/;
+    const regExRegNumber = /^[A-Z]{2}-?\d{3}|^[A-Z]{3}-?\d{3}|^\d{3}-?[A-Z]{3}$/;
+    const regExFreeMileage = /^[0-9 ]{1,4}$/;
+    const regExColor = /^[A-z ]{3,20}$/;
+    <!-- end regex patterns -->
+
+    // customer validation array
+    let carValidations = [];
+
+    carValidations.push({
+        carReg: regExName,
+        carField: $('#carName')
+    });
+    carValidations.push({
+        carReg: regExBrand,
+        carField: $('#carBrand')
+    });
+    carValidations.push({
+        carReg: regExNoPassengers,
+        carField: $('#numberOfPassengers')
+    });
+    carValidations.push({
+        carReg: regExDailyRate,
+        carField: $('#dailyRate')
+    });
+    carValidations.push({
+        carReg: regExMonthlyRate,
+        carField: $('#monthlyRate')
+    });
+    carValidations.push({
+        carReg: regExKM,
+        carField: $('#priceExtraKM')
+    });
+    carValidations.push({
+        carReg: regExRegNumber,
+        carField: $('#registrationNumber')
+    });
+    carValidations.push({
+        carReg: regExFreeMileage,
+        carField: $('#freeMileage')
+    });
+    carValidations.push({
+        carReg: regExColor,
+        carField: $('#color')
+    });
+
+    // disable tab key of all four text fields using grouping selector in CSS
+    $("#carName, #carBrand, #numberOfPassengers, #dailyRate,#monthlyRate, #priceExtraKM, #registrationNumber, #freeMileage,#color").on('keydown', function (event) {
+        if (event.key === "Tab") {
+            event.preventDefault();
+        }
+    });
+
+    // grouping all fields keyup event using and call check validity function
+    $("#carName, #carBrand, #numberOfPassengers, #dailyRate,#monthlyRate, #priceExtraKM, #registrationNumber, #freeMileage,#color").on('keyup', function (event) {
+        checkCarValidity();
+    });
+
+    // grouping all fields blur event using and call check validity function
+    $("#carName, #carBrand, #numberOfPassengers, #dailyRate,#monthlyRate, #priceExtraKM, #registrationNumber, #freeMileage,#color").on('blur', function (event) {
+        checkCarValidity();
+    });
+
+    // car-name focus event
+    $("#carName").on('keydown', function (event) {
+        if (event.key === "Enter" && carCheck(regExName, $("#carName"))) {
+            $("#carBrand").focus();
+        } else {
+            focusCarText($("#carName"));
+        }
+    });
+
+    // car-brand focus event
+    $("#carBrand").on('keydown', function (event) {
+        if (event.key === "Enter" && carCheck(regExBrand, $("#carBrand"))) {
+            $("#carType").focus();
+        }
+    });
+
+    // car-type focus event
+    $("#carType").on('keydown', function (event) {
+        if (event.key === "Enter") {
+            $("#frontView").focus();
+        }
+    });
+
+    // car-frontView focus event
+    $("#frontView").on('keydown', function (event) {
+        if (event.key === "Enter") {
+            $("#backView").focus();
+        }
+    });
+
+    // car-backView focus event
+    $("#backView").on('keydown', function (event) {
+        if (event.key === "Enter") {
+            $("#sideView").focus();
+        }
+    });
+
+    // car-sideView focus event
+    $("#sideView").on('keydown', function (event) {
+        if (event.key === "Enter") {
+            $("#interiorImage").focus();
+        }
+    });
+
+    // car-interiorImage focus event
+    $("#interiorImage").on('keydown', function (event) {
+        if (event.key === "Enter") {
+            focusCarText($("#numberOfPassengers"));
+        }
+    });
+
+    // car-number-of-passengers focus event
+    $("#numberOfPassengers").on('keydown', function (event) {
+        if (event.key === "Enter" && carCheck(regExNoPassengers, $("#numberOfPassengers"))) {
+            $("#transmissionType").focus();
+        }
+    });
+
+    // car-transmission-type focus event
+    $("#transmissionType").on('keydown', function (event) {
+        if (event.key === "Enter") {
+            $("#fuelType").focus();
+        }
+    });
+
+    // car-fuel-type focus event
+    $("#fuelType").on('keydown', function (event) {
+        if (event.key === "Enter") {
+            focusCarText($("#dailyRate"));
+        }
+    });
+
+    // car-daily-rate focus event
+    $("#dailyRate").on('keydown', function (event) {
+        if (event.key === "Enter" && carCheck(regExDailyRate, $("#dailyRate"))) {
+            focusCarText($("#monthlyRate"));
+        }
+    });
+
+    // car-monthly-rate focus event
+    $("#monthlyRate").on('keydown', function (event) {
+        if (event.key === "Enter" && carCheck(regExMonthlyRate, $("#monthlyRate"))) {
+            focusCarText($("#priceExtraKM"));
+        }
+    });
+
+    // car-price-extra-KM focus event
+    $("#priceExtraKM").on('keydown', function (event) {
+        if (event.key === "Enter" && carCheck(regExKM, $("#priceExtraKM"))) {
+            focusCarText($("#registrationNumber"));
+        }
+    });
+
+    // car-registration-number focus event
+    $("#registrationNumber").on('keydown', function (event) {
+        if (event.key === "Enter" && carCheck(regExRegNumber, $("#registrationNumber"))) {
+            focusCarText($("#freeMileage"));
+        }
+    });
+
+    // car-free-mileage focus event
+    $("#freeMileage").on('keydown', function (event) {
+        if (event.key === "Enter" && carCheck(regExFreeMileage, $("#freeMileage"))) {
+            focusCarText($("#color"));
+        }
+    });
+
+    // car-color focus event
+    $("#color").on('keydown', function (event) {
+        if (event.key === "Enter" && carCheck(regExColor, $("#color"))) {
+            $("#carAvailability").focus();
+        }
+    });
+
+    // car-availability focus event
+    $("#carAvailability").on('keydown', function (event) {
+        if (event.key === "Enter") {
+            $("#addCarBtn").focus();
+        }
+    });
+
+
+    // check validity function
+    function checkCarValidity() {
+        let carErrorCount = 0;
+        for (let carValidation of carValidations) {
+            if (carCheck(carValidation.carReg, carValidation.carField)) {
+                textCarSuccess(carValidation.carField, "");
+            } else {
+                carErrorCount = carErrorCount + 1;
+                setCarTextError(carValidation.carField);
+            }
+        }
+        setCarButtonState(carErrorCount);
+    }
+
+    // check regex pattern function
+    function carCheck(regex, txtField) {
+        let carInputValue = txtField.val();
+        return regex.test(carInputValue) ? true : false;
+    }
+
+    // error text fields function
+    function setCarTextError(txtField) {
+        if (txtField.val().length <= 0) {
+            defaultCarText(txtField, "");
+        } else {
+            txtField.css('border', '2px solid red');
+        }
+    }
+
+    // success text fields function
+    function textCarSuccess(txtField) {
+        if (txtField.val().length <= 0) {
+            defaultCarText(txtField, "");
+        } else {
+            txtField.css('border', '2px solid green');
+        }
+    }
+
+    // default text fields function
+    function defaultCarText(txtField) {
+        txtField.css("border", "1px solid #ced4da");
+    }
+
+    // focus texts function
+    function focusCarText(txtField) {
+        txtField.focus();
+    }
+
+    // button state function
+    function setCarButtonState(value) {
+        if (value > 0) {
+            $("#addCarBtn").attr('disabled', true);
+            $("#updateCar").attr('disabled', true);
+        } else {
+            $("#addCarBtn").attr('disabled', false);
+            $("#updateCar").attr('disabled', false);
         }
     }
 
