@@ -101,7 +101,7 @@
                 </li>
 
                 <li class="side-nav-item">
-                    <a href="#" class="side-nav-link">
+                    <a href="#" id="LinkRentDetails" class="side-nav-link">
                         <i class="uil-list-ui-alt"></i>
                         <span> Rent Details </span>
                     </a>
@@ -1397,6 +1397,7 @@
         $("#manageCustomer").css("display", "none");
         $("#paymentDetails").css("display", "none");
         $("#userRequest").css("display", "none");
+        $("#rentDetails").css("display", "none");
     });
     <!-- End Document Ready Navigation -->
 
@@ -1408,6 +1409,7 @@
         $("#manageCustomer").css("display", "none");
         $("#paymentDetails").css("display", "none");
         $("#userRequest").css("display", "none");
+        $("#rentDetails").css("display", "none");
     });
     <!-- End Dashboard Navigation -->
 
@@ -1419,6 +1421,7 @@
         $("#manageCustomer").css("display", "none");
         $("#paymentDetails").css("display", "none");
         $("#userRequest").css("display", "none");
+        $("#rentDetails").css("display", "none");
     });
     <!-- End Manage Car Navigation -->
 
@@ -1430,6 +1433,7 @@
         $("#manageCustomer").css("display", "none");
         $("#paymentDetails").css("display", "none");
         $("#userRequest").css("display", "none");
+        $("#rentDetails").css("display", "none");
     });
     <!-- End Manage Car Navigation -->
 
@@ -1441,6 +1445,7 @@
         $("#manageCustomer").css("display", "block");
         $("#paymentDetails").css("display", "none");
         $("#userRequest").css("display", "none");
+        $("#rentDetails").css("display", "none");
     });
     <!-- End Manage Customer Navigation -->
 
@@ -1452,6 +1457,7 @@
         $("#manageCustomer").css("display", "none");
         $("#paymentDetails").css("display", "block");
         $("#userRequest").css("display", "none");
+        $("#rentDetails").css("display", "none");
     });
     <!-- End Manage Payment Navigation -->
 
@@ -1463,8 +1469,21 @@
         $("#manageCustomer").css("display", "none");
         $("#paymentDetails").css("display", "none");
         $("#userRequest").css("display", "block");
+        $("#rentDetails").css("display", "none");
     });
     <!-- End Customer Request Navigation -->
+
+    <!-- Start Rent Details Navigation -->
+    $("#LinkRentDetails").on('click', function () {
+        $("#adminDashboard").css("display", "none");
+        $("#manageCar").css("display", "none");
+        $("#manageDriver").css("display", "none");
+        $("#manageCustomer").css("display", "none");
+        $("#paymentDetails").css("display", "none");
+        $("#userRequest").css("display", "none");
+        $("#rentDetails").css("display", "block");
+    });
+    <!-- End Rent Details Navigation -->
 
     //<!------------------------------------ Customer Request ------------------------------------>
 
