@@ -20,6 +20,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.Optional;
 
 /**
  * @author : ShEnUx
@@ -81,7 +82,12 @@ public class RegUserServiceImpl implements RegUserService {
     }
 
     public void updateRegUser(RegUserDTO regUserDTO) {
-        RegUser regUser = new RegUser(regUserDTO.getUser_Id(), regUserDTO.getName(), regUserDTO.getContact_No(), regUserDTO.getAddress(), regUserDTO.getEmail(), regUserDTO.getNic(), regUserDTO.getLicense_No(), "", "", new User(regUserDTO.getUser().getUser_Id(), regUserDTO.getUser().getRole_Type(), regUserDTO.getUser().getUser_Name(), regUserDTO.getUser().getPassword()));
+        System.out.println(regUserDTO);
+        RegUser regUser = new RegUser(regUserDTO.getUser_Id(), regUserDTO.getName(), regUserDTO.getContact_No(), regUserDTO.getAddress(), regUserDTO.getEmail(), regUserDTO.getNic(), regUserDTO.getLicense_No(), new User(regUserDTO.getUser().getUser_Id(), regUserDTO.getUser().getRole_Type(), regUserDTO.getUser().getUser_Name(), regUserDTO.getUser().getPassword()));
+
+        System.out.println(regUser.toString());
+
+
         if (!repo.existsById(regUserDTO.getUser_Id()))
             throw new RuntimeException("Wrong ID..No Such a User to Update..!");
 
@@ -110,7 +116,6 @@ public class RegUserServiceImpl implements RegUserService {
 
             System.out.println(regUser);
 //          repo.save(regUser);
-            regUser.getUser().setRole_Type(RoleType.REGISTERED_USER);
             repo.save(mapper.map(regUser, RegUser.class));
         } catch (IOException e) {
             throw new RuntimeException(e);

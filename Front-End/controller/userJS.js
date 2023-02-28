@@ -156,15 +156,18 @@ function customerBindClickEvents() {
 <!-- start set text fields values function -->
 function setTextFieldValuesCustomer(userID, userFirstName, userLastName, customerContactNo, customerAddress, customerDriverEmail, customerNic, customerLicence, customerUserName, customerPassword) {
     $("#userID").val(userID);
-    $("#userFirstName").val(userFirstName);
-    $("#userLastName").val(userLastName);
-    $("#customerContactNo").val(customerContactNo);
-    $("#customerAddress").val(customerAddress);
-    $("#customerDriverEmail").val(customerDriverEmail);
-    $("#customerNic").val(customerNic);
-    $("#customerLicence").val(customerLicence);
-    $("#customerUserName").val(customerUserName);
-    $("#customerPassword").val(customerPassword);
+    $("#userFirstName,#cusFirstName").val(userFirstName);
+    $("#userLastName,#cusLastName").val(userLastName);
+    $("#customerContactNo,#contactNo").val(customerContactNo);
+    $("#customerAddress,#address").val(customerAddress);
+    $("#customerDriverEmail,#cusEmail").val(customerDriverEmail);
+    $("#customerNic,#nicNo").val(customerNic);
+    $("#customerLicence,#cusLicence").val(customerLicence);
+    $("#customerUserName,#cusUserName").val(customerUserName);
+    $("#customerPassword,#cusPassword").val(customerPassword);
+    $(".form-control").css({
+        "border": "1px solid #dee2e6"
+    });
 }
 
 <!-- end set text fields values function -->

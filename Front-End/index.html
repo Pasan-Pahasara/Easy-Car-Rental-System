@@ -18,6 +18,41 @@
     <link rel="stylesheet" href="assets/css/swiperCSS/swiper-bundle.min.css">
     <!-- CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
+    <style>
+        .swiper {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .swiper-slide img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .swiper-slide {
+            text-align: center;
+            font-size: 18px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .swiper {
+            width: 100%;
+            height: 100%;
+        }
+
+        .featured-car-card {
+            margin-right: 1rem;
+            margin-left: 1rem;
+            width: 18rem;
+        }
+
+    </style>
 </head>
 
 <body>
@@ -27,7 +62,8 @@
         <div class="overlay" data-overlay></div>
         <a href="#" class="logo" style="display: flex;">
             <img src="assets/img/favicon.png" alt="Easy Car Rental logo" style="width: 9rem;">
-            <span style="font-size: 20px; font-weight: bolder; color: #32324E;margin-top: 1px;margin-top: 13px;margin-left: 11px;">EᗩSY</span><span style="display: flex; margin-top: 17px; color: #6D76E9;margin-left: 2px;"> car rental</span>
+            <span style="font-size: 20px; font-weight: bolder; color: #32324E;margin-top: 1px;margin-top: 13px;margin-left: 11px;">EᗩSY</span><span
+                style="display: flex; margin-top: 17px; color: #6D76E9;margin-left: 2px;"> car rental</span>
         </a>
         <nav class="navbar" data-navbar>
             <ul class="navbar-list">
@@ -50,7 +86,7 @@
                 <a href="tel:719568877" class="contact-link">+94 719 568 877</a>
                 <span class="contact-time">Mon - Sat: 9:00 am - 6:00 pm</span>
             </div>
-            <a href="#" class="btn" aria-labelledby="aria-label-txt">
+            <a href="#" class="btn" id="#featured-car" aria-labelledby="aria-label-txt">
                 <ion-icon name="car-outline"></ion-icon>
                 <span id="aria-label-txt">Explore cars</span>
             </a>
@@ -76,38 +112,40 @@
         <section class="section hero" id="home">
             <div class="container">
                 <div class="hero-content">
-                    <h2 class="h1 hero-title">
-                        <span>Looking </span>to <br> rent a car</h2>
-                    <p class="hero-text">
-                        Best Car Rental Company in Panadura city!
-                    </p>
-                    <div class="app-stores">
-                        <img src="assets/img/hero/ios.png">
-                        <img src="assets/img/hero/play.png">
-                        <div class="d-flex" data-aos="fade-up" data-aos-delay="200">
-                            <a href="https://vimeo.com/290450151"
-                               class="glightbox btn-watch-video d-flex align-items-center"><i
-                                    class="bi bi-play-circle"></i><span>Watch Video</span></a>
+                    <div class="hero-details">
+                        <h2 class="h1 hero-title">
+                            <span>Looking </span>to <br> rent a car</h2>
+                        <p class="hero-text">
+                            Best Car Rental Company in Panadura city!
+                        </p>
+                        <div class="app-stores">
+                            <img src="assets/img/hero/ios.png">
+                            <img src="assets/img/hero/play.png">
+                            <div class="d-flex" data-aos="fade-up" data-aos-delay="200">
+                                <a href="https://vimeo.com/290450151"
+                                   class="glightbox btn-watch-video d-flex align-items-center"><i
+                                        class="bi bi-play-circle"></i><span>Watch Video</span></a>
+                            </div>
                         </div>
                     </div>
                     <div class="hero-banner"></div>
-                    <div class="form-container">
-                        <form action="">
-                            <div class="input-box">
-                                <span>Location</span>
-                                <input type="search" name="" id="location" placeholder="Search Places">
-                            </div>
-                            <div class="input-box">
-                                <span>Pick-Up Date</span>
-                                <input type="date" name="" id="date">
-                            </div>
-                            <div class="input-box">
-                                <span>Return Date</span>
-                                <input type="date" name="" id="date2">
-                            </div>
-                            <button type="submit" name="" id="submit" class="btn">Search</button>
-                        </form>
-                    </div>
+                    <!--                    <div class="form-container">-->
+                    <!--                        <form action="">-->
+                    <!--                            <div class="input-box">-->
+                    <!--                                <span>Location</span>-->
+                    <!--                                <input type="search" name="" id="location" placeholder="Search Places">-->
+                    <!--                            </div>-->
+                    <!--                            <div class="input-box">-->
+                    <!--                                <span>Pick-Up Date</span>-->
+                    <!--                                <input type="date" name="" id="date">-->
+                    <!--                            </div>-->
+                    <!--                            <div class="input-box">-->
+                    <!--                                <span>Return Date</span>-->
+                    <!--                                <input type="date" name="" id="date2">-->
+                    <!--                            </div>-->
+                    <!--                            <button type="submit" name="" id="submit" class="btn">Search</button>-->
+                    <!--                        </form>-->
+                    <!--                    </div>-->
                 </div>
             </div>
         </section>
@@ -173,6 +211,602 @@
             </div>
         </section>
         <!-- get start section ends -->
+
+        <!-- featured car section start -->
+        <section class="section featured-car" id="featured-car">
+            <div class="container">
+
+                <div class="heading-side">
+                    <h2 class="h2 section-title">Featured cars</h2>
+                </div>
+
+                <!-- Swiper -->
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+
+                        <div class="swiper-slide">
+                            <div class="featured-car-card">
+
+                                <figure class="card-banner">
+                                    <img src="./assets/img/exploreCars/car1.jpg" alt="Audi A4" loading="lazy"
+                                         width="440" height="300"
+                                         class="w-100">
+                                </figure>
+
+                                <div class="card-content">
+
+                                    <div class="card-title-wrapper">
+                                        <h3 class="h3 card-title">
+                                            <a href="#">Audi A4</a>
+                                        </h3>
+
+                                        <data class="year" value="2012">2012</data>
+                                    </div>
+
+                                    <ul class="card-list">
+
+                                        <li class="card-list-item">
+                                            <ion-icon name="people-outline"></ion-icon>
+
+                                            <span class="card-item-text">4 People</span>
+                                        </li>
+
+                                        <li class="card-list-item">
+                                            <ion-icon name="flash-outline"></ion-icon>
+
+                                            <span class="card-item-text">Hybrid</span>
+                                        </li>
+
+                                        <li class="card-list-item">
+                                            <ion-icon name="speedometer-outline"></ion-icon>
+
+                                            <span class="card-item-text">6.1km / 1-litre</span>
+                                        </li>
+
+                                        <li class="card-list-item">
+                                            <ion-icon name="hardware-chip-outline"></ion-icon>
+
+                                            <span class="card-item-text">Automatic</span>
+                                        </li>
+
+                                    </ul>
+
+                                    <div class="card-price-wrapper">
+
+                                        <p class="card-price">
+                                            <strong>Rs: 44000</strong> / month
+                                        </p>
+
+                                        <button class="btn fav-btn" aria-label="Add to favourite list">
+                                            <ion-icon name="heart-outline"></ion-icon>
+                                        </button>
+
+                                        <button class="btn">Rent now</button>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+                            <div class="featured-car-card">
+
+                                <figure class="card-banner">
+                                    <img src="./assets/img/exploreCars/car2.jpg" alt="BMW 520D M sport" loading="lazy"
+                                         width="340" height="200"
+                                         class="w-100">
+                                </figure>
+
+                                <div class="card-content">
+
+                                    <div class="card-title-wrapper">
+                                        <h3 class="h3 card-title">
+                                            <a href="#">BMW 520D M sport</a>
+                                        </h3>
+
+                                        <data class="year" value="2011">2011</data>
+                                    </div>
+
+                                    <ul class="card-list">
+
+                                        <li class="card-list-item">
+                                            <ion-icon name="people-outline"></ion-icon>
+
+                                            <span class="card-item-text">4 People</span>
+                                        </li>
+
+                                        <li class="card-list-item">
+                                            <ion-icon name="flash-outline"></ion-icon>
+
+                                            <span class="card-item-text">Hybrid</span>
+                                        </li>
+
+                                        <li class="card-list-item">
+                                            <ion-icon name="speedometer-outline"></ion-icon>
+
+                                            <span class="card-item-text">6.1km / 1-litre</span>
+                                        </li>
+
+                                        <li class="card-list-item">
+                                            <ion-icon name="hardware-chip-outline"></ion-icon>
+
+                                            <span class="card-item-text">Automatic</span>
+                                        </li>
+
+                                    </ul>
+
+                                    <div class="card-price-wrapper">
+
+                                        <p class="card-price">
+                                            <strong>Rs: 35000</strong> / month
+                                        </p>
+
+                                        <button class="btn fav-btn" aria-label="Add to favourite list">
+                                            <ion-icon name="heart-outline"></ion-icon>
+                                        </button>
+
+                                        <button class="btn">Rent now</button>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+                            <div class="featured-car-card">
+
+                                <figure class="card-banner">
+                                    <img src="./assets/img/exploreCars/car3.jpg" alt="Toyota Land Cruiser" loading="lazy"
+                                         width="440" height="300"
+                                         class="w-100">
+                                </figure>
+
+                                <div class="card-content">
+
+                                    <div class="card-title-wrapper">
+                                        <h3 class="h3 card-title">
+                                            <a href="#">Land Cruiser</a>
+                                        </h3>
+
+                                        <data class="year" value="2020">2022</data>
+                                    </div>
+
+                                    <ul class="card-list">
+
+                                        <li class="card-list-item">
+                                            <ion-icon name="people-outline"></ion-icon>
+
+                                            <span class="card-item-text">5 People</span>
+                                        </li>
+
+                                        <li class="card-list-item">
+                                            <ion-icon name="flash-outline"></ion-icon>
+
+                                            <span class="card-item-text">Hybrid</span>
+                                        </li>
+
+                                        <li class="card-list-item">
+                                            <ion-icon name="speedometer-outline"></ion-icon>
+
+                                            <span class="card-item-text">3.1km / 1-litre</span>
+                                        </li>
+
+                                        <li class="card-list-item">
+                                            <ion-icon name="hardware-chip-outline"></ion-icon>
+
+                                            <span class="card-item-text">Automatic</span>
+                                        </li>
+
+                                    </ul>
+
+                                    <div class="card-price-wrapper">
+
+                                        <p class="card-price">
+                                            <strong>Rs: 40000</strong> / month
+                                        </p>
+
+                                        <button class="btn fav-btn" aria-label="Add to favourite list">
+                                            <ion-icon name="heart-outline"></ion-icon>
+                                        </button>
+
+                                        <button class="btn">Rent now</button>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="featured-car-card">
+
+                                <figure class="card-banner">
+                                    <img src="./assets/img/exploreCars/car4.jpg" alt="Toyota CHR" loading="lazy"
+                                         width="440" height="300"
+                                         class="w-100">
+                                </figure>
+
+                                <div class="card-content">
+
+                                    <div class="card-title-wrapper">
+                                        <h3 class="h3 card-title">
+                                            <a href="#">Toyota CHR</a>
+                                        </h3>
+
+                                        <data class="year" value="2021">2021</data>
+                                    </div>
+
+                                    <ul class="card-list">
+
+                                        <li class="card-list-item">
+                                            <ion-icon name="people-outline"></ion-icon>
+
+                                            <span class="card-item-text">5 People</span>
+                                        </li>
+
+                                        <li class="card-list-item">
+                                            <ion-icon name="flash-outline"></ion-icon>
+
+                                            <span class="card-item-text">Hybrid</span>
+                                        </li>
+
+                                        <li class="card-list-item">
+                                            <ion-icon name="speedometer-outline"></ion-icon>
+
+                                            <span class="card-item-text">12.1km / 1-litre</span>
+                                        </li>
+
+                                        <li class="card-list-item">
+                                            <ion-icon name="hardware-chip-outline"></ion-icon>
+
+                                            <span class="card-item-text">Automatic</span>
+                                        </li>
+
+                                    </ul>
+
+                                    <div class="card-price-wrapper">
+
+                                        <p class="card-price">
+                                            <strong>Rs: 30000</strong> / month
+                                        </p>
+
+                                        <button class="btn fav-btn" aria-label="Add to favourite list">
+                                            <ion-icon name="heart-outline"></ion-icon>
+                                        </button>
+
+                                        <button class="btn">Rent now</button>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+                            <div class="featured-car-card">
+
+                                <figure class="card-banner">
+                                    <img src="./assets/img/exploreCars/car5.jpg" alt="Toyota Vezel" loading="lazy"
+                                         width="440" height="300"
+                                         class="w-100">
+                                </figure>
+
+                                <div class="card-content">
+
+                                    <div class="card-title-wrapper">
+                                        <h3 class="h3 card-title">
+                                            <a href="#">Toyota Vezel</a>
+                                        </h3>
+
+                                        <data class="year" value="2020">2020</data>
+                                    </div>
+
+                                    <ul class="card-list">
+
+                                        <li class="card-list-item">
+                                            <ion-icon name="people-outline"></ion-icon>
+
+                                            <span class="card-item-text">5 People</span>
+                                        </li>
+
+                                        <li class="card-list-item">
+                                            <ion-icon name="flash-outline"></ion-icon>
+
+                                            <span class="card-item-text">Hybrid</span>
+                                        </li>
+
+                                        <li class="card-list-item">
+                                            <ion-icon name="speedometer-outline"></ion-icon>
+
+                                            <span class="card-item-text">15.1km / 1-litre</span>
+                                        </li>
+
+                                        <li class="card-list-item">
+                                            <ion-icon name="hardware-chip-outline"></ion-icon>
+
+                                            <span class="card-item-text">Automatic</span>
+                                        </li>
+
+                                    </ul>
+
+                                    <div class="card-price-wrapper">
+
+                                        <p class="card-price">
+                                            <strong>Rs: 25000</strong> / month
+                                        </p>
+
+                                        <button class="btn fav-btn" aria-label="Add to favourite list">
+                                            <ion-icon name="heart-outline"></ion-icon>
+                                        </button>
+
+                                        <button class="btn">Rent now</button>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+                            <div class="featured-car-card">
+
+                                <figure class="card-banner">
+                                    <img src="./assets/img/exploreCars/car6.jpg" alt="Toyota Axio" loading="lazy"
+                                         width="440" height="300"
+                                         class="w-100">
+                                </figure>
+
+                                <div class="card-content">
+
+                                    <div class="card-title-wrapper">
+                                        <h3 class="h3 card-title">
+                                            <a href="#">Toyota Axio</a>
+                                        </h3>
+
+                                        <data class="year" value="2022">2022</data>
+                                    </div>
+
+                                    <ul class="card-list">
+
+                                        <li class="card-list-item">
+                                            <ion-icon name="people-outline"></ion-icon>
+
+                                            <span class="card-item-text">4 People</span>
+                                        </li>
+
+                                        <li class="card-list-item">
+                                            <ion-icon name="flash-outline"></ion-icon>
+
+                                            <span class="card-item-text">Hybrid</span>
+                                        </li>
+
+                                        <li class="card-list-item">
+                                            <ion-icon name="speedometer-outline"></ion-icon>
+
+                                            <span class="card-item-text">18.1km / 1-litre</span>
+                                        </li>
+
+                                        <li class="card-list-item">
+                                            <ion-icon name="hardware-chip-outline"></ion-icon>
+
+                                            <span class="card-item-text">Automatic</span>
+                                        </li>
+
+                                    </ul>
+
+                                    <div class="card-price-wrapper">
+
+                                        <p class="card-price">
+                                            <strong>Rs: 20000</strong> / month
+                                        </p>
+
+                                        <button class="btn fav-btn" aria-label="Add to favourite list">
+                                            <ion-icon name="heart-outline"></ion-icon>
+                                        </button>
+
+                                        <button class="btn">Rent now</button>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="featured-car-card">
+
+                                <figure class="card-banner">
+                                    <img src="./assets/img/exploreCars/car7.jpg" alt="Suzuki Swift Rs" loading="lazy"
+                                         width="440" height="300"
+                                         class="w-100">
+                                </figure>
+
+                                <div class="card-content">
+
+                                    <div class="card-title-wrapper">
+                                        <h3 class="h3 card-title">
+                                            <a href="#">Suzuki Swift Rs</a>
+                                        </h3>
+
+                                        <data class="year" value="2021">2021</data>
+                                    </div>
+
+                                    <ul class="card-list">
+
+                                        <li class="card-list-item">
+                                            <ion-icon name="people-outline"></ion-icon>
+
+                                            <span class="card-item-text">4 People</span>
+                                        </li>
+
+                                        <li class="card-list-item">
+                                            <ion-icon name="flash-outline"></ion-icon>
+
+                                            <span class="card-item-text">Turbo</span>
+                                        </li>
+
+                                        <li class="card-list-item">
+                                            <ion-icon name="speedometer-outline"></ion-icon>
+
+                                            <span class="card-item-text">25.1km / 1-litre</span>
+                                        </li>
+
+                                        <li class="card-list-item">
+                                            <ion-icon name="hardware-chip-outline"></ion-icon>
+
+                                            <span class="card-item-text">Automatic</span>
+                                        </li>
+
+                                    </ul>
+
+                                    <div class="card-price-wrapper">
+
+                                        <p class="card-price">
+                                            <strong>Rs: 18000</strong> / month
+                                        </p>
+
+                                        <button class="btn fav-btn" aria-label="Add to favourite list">
+                                            <ion-icon name="heart-outline"></ion-icon>
+                                        </button>
+
+                                        <button class="btn">Rent now</button>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+                            <div class="featured-car-card">
+
+                                <figure class="card-banner">
+                                    <img src="./assets/img/exploreCars/car8.jpg" alt="Toyota aqua" loading="lazy"
+                                         width="440" height="300"
+                                         class="w-100">
+                                </figure>
+
+                                <div class="card-content">
+
+                                    <div class="card-title-wrapper">
+                                        <h3 class="h3 card-title">
+                                            <a href="#">Toyota aqua</a>
+                                        </h3>
+
+                                        <data class="year" value="2019">2019</data>
+                                    </div>
+
+                                    <ul class="card-list">
+
+                                        <li class="card-list-item">
+                                            <ion-icon name="people-outline"></ion-icon>
+
+                                            <span class="card-item-text">4 People</span>
+                                        </li>
+
+                                        <li class="card-list-item">
+                                            <ion-icon name="flash-outline"></ion-icon>
+
+                                            <span class="card-item-text">Hybrid</span>
+                                        </li>
+
+                                        <li class="card-list-item">
+                                            <ion-icon name="speedometer-outline"></ion-icon>
+
+                                            <span class="card-item-text">20.1km / 1-litre</span>
+                                        </li>
+
+                                        <li class="card-list-item">
+                                            <ion-icon name="hardware-chip-outline"></ion-icon>
+
+                                            <span class="card-item-text">Automatic</span>
+                                        </li>
+
+                                    </ul>
+
+                                    <div class="card-price-wrapper">
+
+                                        <p class="card-price">
+                                            <strong>Rs: 18000</strong> / month
+                                        </p>
+
+                                        <button class="btn fav-btn" aria-label="Add to favourite list">
+                                            <ion-icon name="heart-outline"></ion-icon>
+                                        </button>
+
+                                        <button class="btn">Rent now</button>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+                            <div class="featured-car-card">
+
+                                <figure class="card-banner">
+                                    <img src="./assets/img/exploreCars/car9.jpg" alt="Suzuki Wagon R FZ" loading="lazy"
+                                         width="440" height="300"
+                                         class="w-100">
+                                </figure>
+
+                                <div class="card-content">
+
+                                    <div class="card-title-wrapper">
+                                        <h3 class="h3 card-title">
+                                            <a href="#">Suzuki Wagon R FZ</a>
+                                        </h3>
+
+                                        <data class="year" value="2022">2022</data>
+                                    </div>
+
+                                    <ul class="card-list">
+
+                                        <li class="card-list-item">
+                                            <ion-icon name="people-outline"></ion-icon>
+
+                                            <span class="card-item-text">4 People</span>
+                                        </li>
+
+                                        <li class="card-list-item">
+                                            <ion-icon name="flash-outline"></ion-icon>
+
+                                            <span class="card-item-text">Hybrid</span>
+                                        </li>
+
+                                        <li class="card-list-item">
+                                            <ion-icon name="speedometer-outline"></ion-icon>
+
+                                            <span class="card-item-text">30.1km / 1-litre</span>
+                                        </li>
+
+                                        <li class="card-list-item">
+                                            <ion-icon name="hardware-chip-outline"></ion-icon>
+
+                                            <span class="card-item-text">Automatic</span>
+                                        </li>
+
+                                    </ul>
+
+                                    <div class="card-price-wrapper">
+
+                                        <p class="card-price">
+                                            <strong>Rs: 10000</strong> / month
+                                        </p>
+
+                                        <button class="btn fav-btn" aria-label="Add to favourite list">
+                                            <ion-icon name="heart-outline"></ion-icon>
+                                        </button>
+
+                                        <button class="btn">Rent now</button>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+        </section>
+        <!-- featured car section ends -->
 
         <!-- about section start -->
         <section class="section about" id="about">
@@ -401,7 +1035,98 @@
 <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 <!-- Swiper JS -->
 <script src="assets/js/swiperJs/swiper-bundle.min.js"></script>
+<!-- Scroller JS -->
+<script src="https://unpkg.com/scrollreveal "></script>
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 <!-- JS -->
 <script src="controller/script.js"></script>
+<script>
+    const sr = ScrollReveal({
+        distance: '60px',
+        duration: 1800,
+        delay: 200,
+        reset: true
+    })
+
+    sr.reveal('.hero-details', {
+        delay: 200,
+        origin: 'top'
+    })
+
+    sr.reveal('.hero-banner', {
+        delay: 200,
+        origin: 'bottom'
+    })
+
+    sr.reveal('.get-start-card', {
+        delay: 300,
+        origin: 'bottom'
+    })
+
+    sr.reveal('.slide-content', {
+        delay: 300,
+        origin: 'bottom'
+    })
+
+    sr.reveal('.form-container form', {
+        delay: 600,
+        origin: 'left'
+    })
+    sr.reveal('.heading-side', {
+        delay: 600,
+        origin: 'left'
+    })
+    sr.reveal('.heading', {
+        delay: 600,
+        origin: 'top'
+    })
+    sr.reveal('.about-container .about-text', {
+        delay: 200,
+        origin: 'bottom'
+    })
+    sr.reveal('.mySwiper', {
+        delay: 600,
+        origin: 'bottom'
+    })
+    sr.reveal('.contact .row form .box:nth-child(2)', {
+        delay: 200,
+        origin: 'top'
+    })
+    sr.reveal('.contact .row form .box:nth-child(3)', {
+        delay: 650,
+        origin: 'top'
+    })
+    sr.reveal('.contact .row form .box:nth-child(4)', {
+        delay: 850,
+        origin: 'top'
+    })
+    sr.reveal('.contact .row form .box:nth-child(5)', {
+        delay: 1050,
+        origin: 'top'
+    })
+    sr.reveal('.contact.row.map', {
+        delay: 600,
+        origin: 'left'
+    })
+
+    var swiper = new Swiper(".mySwiper", {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        loop: true,
+        autoplay: {
+            delay: 2500,
+            disableOnInteraction: false,
+        },
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+    });
+</script>
 </body>
 </html>

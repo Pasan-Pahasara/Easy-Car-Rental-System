@@ -13,6 +13,10 @@ var swiper = new Swiper(".slide-content", {
     centerSlide: 'true',
     fade: 'true',
     grabCursor: 'true',
+    autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+    },
     pagination: {
         el: ".swiper-pagination",
         clickable: true,

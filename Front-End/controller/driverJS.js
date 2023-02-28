@@ -243,6 +243,9 @@ function setTextFieldValuesDriver(driverNicNo, driverFirstName, driverLastName, 
     $("#role_Type").val(role_Type);
     $("#driverUserName").val(driverUserName);
     $("#driverPassword").val(driverPassword);
+    $(".form-control").css({
+        "border": "1px solid #dee2e6"
+    });
 }
 <!-- end set text fields values function -->
 

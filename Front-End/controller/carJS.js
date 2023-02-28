@@ -199,6 +199,9 @@ function setTextFieldValuesCar(carId, carName, carBrand, carType, numberOfPassen
     $("#freeMileage").val(freeMileage);
     $("#color").val(color);
     $("#carAvailability").val(carAvailability);
+    $(".form-control").css({
+        "border": "1px solid #dee2e6"
+    });
 }
 
 <!-- end set text fields values function -->

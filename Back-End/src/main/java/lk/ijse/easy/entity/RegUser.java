@@ -33,4 +33,15 @@ public class RegUser {
 
     @OneToOne(cascade = CascadeType.ALL)
     private User user;
+
+    public RegUser(String user_Id, Name name, String contact_No, String address, String email, String nic, String license_No, User user) {
+        this.user_Id = user_Id;
+        this.name = name;
+        this.contact_No = contact_No;
+        this.address = address;
+        this.email = email;
+        this.nic = nic;
+        this.license_No = license_No;
+        this.user = user;
+    }
 }

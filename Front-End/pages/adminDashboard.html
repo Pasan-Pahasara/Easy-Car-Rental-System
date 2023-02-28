@@ -870,14 +870,25 @@
                                                            placeholder="Eg :- 781596458v / 200175968215" type="text">
                                                 </div>
                                                 <div class="mb-3">
+                                                    <label class="form-label" for="imgNiC">NIC Image<span
+                                                            class="text-danger">*</span></label>
+                                                    <input class="form-control" id="imgNiC" name="nic_Img"
+                                                           placeholder="NIC NO" type="file">
+                                                </div>
+                                            </section>
+                                            <section id="sec3CustomerDetails" class="col-xl-4">
+                                                <div class="mb-3">
                                                     <label class="form-label" for="customerLicence">Licence No<span
                                                             class="text-danger">*</span></label>
                                                     <input class="form-control" id="customerLicence" name="license_No"
                                                            placeholder="Eg :- 587459621587" type="text">
                                                 </div>
-
-                                            </section>
-                                            <section id="sec3CustomerDetails" class="col-xl-4">
+                                                <div class="mb-3">
+                                                    <label class="form-label" for="imgLicence">Licence Image<span
+                                                            class="text-danger">*</span></label>
+                                                    <input class="form-control" id="imgLicence" name="license_Img"
+                                                           placeholder="NIC NO" type="file">
+                                                </div>
                                                 <div class="mb-3">
                                                     <label for="driverUserName" class="form-label">User Name<span
                                                             class="text-danger">*</span></label>
@@ -1967,6 +1978,13 @@
     // customer-nic focus event
     $("#customerNic").on('keydown', function (event) {
         if (event.key === "Enter" && cusCheck(regExCusNic, $("#customerNic"))) {
+            $("#imgNiC").focus();
+        }
+    });
+
+    // customer-nic-img focus event
+    $("#imgNiC").on('keydown', function (event) {
+        if (event.key === "Enter") {
             focusCusText($("#customerLicence"));
         }
     });
@@ -1974,6 +1992,13 @@
     // customer-licence focus event
     $("#customerLicence").on('keydown', function (event) {
         if (event.key === "Enter" && cusCheck(regExCusLicense, $("#customerLicence"))) {
+            $("#imgLicence").focus();
+        }
+    });
+
+    // customer-licence-img focus event
+    $("#imgLicence").on('keydown', function (event) {
+        if (event.key === "Enter") {
             focusCusText($("#customerUserName"));
         }
     });

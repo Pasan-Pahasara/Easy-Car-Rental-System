@@ -10,6 +10,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
+import static lk.ijse.easy.enums.RoleType.REGISTERED_USER;
+
 /**
  * @author : ShEnUx
  * @time : 3:07 PM
@@ -50,6 +52,7 @@ public class RegUserController {
     public ResponseUtil updateRegUser(@ModelAttribute RegUserDTO regUserDTO, @ModelAttribute UserDTO userDTO, @ModelAttribute Name name){
         regUserDTO.setUser(userDTO);
         regUserDTO.setName(name);
+        regUserDTO.getUser().setRole_Type(REGISTERED_USER);
         service.updateRegUser(regUserDTO);
         return new ResponseUtil("OK","Successfully Updated..! : "+regUserDTO.getUser_Id(),null);
     }
