@@ -10,37 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9d9c7e19-daae-4dea-98be-3ff2eb93366f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Front-End/assets/img/exploreCars/car1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Front-End/assets/img/exploreCars/car2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Front-End/assets/img/exploreCars/car3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Front-End/assets/img/exploreCars/car4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Front-End/assets/img/exploreCars/car5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Front-End/assets/img/exploreCars/car6.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Front-End/assets/img/exploreCars/car7.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Front-End/assets/img/exploreCars/car8.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Front-End/assets/img/exploreCars/car9.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End/src/main/java/lk/ijse/easy/controller/RegUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/src/main/java/lk/ijse/easy/controller/RegUserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End/src/main/java/lk/ijse/easy/entity/RegUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/src/main/java/lk/ijse/easy/entity/RegUser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End/src/main/java/lk/ijse/easy/service/impl/RegUserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/src/main/java/lk/ijse/easy/service/impl/RegUserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End/target/Back-End-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/target/Back-End-1.0-SNAPSHOT.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End/target/Back-End-1.0-SNAPSHOT/WEB-INF/classes/lk/ijse/easy/controller/RegUserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/target/Back-End-1.0-SNAPSHOT/WEB-INF/classes/lk/ijse/easy/controller/RegUserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End/target/Back-End-1.0-SNAPSHOT/WEB-INF/classes/lk/ijse/easy/entity/RegUser.class" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/target/Back-End-1.0-SNAPSHOT/WEB-INF/classes/lk/ijse/easy/entity/RegUser.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End/target/Back-End-1.0-SNAPSHOT/WEB-INF/classes/lk/ijse/easy/service/impl/RegUserServiceImpl$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/target/Back-End-1.0-SNAPSHOT/WEB-INF/classes/lk/ijse/easy/service/impl/RegUserServiceImpl$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End/target/Back-End-1.0-SNAPSHOT/WEB-INF/classes/lk/ijse/easy/service/impl/RegUserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/target/Back-End-1.0-SNAPSHOT/WEB-INF/classes/lk/ijse/easy/service/impl/RegUserServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End/target/classes/lk/ijse/easy/controller/RegUserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/target/classes/lk/ijse/easy/controller/RegUserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End/target/classes/lk/ijse/easy/entity/RegUser.class" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/target/classes/lk/ijse/easy/entity/RegUser.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End/target/classes/lk/ijse/easy/service/impl/RegUserServiceImpl$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/target/classes/lk/ijse/easy/service/impl/RegUserServiceImpl$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End/target/classes/lk/ijse/easy/service/impl/RegUserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/target/classes/lk/ijse/easy/service/impl/RegUserServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front-End/assets/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/Front-End/assets/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front-End/assets/img/hero/hero-banner.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Front-End/assets/img/hero/hero-banner.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front-End/controller/carJS.js" beforeDir="false" afterPath="$PROJECT_DIR$/Front-End/controller/carJS.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front-End/controller/driverJS.js" beforeDir="false" afterPath="$PROJECT_DIR$/Front-End/controller/driverJS.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front-End/controller/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/Front-End/controller/script.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front-End/controller/userJS.js" beforeDir="false" afterPath="$PROJECT_DIR$/Front-End/controller/userJS.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front-End/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Front-End/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front-End/pages/adminDashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/Front-End/pages/adminDashboard.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front-End/pages/regUser.html" beforeDir="false" afterPath="$PROJECT_DIR$/Front-End/pages/regUser.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -324,7 +294,7 @@
       <workItem from="1677523855443" duration="1935000" />
       <workItem from="1677526498354" duration="2556000" />
       <workItem from="1677529707241" duration="11716000" />
-      <workItem from="1677554087603" duration="11060000" />
+      <workItem from="1677554087603" duration="11965000" />
     </task>
     <servers />
   </component>

@@ -219,7 +219,7 @@ $("#reservationBtn").on('click', function () {
             },
             error: function (error) {
                 let message = JSON.parse(error.responseText).message;
-                alert(message);
+                // alert(message);
             }
         });
     }
