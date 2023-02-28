@@ -9,10 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9d9c7e19-daae-4dea-98be-3ff2eb93366f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front-End/pages/adminDashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/Front-End/pages/adminDashboard.html" afterDir="false" />
-    </list>
+    <list default="true" id="9d9c7e19-daae-4dea-98be-3ff2eb93366f" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -60,7 +57,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "jdk.selected.JAVA_MODULE": "1.8",
-    "last_opened_file_path": "D:/IJSE/Second Semester/AAD (Advance API Development)/Easy-Car-Rental-System/Front-End/assets/css",
+    "last_opened_file_path": "E:/Desktop/Documents/oCam/dmin_dashbaord_v18_html_css_js_bootstap5-main",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -299,7 +296,7 @@
       <workItem from="1677572181279" duration="121000" />
       <workItem from="1677577859388" duration="45000" />
       <workItem from="1677584651565" duration="1648000" />
-      <workItem from="1677603918999" duration="7950000" />
+      <workItem from="1677603918999" duration="8299000" />
     </task>
     <servers />
   </component>
