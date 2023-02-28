@@ -29,6 +29,51 @@
         .card-radius {
             border-radius: 1.5rem;
         }
+
+        .dash-icon{
+            background: var(--icon-card-bg, var(--columbia-blue));
+            color: var(--icon-card-color, var(--carolina-blue));
+            height: 50px;
+            width: 50px;
+            display: grid;
+            place-items: center;
+            border-radius: 14px;
+            margin-bottom: 20px;
+        }
+
+        .dash-icon ion-icon {
+            font-size: 26px;
+            --ionicon-stroke-width: 45px;
+        }
+
+        .get-start-card .card-icon ion-icon {
+            font-size: 26px;
+            --ionicon-stroke-width: 45px;
+        }
+
+        .icon-1 {
+            --icon-card-bg: #F6D5E6;
+            --icon-card-color: #D23787;
+        }
+
+        .icon-2 {
+            --icon-card-bg: #CEEAFD;
+            --icon-card-color: #6D76E9;
+        }
+        .icon-3 {
+            --icon-card-bg: #D5F0E4;
+            --icon-card-color: #29B372;
+        }
+
+        .icon-4 {
+            --icon-card-bg: #E7DEF7;
+            --icon-card-color: #8050D3;
+        }
+
+        .icon-5 {
+            --icon-card-bg: #f1e7c5;
+            --icon-card-color: #e5b61e;
+        }
     </style>
 </head>
 <body class="loading"
@@ -217,13 +262,14 @@
                                 <div class="row">
                                     <div class="col-lg-6 col-xl-3">
                                         <div class="card widget-flat card-radius">
-                                            <div class="card-body">
-                                                <div class="float-end">
-                                                    <i class="mdi mdi-account-multiple widget-icon"></i>
+                                            <div class="card-body pb-1">
+                                                <div class="dash-icon float-end icon-2">
+                                                    <ion-icon name="person-add-outline"></ion-icon>
                                                 </div>
                                                 <h5 class="text-muted fw-bolder mt-0" title="Number of Users">Registered
                                                     Users</h5>
                                                 <h1 class="mt-2 mb-2" id="numberOfUsers">0</h1>
+                                                <hr class="mb-1">
                                                 <p class="mb-0 text-muted text-center">
                                                     <span class="text-success text-nowrap fw-semibold">Today</span>
                                                 </p>
@@ -232,13 +278,14 @@
                                     </div>
                                     <div class="col-lg-6 col-xl-3">
                                         <div class="card widget-flat card-radius">
-                                            <div class="card-body">
-                                                <div class="float-end">
-                                                    <i class="mdi mdi-cart-plus widget-icon"></i>
+                                            <div class="card-body pb-1">
+                                                <div class="dash-icon float-end icon-3">
+                                                    <ion-icon name="clipboard-outline"></ion-icon>
                                                 </div>
                                                 <h5 class="text-muted fw-bolder mt-0" title="Number of Bookings">Daily
                                                     Bookings</h5>
                                                 <h1 class="mt-2 mb-2" id="numberOfBookings">0</h1>
+                                                <hr class="mb-1">
                                                 <p class="mb-0 text-muted text-center">
                                                     <span class="text-success text-nowrap fw-semibold">Today</span>
                                                 </p>
@@ -247,13 +294,14 @@
                                     </div>
                                     <div class="col-lg-6 col-xl-3">
                                         <div class="card widget-flat card-radius">
-                                            <div class="card-body">
-                                                <div class="float-end">
-                                                    <i class="mdi mdi-currency-usd widget-icon"></i>
+                                            <div class="card-body pb-1">
+                                                <div class="dash-icon float-end icon-4">
+                                                    <ion-icon name="car-outline"></ion-icon>
                                                 </div>
                                                 <h5 class="text-muted fw-bolder mt-0" title="Available Cars">Available
                                                     Cars</h5>
                                                 <h1 class="mt-2 mb-2" id="availableCars">0</h1>
+                                                <hr class="mb-1">
                                                 <p class="mb-0 text-muted text-center">
                                                     <span class="text-nowrap text-success fw-semibold">Today</span>
                                                 </p>
@@ -262,13 +310,14 @@
                                     </div>
                                     <div class="col-lg-6 col-xl-3">
                                         <div class="card widget-flat card-radius">
-                                            <div class="card-body">
-                                                <div class="float-end">
-                                                    <i class="mdi mdi-pulse widget-icon"></i>
+                                            <div class="card-body pb-1">
+                                                <div class="dash-icon float-end icon-1">
+                                                    <ion-icon name="stopwatch-outline"></ion-icon>
                                                 </div>
                                                 <h5 class="text-muted fw-bolder mt-0" title="Reserved Cars">Reserved
                                                     Cars</h5>
                                                 <h1 class="mt-2 mb-2" id="reservedCars">0</h1>
+                                                <hr class="mb-1">
                                                 <p class="mb-0 text-muted text-center">
                                                     <span class="text-nowrap text-success fw-semibold">Today</span>
                                                 </p>
@@ -282,13 +331,14 @@
                                 <div class="row">
                                     <div class="col-lg-6 col-xl-3">
                                         <div class="card widget-flat card-radius">
-                                            <div class="card-body">
-                                                <div class="float-end">
-                                                    <i class="mdi mdi-account-multiple widget-icon"></i>
+                                            <div class="card-body pb-1">
+                                                <div class="dash-icon float-end icon-3">
+                                                    <ion-icon name="checkbox-outline"></ion-icon>
                                                 </div>
                                                 <h5 class="text-muted fw-bolder mt-0" title="Bookings Active">Bookings
                                                     Active</h5>
                                                 <h1 class="mt-2 mb-2" id="activeBookings">0</h1>
+                                                <hr class="mb-1">
                                                 <p class="mb-0 text-muted text-center">
                                                     <span class="text-nowrap text-success fw-semibold">Today</span>
                                                 </p>
@@ -297,13 +347,14 @@
                                     </div>
                                     <div class="col-lg-6 col-xl-3">
                                         <div class="card widget-flat card-radius">
-                                            <div class="card-body">
-                                                <div class="float-end">
-                                                    <i class="mdi mdi-cart-plus widget-icon"></i>
+                                            <div class="card-body pb-1">
+                                                <div class="dash-icon float-end icon-4">
+                                                    <ion-icon name="person-outline"></ion-icon>
                                                 </div>
                                                 <h5 class="text-muted fw-bolder mt-0" title="Available Drivers">
                                                     Available Drivers</h5>
                                                 <h1 class="mt-2 mb-2" id="availableDrivers">0</h1>
+                                                <hr class="mb-1">
                                                 <p class="mb-0 text-muted text-center">
                                                     <span class="text-nowrap text-success fw-semibold">Today</span>
                                                 </p>
@@ -312,13 +363,14 @@
                                     </div>
                                     <div class="col-lg-6 col-xl-3">
                                         <div class="card widget-flat card-radius">
-                                            <div class="card-body">
-                                                <div class="float-end">
-                                                    <i class="mdi mdi-currency-usd widget-icon"></i>
+                                            <div class="card-body pb-1">
+                                                <div class="dash-icon float-end icon-5">
+                                                    <ion-icon name="car-outline"></ion-icon>
                                                 </div>
                                                 <h5 class="text-muted fw-bolder mt-0" title="Maintenance Cars">
                                                     Maintenance Cars</h5>
                                                 <h1 class="mt-2 mb-2" id="maintenanceCars">0</h1>
+                                                <hr class="mb-1">
                                                 <p class="mb-0 text-muted text-center">
                                                     <span class="text-nowrap text-success fw-semibold">Today</span>
                                                 </p>
@@ -327,13 +379,14 @@
                                     </div>
                                     <div class="col-lg-6 col-xl-3">
                                         <div class="card widget-flat card-radius">
-                                            <div class="card-body">
-                                                <div class="float-end">
-                                                    <i class="mdi mdi-pulse widget-icon"></i>
+                                            <div class="card-body pb-1">
+                                                <div class="dash-icon float-end icon-1">
+                                                    <ion-icon name="cog-outline"></ion-icon>
                                                 </div>
                                                 <h5 class="text-muted fw-bolder mt-0" title="Under Maintenance Cars">
-                                                    Under Maintenance Cars</h5>
+                                                    Under Maintenance</h5>
                                                 <h1 class="mt-2 mb-2" id="underMaintenanceCars">0</h1>
+                                                <hr class="mb-1">
                                                 <p class="mb-0 text-muted text-center">
                                                     <span class="text-nowrap text-success fw-semibold">Today</span>
                                                 </p>
@@ -1485,6 +1538,7 @@
 
 <!-- Icons -->
 <script src="https://code.iconify.design/iconify-icon/1.0.5/iconify-icon.min.js"></script>
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 
 <!-- jQuery -->
 <script src="../assets/jQuery/jquery-3.6.0.min.js"></script>
