@@ -249,6 +249,22 @@
                 </div>
                 <!-- end page title -->
 
+                <h1 id="time" class="d-flex justify-content-center" style="font-size: 2.5rem;"></h1>
+                <script>
+                    function updateTime() {
+                        var now = new Date();
+                        var hours = now.getHours();
+                        var minutes = now.getMinutes();
+                        var seconds = now.getSeconds();
+                        var ampm = hours >= 12 ? 'PM' : 'AM'; // get AM/PM indicator
+                        hours = hours % 12; // convert to 12-hour format
+                        hours = hours ? hours : 12; // handle midnight (0 hours)
+                        var timeString = hours.toString().padStart(2, "0") + ":" + minutes.toString().padStart(2, "0") + ":" + seconds.toString().padStart(2, "0") + " " + ampm;
+                        document.getElementById("time").textContent = timeString;
+                    }
+                    setInterval(updateTime, 1000);
+                </script>
+
                 <!-- start content -->
                 <div class="row mt-xl-5">
                     <!-- start col -->
