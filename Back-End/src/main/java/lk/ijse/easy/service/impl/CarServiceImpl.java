@@ -100,7 +100,7 @@ public class CarServiceImpl implements CarService {
     }
 
     public ArrayList<CarDTO> getAllCars() {
-        return mapper.map(repo.findAll(), new TypeToken<ArrayList<CarDTO>>() {
+        return mapper.map(repo.findAll(), new TypeToken<ArrayList<Car>>() {
         }.getType());
     }
 
@@ -158,5 +158,11 @@ public class CarServiceImpl implements CarService {
     @Override
     public CustomDTO getSumUnderMaintainCars() {
         return new CustomDTO(repo.getSumUnderMaintainCars());
+    }
+
+    @Override
+    public ArrayList<CarDTO> getAvailableCars() {
+        return mapper.map(repo.getAvailableCars(), new TypeToken<ArrayList<Car>>() {
+        }.getType());
     }
 }

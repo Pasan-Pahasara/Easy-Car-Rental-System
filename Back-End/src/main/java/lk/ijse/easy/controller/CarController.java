@@ -97,4 +97,9 @@ public class CarController {
     public ResponseUtil getSumUnderMaintainCars() {
         return new ResponseUtil("OK", "Successfully Loaded Count..!", service.getSumUnderMaintainCars());
     }
+    @ResponseStatus(HttpStatus.ACCEPTED)
+    @GetMapping(path = "/getAvailableCars")
+    public ResponseUtil getAvailableCars() {
+        return new ResponseUtil("OK", "Successfully Loaded Available Cars..!", service.getAvailableCars());
+    }
 }

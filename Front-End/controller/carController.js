@@ -78,7 +78,6 @@ function carLoadTable() {
                 $("#tblCar").append(row);
             }
             carBindClickEvents();
-            setTextFieldValuesCar("", "", "", "", "", "", "", "", "", "", "", "", "", "");
         },
         error: function (error) {
             let message = JSON.parse(error.responseText).message;

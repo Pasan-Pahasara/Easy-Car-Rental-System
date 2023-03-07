@@ -5,6 +5,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author : ShEnUx
@@ -25,4 +26,6 @@ public interface CarRepo extends JpaRepository<Car,String> {
     int getSumMaintainCars();
     @Query(value = "SELECT COUNT(car_Id) FROM Car WHERE car_Availability='UNDER_MAINTAIN';", nativeQuery = true)
     int getSumUnderMaintainCars();
+    @Query(value = "SELECT * FROM Car WHERE car_Availability='AVAILABLE'", nativeQuery = true)
+    ArrayList<Car> getAvailableCars();
 }
