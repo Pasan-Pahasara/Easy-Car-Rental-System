@@ -30,6 +30,7 @@ $("#addCarBtn").on('click', function () {
             generateCarId();
             alert(resp.message);
             setTextFieldValuesCar("", "", "", "", "", "", "", "", "", "", "", "", "", "");
+            loadAllCars();
         },
         error: function (error) {
             let message = JSON.parse(error.responseText).message;
@@ -54,6 +55,7 @@ $("#updateCar").on('click', function () {
             carLoadTable();
             alert(res.message);
             setTextFieldValuesCar("", "", "", "", "", "", "", "", "", "", "", "", "", "");
+            loadAllCars();
         },
         error: function (error) {
             let message = JSON.parse(error.responseText).message;
@@ -216,6 +218,7 @@ $("#deleteCar").on('click', function () {
             carLoadTable();
             alert(res.message);
             setTextFieldValuesCar("", "", "", "", "", "", "", "", "", "", "", "", "", "");
+            loadAllCars();
         },
         error: function (error) {
             let message = JSON.parse(error.responseText).message;
